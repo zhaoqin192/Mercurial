@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D036F0D3D5D69D4249794B4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8BCBA5CED9CE1AD81A140B /* libPods.a */; };
+		AC5E1CDE1C904484008D91E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5E1CDD1C904484008D91E5 /* main.m */; };
+		AC5E1CE11C904484008D91E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5E1CE01C904484008D91E5 /* AppDelegate.m */; };
+		AC5E1CE71C904484008D91E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC5E1CE51C904484008D91E5 /* Main.storyboard */; };
+		AC5E1CEA1C904484008D91E5 /* Mercurial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC5E1CE81C904484008D91E5 /* Mercurial.xcdatamodeld */; };
+		AC5E1CEC1C904484008D91E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC5E1CEB1C904484008D91E5 /* Assets.xcassets */; };
+		AC5E1CEF1C904484008D91E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC5E1CED1C904484008D91E5 /* LaunchScreen.storyboard */; };
+		ACCA4CBE1C910F0900121269 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCA4CBD1C910F0900121269 /* HomeViewController.m */; };
+		ACCA4CC51C9110F300121269 /* FuncTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCA4CC31C9110F300121269 /* FuncTableViewCell.m */; };
+		ACCA4CC61C9110F300121269 /* FuncTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCA4CC41C9110F300121269 /* FuncTableViewCell.xib */; };
+		ACCA4CC91C91171A00121269 /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCA4CC81C91171A00121269 /* Constant.m */; };
+		ACCA4CD71C91544C00121269 /* RoundTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCA4CD51C91544C00121269 /* RoundTableViewCell.m */; };
+		ACCA4CD81C91544C00121269 /* RoundTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCA4CD61C91544C00121269 /* RoundTableViewCell.xib */; };
+		ACCA4CE01C91575700121269 /* RoundCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCA4CDE1C91575700121269 /* RoundCollectionViewCell.m */; };
+		ACCA4CE11C91575700121269 /* RoundCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCA4CDF1C91575700121269 /* RoundCollectionViewCell.xib */; };
+		ACCA4CE51C91648E00121269 /* FuncCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCA4CE31C91648E00121269 /* FuncCollectionViewCell.m */; };
+		ACCA4CE61C91648E00121269 /* FuncCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCA4CE41C91648E00121269 /* FuncCollectionViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		59A6001685EAEFD7AF2127DC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6A8BCBA5CED9CE1AD81A140B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC5E1CD91C904484008D91E5 /* Mercurial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mercurial.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC5E1CDD1C904484008D91E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AC5E1CDF1C904484008D91E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AC5E1CE01C904484008D91E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AC5E1CE61C904484008D91E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AC5E1CE91C904484008D91E5 /* Mercurial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mercurial.xcdatamodel; sourceTree = "<group>"; };
+		AC5E1CEB1C904484008D91E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC5E1CEE1C904484008D91E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AC5E1CF01C904484008D91E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACCA4CBC1C910F0900121269 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		ACCA4CBD1C910F0900121269 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		ACCA4CC21C9110F300121269 /* FuncTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuncTableViewCell.h; sourceTree = "<group>"; };
+		ACCA4CC31C9110F300121269 /* FuncTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuncTableViewCell.m; sourceTree = "<group>"; };
+		ACCA4CC41C9110F300121269 /* FuncTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FuncTableViewCell.xib; sourceTree = "<group>"; };
+		ACCA4CC71C91171A00121269 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		ACCA4CC81C91171A00121269 /* Constant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constant.m; sourceTree = "<group>"; };
+		ACCA4CD41C91544C00121269 /* RoundTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundTableViewCell.h; sourceTree = "<group>"; };
+		ACCA4CD51C91544C00121269 /* RoundTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundTableViewCell.m; sourceTree = "<group>"; };
+		ACCA4CD61C91544C00121269 /* RoundTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundTableViewCell.xib; sourceTree = "<group>"; };
+		ACCA4CDD1C91575700121269 /* RoundCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundCollectionViewCell.h; sourceTree = "<group>"; };
+		ACCA4CDE1C91575700121269 /* RoundCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundCollectionViewCell.m; sourceTree = "<group>"; };
+		ACCA4CDF1C91575700121269 /* RoundCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundCollectionViewCell.xib; sourceTree = "<group>"; };
+		ACCA4CE21C91648E00121269 /* FuncCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuncCollectionViewCell.h; sourceTree = "<group>"; };
+		ACCA4CE31C91648E00121269 /* FuncCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuncCollectionViewCell.m; sourceTree = "<group>"; };
+		ACCA4CE41C91648E00121269 /* FuncCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FuncCollectionViewCell.xib; sourceTree = "<group>"; };
+		F13185264FDB502171C80DA5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC5E1CD61C904484008D91E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D036F0D3D5D69D4249794B4 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		51E4ABF6D2D0F2A61EE86E89 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A8BCBA5CED9CE1AD81A140B /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC5E1CD01C904484008D91E5 = {
+			isa = PBXGroup;
+			children = (
+				AC5E1CDB1C904484008D91E5 /* Mercurial */,
+				AC5E1CDA1C904484008D91E5 /* Products */,
+				F5A1E370065FCA7CEA751987 /* Pods */,
+				51E4ABF6D2D0F2A61EE86E89 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AC5E1CDA1C904484008D91E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC5E1CD91C904484008D91E5 /* Mercurial.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC5E1CDB1C904484008D91E5 /* Mercurial */ = {
+			isa = PBXGroup;
+			children = (
+				AC8C1F7B1C9046A000D61A3F /* PresentationLayer */,
+				AC8C1F7A1C90469700D61A3F /* PersistenceLayer */,
+				AC8C1F791C90468C00D61A3F /* BusinessLogicLayer */,
+				AC5E1CF01C904484008D91E5 /* Info.plist */,
+				AC5E1CEB1C904484008D91E5 /* Assets.xcassets */,
+				AC5E1CDC1C904484008D91E5 /* Supporting Files */,
+			);
+			path = Mercurial;
+			sourceTree = "<group>";
+		};
+		AC5E1CDC1C904484008D91E5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AC5E1CDD1C904484008D91E5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AC8C1F791C90468C00D61A3F /* BusinessLogicLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = BusinessLogicLayer;
+			sourceTree = "<group>";
+		};
+		AC8C1F7A1C90469700D61A3F /* PersistenceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				AC5E1CE81C904484008D91E5 /* Mercurial.xcdatamodeld */,
+			);
+			name = PersistenceLayer;
+			sourceTree = "<group>";
+		};
+		AC8C1F7B1C9046A000D61A3F /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				ACCA4CDC1C91571200121269 /* storyboard */,
+				ACCA4CDB1C9156F100121269 /* utility */,
+				ACCA4CDA1C9156E500121269 /* appDelegate */,
+				ACCA4CD91C9156D200121269 /* home */,
+			);
+			name = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		ACCA4CD91C9156D200121269 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				ACCA4CBC1C910F0900121269 /* HomeViewController.h */,
+				ACCA4CBD1C910F0900121269 /* HomeViewController.m */,
+				ACCA4CC21C9110F300121269 /* FuncTableViewCell.h */,
+				ACCA4CC31C9110F300121269 /* FuncTableViewCell.m */,
+				ACCA4CC41C9110F300121269 /* FuncTableViewCell.xib */,
+				ACCA4CE21C91648E00121269 /* FuncCollectionViewCell.h */,
+				ACCA4CE31C91648E00121269 /* FuncCollectionViewCell.m */,
+				ACCA4CE41C91648E00121269 /* FuncCollectionViewCell.xib */,
+				ACCA4CD41C91544C00121269 /* RoundTableViewCell.h */,
+				ACCA4CD51C91544C00121269 /* RoundTableViewCell.m */,
+				ACCA4CD61C91544C00121269 /* RoundTableViewCell.xib */,
+				ACCA4CDD1C91575700121269 /* RoundCollectionViewCell.h */,
+				ACCA4CDE1C91575700121269 /* RoundCollectionViewCell.m */,
+				ACCA4CDF1C91575700121269 /* RoundCollectionViewCell.xib */,
+			);
+			name = home;
+			sourceTree = "<group>";
+		};
+		ACCA4CDA1C9156E500121269 /* appDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				AC5E1CDF1C904484008D91E5 /* AppDelegate.h */,
+				AC5E1CE01C904484008D91E5 /* AppDelegate.m */,
+			);
+			name = appDelegate;
+			sourceTree = "<group>";
+		};
+		ACCA4CDB1C9156F100121269 /* utility */ = {
+			isa = PBXGroup;
+			children = (
+				ACCA4CC71C91171A00121269 /* Constant.h */,
+				ACCA4CC81C91171A00121269 /* Constant.m */,
+			);
+			name = utility;
+			sourceTree = "<group>";
+		};
+		ACCA4CDC1C91571200121269 /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				AC5E1CE51C904484008D91E5 /* Main.storyboard */,
+				AC5E1CED1C904484008D91E5 /* LaunchScreen.storyboard */,
+			);
+			name = storyboard;
+			sourceTree = "<group>";
+		};
+		F5A1E370065FCA7CEA751987 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				59A6001685EAEFD7AF2127DC /* Pods.debug.xcconfig */,
+				F13185264FDB502171C80DA5 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC5E1CD81C904484008D91E5 /* Mercurial */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC5E1CF31C904484008D91E5 /* Build configuration list for PBXNativeTarget "Mercurial" */;
+			buildPhases = (
+				98B382FDBCDC420D9379DA5D /* Check Pods Manifest.lock */,
+				AC5E1CD51C904484008D91E5 /* Sources */,
+				AC5E1CD61C904484008D91E5 /* Frameworks */,
+				AC5E1CD71C904484008D91E5 /* Resources */,
+				76036ECED55730C468419191 /* Embed Pods Frameworks */,
+				7F92EF90D486D590CCDA25E7 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mercurial;
+			productName = Mercurial;
+			productReference = AC5E1CD91C904484008D91E5 /* Mercurial.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC5E1CD11C904484008D91E5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = muggins;
+				TargetAttributes = {
+					AC5E1CD81C904484008D91E5 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = AC5E1CD41C904484008D91E5 /* Build configuration list for PBXProject "Mercurial" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC5E1CD01C904484008D91E5;
+			productRefGroup = AC5E1CDA1C904484008D91E5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC5E1CD81C904484008D91E5 /* Mercurial */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC5E1CD71C904484008D91E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACCA4CD81C91544C00121269 /* RoundTableViewCell.xib in Resources */,
+				ACCA4CE61C91648E00121269 /* FuncCollectionViewCell.xib in Resources */,
+				ACCA4CE11C91575700121269 /* RoundCollectionViewCell.xib in Resources */,
+				AC5E1CEF1C904484008D91E5 /* LaunchScreen.storyboard in Resources */,
+				ACCA4CC61C9110F300121269 /* FuncTableViewCell.xib in Resources */,
+				AC5E1CEC1C904484008D91E5 /* Assets.xcassets in Resources */,
+				AC5E1CE71C904484008D91E5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		76036ECED55730C468419191 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F92EF90D486D590CCDA25E7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98B382FDBCDC420D9379DA5D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC5E1CD51C904484008D91E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACCA4CE51C91648E00121269 /* FuncCollectionViewCell.m in Sources */,
+				AC5E1CE11C904484008D91E5 /* AppDelegate.m in Sources */,
+				ACCA4CC91C91171A00121269 /* Constant.m in Sources */,
+				ACCA4CD71C91544C00121269 /* RoundTableViewCell.m in Sources */,
+				AC5E1CEA1C904484008D91E5 /* Mercurial.xcdatamodeld in Sources */,
+				ACCA4CE01C91575700121269 /* RoundCollectionViewCell.m in Sources */,
+				ACCA4CC51C9110F300121269 /* FuncTableViewCell.m in Sources */,
+				AC5E1CDE1C904484008D91E5 /* main.m in Sources */,
+				ACCA4CBE1C910F0900121269 /* HomeViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AC5E1CE51C904484008D91E5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC5E1CE61C904484008D91E5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AC5E1CED1C904484008D91E5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC5E1CEE1C904484008D91E5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AC5E1CF11C904484008D91E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AC5E1CF21C904484008D91E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC5E1CF41C904484008D91E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59A6001685EAEFD7AF2127DC /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Mercurial/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.muggins.Mercurial;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AC5E1CF51C904484008D91E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F13185264FDB502171C80DA5 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Mercurial/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.muggins.Mercurial;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC5E1CD41C904484008D91E5 /* Build configuration list for PBXProject "Mercurial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC5E1CF11C904484008D91E5 /* Debug */,
+				AC5E1CF21C904484008D91E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC5E1CF31C904484008D91E5 /* Build configuration list for PBXNativeTarget "Mercurial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC5E1CF41C904484008D91E5 /* Debug */,
+				AC5E1CF51C904484008D91E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AC5E1CE81C904484008D91E5 /* Mercurial.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AC5E1CE91C904484008D91E5 /* Mercurial.xcdatamodel */,
+			);
+			currentVersion = AC5E1CE91C904484008D91E5 /* Mercurial.xcdatamodel */;
+			path = Mercurial.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AC5E1CD11C904484008D91E5 /* Project object */;
+}
