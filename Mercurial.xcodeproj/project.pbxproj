@@ -14,6 +14,14 @@
 		30A4A6581C96939100BF5EA1 /* ScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A4A6501C96939100BF5EA1 /* ScanViewController.xib */; };
 		30A4A6591C96939100BF5EA1 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A4A6511C96939100BF5EA1 /* User.storyboard */; };
 		30A4A65A1C96939100BF5EA1 /* UserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6531C96939100BF5EA1 /* UserInformationViewController.m */; };
+		30A4A65E1C96983700BF5EA1 /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A65D1C96983700BF5EA1 /* RadioButton.m */; };
+		30A4A6621C969A3100BF5EA1 /* SexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6611C969A3100BF5EA1 /* SexViewController.m */; };
+		30A4A6651C969BA900BF5EA1 /* JobChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6641C969BA900BF5EA1 /* JobChooseViewController.m */; };
+		30A4A6681C969D2500BF5EA1 /* EducationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6671C969D2500BF5EA1 /* EducationViewController.m */; };
+		30A4A66E1C969F6600BF5EA1 /* FriendsIntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A66D1C969F6600BF5EA1 /* FriendsIntroduceViewController.m */; };
+		30A4A6711C96A00F00BF5EA1 /* FansCommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6701C96A00F00BF5EA1 /* FansCommandViewController.m */; };
+		30A4A6741C96A0D800BF5EA1 /* AddProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6731C96A0D800BF5EA1 /* AddProductViewController.m */; };
+		30A4A6771C96A25700BF5EA1 /* UserOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6761C96A25700BF5EA1 /* UserOrderViewController.m */; };
 		8D036F0D3D5D69D4249794B4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8BCBA5CED9CE1AD81A140B /* libPods.a */; };
 		AC5E1CDE1C904484008D91E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5E1CDD1C904484008D91E5 /* main.m */; };
 		AC5E1CE11C904484008D91E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5E1CE01C904484008D91E5 /* AppDelegate.m */; };
@@ -41,6 +49,22 @@
 		30A4A6511C96939100BF5EA1 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		30A4A6521C96939100BF5EA1 /* UserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInformationViewController.h; sourceTree = "<group>"; };
 		30A4A6531C96939100BF5EA1 /* UserInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInformationViewController.m; sourceTree = "<group>"; };
+		30A4A65C1C96983700BF5EA1 /* RadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButton.h; sourceTree = "<group>"; };
+		30A4A65D1C96983700BF5EA1 /* RadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButton.m; sourceTree = "<group>"; };
+		30A4A6601C969A3100BF5EA1 /* SexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SexViewController.h; sourceTree = "<group>"; };
+		30A4A6611C969A3100BF5EA1 /* SexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SexViewController.m; sourceTree = "<group>"; };
+		30A4A6631C969BA900BF5EA1 /* JobChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobChooseViewController.h; sourceTree = "<group>"; };
+		30A4A6641C969BA900BF5EA1 /* JobChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobChooseViewController.m; sourceTree = "<group>"; };
+		30A4A6661C969D2500BF5EA1 /* EducationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EducationViewController.h; sourceTree = "<group>"; };
+		30A4A6671C969D2500BF5EA1 /* EducationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EducationViewController.m; sourceTree = "<group>"; };
+		30A4A66C1C969F6600BF5EA1 /* FriendsIntroduceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsIntroduceViewController.h; sourceTree = "<group>"; };
+		30A4A66D1C969F6600BF5EA1 /* FriendsIntroduceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsIntroduceViewController.m; sourceTree = "<group>"; };
+		30A4A66F1C96A00F00BF5EA1 /* FansCommandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FansCommandViewController.h; sourceTree = "<group>"; };
+		30A4A6701C96A00F00BF5EA1 /* FansCommandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FansCommandViewController.m; sourceTree = "<group>"; };
+		30A4A6721C96A0D800BF5EA1 /* AddProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddProductViewController.h; sourceTree = "<group>"; };
+		30A4A6731C96A0D800BF5EA1 /* AddProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddProductViewController.m; sourceTree = "<group>"; };
+		30A4A6751C96A25700BF5EA1 /* UserOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserOrderViewController.h; sourceTree = "<group>"; };
+		30A4A6761C96A25700BF5EA1 /* UserOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserOrderViewController.m; sourceTree = "<group>"; };
 		59A6001685EAEFD7AF2127DC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6A8BCBA5CED9CE1AD81A140B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC5E1CD91C904484008D91E5 /* Mercurial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mercurial.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,8 +115,39 @@
 				30A4A6511C96939100BF5EA1 /* User.storyboard */,
 				30A4A6521C96939100BF5EA1 /* UserInformationViewController.h */,
 				30A4A6531C96939100BF5EA1 /* UserInformationViewController.m */,
+				30A4A6601C969A3100BF5EA1 /* SexViewController.h */,
+				30A4A6611C969A3100BF5EA1 /* SexViewController.m */,
+				30A4A6631C969BA900BF5EA1 /* JobChooseViewController.h */,
+				30A4A6641C969BA900BF5EA1 /* JobChooseViewController.m */,
+				30A4A6661C969D2500BF5EA1 /* EducationViewController.h */,
+				30A4A6671C969D2500BF5EA1 /* EducationViewController.m */,
+				30A4A66C1C969F6600BF5EA1 /* FriendsIntroduceViewController.h */,
+				30A4A66D1C969F6600BF5EA1 /* FriendsIntroduceViewController.m */,
+				30A4A66F1C96A00F00BF5EA1 /* FansCommandViewController.h */,
+				30A4A6701C96A00F00BF5EA1 /* FansCommandViewController.m */,
+				30A4A6721C96A0D800BF5EA1 /* AddProductViewController.h */,
+				30A4A6731C96A0D800BF5EA1 /* AddProductViewController.m */,
+				30A4A6751C96A25700BF5EA1 /* UserOrderViewController.h */,
+				30A4A6761C96A25700BF5EA1 /* UserOrderViewController.m */,
 			);
 			name = main;
+			sourceTree = "<group>";
+		};
+		30A4A65B1C96980200BF5EA1 /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				30A4A65F1C96983D00BF5EA1 /* Radio Button */,
+			);
+			name = "Third Party";
+			sourceTree = "<group>";
+		};
+		30A4A65F1C96983D00BF5EA1 /* Radio Button */ = {
+			isa = PBXGroup;
+			children = (
+				30A4A65C1C96983700BF5EA1 /* RadioButton.h */,
+				30A4A65D1C96983700BF5EA1 /* RadioButton.m */,
+			);
+			name = "Radio Button";
 			sourceTree = "<group>";
 		};
 		51E4ABF6D2D0F2A61EE86E89 /* Frameworks */ = {
@@ -165,6 +220,7 @@
 				ACCA4CDB1C9156F100121269 /* utility */,
 				ACCA4CDA1C9156E500121269 /* appDelegate */,
 				ACCA4CD91C9156D200121269 /* home */,
+				30A4A65B1C96980200BF5EA1 /* Third Party */,
 			);
 			name = PresentationLayer;
 			sourceTree = "<group>";
@@ -347,16 +403,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACCA4CE51C91648E00121269 /* FuncCollectionViewCell.m in Sources */,
+				30A4A6771C96A25700BF5EA1 /* UserOrderViewController.m in Sources */,
 				30A4A6571C96939100BF5EA1 /* ScanViewController.m in Sources */,
 				30A4A65A1C96939100BF5EA1 /* UserInformationViewController.m in Sources */,
 				AC5E1CE11C904484008D91E5 /* AppDelegate.m in Sources */,
+				30A4A66E1C969F6600BF5EA1 /* FriendsIntroduceViewController.m in Sources */,
 				ACCA4CC91C91171A00121269 /* Constant.m in Sources */,
 				30A4A6541C96939100BF5EA1 /* NewsViewController.m in Sources */,
 				AC5E1CEA1C904484008D91E5 /* Mercurial.xcdatamodeld in Sources */,
+				30A4A6651C969BA900BF5EA1 /* JobChooseViewController.m in Sources */,
 				ACCA4CC51C9110F300121269 /* FuncTableViewCell.m in Sources */,
+				30A4A6741C96A0D800BF5EA1 /* AddProductViewController.m in Sources */,
+				30A4A6711C96A00F00BF5EA1 /* FansCommandViewController.m in Sources */,
 				AC5E1CDE1C904484008D91E5 /* main.m in Sources */,
 				30A4A6551C96939100BF5EA1 /* PromoteViewController.m in Sources */,
 				ACCA4CBE1C910F0900121269 /* HomeViewController.m in Sources */,
+				30A4A6621C969A3100BF5EA1 /* SexViewController.m in Sources */,
+				30A4A65E1C96983700BF5EA1 /* RadioButton.m in Sources */,
+				30A4A6681C969D2500BF5EA1 /* EducationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
