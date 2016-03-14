@@ -18,10 +18,6 @@
 		ACCA4CC51C9110F300121269 /* FuncTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCA4CC31C9110F300121269 /* FuncTableViewCell.m */; };
 		ACCA4CC61C9110F300121269 /* FuncTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCA4CC41C9110F300121269 /* FuncTableViewCell.xib */; };
 		ACCA4CC91C91171A00121269 /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCA4CC81C91171A00121269 /* Constant.m */; };
-		ACCA4CD71C91544C00121269 /* RoundTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCA4CD51C91544C00121269 /* RoundTableViewCell.m */; };
-		ACCA4CD81C91544C00121269 /* RoundTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCA4CD61C91544C00121269 /* RoundTableViewCell.xib */; };
-		ACCA4CE01C91575700121269 /* RoundCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCA4CDE1C91575700121269 /* RoundCollectionViewCell.m */; };
-		ACCA4CE11C91575700121269 /* RoundCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCA4CDF1C91575700121269 /* RoundCollectionViewCell.xib */; };
 		ACCA4CE51C91648E00121269 /* FuncCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCA4CE31C91648E00121269 /* FuncCollectionViewCell.m */; };
 		ACCA4CE61C91648E00121269 /* FuncCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCA4CE41C91648E00121269 /* FuncCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -45,12 +41,6 @@
 		ACCA4CC41C9110F300121269 /* FuncTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FuncTableViewCell.xib; sourceTree = "<group>"; };
 		ACCA4CC71C91171A00121269 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		ACCA4CC81C91171A00121269 /* Constant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constant.m; sourceTree = "<group>"; };
-		ACCA4CD41C91544C00121269 /* RoundTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundTableViewCell.h; sourceTree = "<group>"; };
-		ACCA4CD51C91544C00121269 /* RoundTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundTableViewCell.m; sourceTree = "<group>"; };
-		ACCA4CD61C91544C00121269 /* RoundTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundTableViewCell.xib; sourceTree = "<group>"; };
-		ACCA4CDD1C91575700121269 /* RoundCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundCollectionViewCell.h; sourceTree = "<group>"; };
-		ACCA4CDE1C91575700121269 /* RoundCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundCollectionViewCell.m; sourceTree = "<group>"; };
-		ACCA4CDF1C91575700121269 /* RoundCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundCollectionViewCell.xib; sourceTree = "<group>"; };
 		ACCA4CE21C91648E00121269 /* FuncCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuncCollectionViewCell.h; sourceTree = "<group>"; };
 		ACCA4CE31C91648E00121269 /* FuncCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuncCollectionViewCell.m; sourceTree = "<group>"; };
 		ACCA4CE41C91648E00121269 /* FuncCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FuncCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -153,12 +143,6 @@
 				ACCA4CE21C91648E00121269 /* FuncCollectionViewCell.h */,
 				ACCA4CE31C91648E00121269 /* FuncCollectionViewCell.m */,
 				ACCA4CE41C91648E00121269 /* FuncCollectionViewCell.xib */,
-				ACCA4CD41C91544C00121269 /* RoundTableViewCell.h */,
-				ACCA4CD51C91544C00121269 /* RoundTableViewCell.m */,
-				ACCA4CD61C91544C00121269 /* RoundTableViewCell.xib */,
-				ACCA4CDD1C91575700121269 /* RoundCollectionViewCell.h */,
-				ACCA4CDE1C91575700121269 /* RoundCollectionViewCell.m */,
-				ACCA4CDF1C91575700121269 /* RoundCollectionViewCell.xib */,
 			);
 			name = home;
 			sourceTree = "<group>";
@@ -259,9 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACCA4CD81C91544C00121269 /* RoundTableViewCell.xib in Resources */,
 				ACCA4CE61C91648E00121269 /* FuncCollectionViewCell.xib in Resources */,
-				ACCA4CE11C91575700121269 /* RoundCollectionViewCell.xib in Resources */,
 				AC5E1CEF1C904484008D91E5 /* LaunchScreen.storyboard in Resources */,
 				ACCA4CC61C9110F300121269 /* FuncTableViewCell.xib in Resources */,
 				AC5E1CEC1C904484008D91E5 /* Assets.xcassets in Resources */,
@@ -327,9 +309,7 @@
 				ACCA4CE51C91648E00121269 /* FuncCollectionViewCell.m in Sources */,
 				AC5E1CE11C904484008D91E5 /* AppDelegate.m in Sources */,
 				ACCA4CC91C91171A00121269 /* Constant.m in Sources */,
-				ACCA4CD71C91544C00121269 /* RoundTableViewCell.m in Sources */,
 				AC5E1CEA1C904484008D91E5 /* Mercurial.xcdatamodeld in Sources */,
-				ACCA4CE01C91575700121269 /* RoundCollectionViewCell.m in Sources */,
 				ACCA4CC51C9110F300121269 /* FuncTableViewCell.m in Sources */,
 				AC5E1CDE1C904484008D91E5 /* main.m in Sources */,
 				ACCA4CBE1C910F0900121269 /* HomeViewController.m in Sources */,

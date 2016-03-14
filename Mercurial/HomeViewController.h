@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Constant.h"
 #import "FuncTableViewCell.h"
-#import "RoundTableViewCell.h"
+#import "SDCycleScrollView.h"
 
 @interface HomeViewController : UITableViewController
 

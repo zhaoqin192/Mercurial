@@ -7,7 +7,6 @@
         <!--主页-->
         <scene sceneID="FmT-2P-OxJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ueu-ls-EAz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="JSC-qQ-jeq" customClass="HomeViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="124" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kmv-cl-3kx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -26,6 +25,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ueu-ls-EAz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-522" y="1723"/>
         </scene>
