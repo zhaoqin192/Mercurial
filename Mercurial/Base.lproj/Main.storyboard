@@ -16,7 +16,7 @@
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Yqh-aR-oi1">
                             <size key="itemSize" width="60" height="60"/>
                             <size key="headerReferenceSize" width="600" height="200"/>
-                            <size key="footerReferenceSize" width="600" height="200"/>
+                            <size key="footerReferenceSize" width="600" height="205"/>
                             <inset key="sectionInset" minX="65" minY="0.0" maxX="65" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
@@ -52,11 +52,11 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </collectionReusableView>
                         <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionFooter" id="fW2-0O-uzJ">
-                            <rect key="frame" x="0.0" y="324" width="600" height="200"/>
+                            <rect key="frame" x="0.0" y="324" width="600" height="205"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="introduce" translatesAutoresizingMaskIntoConstraints="NO" id="CQy-pV-QcH">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="205"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

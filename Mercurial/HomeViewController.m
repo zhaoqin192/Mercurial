@@ -63,7 +63,7 @@ static NSString * const reuseIdentifier = @"funcCell";
     }
     if (kind == UICollectionElementKindSectionFooter) {
         UICollectionReusableView *footView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"collectionFooter" forIndexPath:indexPath];
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 200.0 / 600 * ScreenHeight)];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 210.0 / 600 * ScreenHeight)];
         [imageView setImage:[UIImage imageNamed:@"introduce"]];
         [footView addSubview:imageView];
         return footView;
