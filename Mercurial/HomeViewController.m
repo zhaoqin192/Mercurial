@@ -7,6 +7,10 @@
 //
 
 #import "HomeViewController.h"
+#import "NewsViewController.h"
+#import "PromoteViewController.h"
+#import "ScanViewController.h"
+#import "ShoppingViewController.h"
 
 @interface HomeViewController ()
 
@@ -74,11 +78,56 @@ static NSString * const reuseIdentifier = @"funcCell";
 
 
 #pragma mark <UICollectionViewDelegate>
-
-#pragma mark --UICollectionViewDelegate
 //UICollectionView被选中时调用的方法
+
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"%ld", (long)indexPath.row);
+    switch (indexPath.row) {
+        case 0:{
+            NSLog(@"公司简介");
+            break;
+        }
+        case 1:{
+            NewsViewController *vc = [[NewsViewController alloc] initWithStyle:UITableViewStylePlain];
+            [self.navigationController pushViewController:vc animated:YES];
+            NSLog(@"公司新闻");
+            break;
+        }
+        case 2:
+            NSLog(@"产品介绍");
+            break;
+        case 3:
+            NSLog(@"产品推荐");
+            break;
+        case 4:{
+            PromoteViewController * vc = [[PromoteViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+            NSLog(@"促销信息");
+            break;
+        }
+        case 5:{
+            ShoppingViewController *vc = [[ShoppingViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+            NSLog(@"商城");
+            break;
+        }
+        case 6:
+            NSLog(@"互动留言");
+            break;
+        case 7:{
+            ScanViewController * vc = [[ScanViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+            NSLog(@"防伪查询");
+            break;
+        }
+        case 8:{
+            UITableViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateInitialViewController];
+            [self.navigationController pushViewController:vc animated:YES];
+            NSLog(@"用户中心");
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 @end

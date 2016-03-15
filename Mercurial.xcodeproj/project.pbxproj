@@ -22,6 +22,8 @@
 		30A4A6711C96A00F00BF5EA1 /* FansCommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6701C96A00F00BF5EA1 /* FansCommandViewController.m */; };
 		30A4A6741C96A0D800BF5EA1 /* AddProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6731C96A0D800BF5EA1 /* AddProductViewController.m */; };
 		30A4A6771C96A25700BF5EA1 /* UserOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6761C96A25700BF5EA1 /* UserOrderViewController.m */; };
+		30A4A67B1C97F61000BF5EA1 /* ShoppingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6791C97F61000BF5EA1 /* ShoppingViewController.m */; };
+		30A4A67C1C97F61000BF5EA1 /* ShoppingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A4A67A1C97F61000BF5EA1 /* ShoppingViewController.xib */; };
 		8D036F0D3D5D69D4249794B4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8BCBA5CED9CE1AD81A140B /* libPods.a */; };
 		AC5E1CDE1C904484008D91E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5E1CDD1C904484008D91E5 /* main.m */; };
 		AC5E1CE11C904484008D91E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5E1CE01C904484008D91E5 /* AppDelegate.m */; };
@@ -62,6 +64,9 @@
 		30A4A6731C96A0D800BF5EA1 /* AddProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddProductViewController.m; sourceTree = "<group>"; };
 		30A4A6751C96A25700BF5EA1 /* UserOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserOrderViewController.h; sourceTree = "<group>"; };
 		30A4A6761C96A25700BF5EA1 /* UserOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserOrderViewController.m; sourceTree = "<group>"; };
+		30A4A6781C97F61000BF5EA1 /* ShoppingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingViewController.h; sourceTree = "<group>"; };
+		30A4A6791C97F61000BF5EA1 /* ShoppingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingViewController.m; sourceTree = "<group>"; };
+		30A4A67A1C97F61000BF5EA1 /* ShoppingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingViewController.xib; sourceTree = "<group>"; };
 		59A6001685EAEFD7AF2127DC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6A8BCBA5CED9CE1AD81A140B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC5E1CD91C904484008D91E5 /* Mercurial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mercurial.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +110,9 @@
 				30A4A64E1C96939100BF5EA1 /* ScanViewController.h */,
 				30A4A64F1C96939100BF5EA1 /* ScanViewController.m */,
 				30A4A6501C96939100BF5EA1 /* ScanViewController.xib */,
+				30A4A6781C97F61000BF5EA1 /* ShoppingViewController.h */,
+				30A4A6791C97F61000BF5EA1 /* ShoppingViewController.m */,
+				30A4A67A1C97F61000BF5EA1 /* ShoppingViewController.xib */,
 				30A4A6511C96939100BF5EA1 /* User.storyboard */,
 				30A4A6521C96939100BF5EA1 /* UserInformationViewController.h */,
 				30A4A6531C96939100BF5EA1 /* UserInformationViewController.m */,
@@ -326,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC5E1CEF1C904484008D91E5 /* LaunchScreen.storyboard in Resources */,
+				30A4A67C1C97F61000BF5EA1 /* ShoppingViewController.xib in Resources */,
 				AC5E1CEC1C904484008D91E5 /* Assets.xcassets in Resources */,
 				AC5E1CE71C904484008D91E5 /* Main.storyboard in Resources */,
 				30A4A6591C96939100BF5EA1 /* User.storyboard in Resources */,
@@ -389,7 +398,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACCA4CE51C91648E00121269 /* FuncCollectionViewCell.m in Sources */,
 				30A4A6771C96A25700BF5EA1 /* UserOrderViewController.m in Sources */,
 				30A4A6571C96939100BF5EA1 /* ScanViewController.m in Sources */,
 				30A4A65A1C96939100BF5EA1 /* UserInformationViewController.m in Sources */,
@@ -397,6 +405,7 @@
 				30A4A66E1C969F6600BF5EA1 /* FriendsIntroduceViewController.m in Sources */,
 				ACCA4CC91C91171A00121269 /* Constant.m in Sources */,
 				30A4A6541C96939100BF5EA1 /* NewsViewController.m in Sources */,
+				30A4A67B1C97F61000BF5EA1 /* ShoppingViewController.m in Sources */,
 				AC5E1CEA1C904484008D91E5 /* Mercurial.xcdatamodeld in Sources */,
 				ACE32B181C96525300BD96E9 /* HomeViewController.m in Sources */,
 				ACE32B1E1C96555500BD96E9 /* FuncViewCell.m in Sources */,
