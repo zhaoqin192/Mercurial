@@ -10,6 +10,7 @@
 #import "Constant.h"
 #import "SDCycleScrollView.h"
 #import "FuncViewCell.h"
+#import "Utility.h"
 
 @interface HomeViewController : UICollectionViewController
 

@@ -28,6 +28,10 @@ static NSString * const reuseIdentifier = @"funcCell";
     // 此处不应该注册collectionViewCell,否则会覆盖storyboard中的cell
     
     // Do any additional setup after loading the view.
+    
+    NSString *string = [Utility md5:@"123456"];
+    NSLog(@"%@", string);
+    
 }
 
 - (void)didReceiveMemoryWarning {
