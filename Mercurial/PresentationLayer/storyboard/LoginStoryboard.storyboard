@@ -25,7 +25,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghd-Nm-3fI">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghd-Nm-3fI">
                                 <rect key="frame" x="42" y="312" width="290" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -52,17 +52,6 @@
                                     <action selector="forgetPassword" destination="f7g-VR-fho" eventType="touchUpInside" id="gtY-tb-gok"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1L-qc-ZgA">
-                                <rect key="frame" x="302" y="395" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="GNm-YU-gCO"/>
-                                    <constraint firstAttribute="height" constant="30" id="kgS-1r-j1D"/>
-                                </constraints>
-                                <state key="normal" title="注册"/>
-                                <connections>
-                                    <action selector="registerButtonClicked" destination="f7g-VR-fho" eventType="touchUpInside" id="moJ-8h-xBE"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tDW-ZQ-AfT">
                                 <rect key="frame" x="42" y="205" width="290" height="30"/>
                                 <constraints>
@@ -77,8 +66,6 @@
                         <constraints>
                             <constraint firstItem="tDW-ZQ-AfT" firstAttribute="centerX" secondItem="OUg-gc-d1R" secondAttribute="centerX" id="1vi-3T-kgD"/>
                             <constraint firstItem="hFs-ed-rJV" firstAttribute="centerX" secondItem="OUg-gc-d1R" secondAttribute="centerX" id="GtC-vn-Z6L"/>
-                            <constraint firstItem="J1L-qc-ZgA" firstAttribute="top" secondItem="ghd-Nm-3fI" secondAttribute="bottom" constant="39" id="Kv7-w0-PnT"/>
-                            <constraint firstItem="J1L-qc-ZgA" firstAttribute="trailing" secondItem="ghd-Nm-3fI" secondAttribute="trailing" id="Qtn-n5-pSU"/>
                             <constraint firstItem="ghd-Nm-3fI" firstAttribute="centerY" secondItem="OUg-gc-d1R" secondAttribute="centerY" id="a8p-FX-ETD"/>
                             <constraint firstItem="L5D-PB-9Vk" firstAttribute="leading" secondItem="ghd-Nm-3fI" secondAttribute="leading" id="ctG-jA-CQQ"/>
                             <constraint firstItem="ghd-Nm-3fI" firstAttribute="centerX" secondItem="OUg-gc-d1R" secondAttribute="centerX" id="miV-pZ-Jai"/>

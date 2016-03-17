@@ -30,9 +30,6 @@
 - (IBAction)forgetPassword {
     NSLog(@"forget");
 }
-- (IBAction)registerButtonClicked {
-    NSLog(@"register");
-}
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
