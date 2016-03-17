@@ -12,6 +12,9 @@
 #import "ScanViewController.h"
 #import "ShoppingViewController.h"
 #import "KxMenu.h"
+#import "LoginViewController.h"
+#import "RegisterViewController.h"
+
 @interface HomeViewController ()
 
 @end
@@ -55,11 +58,15 @@ static NSString * const reuseIdentifier = @"funcCell";
 
 
 - (void)loginButtonClicked{
-    NSLog(@"login");
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"LoginStoryboard" bundle:nil];
+    LoginViewController *vc = [sb instantiateInitialViewController];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)registerButtonClicked{
-    NSLog(@"register");
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"RegisterStoryBoard" bundle:nil];
+    RegisterViewController *vc = [sb instantiateInitialViewController];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
