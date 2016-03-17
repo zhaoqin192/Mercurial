@@ -11,7 +11,7 @@
 #import "PromoteViewController.h"
 #import "ScanViewController.h"
 #import "ShoppingViewController.h"
-
+#import "KxMenu.h"
 @interface HomeViewController ()
 
 @end
@@ -31,13 +31,37 @@ static NSString * const reuseIdentifier = @"funcCell";
     
     NSString *string = [Utility md5:@"123456"];
     NSLog(@"%@", string);
-    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark <MenuController>
+
+- (IBAction)barButtonClicked:(UIBarButtonItem *)sender {
+    NSArray *menuItems =
+    @[
+      [KxMenuItem menuItem:@"注册"
+                     image:nil
+                    target:self
+                    action:@selector(registerButtonClicked)],
+      
+      [KxMenuItem menuItem:@"登录"
+                     image:nil
+                    target:self
+                    action:@selector(loginButtonClicked)],
+      ];
+    [KxMenu showMenuInView:self.view
+                  fromRect:CGRectMake(KScreen_width-40, 44, 20, 20)
+                 menuItems:menuItems];
 }
+
+
+- (void)loginButtonClicked{
+    NSLog(@"login");
+}
+
+- (void)registerButtonClicked{
+    NSLog(@"register");
+}
+
 
 
 
