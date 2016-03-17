@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "News.h"
 
 @interface NewsManager : NSObject
 
+//新闻列表
 @property (nonatomic, strong) NSMutableArray *newsArray;
 
 + (NewsManager *) sharedManager;

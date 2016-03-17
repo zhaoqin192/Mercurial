@@ -46,4 +46,7 @@
 
 - (Account *) getAccount;
 
+- (void) deleteAccountSuccess:(void (^)())success
+                      failure:(void (^)())failure;
+
 @end

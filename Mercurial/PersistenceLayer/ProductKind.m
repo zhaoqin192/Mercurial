@@ -10,4 +10,8 @@
 
 @implementation ProductKind
 
+- (NSMutableArray *)getProductTypeArray{
+    return self.typeArray;
+}
+
 @end

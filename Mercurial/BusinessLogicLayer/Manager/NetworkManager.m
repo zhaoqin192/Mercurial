@@ -25,6 +25,10 @@ static NetworkManager *sharedManager;
     dispatch_once(&onceToken, ^{
         self.manager = [AFHTTPSessionManager manager];
     });
+//    [self.manager.requestSerializer setValue:@"application/json" forKey:@"Accept"];
+//    self.manager.requestSerializer = [AFJSONRequestSerializer serializer];
+//    [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObjects:@"application/json", @"text/html", nil]];
+    self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", nil];
     return self.manager;
 }
 

@@ -27,10 +27,8 @@
 		8D036F0D3D5D69D4249794B4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8BCBA5CED9CE1AD81A140B /* libPods.a */; };
 		AC5E1CDE1C904484008D91E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5E1CDD1C904484008D91E5 /* main.m */; };
 		AC5E1CE11C904484008D91E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5E1CE01C904484008D91E5 /* AppDelegate.m */; };
-		AC5E1CE71C904484008D91E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC5E1CE51C904484008D91E5 /* Main.storyboard */; };
 		AC5E1CEA1C904484008D91E5 /* Mercurial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC5E1CE81C904484008D91E5 /* Mercurial.xcdatamodeld */; };
 		AC5E1CEC1C904484008D91E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC5E1CEB1C904484008D91E5 /* Assets.xcassets */; };
-		AC5E1CEF1C904484008D91E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC5E1CED1C904484008D91E5 /* LaunchScreen.storyboard */; };
 		ACC204E01C98F35A00B26CDD /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC204DF1C98F35A00B26CDD /* NetworkManager.m */; };
 		ACC204E41C99037C00B26CDD /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC204E31C99037C00B26CDD /* Utility.m */; };
 		ACC204E71C99065C00B26CDD /* NetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC204E61C99065C00B26CDD /* NetworkRequest.m */; };
@@ -43,6 +41,12 @@
 		ACC204FF1C99527200B26CDD /* ProductType.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC204FE1C99527200B26CDD /* ProductType.m */; };
 		ACC205021C9956D000B26CDD /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC205011C9956D000B26CDD /* News.m */; };
 		ACC2050A1C99587A00B26CDD /* NewsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC205091C99587A00B26CDD /* NewsManager.m */; };
+		ACC205111C9A479100B26CDD /* ProductManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC205101C9A479100B26CDD /* ProductManager.m */; };
+		ACC205151C9A4FA500B26CDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC205131C9A4FA500B26CDD /* LaunchScreen.storyboard */; };
+		ACC205161C9A4FA500B26CDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC205141C9A4FA500B26CDD /* Main.storyboard */; };
+		ACC205191C9A50D600B26CDD /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC205181C9A50D600B26CDD /* TestViewController.m */; };
+		ACC2051C1C9A99DD00B26CDD /* Sales.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC2051B1C9A99DD00B26CDD /* Sales.m */; };
+		ACC2051F1C9A9A1D00B26CDD /* SalesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC2051E1C9A9A1D00B26CDD /* SalesManager.m */; };
 		ACCA4CC91C91171A00121269 /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCA4CC81C91171A00121269 /* Constant.m */; };
 		ACE32B181C96525300BD96E9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE32B171C96525300BD96E9 /* HomeViewController.m */; };
 		ACE32B1E1C96555500BD96E9 /* FuncViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE32B1D1C96555500BD96E9 /* FuncViewCell.m */; };
@@ -85,10 +89,8 @@
 		AC5E1CDD1C904484008D91E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AC5E1CDF1C904484008D91E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AC5E1CE01C904484008D91E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AC5E1CE61C904484008D91E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC5E1CE91C904484008D91E5 /* Mercurial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mercurial.xcdatamodel; sourceTree = "<group>"; };
 		AC5E1CEB1C904484008D91E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AC5E1CEE1C904484008D91E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC5E1CF01C904484008D91E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACC204DE1C98F35A00B26CDD /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		ACC204DF1C98F35A00B26CDD /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
@@ -114,6 +116,16 @@
 		ACC205011C9956D000B26CDD /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		ACC205081C99587A00B26CDD /* NewsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsManager.h; sourceTree = "<group>"; };
 		ACC205091C99587A00B26CDD /* NewsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsManager.m; sourceTree = "<group>"; };
+		ACC2050F1C9A479100B26CDD /* ProductManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductManager.h; sourceTree = "<group>"; };
+		ACC205101C9A479100B26CDD /* ProductManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductManager.m; sourceTree = "<group>"; };
+		ACC205131C9A4FA500B26CDD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ACC205141C9A4FA500B26CDD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		ACC205171C9A50D600B26CDD /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		ACC205181C9A50D600B26CDD /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		ACC2051A1C9A99DD00B26CDD /* Sales.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sales.h; sourceTree = "<group>"; };
+		ACC2051B1C9A99DD00B26CDD /* Sales.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sales.m; sourceTree = "<group>"; };
+		ACC2051D1C9A9A1D00B26CDD /* SalesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesManager.h; sourceTree = "<group>"; };
+		ACC2051E1C9A9A1D00B26CDD /* SalesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesManager.m; sourceTree = "<group>"; };
 		ACCA4CC71C91171A00121269 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		ACCA4CC81C91171A00121269 /* Constant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constant.m; sourceTree = "<group>"; };
 		ACE32B161C96525300BD96E9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -167,7 +179,7 @@
 				30A4A6751C96A25700BF5EA1 /* UserOrderViewController.h */,
 				30A4A6761C96A25700BF5EA1 /* UserOrderViewController.m */,
 			);
-			name = main;
+			path = main;
 			sourceTree = "<group>";
 		};
 		30A4A65B1C96980200BF5EA1 /* Third Party */ = {
@@ -175,7 +187,7 @@
 			children = (
 				30A4A65F1C96983D00BF5EA1 /* Radio Button */,
 			);
-			name = "Third Party";
+			path = "Third Party";
 			sourceTree = "<group>";
 		};
 		30A4A65F1C96983D00BF5EA1 /* Radio Button */ = {
@@ -184,7 +196,7 @@
 				30A4A65C1C96983700BF5EA1 /* RadioButton.h */,
 				30A4A65D1C96983700BF5EA1 /* RadioButton.m */,
 			);
-			name = "Radio Button";
+			path = "Radio Button";
 			sourceTree = "<group>";
 		};
 		51E4ABF6D2D0F2A61EE86E89 /* Frameworks */ = {
@@ -241,7 +253,7 @@
 				ACC205061C99578F00B26CDD /* Manager */,
 				ACC204EE1C99282700B26CDD /* Dao */,
 			);
-			name = BusinessLogicLayer;
+			path = BusinessLogicLayer;
 			sourceTree = "<group>";
 		};
 		AC8C1F7A1C90469700D61A3F /* PersistenceLayer */ = {
@@ -260,21 +272,23 @@
 				ACC204FE1C99527200B26CDD /* ProductType.m */,
 				ACC205001C9956D000B26CDD /* News.h */,
 				ACC205011C9956D000B26CDD /* News.m */,
+				ACC2051A1C9A99DD00B26CDD /* Sales.h */,
+				ACC2051B1C9A99DD00B26CDD /* Sales.m */,
 			);
-			name = PersistenceLayer;
+			path = PersistenceLayer;
 			sourceTree = "<group>";
 		};
 		AC8C1F7B1C9046A000D61A3F /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				ACC205121C9A4F7300B26CDD /* storyboard */,
 				30A4A6481C96938100BF5EA1 /* main */,
-				ACCA4CDC1C91571200121269 /* storyboard */,
 				ACCA4CDB1C9156F100121269 /* utility */,
 				ACCA4CDA1C9156E500121269 /* appDelegate */,
 				ACCA4CD91C9156D200121269 /* home */,
 				30A4A65B1C96980200BF5EA1 /* Third Party */,
 			);
-			name = PresentationLayer;
+			path = PresentationLayer;
 			sourceTree = "<group>";
 		};
 		ACC204EE1C99282700B26CDD /* Dao */ = {
@@ -283,7 +297,7 @@
 				ACC204EF1C99283A00B26CDD /* AccountDao.h */,
 				ACC204F01C99283A00B26CDD /* AccountDao.m */,
 			);
-			name = Dao;
+			path = Dao;
 			sourceTree = "<group>";
 		};
 		ACC205061C99578F00B26CDD /* Manager */ = {
@@ -297,8 +311,12 @@
 				ACC204E61C99065C00B26CDD /* NetworkRequest.m */,
 				ACC205081C99587A00B26CDD /* NewsManager.h */,
 				ACC205091C99587A00B26CDD /* NewsManager.m */,
+				ACC2050F1C9A479100B26CDD /* ProductManager.h */,
+				ACC205101C9A479100B26CDD /* ProductManager.m */,
+				ACC2051D1C9A9A1D00B26CDD /* SalesManager.h */,
+				ACC2051E1C9A9A1D00B26CDD /* SalesManager.m */,
 			);
-			name = Manager;
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		ACC205071C9957A500B26CDD /* Utility */ = {
@@ -307,7 +325,16 @@
 				ACC204E21C99037C00B26CDD /* Utility.h */,
 				ACC204E31C99037C00B26CDD /* Utility.m */,
 			);
-			name = Utility;
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		ACC205121C9A4F7300B26CDD /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				ACC205131C9A4FA500B26CDD /* LaunchScreen.storyboard */,
+				ACC205141C9A4FA500B26CDD /* Main.storyboard */,
+			);
+			path = storyboard;
 			sourceTree = "<group>";
 		};
 		ACCA4CD91C9156D200121269 /* home */ = {
@@ -317,8 +344,10 @@
 				ACE32B171C96525300BD96E9 /* HomeViewController.m */,
 				ACE32B1C1C96555500BD96E9 /* FuncViewCell.h */,
 				ACE32B1D1C96555500BD96E9 /* FuncViewCell.m */,
+				ACC205171C9A50D600B26CDD /* TestViewController.h */,
+				ACC205181C9A50D600B26CDD /* TestViewController.m */,
 			);
-			name = home;
+			path = home;
 			sourceTree = "<group>";
 		};
 		ACCA4CDA1C9156E500121269 /* appDelegate */ = {
@@ -327,7 +356,7 @@
 				AC5E1CDF1C904484008D91E5 /* AppDelegate.h */,
 				AC5E1CE01C904484008D91E5 /* AppDelegate.m */,
 			);
-			name = appDelegate;
+			path = appDelegate;
 			sourceTree = "<group>";
 		};
 		ACCA4CDB1C9156F100121269 /* utility */ = {
@@ -336,16 +365,7 @@
 				ACCA4CC71C91171A00121269 /* Constant.h */,
 				ACCA4CC81C91171A00121269 /* Constant.m */,
 			);
-			name = utility;
-			sourceTree = "<group>";
-		};
-		ACCA4CDC1C91571200121269 /* storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				AC5E1CE51C904484008D91E5 /* Main.storyboard */,
-				AC5E1CED1C904484008D91E5 /* LaunchScreen.storyboard */,
-			);
-			name = storyboard;
+			path = utility;
 			sourceTree = "<group>";
 		};
 		F5A1E370065FCA7CEA751987 /* Pods */ = {
@@ -417,11 +437,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC5E1CEF1C904484008D91E5 /* LaunchScreen.storyboard in Resources */,
+				ACC205161C9A4FA500B26CDD /* Main.storyboard in Resources */,
 				30A4A67C1C97F61000BF5EA1 /* ShoppingViewController.xib in Resources */,
 				AC5E1CEC1C904484008D91E5 /* Assets.xcassets in Resources */,
-				AC5E1CE71C904484008D91E5 /* Main.storyboard in Resources */,
 				30A4A6591C96939100BF5EA1 /* User.storyboard in Resources */,
+				ACC205151C9A4FA500B26CDD /* LaunchScreen.storyboard in Resources */,
 				30A4A6581C96939100BF5EA1 /* ScanViewController.xib in Resources */,
 				30A4A6561C96939100BF5EA1 /* PromoteViewController.xib in Resources */,
 			);
@@ -489,9 +509,11 @@
 				AC5E1CE11C904484008D91E5 /* AppDelegate.m in Sources */,
 				ACC204F11C99283A00B26CDD /* AccountDao.m in Sources */,
 				ACC204E41C99037C00B26CDD /* Utility.m in Sources */,
+				ACC205111C9A479100B26CDD /* ProductManager.m in Sources */,
 				ACC2050A1C99587A00B26CDD /* NewsManager.m in Sources */,
 				30A4A66E1C969F6600BF5EA1 /* FriendsIntroduceViewController.m in Sources */,
 				ACCA4CC91C91171A00121269 /* Constant.m in Sources */,
+				ACC2051F1C9A9A1D00B26CDD /* SalesManager.m in Sources */,
 				30A4A6541C96939100BF5EA1 /* NewsViewController.m in Sources */,
 				ACC204ED1C99251400B26CDD /* Account.m in Sources */,
 				30A4A67B1C97F61000BF5EA1 /* ShoppingViewController.m in Sources */,
@@ -499,9 +521,11 @@
 				ACC204F41C99401600B26CDD /* DatabaseManager.m in Sources */,
 				ACC204E01C98F35A00B26CDD /* NetworkManager.m in Sources */,
 				AC5E1CEA1C904484008D91E5 /* Mercurial.xcdatamodeld in Sources */,
+				ACC205191C9A50D600B26CDD /* TestViewController.m in Sources */,
 				ACE32B181C96525300BD96E9 /* HomeViewController.m in Sources */,
 				ACC204E71C99065C00B26CDD /* NetworkRequest.m in Sources */,
 				ACE32B1E1C96555500BD96E9 /* FuncViewCell.m in Sources */,
+				ACC2051C1C9A99DD00B26CDD /* Sales.m in Sources */,
 				30A4A6651C969BA900BF5EA1 /* JobChooseViewController.m in Sources */,
 				ACC205021C9956D000B26CDD /* News.m in Sources */,
 				30A4A6741C96A0D800BF5EA1 /* AddProductViewController.m in Sources */,
@@ -517,25 +541,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		AC5E1CE51C904484008D91E5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AC5E1CE61C904484008D91E5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		AC5E1CED1C904484008D91E5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AC5E1CEE1C904484008D91E5 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		AC5E1CF11C904484008D91E5 /* Debug */ = {

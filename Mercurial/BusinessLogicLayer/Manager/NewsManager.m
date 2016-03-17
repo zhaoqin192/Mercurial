@@ -12,6 +12,12 @@
 
 static NewsManager *sharedManager;
 
+- (id)init{
+    self = [super init];
+    self.newsArray = [[NSMutableArray alloc] init];
+    return self;
+}
+
 + (NewsManager *) sharedManager{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

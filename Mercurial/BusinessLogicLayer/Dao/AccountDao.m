@@ -13,6 +13,13 @@
     NSManagedObjectContext *appContext;
 }
 
+- (id) init{
+    self = [super init];
+    appDelegate = [[UIApplication sharedApplication] delegate];
+    appContext = [appDelegate managedObjectContext];
+    return self;
+}
+
 - (void) insertWithAccountName:(NSString *)accountName
                       password:(NSString *)password
                          phone:(NSString *)phone
@@ -77,7 +84,7 @@
     
     NSArray *array = [self fetchAccount];
     Account *account = nil;
-    if (array == nil) {
+    if ([array count] == 0) {
         account = [NSEntityDescription insertNewObjectForEntityForName:@"Account" inManagedObjectContext:appContext];
         
     }else{
@@ -109,6 +116,18 @@
     return fetchedObjects;
 }
 
+- (void) deleteAccountSuccess:(void (^)())success
+                      failure:(void (^)())failure{
+    NSArray *array = [self fetchAccount];
+
+    if ([array count] != 0) {
+        [appContext deleteObject:[array objectAtIndex:0]];
+        [appDelegate saveContext];
+        success();
+    }else{
+        failure();
+    }
+}
 
 @end
 
