@@ -29,6 +29,7 @@
 		30D18F231C9ADBF000559866 /* RegisterStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D18F221C9ADBF000559866 /* RegisterStoryBoard.storyboard */; };
 		30D18F261C9ADDAF00559866 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D18F251C9ADDAF00559866 /* LoginViewController.m */; };
 		30D18F291C9ADDC100559866 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D18F281C9ADDC100559866 /* RegisterViewController.m */; };
+		30D18F2C1C9E484F00559866 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D18F2B1C9E484F00559866 /* HomePageViewController.m */; };
 		8D036F0D3D5D69D4249794B4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8BCBA5CED9CE1AD81A140B /* libPods.a */; };
 		AC5E1CDE1C904484008D91E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5E1CDD1C904484008D91E5 /* main.m */; };
 		AC5E1CE11C904484008D91E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5E1CE01C904484008D91E5 /* AppDelegate.m */; };
@@ -97,6 +98,8 @@
 		30D18F251C9ADDAF00559866 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		30D18F271C9ADDC100559866 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		30D18F281C9ADDC100559866 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		30D18F2A1C9E484F00559866 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
+		30D18F2B1C9E484F00559866 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
 		59A6001685EAEFD7AF2127DC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6A8BCBA5CED9CE1AD81A140B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC5E1CD91C904484008D91E5 /* Mercurial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mercurial.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -378,6 +381,8 @@
 				ACE32B1D1C96555500BD96E9 /* FuncViewCell.m */,
 				ACC205171C9A50D600B26CDD /* TestViewController.h */,
 				ACC205181C9A50D600B26CDD /* TestViewController.m */,
+				30D18F2A1C9E484F00559866 /* HomePageViewController.h */,
+				30D18F2B1C9E484F00559866 /* HomePageViewController.m */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -568,6 +573,7 @@
 				30A4A6711C96A00F00BF5EA1 /* FansCommandViewController.m in Sources */,
 				AC5E1CDE1C904484008D91E5 /* main.m in Sources */,
 				ACC204FC1C99526700B26CDD /* ProductKind.m in Sources */,
+				30D18F2C1C9E484F00559866 /* HomePageViewController.m in Sources */,
 				30A4A6551C96939100BF5EA1 /* PromoteViewController.m in Sources */,
 				30D18F1E1C9AD79500559866 /* KxMenu.m in Sources */,
 				30A4A6621C969A3100BF5EA1 /* SexViewController.m in Sources */,

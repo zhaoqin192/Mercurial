@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.navigationItem.title = @"注册";
     // Do any additional setup after loading the view.
 }
 
