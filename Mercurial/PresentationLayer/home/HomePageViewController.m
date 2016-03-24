@@ -18,10 +18,16 @@
 
 @interface HomePageViewController ()
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *scrollAdView;
+
 @end
 
 @implementation HomePageViewController
-- (IBAction)buttonClicked:(UIButton *)sender {
+- (IBAction)viewTapped:(UITapGestureRecognizer *)sender {
+    UIView *view = sender.view;
+    [self buttonClicked:view];
+}
+
+- (void)buttonClicked:(UIView *)sender {
     switch (sender.tag) {
         case 100:{
             NSLog(@"公司简介");
