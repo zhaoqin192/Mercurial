@@ -14,4 +14,6 @@
 #define KScreen_width [UIScreen mainScreen].bounds.size.width
 #define KScreen_height [UIScreen mainScreen].bounds.size.height
 
+#define MybackgroundColor [UIColor colorWithRed:117/256. green:21/256. blue:21/256. alpha:1.0]
+
 #endif /* PrefixHeader_pch */

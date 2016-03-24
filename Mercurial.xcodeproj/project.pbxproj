@@ -49,7 +49,7 @@
 		ACC2050A1C99587A00B26CDD /* NewsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC205091C99587A00B26CDD /* NewsManager.m */; };
 		ACC205111C9A479100B26CDD /* ProductManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC205101C9A479100B26CDD /* ProductManager.m */; };
 		ACC205151C9A4FA500B26CDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC205131C9A4FA500B26CDD /* LaunchScreen.storyboard */; };
-		ACC205161C9A4FA500B26CDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC205141C9A4FA500B26CDD /* Main.storyboard */; };
+		ACC205161C9A4FA500B26CDD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC205141C9A4FA500B26CDD /* Home.storyboard */; };
 		ACC205191C9A50D600B26CDD /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC205181C9A50D600B26CDD /* TestViewController.m */; };
 		ACC2051C1C9A99DD00B26CDD /* Sales.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC2051B1C9A99DD00B26CDD /* Sales.m */; };
 		ACC2051F1C9A9A1D00B26CDD /* SalesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC2051E1C9A9A1D00B26CDD /* SalesManager.m */; };
@@ -136,7 +136,7 @@
 		ACC2050F1C9A479100B26CDD /* ProductManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductManager.h; sourceTree = "<group>"; };
 		ACC205101C9A479100B26CDD /* ProductManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductManager.m; sourceTree = "<group>"; };
 		ACC205131C9A4FA500B26CDD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		ACC205141C9A4FA500B26CDD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		ACC205141C9A4FA500B26CDD /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = ../storyboard/Home.storyboard; sourceTree = "<group>"; };
 		ACC205171C9A50D600B26CDD /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		ACC205181C9A50D600B26CDD /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		ACC2051A1C9A99DD00B26CDD /* Sales.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sales.h; sourceTree = "<group>"; };
@@ -361,7 +361,6 @@
 			isa = PBXGroup;
 			children = (
 				ACC205131C9A4FA500B26CDD /* LaunchScreen.storyboard */,
-				ACC205141C9A4FA500B26CDD /* Main.storyboard */,
 				30D18F201C9ADBE500559866 /* LoginStoryboard.storyboard */,
 				30D18F221C9ADBF000559866 /* RegisterStoryBoard.storyboard */,
 				30D18F241C9ADDAF00559866 /* LoginViewController.h */,
@@ -381,6 +380,7 @@
 				ACE32B1D1C96555500BD96E9 /* FuncViewCell.m */,
 				ACC205171C9A50D600B26CDD /* TestViewController.h */,
 				ACC205181C9A50D600B26CDD /* TestViewController.m */,
+				ACC205141C9A4FA500B26CDD /* Home.storyboard */,
 				30D18F2A1C9E484F00559866 /* HomePageViewController.h */,
 				30D18F2B1C9E484F00559866 /* HomePageViewController.m */,
 			);
@@ -474,7 +474,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACC205161C9A4FA500B26CDD /* Main.storyboard in Resources */,
+				ACC205161C9A4FA500B26CDD /* Home.storyboard in Resources */,
 				30D18F231C9ADBF000559866 /* RegisterStoryBoard.storyboard in Resources */,
 				30A4A67C1C97F61000BF5EA1 /* ShoppingViewController.xib in Resources */,
 				AC5E1CEC1C904484008D91E5 /* Assets.xcassets in Resources */,
