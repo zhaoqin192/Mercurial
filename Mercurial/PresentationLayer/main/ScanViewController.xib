@@ -6,6 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScanViewController">
             <connections>
+                <outlet property="enquiryButton" destination="cMb-aT-JV9" id="nvl-WB-n4C"/>
+                <outlet property="productTextField" destination="9Kj-YB-RMh" id="nQo-7s-44A"/>
+                <outlet property="scanButton" destination="SYe-Jh-Lv5" id="hIx-nC-7m3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,29 +20,48 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lqb-BG-fcr">
                     <rect key="frame" x="0.0" y="70" width="375" height="150"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="产品信息" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Kj-YB-RMh">
-                            <rect key="frame" x="10" y="21" width="355" height="30"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="  产品信息" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Kj-YB-RMh">
+                            <rect key="frame" x="10" y="20" width="355" height="30"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="wCD-6s-gbf"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYe-Jh-Lv5">
-                            <rect key="frame" x="16" y="84" width="75" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYe-Jh-Lv5">
+                            <rect key="frame" x="10" y="90" width="75" height="30"/>
                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="E6V-uh-vCk"/>
+                                <constraint firstAttribute="width" constant="75" id="GeD-Ah-p1Q"/>
+                            </constraints>
                             <state key="normal" title="扫描">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMb-aT-JV9">
-                            <rect key="frame" x="292" y="84" width="75" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMb-aT-JV9">
+                            <rect key="frame" x="290" y="90" width="75" height="30"/>
                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="gc6-ha-YPb"/>
+                                <constraint firstAttribute="width" constant="75" id="xE1-Wc-JXC"/>
+                            </constraints>
                             <state key="normal" title="查询">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="cMb-aT-JV9" firstAttribute="trailing" secondItem="9Kj-YB-RMh" secondAttribute="trailing" id="9YK-9e-A81"/>
+                        <constraint firstItem="SYe-Jh-Lv5" firstAttribute="leading" secondItem="9Kj-YB-RMh" secondAttribute="leading" id="E7l-au-YIH"/>
+                        <constraint firstAttribute="trailing" secondItem="9Kj-YB-RMh" secondAttribute="trailing" constant="10" id="Enn-XR-t8s"/>
+                        <constraint firstItem="9Kj-YB-RMh" firstAttribute="leading" secondItem="lqb-BG-fcr" secondAttribute="leading" constant="10" id="EuB-8W-Nvg"/>
+                        <constraint firstItem="cMb-aT-JV9" firstAttribute="top" secondItem="9Kj-YB-RMh" secondAttribute="bottom" constant="40" id="G5a-4k-Vqy"/>
+                        <constraint firstItem="9Kj-YB-RMh" firstAttribute="top" secondItem="lqb-BG-fcr" secondAttribute="top" constant="20" id="bVH-2u-UIX"/>
                         <constraint firstAttribute="height" constant="150" id="lPC-6K-8ew"/>
+                        <constraint firstItem="SYe-Jh-Lv5" firstAttribute="top" secondItem="9Kj-YB-RMh" secondAttribute="bottom" constant="40" id="ydR-8d-byY"/>
                     </constraints>
                 </view>
             </subviews>
