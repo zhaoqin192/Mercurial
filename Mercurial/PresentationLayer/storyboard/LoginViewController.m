@@ -19,30 +19,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"登录";
+    self.navigationItem.title = @"用户登录";
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self.nameTextField becomeFirstResponder];
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"menu_bg"]]];
+    [self configureLoginButton];
+}
+
+- (void)configureLoginButton{
+    self.loginButton.backgroundColor = [UIColor clearColor];
+    self.loginButton.layer.cornerRadius = 8;
+    self.loginButton.layer.masksToBounds = YES;
+    self.loginButton.layer.borderWidth = 2;
+    self.loginButton.layer.borderColor = [UIColor whiteColor].CGColor;
 }
 
 - (IBAction)loginButtonClicked {
     NSLog(@"login");
 }
-- (IBAction)forgetPassword {
-    NSLog(@"forget");
-}
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

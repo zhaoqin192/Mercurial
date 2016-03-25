@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hFs-ed-rJV">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hFs-ed-rJV">
                                 <rect key="frame" x="42" y="132" width="290" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="aoD-mz-bRX"/>
@@ -25,11 +25,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghd-Nm-3fI">
-                                <rect key="frame" x="42" y="312" width="290" height="44"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghd-Nm-3fI">
+                                <rect key="frame" x="252" y="312" width="80" height="44"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="290" id="OxA-bR-iPu"/>
+                                    <constraint firstAttribute="width" constant="80" id="OxA-bR-iPu"/>
                                     <constraint firstAttribute="height" constant="44" id="qDy-jb-OKf"/>
                                 </constraints>
                                 <state key="normal" title="登录">
@@ -37,19 +37,6 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButtonClicked" destination="f7g-VR-fho" eventType="touchUpInside" id="jSP-uF-dnl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5D-PB-9Vk">
-                                <rect key="frame" x="42" y="395" width="75" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Grs-2b-TJr"/>
-                                    <constraint firstAttribute="width" constant="75" id="WHU-Q5-RPU"/>
-                                </constraints>
-                                <state key="normal" title="忘记密码？">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="forgetPassword" destination="f7g-VR-fho" eventType="touchUpInside" id="gtY-tb-gok"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tDW-ZQ-AfT">
@@ -67,12 +54,16 @@
                             <constraint firstItem="tDW-ZQ-AfT" firstAttribute="centerX" secondItem="OUg-gc-d1R" secondAttribute="centerX" id="1vi-3T-kgD"/>
                             <constraint firstItem="hFs-ed-rJV" firstAttribute="centerX" secondItem="OUg-gc-d1R" secondAttribute="centerX" id="GtC-vn-Z6L"/>
                             <constraint firstItem="ghd-Nm-3fI" firstAttribute="centerY" secondItem="OUg-gc-d1R" secondAttribute="centerY" id="a8p-FX-ETD"/>
-                            <constraint firstItem="L5D-PB-9Vk" firstAttribute="leading" secondItem="ghd-Nm-3fI" secondAttribute="leading" id="ctG-jA-CQQ"/>
+                            <constraint firstItem="ghd-Nm-3fI" firstAttribute="trailing" secondItem="tDW-ZQ-AfT" secondAttribute="trailing" id="l2B-UN-i71"/>
                             <constraint firstItem="ghd-Nm-3fI" firstAttribute="centerX" secondItem="OUg-gc-d1R" secondAttribute="centerX" id="miV-pZ-Jai"/>
-                            <constraint firstItem="L5D-PB-9Vk" firstAttribute="top" secondItem="ghd-Nm-3fI" secondAttribute="bottom" constant="39" id="msq-v6-R8g"/>
                             <constraint firstItem="ghd-Nm-3fI" firstAttribute="top" secondItem="tDW-ZQ-AfT" secondAttribute="bottom" constant="77" id="pna-Ge-ane"/>
                             <constraint firstItem="tDW-ZQ-AfT" firstAttribute="top" secondItem="hFs-ed-rJV" secondAttribute="bottom" constant="43" id="sxJ-mk-eik"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="miV-pZ-Jai"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
