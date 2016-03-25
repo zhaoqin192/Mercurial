@@ -24,6 +24,8 @@
 		30A4A6771C96A25700BF5EA1 /* UserOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6761C96A25700BF5EA1 /* UserOrderViewController.m */; };
 		30A4A67B1C97F61000BF5EA1 /* ShoppingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6791C97F61000BF5EA1 /* ShoppingViewController.m */; };
 		30A4A67C1C97F61000BF5EA1 /* ShoppingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A4A67A1C97F61000BF5EA1 /* ShoppingViewController.xib */; };
+		30ACF6471CA51E5C005B56EC /* WXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF6451CA51E5C005B56EC /* WXWebViewController.m */; };
+		30ACF6481CA51E5C005B56EC /* WXWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30ACF6461CA51E5C005B56EC /* WXWebViewController.xib */; };
 		30D18F1E1C9AD79500559866 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D18F1D1C9AD79500559866 /* KxMenu.m */; };
 		30D18F211C9ADBE500559866 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D18F201C9ADBE500559866 /* LoginStoryboard.storyboard */; };
 		30D18F231C9ADBF000559866 /* RegisterStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D18F221C9ADBF000559866 /* RegisterStoryBoard.storyboard */; };
@@ -89,6 +91,9 @@
 		30A4A6781C97F61000BF5EA1 /* ShoppingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingViewController.h; sourceTree = "<group>"; };
 		30A4A6791C97F61000BF5EA1 /* ShoppingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingViewController.m; sourceTree = "<group>"; };
 		30A4A67A1C97F61000BF5EA1 /* ShoppingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingViewController.xib; sourceTree = "<group>"; };
+		30ACF6441CA51E5C005B56EC /* WXWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXWebViewController.h; sourceTree = "<group>"; };
+		30ACF6451CA51E5C005B56EC /* WXWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXWebViewController.m; sourceTree = "<group>"; };
+		30ACF6461CA51E5C005B56EC /* WXWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXWebViewController.xib; sourceTree = "<group>"; };
 		30D18F1C1C9AD79500559866 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
 		30D18F1D1C9AD79500559866 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		30D18F1F1C9AD98400559866 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = ../PrefixHeader.pch; sourceTree = "<group>"; };
@@ -167,6 +172,9 @@
 		30A4A6481C96938100BF5EA1 /* main */ = {
 			isa = PBXGroup;
 			children = (
+				30ACF6441CA51E5C005B56EC /* WXWebViewController.h */,
+				30ACF6451CA51E5C005B56EC /* WXWebViewController.m */,
+				30ACF6461CA51E5C005B56EC /* WXWebViewController.xib */,
 				30A4A6491C96939100BF5EA1 /* NewsViewController.h */,
 				30A4A64A1C96939100BF5EA1 /* NewsViewController.m */,
 				30A4A64B1C96939100BF5EA1 /* PromoteViewController.h */,
@@ -476,6 +484,7 @@
 			files = (
 				ACC205161C9A4FA500B26CDD /* Home.storyboard in Resources */,
 				30D18F231C9ADBF000559866 /* RegisterStoryBoard.storyboard in Resources */,
+				30ACF6481CA51E5C005B56EC /* WXWebViewController.xib in Resources */,
 				30A4A67C1C97F61000BF5EA1 /* ShoppingViewController.xib in Resources */,
 				AC5E1CEC1C904484008D91E5 /* Assets.xcassets in Resources */,
 				30D18F211C9ADBE500559866 /* LoginStoryboard.storyboard in Resources */,
@@ -577,6 +586,7 @@
 				30A4A6551C96939100BF5EA1 /* PromoteViewController.m in Sources */,
 				30D18F1E1C9AD79500559866 /* KxMenu.m in Sources */,
 				30A4A6621C969A3100BF5EA1 /* SexViewController.m in Sources */,
+				30ACF6471CA51E5C005B56EC /* WXWebViewController.m in Sources */,
 				ACC204FF1C99527200B26CDD /* ProductType.m in Sources */,
 				30A4A65E1C96983700BF5EA1 /* RadioButton.m in Sources */,
 				30A4A6681C969D2500BF5EA1 /* EducationViewController.m in Sources */,

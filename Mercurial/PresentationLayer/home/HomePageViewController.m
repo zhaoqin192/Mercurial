@@ -15,6 +15,7 @@
 #import "KxMenu.h"
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
+#import "WXWebViewController.h"
 
 @interface HomePageViewController ()
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *scrollAdView;
@@ -30,7 +31,8 @@
 - (void)buttonClicked:(UIView *)sender {
     switch (sender.tag) {
         case 100:{
-            NSLog(@"公司简介");
+            WXWebViewController *vc = [[WXWebViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
             break;
         }
         case 101:{
