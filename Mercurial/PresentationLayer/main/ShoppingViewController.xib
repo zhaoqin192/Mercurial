@@ -14,14 +14,28 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shopping1" translatesAutoresizingMaskIntoConstraints="NO" id="0cQ-P3-mYU">
-                    <rect key="frame" x="0.0" y="130" width="375" height="128"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shopping1" translatesAutoresizingMaskIntoConstraints="NO" id="0cQ-P3-mYU">
+                    <rect key="frame" x="0.0" y="109" width="375" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="ACf-Bq-R5I"/>
+                    </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shopping2" translatesAutoresizingMaskIntoConstraints="NO" id="13i-3N-eLm">
-                    <rect key="frame" x="0.0" y="352" width="375" height="128"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shopping2" translatesAutoresizingMaskIntoConstraints="NO" id="13i-3N-eLm">
+                    <rect key="frame" x="0.0" y="409" width="375" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="smv-NI-eKP"/>
+                    </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="0cQ-P3-mYU" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-150" id="B0Z-t4-IXf"/>
+                <constraint firstAttribute="trailing" secondItem="0cQ-P3-mYU" secondAttribute="trailing" id="XnM-In-IsN"/>
+                <constraint firstItem="0cQ-P3-mYU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YgY-UL-2V7"/>
+                <constraint firstItem="13i-3N-eLm" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="150" id="aik-05-7vb"/>
+                <constraint firstItem="13i-3N-eLm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vIr-8a-uaG"/>
+                <constraint firstAttribute="trailing" secondItem="13i-3N-eLm" secondAttribute="trailing" id="vhS-sv-hBZ"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="329.5" y="380.5"/>
         </view>
