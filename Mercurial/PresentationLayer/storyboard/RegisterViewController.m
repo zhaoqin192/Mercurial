@@ -26,6 +26,7 @@
     self.navigationItem.title = @"用户注册";
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"menu_bg"]]];
     [self configureRegisterButton];
+    [self.phoneNumTextField becomeFirstResponder];
 }
 
 - (void)configureRegisterButton{
