@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "HomePageViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <EAIntroDelegate>
 
 @end
 
@@ -24,6 +24,7 @@
     self.window.rootViewController =vc;
     
     [self configureNavigationItem];
+    [self configureIntroView];
     return YES;
 }
 
@@ -31,6 +32,59 @@
     [[UINavigationBar appearance]  setBarTintColor:MybackgroundColor];
     [[UINavigationBar appearance]  setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance]  setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+}
+
+- (void)configureIntroView{
+    EAIntroPage *page1 = [EAIntroPage page];
+    page1.title = @"Hello world";
+    page1.desc = @"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+    page1.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title1"]];
+    
+    EAIntroPage *page2 = [EAIntroPage page];
+    page2.title = @"This is page 2";
+    page2.titlePositionY = KScreen_height/2 - 10;
+    page2.desc = @"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+    page2.descPositionY = KScreen_height/2 - 50;
+    page2.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title2"]];
+    page2.titleIconPositionY = 70;
+    
+    EAIntroPage *page3 = [EAIntroPage page];
+    page3.title = @"This is page 3";
+    page3.titleFont = [UIFont fontWithName:@"Georgia-BoldItalic" size:20];
+    page3.titlePositionY = 220;
+    page3.desc = @"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+    page3.descFont = [UIFont fontWithName:@"Georgia-Italic" size:18];
+    page3.descPositionY = 200;
+    page3.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title3"]];
+    page3.titleIconPositionY = 100;
+    
+    EAIntroPage *page4 = [EAIntroPage page];
+    page4.title = @"This is page 4";
+    page4.desc = @"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+    page4.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title4"]];
+    
+    EAIntroView *intro = [[EAIntroView alloc] initWithFrame:[UIScreen mainScreen].bounds andPages:@[page1,page2,page3,page4]];
+    intro.bgImage = [UIImage imageNamed:@"bg2"];
+    
+    intro.pageControlY = 250.f;
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [btn setFrame:CGRectMake(0, 0, 230, 40)];
+    [btn setTitle:@"SKIP NOW" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    btn.layer.borderWidth = 2.f;
+    btn.layer.cornerRadius = 10;
+    btn.layer.borderColor = [[UIColor whiteColor] CGColor];
+    intro.skipButton = btn;
+    intro.skipButtonY = 60.f;
+    intro.skipButtonAlignment = EAViewAlignmentCenter;
+    
+    [intro setDelegate:self];
+    [intro showInView:self.window.rootViewController.view animateDuration:0.3];
+}
+
+- (void)introDidFinish:(EAIntroView *)introView {
+    NSLog(@"introDidFinish callback");
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
