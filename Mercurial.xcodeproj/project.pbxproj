@@ -14,10 +14,6 @@
 		30A4A6581C96939100BF5EA1 /* ScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A4A6501C96939100BF5EA1 /* ScanViewController.xib */; };
 		30A4A6591C96939100BF5EA1 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A4A6511C96939100BF5EA1 /* User.storyboard */; };
 		30A4A65A1C96939100BF5EA1 /* UserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6531C96939100BF5EA1 /* UserInformationViewController.m */; };
-		30A4A65E1C96983700BF5EA1 /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A65D1C96983700BF5EA1 /* RadioButton.m */; };
-		30A4A6621C969A3100BF5EA1 /* SexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6611C969A3100BF5EA1 /* SexViewController.m */; };
-		30A4A6651C969BA900BF5EA1 /* JobChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6641C969BA900BF5EA1 /* JobChooseViewController.m */; };
-		30A4A6681C969D2500BF5EA1 /* EducationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6671C969D2500BF5EA1 /* EducationViewController.m */; };
 		30A4A66E1C969F6600BF5EA1 /* FriendsIntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A66D1C969F6600BF5EA1 /* FriendsIntroduceViewController.m */; };
 		30A4A6711C96A00F00BF5EA1 /* FansCommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6701C96A00F00BF5EA1 /* FansCommandViewController.m */; };
 		30A4A6741C96A0D800BF5EA1 /* AddProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6731C96A0D800BF5EA1 /* AddProductViewController.m */; };
@@ -26,6 +22,14 @@
 		30A4A67C1C97F61000BF5EA1 /* ShoppingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A4A67A1C97F61000BF5EA1 /* ShoppingViewController.xib */; };
 		30ACF6471CA51E5C005B56EC /* WXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF6451CA51E5C005B56EC /* WXWebViewController.m */; };
 		30ACF6481CA51E5C005B56EC /* WXWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30ACF6461CA51E5C005B56EC /* WXWebViewController.xib */; };
+		30ACF65B1CA58773005B56EC /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF64B1CA58773005B56EC /* AbstractActionSheetPicker.m */; };
+		30ACF65C1CA58773005B56EC /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF64D1CA58773005B56EC /* ActionSheetCustomPicker.m */; };
+		30ACF65D1CA58773005B56EC /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF6501CA58773005B56EC /* ActionSheetDatePicker.m */; };
+		30ACF65E1CA58773005B56EC /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF6521CA58773005B56EC /* ActionSheetDistancePicker.m */; };
+		30ACF65F1CA58773005B56EC /* ActionSheetLocalePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF6541CA58773005B56EC /* ActionSheetLocalePicker.m */; };
+		30ACF6601CA58773005B56EC /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF6561CA58773005B56EC /* ActionSheetStringPicker.m */; };
+		30ACF6611CA58773005B56EC /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF6581CA58773005B56EC /* DistancePickerView.m */; };
+		30ACF6621CA58773005B56EC /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF65A1CA58773005B56EC /* SWActionSheet.m */; };
 		30D18F1E1C9AD79500559866 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D18F1D1C9AD79500559866 /* KxMenu.m */; };
 		30D18F211C9ADBE500559866 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D18F201C9ADBE500559866 /* LoginStoryboard.storyboard */; };
 		30D18F231C9ADBF000559866 /* RegisterStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D18F221C9ADBF000559866 /* RegisterStoryBoard.storyboard */; };
@@ -72,14 +76,6 @@
 		30A4A6511C96939100BF5EA1 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		30A4A6521C96939100BF5EA1 /* UserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInformationViewController.h; sourceTree = "<group>"; };
 		30A4A6531C96939100BF5EA1 /* UserInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInformationViewController.m; sourceTree = "<group>"; };
-		30A4A65C1C96983700BF5EA1 /* RadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButton.h; sourceTree = "<group>"; };
-		30A4A65D1C96983700BF5EA1 /* RadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButton.m; sourceTree = "<group>"; };
-		30A4A6601C969A3100BF5EA1 /* SexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SexViewController.h; sourceTree = "<group>"; };
-		30A4A6611C969A3100BF5EA1 /* SexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SexViewController.m; sourceTree = "<group>"; };
-		30A4A6631C969BA900BF5EA1 /* JobChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobChooseViewController.h; sourceTree = "<group>"; };
-		30A4A6641C969BA900BF5EA1 /* JobChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobChooseViewController.m; sourceTree = "<group>"; };
-		30A4A6661C969D2500BF5EA1 /* EducationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EducationViewController.h; sourceTree = "<group>"; };
-		30A4A6671C969D2500BF5EA1 /* EducationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EducationViewController.m; sourceTree = "<group>"; };
 		30A4A66C1C969F6600BF5EA1 /* FriendsIntroduceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsIntroduceViewController.h; sourceTree = "<group>"; };
 		30A4A66D1C969F6600BF5EA1 /* FriendsIntroduceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsIntroduceViewController.m; sourceTree = "<group>"; };
 		30A4A66F1C96A00F00BF5EA1 /* FansCommandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FansCommandViewController.h; sourceTree = "<group>"; };
@@ -94,6 +90,23 @@
 		30ACF6441CA51E5C005B56EC /* WXWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXWebViewController.h; sourceTree = "<group>"; };
 		30ACF6451CA51E5C005B56EC /* WXWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXWebViewController.m; sourceTree = "<group>"; };
 		30ACF6461CA51E5C005B56EC /* WXWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXWebViewController.xib; sourceTree = "<group>"; };
+		30ACF64A1CA58773005B56EC /* AbstractActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActionSheetPicker.h; sourceTree = "<group>"; };
+		30ACF64B1CA58773005B56EC /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActionSheetPicker.m; sourceTree = "<group>"; };
+		30ACF64C1CA58773005B56EC /* ActionSheetCustomPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPicker.h; sourceTree = "<group>"; };
+		30ACF64D1CA58773005B56EC /* ActionSheetCustomPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetCustomPicker.m; sourceTree = "<group>"; };
+		30ACF64E1CA58773005B56EC /* ActionSheetCustomPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPickerDelegate.h; sourceTree = "<group>"; };
+		30ACF64F1CA58773005B56EC /* ActionSheetDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetDatePicker.h; sourceTree = "<group>"; };
+		30ACF6501CA58773005B56EC /* ActionSheetDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDatePicker.m; sourceTree = "<group>"; };
+		30ACF6511CA58773005B56EC /* ActionSheetDistancePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetDistancePicker.h; sourceTree = "<group>"; };
+		30ACF6521CA58773005B56EC /* ActionSheetDistancePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDistancePicker.m; sourceTree = "<group>"; };
+		30ACF6531CA58773005B56EC /* ActionSheetLocalePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetLocalePicker.h; sourceTree = "<group>"; };
+		30ACF6541CA58773005B56EC /* ActionSheetLocalePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetLocalePicker.m; sourceTree = "<group>"; };
+		30ACF6551CA58773005B56EC /* ActionSheetStringPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetStringPicker.h; sourceTree = "<group>"; };
+		30ACF6561CA58773005B56EC /* ActionSheetStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetStringPicker.m; sourceTree = "<group>"; };
+		30ACF6571CA58773005B56EC /* DistancePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistancePickerView.h; sourceTree = "<group>"; };
+		30ACF6581CA58773005B56EC /* DistancePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistancePickerView.m; sourceTree = "<group>"; };
+		30ACF6591CA58773005B56EC /* SWActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWActionSheet.h; sourceTree = "<group>"; };
+		30ACF65A1CA58773005B56EC /* SWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWActionSheet.m; sourceTree = "<group>"; };
 		30D18F1C1C9AD79500559866 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
 		30D18F1D1C9AD79500559866 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		30D18F1F1C9AD98400559866 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = ../PrefixHeader.pch; sourceTree = "<group>"; };
@@ -189,12 +202,6 @@
 				30A4A6511C96939100BF5EA1 /* User.storyboard */,
 				30A4A6521C96939100BF5EA1 /* UserInformationViewController.h */,
 				30A4A6531C96939100BF5EA1 /* UserInformationViewController.m */,
-				30A4A6601C969A3100BF5EA1 /* SexViewController.h */,
-				30A4A6611C969A3100BF5EA1 /* SexViewController.m */,
-				30A4A6631C969BA900BF5EA1 /* JobChooseViewController.h */,
-				30A4A6641C969BA900BF5EA1 /* JobChooseViewController.m */,
-				30A4A6661C969D2500BF5EA1 /* EducationViewController.h */,
-				30A4A6671C969D2500BF5EA1 /* EducationViewController.m */,
 				30A4A66C1C969F6600BF5EA1 /* FriendsIntroduceViewController.h */,
 				30A4A66D1C969F6600BF5EA1 /* FriendsIntroduceViewController.m */,
 				30A4A66F1C96A00F00BF5EA1 /* FansCommandViewController.h */,
@@ -210,19 +217,34 @@
 		30A4A65B1C96980200BF5EA1 /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
+				30ACF6491CA58773005B56EC /* ActionSheetPicker */,
 				30D18F1B1C9AD79500559866 /* KxMenu */,
-				30A4A65F1C96983D00BF5EA1 /* Radio Button */,
 			);
 			path = "Third Party";
 			sourceTree = "<group>";
 		};
-		30A4A65F1C96983D00BF5EA1 /* Radio Button */ = {
+		30ACF6491CA58773005B56EC /* ActionSheetPicker */ = {
 			isa = PBXGroup;
 			children = (
-				30A4A65C1C96983700BF5EA1 /* RadioButton.h */,
-				30A4A65D1C96983700BF5EA1 /* RadioButton.m */,
+				30ACF64A1CA58773005B56EC /* AbstractActionSheetPicker.h */,
+				30ACF64B1CA58773005B56EC /* AbstractActionSheetPicker.m */,
+				30ACF64C1CA58773005B56EC /* ActionSheetCustomPicker.h */,
+				30ACF64D1CA58773005B56EC /* ActionSheetCustomPicker.m */,
+				30ACF64E1CA58773005B56EC /* ActionSheetCustomPickerDelegate.h */,
+				30ACF64F1CA58773005B56EC /* ActionSheetDatePicker.h */,
+				30ACF6501CA58773005B56EC /* ActionSheetDatePicker.m */,
+				30ACF6511CA58773005B56EC /* ActionSheetDistancePicker.h */,
+				30ACF6521CA58773005B56EC /* ActionSheetDistancePicker.m */,
+				30ACF6531CA58773005B56EC /* ActionSheetLocalePicker.h */,
+				30ACF6541CA58773005B56EC /* ActionSheetLocalePicker.m */,
+				30ACF6551CA58773005B56EC /* ActionSheetStringPicker.h */,
+				30ACF6561CA58773005B56EC /* ActionSheetStringPicker.m */,
+				30ACF6571CA58773005B56EC /* DistancePickerView.h */,
+				30ACF6581CA58773005B56EC /* DistancePickerView.m */,
+				30ACF6591CA58773005B56EC /* SWActionSheet.h */,
+				30ACF65A1CA58773005B56EC /* SWActionSheet.m */,
 			);
-			path = "Radio Button";
+			path = ActionSheetPicker;
 			sourceTree = "<group>";
 		};
 		30D18F1B1C9AD79500559866 /* KxMenu */ = {
@@ -556,9 +578,12 @@
 				30A4A6571C96939100BF5EA1 /* ScanViewController.m in Sources */,
 				30A4A65A1C96939100BF5EA1 /* UserInformationViewController.m in Sources */,
 				AC5E1CE11C904484008D91E5 /* AppDelegate.m in Sources */,
+				30ACF65F1CA58773005B56EC /* ActionSheetLocalePicker.m in Sources */,
+				30ACF65D1CA58773005B56EC /* ActionSheetDatePicker.m in Sources */,
 				ACC204F11C99283A00B26CDD /* AccountDao.m in Sources */,
 				ACC204E41C99037C00B26CDD /* Utility.m in Sources */,
 				ACC205111C9A479100B26CDD /* ProductManager.m in Sources */,
+				30ACF6621CA58773005B56EC /* SWActionSheet.m in Sources */,
 				ACC2050A1C99587A00B26CDD /* NewsManager.m in Sources */,
 				30A4A66E1C969F6600BF5EA1 /* FriendsIntroduceViewController.m in Sources */,
 				ACCA4CC91C91171A00121269 /* Constant.m in Sources */,
@@ -570,12 +595,13 @@
 				ACC204F41C99401600B26CDD /* DatabaseManager.m in Sources */,
 				ACC204E01C98F35A00B26CDD /* NetworkManager.m in Sources */,
 				AC5E1CEA1C904484008D91E5 /* Mercurial.xcdatamodeld in Sources */,
+				30ACF65C1CA58773005B56EC /* ActionSheetCustomPicker.m in Sources */,
+				30ACF65E1CA58773005B56EC /* ActionSheetDistancePicker.m in Sources */,
 				ACC205191C9A50D600B26CDD /* TestViewController.m in Sources */,
 				ACE32B181C96525300BD96E9 /* HomeViewController.m in Sources */,
 				ACC204E71C99065C00B26CDD /* NetworkRequest.m in Sources */,
 				ACE32B1E1C96555500BD96E9 /* FuncViewCell.m in Sources */,
 				ACC2051C1C9A99DD00B26CDD /* Sales.m in Sources */,
-				30A4A6651C969BA900BF5EA1 /* JobChooseViewController.m in Sources */,
 				ACC205021C9956D000B26CDD /* News.m in Sources */,
 				30D18F291C9ADDC100559866 /* RegisterViewController.m in Sources */,
 				30A4A6741C96A0D800BF5EA1 /* AddProductViewController.m in Sources */,
@@ -585,11 +611,11 @@
 				30D18F2C1C9E484F00559866 /* HomePageViewController.m in Sources */,
 				30A4A6551C96939100BF5EA1 /* PromoteViewController.m in Sources */,
 				30D18F1E1C9AD79500559866 /* KxMenu.m in Sources */,
-				30A4A6621C969A3100BF5EA1 /* SexViewController.m in Sources */,
 				30ACF6471CA51E5C005B56EC /* WXWebViewController.m in Sources */,
+				30ACF6611CA58773005B56EC /* DistancePickerView.m in Sources */,
 				ACC204FF1C99527200B26CDD /* ProductType.m in Sources */,
-				30A4A65E1C96983700BF5EA1 /* RadioButton.m in Sources */,
-				30A4A6681C969D2500BF5EA1 /* EducationViewController.m in Sources */,
+				30ACF6601CA58773005B56EC /* ActionSheetStringPicker.m in Sources */,
+				30ACF65B1CA58773005B56EC /* AbstractActionSheetPicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

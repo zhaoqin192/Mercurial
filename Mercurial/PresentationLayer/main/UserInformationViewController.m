@@ -7,9 +7,6 @@
 //
 
 #import "UserInformationViewController.h"
-#import "SexViewController.h"
-#import "JobChooseViewController.h"
-#import "EducationViewController.h"
 
 @interface UserInformationViewController ()
 
@@ -101,79 +98,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    switch (indexPath.row) {
-        case 0:{
-            NSLog(@"clicked");
-            SexViewController * vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"SexViewController"];
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        case 1:{
-            SexViewController * vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"SexViewController"];
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        case 2:{
-            SexViewController * vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"SexViewController"];
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        case 3:{
-            SexViewController * vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"SexViewController"];
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        case 4:{
-            SexViewController * vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"SexViewController"];
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        case 5:{
-            SexViewController * vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"SexViewController"];
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        case 6:{
-            SexViewController * vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"SexViewController"];
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        case 7:{
-            JobChooseViewController * vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"JobChooseViewController"];
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        case 8:{
-            EducationViewController * vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"EducationViewController"];
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        case 9:{
-            SexViewController * vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"SexViewController"];
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        case 10:{
-            SexViewController * vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"SexViewController"];
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        case 11:{
-            SexViewController * vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"SexViewController"];
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        case 12:{
-            SexViewController * vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"SexViewController"];
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        default:
-            break;
-    }
-
-    
+    NSLog(@"clicked");
 }
-
 
 @end
