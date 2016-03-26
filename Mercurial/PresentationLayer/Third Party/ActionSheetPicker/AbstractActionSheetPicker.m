@@ -409,17 +409,17 @@ CG_INLINE BOOL isIPhone4()
     return buttonLabel;
 }
 
-//- (UIBarButtonItem *)createButtonWithType:(UIBarButtonSystemItem)type target:(id)target action:(SEL)buttonAction
-//{
-//    UIBarButtonItem *barButton;
-//    barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:type target:target
-//                                                              action:buttonAction];
-//    [barButton setTitleTextAttributes:@{
-//                                        NSFontAttributeName: [UIFont boldSystemFontOfSize:17],
-//                                        NSForegroundColorAttributeName: [UIColor colorWithHexString:@"0x666666"],
-//                                        } forState:UIControlStateNormal];
-//    return barButton;
-//}
+- (UIBarButtonItem *)createButtonWithType:(UIBarButtonSystemItem)type target:(id)target action:(SEL)buttonAction
+{
+    UIBarButtonItem *barButton;
+    barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:type target:target
+                                                              action:buttonAction];
+    [barButton setTitleTextAttributes:@{
+                                        NSFontAttributeName: [UIFont boldSystemFontOfSize:17],
+                                        NSForegroundColorAttributeName: [UIColor colorWithHexString:@"0x666666"],
+                                        } forState:UIControlStateNormal];
+    return barButton;
+}
 
 #pragma mark - Utilities and Accessors
 

@@ -7,6 +7,7 @@
 //
 
 #import "UserInformationViewController.h"
+#import "ActionSheetStringPicker.h"
 
 @interface UserInformationViewController ()
 
@@ -33,15 +34,14 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"informationCell" forIndexPath:indexPath];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"informationCell"];
-    }
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"informationCell"];
+    
     switch (indexPath.row) {
-        case 0:
+        case 0:{
             cell.textLabel.text = @"登录用户";
             cell.detailTextLabel.text = @"xxxx";
             break;
+        }
         case 1:
             cell.textLabel.text = @"真实姓名";
             cell.detailTextLabel.text = @"xxxx";
@@ -94,11 +94,26 @@
             break;
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [cell layoutIfNeeded];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"clicked");
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    __weak typeof(self) weakSelf = self;
+    switch (indexPath.row) {
+        case 2:{
+            [ActionSheetStringPicker showPickerWithTitle:@"请选择性别" rows:@[@[@"男", @"女", @"未知"]] initialSelection:@[@(0)] doneBlock:^(ActionSheetStringPicker *picker, NSArray * selectedIndex, NSArray *selectedValue) {
+                UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+                cell.detailTextLabel.text = [selectedValue firstObject];
+                //[weakSelf.tableView reloadData];
+                //改数据源 发网络请求  更新数据而不是改cell
+            } cancelBlock:nil origin:self.view];
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 @end
