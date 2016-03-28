@@ -9,7 +9,6 @@
 #import "HomePageViewController.h"
 #import "SDCycleScrollView.h"
 #import "NewsViewController.h"
-#import "PromoteViewController.h"
 #import "ScanViewController.h"
 #import "ShoppingViewController.h"
 #import "KxMenu.h"
@@ -38,8 +37,9 @@
         }
         case 101:{
             NewsViewController *vc = [[NewsViewController alloc] initWithStyle:UITableViewStylePlain];
+            vc.isNews = YES;
+            vc.mytitle = @"公司新闻";
             [self.navigationController pushViewController:vc animated:YES];
-            NSLog(@"公司新闻");
             break;
         }
         case 102:
@@ -49,7 +49,9 @@
             NSLog(@"产品推荐");
             break;
         case 104:{
-            PromoteViewController * vc = [[PromoteViewController alloc] init];
+            NewsViewController *vc = [[NewsViewController alloc] initWithStyle:UITableViewStylePlain];
+            vc.isNews = NO;
+            vc.mytitle = @"促销信息";
             [self.navigationController pushViewController:vc animated:YES];
             NSLog(@"促销信息");
             break;

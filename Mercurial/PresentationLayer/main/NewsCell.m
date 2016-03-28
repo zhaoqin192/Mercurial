@@ -8,6 +8,7 @@
 
 #import "NewsCell.h"
 #import "News.h"
+#import "Sales.h"
 
 @interface NewsCell()
 @property (weak, nonatomic) IBOutlet UIImageView *myImageView;
@@ -33,6 +34,13 @@
     [self.myImageView sd_setImageWithURL:[NSURL URLWithString:_mynews.imageURL] placeholderImage:[UIImage imageNamed:@"placehold"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
     }];
     self.myTextLabel.text = mynews.title;
+}
+
+- (void)setSale:(Sales *)sale{
+    _sale = sale;
+    [self.myImageView sd_setImageWithURL:[NSURL URLWithString:_sale.imageURL] placeholderImage:[UIImage imageNamed:@"placehold"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    }];
+    self.myTextLabel.text = _sale.title;
 }
 
 @end

@@ -10,8 +10,6 @@
 		30A3A9271CA96FD70076208B /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A3A9251CA96FD70076208B /* NewsCell.m */; };
 		30A3A9281CA96FD70076208B /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A3A9261CA96FD70076208B /* NewsCell.xib */; };
 		30A4A6541C96939100BF5EA1 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A64A1C96939100BF5EA1 /* NewsViewController.m */; };
-		30A4A6551C96939100BF5EA1 /* PromoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A64C1C96939100BF5EA1 /* PromoteViewController.m */; };
-		30A4A6561C96939100BF5EA1 /* PromoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A4A64D1C96939100BF5EA1 /* PromoteViewController.xib */; };
 		30A4A6571C96939100BF5EA1 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A64F1C96939100BF5EA1 /* ScanViewController.m */; };
 		30A4A6581C96939100BF5EA1 /* ScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A4A6501C96939100BF5EA1 /* ScanViewController.xib */; };
 		30A4A6591C96939100BF5EA1 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A4A6511C96939100BF5EA1 /* User.storyboard */; };
@@ -62,8 +60,6 @@
 		ACC2051C1C9A99DD00B26CDD /* Sales.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC2051B1C9A99DD00B26CDD /* Sales.m */; };
 		ACC2051F1C9A9A1D00B26CDD /* SalesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC2051E1C9A9A1D00B26CDD /* SalesManager.m */; };
 		ACCA4CC91C91171A00121269 /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCA4CC81C91171A00121269 /* Constant.m */; };
-		ACE32B181C96525300BD96E9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE32B171C96525300BD96E9 /* HomeViewController.m */; };
-		ACE32B1E1C96555500BD96E9 /* FuncViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE32B1D1C96555500BD96E9 /* FuncViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,9 +68,6 @@
 		30A3A9261CA96FD70076208B /* NewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		30A4A6491C96939100BF5EA1 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		30A4A64A1C96939100BF5EA1 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
-		30A4A64B1C96939100BF5EA1 /* PromoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromoteViewController.h; sourceTree = "<group>"; };
-		30A4A64C1C96939100BF5EA1 /* PromoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromoteViewController.m; sourceTree = "<group>"; };
-		30A4A64D1C96939100BF5EA1 /* PromoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PromoteViewController.xib; sourceTree = "<group>"; };
 		30A4A64E1C96939100BF5EA1 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
 		30A4A64F1C96939100BF5EA1 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
 		30A4A6501C96939100BF5EA1 /* ScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanViewController.xib; sourceTree = "<group>"; };
@@ -169,10 +162,6 @@
 		ACC2051E1C9A9A1D00B26CDD /* SalesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesManager.m; sourceTree = "<group>"; };
 		ACCA4CC71C91171A00121269 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		ACCA4CC81C91171A00121269 /* Constant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constant.m; sourceTree = "<group>"; };
-		ACE32B161C96525300BD96E9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		ACE32B171C96525300BD96E9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		ACE32B1C1C96555500BD96E9 /* FuncViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuncViewCell.h; sourceTree = "<group>"; };
-		ACE32B1D1C96555500BD96E9 /* FuncViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuncViewCell.m; sourceTree = "<group>"; };
 		F13185264FDB502171C80DA5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,9 +188,6 @@
 				30A3A9241CA96FD70076208B /* NewsCell.h */,
 				30A3A9251CA96FD70076208B /* NewsCell.m */,
 				30A3A9261CA96FD70076208B /* NewsCell.xib */,
-				30A4A64B1C96939100BF5EA1 /* PromoteViewController.h */,
-				30A4A64C1C96939100BF5EA1 /* PromoteViewController.m */,
-				30A4A64D1C96939100BF5EA1 /* PromoteViewController.xib */,
 				30A4A64E1C96939100BF5EA1 /* ScanViewController.h */,
 				30A4A64F1C96939100BF5EA1 /* ScanViewController.m */,
 				30A4A6501C96939100BF5EA1 /* ScanViewController.xib */,
@@ -423,10 +409,6 @@
 		ACCA4CD91C9156D200121269 /* home */ = {
 			isa = PBXGroup;
 			children = (
-				ACE32B161C96525300BD96E9 /* HomeViewController.h */,
-				ACE32B171C96525300BD96E9 /* HomeViewController.m */,
-				ACE32B1C1C96555500BD96E9 /* FuncViewCell.h */,
-				ACE32B1D1C96555500BD96E9 /* FuncViewCell.m */,
 				ACC205171C9A50D600B26CDD /* TestViewController.h */,
 				ACC205181C9A50D600B26CDD /* TestViewController.m */,
 				ACC205141C9A4FA500B26CDD /* Home.storyboard */,
@@ -532,7 +514,6 @@
 				30D18F211C9ADBE500559866 /* LoginStoryboard.storyboard in Resources */,
 				30A4A6591C96939100BF5EA1 /* User.storyboard in Resources */,
 				30A4A6581C96939100BF5EA1 /* ScanViewController.xib in Resources */,
-				30A4A6561C96939100BF5EA1 /* PromoteViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,9 +599,7 @@
 				30ACF65C1CA58773005B56EC /* ActionSheetCustomPicker.m in Sources */,
 				30ACF65E1CA58773005B56EC /* ActionSheetDistancePicker.m in Sources */,
 				ACC205191C9A50D600B26CDD /* TestViewController.m in Sources */,
-				ACE32B181C96525300BD96E9 /* HomeViewController.m in Sources */,
 				ACC204E71C99065C00B26CDD /* NetworkRequest.m in Sources */,
-				ACE32B1E1C96555500BD96E9 /* FuncViewCell.m in Sources */,
 				ACC2051C1C9A99DD00B26CDD /* Sales.m in Sources */,
 				ACC205021C9956D000B26CDD /* News.m in Sources */,
 				30A3A9271CA96FD70076208B /* NewsCell.m in Sources */,
@@ -630,7 +609,6 @@
 				AC5E1CDE1C904484008D91E5 /* main.m in Sources */,
 				ACC204FC1C99526700B26CDD /* ProductKind.m in Sources */,
 				30D18F2C1C9E484F00559866 /* HomePageViewController.m in Sources */,
-				30A4A6551C96939100BF5EA1 /* PromoteViewController.m in Sources */,
 				30D18F1E1C9AD79500559866 /* KxMenu.m in Sources */,
 				30ACF6471CA51E5C005B56EC /* WXWebViewController.m in Sources */,
 				30ACF6611CA58773005B56EC /* DistancePickerView.m in Sources */,

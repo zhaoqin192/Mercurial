@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 @class News;
-
+@class Sales;
 @interface NewsCell : UITableViewCell
 @property (nonatomic, strong) News *mynews;
+@property (nonatomic, strong) Sales *sale;
 @end

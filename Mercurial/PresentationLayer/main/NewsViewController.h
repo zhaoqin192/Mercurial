@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface NewsViewController : UITableViewController
-
+@property (nonatomic, copy) NSArray *news;
+@property (nonatomic, copy) NSString *mytitle;
+@property (nonatomic, assign) BOOL isNews;
 @end

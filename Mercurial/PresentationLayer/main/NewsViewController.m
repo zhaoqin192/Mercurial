@@ -8,22 +8,24 @@
 
 #import "NewsViewController.h"
 #import "NewsManager.h"
+#import "SalesManager.h"
 #import "News.h"
+#import "Sales.h"
 #import "WXWebViewController.h"
 #import "NewsCell.h"
 
 @interface NewsViewController ()
-@property (nonatomic, copy) NSArray *news;
+
 @end
 
 @implementation NewsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"公司新闻";
+    self.navigationItem.title = self.mytitle;
     self.tableView.rowHeight = 80;
-    [self loadTableViewData];
     [self.tableView registerNib:[UINib nibWithNibName:@"NewsCell" bundle:nil] forCellReuseIdentifier:@"newsCell"];
+    [self loadTableViewData];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -31,13 +33,25 @@
 }
 
 - (void)loadTableViewData{
-    [NetworkRequest requestNewsWithSuccess:^{
-       self.news = [[NewsManager sharedManager] fetchArray];
-        [self.tableView reloadData];
-    } failure:^{
-        [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
-    }];
+    if (self.isNews) {
+        [NetworkRequest requestNewsWithSuccess:^{
+            self.news = [[NewsManager sharedManager] fetchArray];
+            [self.tableView reloadData];
+        } failure:^{
+            [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        }];
+    }
+    else{
+        [NetworkRequest requestSalesType:@(1) success:^{
+            self.news = [[SalesManager sharedManager] fetchSalesArray];
+            NSLog(@"%zd %zd",self.news.count,[[SalesManager sharedManager] fetchSalesArray].count);
+            [self.tableView reloadData];
+        } failure:^{
+            [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        }];
+    }
 }
 
 - (void)dismiss {
@@ -54,8 +68,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NewsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"newsCell"];
-    News *new = self.news[indexPath.row];
-    cell.mynews = new;
+    if (self.isNews) {
+        News *new = self.news[indexPath.row];
+        cell.mynews = new;
+    }
+    else{
+        Sales *sale = self.news[indexPath.row];
+        cell.sale = sale;
+    }
     return cell;
 }
 

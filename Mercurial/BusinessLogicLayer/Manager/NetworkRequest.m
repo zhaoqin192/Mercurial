@@ -302,7 +302,7 @@
     
     [manager POST:URL.absoluteString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"JSON: %@", responseObject);
-        SalesManager *manager = [[SalesManager alloc] init];
+        SalesManager *manager = [SalesManager sharedManager];
         if (type == 0) {
             [manager.roundArray removeAllObjects];
             NSArray *array = responseObject;
@@ -325,7 +325,6 @@
                 sales.date = [dic objectForKey:@"news_date"];
                 [manager.salesArray addObject:sales];
             }
- 
         }
         success();
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

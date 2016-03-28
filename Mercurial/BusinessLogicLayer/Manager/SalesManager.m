@@ -27,11 +27,12 @@ static SalesManager *sharedManager;
     return sharedManager;
 }
 
-- (NSMutableArray *) getSalesArray{
+- (NSMutableArray *) fetchSalesArray{
+    NSLog(@"aaaa %zd",self.salesArray.count);
     return self.salesArray;
 }
 
-- (NSMutableArray *) gerRoundArray{
+- (NSMutableArray *) fetchRoundArray{
     return self.roundArray;
 }
 
