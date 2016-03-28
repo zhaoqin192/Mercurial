@@ -24,6 +24,8 @@
     [self.nameTextField becomeFirstResponder];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"menu_bg"]]];
     [self configureLoginButton];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
 }
 
 - (void)configureLoginButton{
@@ -35,11 +37,67 @@
 }
 
 - (IBAction)loginButtonClicked {
-    NSLog(@"login");
+    if(![self isValidPhoneNumber:self.nameTextField.text]){
+        [SVProgressHUD showErrorWithStatus:@"请输入正确的电话号码"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        return;
+    }
+    if (self.passwordTextField.text.length == 0) {
+        [SVProgressHUD showErrorWithStatus:@"请输入密码"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        return;
+    }
+    [SVProgressHUD show];
+    [NetworkRequest userLoginWithName:self.nameTextField.text password:self.passwordTextField.text success:^{
+        [SVProgressHUD showSuccessWithStatus:@"登录成功!"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self.navigationController popViewControllerAnimated:YES];
+    } failure:^{
+        [SVProgressHUD showErrorWithStatus:@"登录失败"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+    }];
+}
+
+- (void)dismiss {
+    [SVProgressHUD dismiss];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
 }
+
+#pragma mark -<VerficationCode>
+
+- (BOOL)isValidPhoneNumber:(NSString *)text{
+    if (text.length != 11) {
+        return NO;
+    }else if (![self isAllNum:text]){
+        return NO;
+    }else{
+        return YES;
+    }
+}
+
+- (BOOL)isValidAgeNumber:(NSString *)text{
+    if (!(text.length == 1 || text.length == 2)) {
+        return NO;
+    }else if (![self isAllNum:text]){
+        return NO;
+    }else{
+        return YES;
+    }
+}
+
+- (BOOL)isAllNum:(NSString *)text{
+    unichar c;
+    for (int i=0; i<text.length; i++) {
+        c=[text characterAtIndex:i];
+        if (!isdigit(c)) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
 
 @end
