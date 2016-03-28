@@ -27,6 +27,8 @@
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"menu_bg"]]];
     [self configureRegisterButton];
     [self.phoneNumTextField becomeFirstResponder];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
 }
 
 - (void)configureRegisterButton{
@@ -38,11 +40,83 @@
 }
 
 - (IBAction)registerButtonClicked {
-    NSLog(@"register");
+    if(![self isValidPhoneNumber:self.phoneNumTextField.text]){
+        [SVProgressHUD showErrorWithStatus:@"请输入正确的电话号码"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        return;
+    }
+    if (self.nameTextField.text.length == 0) {
+        [SVProgressHUD showErrorWithStatus:@"请输入姓名"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        return;
+    }
+    if (self.passwordTextField.text.length == 0) {
+        [SVProgressHUD showErrorWithStatus:@"请输入密码"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        return;
+    }
+    if (self.mailTextField.text.length == 0) {
+        [SVProgressHUD showErrorWithStatus:@"请输入邮箱"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        return;
+    }
+    if (![self isValidAgeNumber:self.ageTextField.text]) {
+        [SVProgressHUD showErrorWithStatus:@"请输入年龄"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        return;
+    }
+    [SVProgressHUD show];
+    NSString *sex = self.sexSwitch.isOn ? @"女" : @"男";
+    NSLog(@"%@",sex);
+    [NetworkRequest userRegisterWithName:self.nameTextField.text password:self.passwordTextField.text phone:self.phoneNumTextField.text sex:sex age:[self.ageTextField.text integerValue] Email:self.mailTextField.text success:^{
+        [SVProgressHUD showSuccessWithStatus:@"注册成功!"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self.navigationController popViewControllerAnimated:YES];
+    } failure:^{
+        [SVProgressHUD showErrorWithStatus:@"注册失败"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+    }];
+}
+
+- (void)dismiss {
+    [SVProgressHUD dismiss];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
+}
+
+#pragma mark -<VerficationCode>
+
+- (BOOL)isValidPhoneNumber:(NSString *)text{
+    if (text.length != 11) {
+        return NO;
+    }else if (![self isAllNum:text]){
+        return NO;
+    }else{
+        return YES;
+    }
+}
+
+- (BOOL)isValidAgeNumber:(NSString *)text{
+    if (!(text.length == 1 || text.length == 2)) {
+        return NO;
+    }else if (![self isAllNum:text]){
+        return NO;
+    }else{
+        return YES;
+    }
+}
+
+- (BOOL)isAllNum:(NSString *)text{
+    unichar c;
+    for (int i=0; i<text.length; i++) {
+        c=[text characterAtIndex:i];
+        if (!isdigit(c)) {
+            return NO;
+        }
+    }
+    return YES;
 }
 
 @end

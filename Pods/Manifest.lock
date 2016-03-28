@@ -29,12 +29,14 @@ PODS:
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
+  - SVProgressHUD (2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - EAIntroView (~> 2.8.0)
   - ReactiveCocoa (= 2.3.1)
   - SDCycleScrollView (~> 1.61)
+  - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
@@ -43,5 +45,6 @@ SPEC CHECKSUMS:
   ReactiveCocoa: 3fe9b233ca6db810e86681b5749488564c1179a1
   SDCycleScrollView: a002d85b30cfa9d0ac74069cd3973ca19ff4f22f
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  SVProgressHUD: e9e7c893686a20da55a28015ed384d9425e15479
 
 COCOAPODS: 0.39.0
