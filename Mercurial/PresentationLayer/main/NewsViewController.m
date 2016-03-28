@@ -10,6 +10,7 @@
 #import "NewsManager.h"
 #import "News.h"
 #import "WXWebViewController.h"
+#import "NewsCell.h"
 
 @interface NewsViewController ()
 @property (nonatomic, copy) NSArray *news;
@@ -20,8 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"公司新闻";
-    self.tableView.rowHeight = 60;
+    self.tableView.rowHeight = 80;
     [self loadTableViewData];
+    [self.tableView registerNib:[UINib nibWithNibName:@"NewsCell" bundle:nil] forCellReuseIdentifier:@"newsCell"];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -51,14 +53,9 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"newsCell"];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"newsCell"];
-    }
+    NewsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"newsCell"];
     News *new = self.news[indexPath.row];
-    cell.textLabel.text = new.title;
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:new.imageURL] placeholderImage:[UIImage imageNamed:@"placehold"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-    }];
+    cell.mynews = new;
     return cell;
 }
 

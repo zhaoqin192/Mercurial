@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30A3A9271CA96FD70076208B /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A3A9251CA96FD70076208B /* NewsCell.m */; };
+		30A3A9281CA96FD70076208B /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A3A9261CA96FD70076208B /* NewsCell.xib */; };
 		30A4A6541C96939100BF5EA1 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A64A1C96939100BF5EA1 /* NewsViewController.m */; };
 		30A4A6551C96939100BF5EA1 /* PromoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A64C1C96939100BF5EA1 /* PromoteViewController.m */; };
 		30A4A6561C96939100BF5EA1 /* PromoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A4A64D1C96939100BF5EA1 /* PromoteViewController.xib */; };
@@ -65,6 +67,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30A3A9241CA96FD70076208B /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
+		30A3A9251CA96FD70076208B /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
+		30A3A9261CA96FD70076208B /* NewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		30A4A6491C96939100BF5EA1 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		30A4A64A1C96939100BF5EA1 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		30A4A64B1C96939100BF5EA1 /* PromoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromoteViewController.h; sourceTree = "<group>"; };
@@ -191,6 +196,9 @@
 				30ACF6461CA51E5C005B56EC /* WXWebViewController.xib */,
 				30A4A6491C96939100BF5EA1 /* NewsViewController.h */,
 				30A4A64A1C96939100BF5EA1 /* NewsViewController.m */,
+				30A3A9241CA96FD70076208B /* NewsCell.h */,
+				30A3A9251CA96FD70076208B /* NewsCell.m */,
+				30A3A9261CA96FD70076208B /* NewsCell.xib */,
 				30A4A64B1C96939100BF5EA1 /* PromoteViewController.h */,
 				30A4A64C1C96939100BF5EA1 /* PromoteViewController.m */,
 				30A4A64D1C96939100BF5EA1 /* PromoteViewController.xib */,
@@ -517,6 +525,7 @@
 			files = (
 				ACC205161C9A4FA500B26CDD /* Home.storyboard in Resources */,
 				30D18F231C9ADBF000559866 /* RegisterStoryBoard.storyboard in Resources */,
+				30A3A9281CA96FD70076208B /* NewsCell.xib in Resources */,
 				30ACF6481CA51E5C005B56EC /* WXWebViewController.xib in Resources */,
 				30A4A67C1C97F61000BF5EA1 /* ShoppingViewController.xib in Resources */,
 				AC5E1CEC1C904484008D91E5 /* Assets.xcassets in Resources */,
@@ -614,6 +623,7 @@
 				ACE32B1E1C96555500BD96E9 /* FuncViewCell.m in Sources */,
 				ACC2051C1C9A99DD00B26CDD /* Sales.m in Sources */,
 				ACC205021C9956D000B26CDD /* News.m in Sources */,
+				30A3A9271CA96FD70076208B /* NewsCell.m in Sources */,
 				30D18F291C9ADDC100559866 /* RegisterViewController.m in Sources */,
 				30A4A6741C96A0D800BF5EA1 /* AddProductViewController.m in Sources */,
 				30A4A6711C96A00F00BF5EA1 /* FansCommandViewController.m in Sources */,

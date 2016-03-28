@@ -16,12 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = self.title;
+    self.navigationItem.title = self.mytitle;
     if (self.url) {
+        NSLog(@"%@",self.url);
         [self.myWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.url]]];
-        return;
     }
-    [self loadUrl];
+    else{
+        [self loadUrl];
+    }
 }
 
 - (void)loadUrl{

@@ -10,5 +10,5 @@
 
 @interface WXWebViewController : UIViewController
 @property (nonatomic, copy) NSString *url;
-@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *mytitle;
 @end
