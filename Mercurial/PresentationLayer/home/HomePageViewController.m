@@ -32,6 +32,7 @@
     switch (sender.tag) {
         case 100:{
             WXWebViewController *vc = [[WXWebViewController alloc] init];
+            vc.title = @"公司简介";
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }

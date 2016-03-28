@@ -9,6 +9,7 @@
 #import "NewsViewController.h"
 #import "NewsManager.h"
 #import "News.h"
+#import "WXWebViewController.h"
 
 @interface NewsViewController ()
 @property (nonatomic, copy) NSArray *news;
@@ -59,6 +60,13 @@
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:new.imageURL] placeholderImage:[UIImage imageNamed:@"placehold"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
     }];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    News *new = self.news[indexPath.row];
+    WXWebViewController *vc = [[WXWebViewController alloc] init];
+    vc.url = new.webURL;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

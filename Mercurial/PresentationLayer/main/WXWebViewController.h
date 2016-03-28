@@ -9,4 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface WXWebViewController : UIViewController
+@property (nonatomic, copy) NSString *url;
+@property (nonatomic, copy) NSString *title;
 @end

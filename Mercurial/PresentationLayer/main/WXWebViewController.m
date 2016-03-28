@@ -16,7 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"公司简介";
+    self.navigationItem.title = self.title;
+    if (self.url) {
+        [self.myWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.url]]];
+        return;
+    }
     [self loadUrl];
 }
 
