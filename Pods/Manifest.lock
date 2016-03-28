@@ -36,6 +36,7 @@ DEPENDENCIES:
   - EAIntroView (~> 2.8.0)
   - ReactiveCocoa (= 2.3.1)
   - SDCycleScrollView (~> 1.61)
+  - SDWebImage
   - SVProgressHUD
 
 SPEC CHECKSUMS:
