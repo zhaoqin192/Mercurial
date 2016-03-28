@@ -82,7 +82,7 @@
  *  @param success
  *  @param failure
  */
-+ (void) requestIntroduceWithSuccess:(void (^)(NSString *))success
++ (void) requestIntroduceWithSuccess:(void (^)(NSString *url))success
                              failure:(void (^)())failure;
 
 /**

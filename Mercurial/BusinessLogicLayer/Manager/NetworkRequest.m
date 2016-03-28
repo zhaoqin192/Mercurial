@@ -113,7 +113,7 @@
     }];
 }
 
-+ (void) requestIntroduceWithSuccess:(void (^)(NSString *))success
++ (void) requestIntroduceWithSuccess:(void (^)(NSString *url))success
                              failure:(void (^)())failure{
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
     NSURL *url = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/Company/Index/companyAbout"]];
