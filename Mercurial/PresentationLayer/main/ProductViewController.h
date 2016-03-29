@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ProductViewController : UIViewController
-@property (nonatomic, copy) NSArray *news;
 @property (nonatomic, copy) NSString *mytitle;
 @property (nonatomic, assign) BOOL isNews;
+@property (nonatomic, copy) NSString *identify;
+@property (nonatomic, copy) NSString *Typeidentify;
 @end

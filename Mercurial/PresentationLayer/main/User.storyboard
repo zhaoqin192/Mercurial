@@ -233,6 +233,51 @@
             </objects>
             <point key="canvasLocation" x="-332" y="752"/>
         </scene>
+        <!--Product Detail View Controller-->
+        <scene sceneID="wvc-Q9-86j">
+            <objects>
+                <viewController storyboardIdentifier="ProductDetailViewController" id="0D8-bJ-Ygr" customClass="ProductDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4CI-QK-wdi"/>
+                        <viewControllerLayoutGuide type="bottom" id="DvV-2C-AKT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0rr-Ne-EUG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9hi-AL-RaZ">
+                                <rect key="frame" x="57" y="60" width="260" height="260"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="6zO-WI-x3c"/>
+                                    <constraint firstAttribute="height" constant="260" id="f72-TP-PNq"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLr-dU-KFq">
+                                <rect key="frame" x="57" y="350" width="260" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jLr-dU-KFq" firstAttribute="top" secondItem="9hi-AL-RaZ" secondAttribute="bottom" constant="30" id="FjH-ed-Y50"/>
+                            <constraint firstItem="9hi-AL-RaZ" firstAttribute="top" secondItem="4CI-QK-wdi" secondAttribute="bottom" constant="40" id="KNm-g0-FjJ"/>
+                            <constraint firstItem="jLr-dU-KFq" firstAttribute="leading" secondItem="9hi-AL-RaZ" secondAttribute="leading" id="Kel-64-mLl"/>
+                            <constraint firstItem="jLr-dU-KFq" firstAttribute="trailing" secondItem="9hi-AL-RaZ" secondAttribute="trailing" id="bmv-mL-bW3"/>
+                            <constraint firstItem="9hi-AL-RaZ" firstAttribute="centerX" secondItem="0rr-Ne-EUG" secondAttribute="centerX" id="qIT-Gs-x5z"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="introductText" destination="jLr-dU-KFq" id="9hR-86-1sf"/>
+                        <outlet property="picView" destination="9hi-AL-RaZ" id="abT-mB-oea"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v4y-KQ-F0F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-311.5" y="1552.5"/>
+        </scene>
         <!--Friends Introduce View Controller-->
         <scene sceneID="IK3-B8-beq">
             <objects>

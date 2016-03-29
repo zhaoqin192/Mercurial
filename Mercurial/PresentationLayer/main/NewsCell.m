@@ -9,7 +9,8 @@
 #import "NewsCell.h"
 #import "News.h"
 #import "Sales.h"
-
+#import "ProductType.h"
+#import "Product.h"
 @interface NewsCell()
 @property (weak, nonatomic) IBOutlet UIImageView *myImageView;
 @property (weak, nonatomic) IBOutlet UILabel *myTextLabel;
@@ -43,7 +44,22 @@
     self.myTextLabel.text = _sale.title;
 }
 
-- (void)setProduct:(ProductKind *)product{
+- (void)setProductKind:(ProductKind *)productKind{
+    _productKind = productKind;
+    NSLog(@"%@",_productKind.imageURL);
+    [self.myImageView sd_setImageWithURL:[NSURL URLWithString:_productKind.imageURL] placeholderImage:[UIImage imageNamed:@"placehold"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    }];
+    self.myTextLabel.text = _productKind.name;
+}
+
+- (void)setProductType:(ProductType *)productType{
+    _productType = productType;
+    [self.myImageView sd_setImageWithURL:[NSURL URLWithString:_productType.imageURL] placeholderImage:[UIImage imageNamed:@"placehold"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    }];
+    self.myTextLabel.text = _productType.name;
+}
+
+- (void)setProduct:(Product *)product{
     _product = product;
     [self.myImageView sd_setImageWithURL:[NSURL URLWithString:_product.imageURL] placeholderImage:[UIImage imageNamed:@"placehold"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
     }];

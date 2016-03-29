@@ -47,7 +47,8 @@
             break;
         }
         case 102:{
-            UITableViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"ProductViewController"];
+            ProductViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"ProductViewController"];
+            vc.mytitle = @"产品品牌";
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
