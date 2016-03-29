@@ -15,9 +15,12 @@
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
 #import "WXWebViewController.h"
+#import "Sales.h"
 
-@interface HomePageViewController ()
+@interface HomePageViewController () <SDCycleScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *scrollAdView;
+@property (strong, nonatomic) NSMutableArray *salesArray;
+@property (strong, nonatomic) NSMutableArray *imageUrlArray;
 
 @end
 
@@ -85,13 +88,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.salesArray = [[NSMutableArray alloc] init];
     [self configureScrollView];
 }
 
-
 - (void)configureScrollView{
-    NSArray *array = @[@"roundImage0", @"roundImage1", @"roundImage2"];
-    self.scrollAdView.localizationImageNamesGroup = array;
+    self.scrollAdView.delegate = self;
+    [NetworkRequest requestSalesType:@(0) success:^{
+        self.salesArray = [[SalesManager sharedManager] fetchRoundArray];
+        self.imageUrlArray = [[NSMutableArray alloc] init];
+        for (Sales *sale in self.salesArray) {
+            [self.imageUrlArray addObject:sale.imageURL];
+        }
+        self.scrollAdView.imageURLStringsGroup = self.imageUrlArray;
+    } failure:^{
+        [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+    }];
+}
+
+- (void)dismiss {
+    [SVProgressHUD dismiss];
 }
 
 - (IBAction)barButtonClicked:(UIBarButtonItem *)sender {
@@ -123,4 +140,13 @@
     RegisterViewController *vc = [sb instantiateInitialViewController];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
+    Sales *sale = self.salesArray[index];
+    WXWebViewController *vc = [[WXWebViewController alloc] init];
+    vc.mytitle = @"促销信息";
+    vc.url = sale.webURL;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 @end
