@@ -30,15 +30,15 @@ static ProductManager *sharedManager;
     return sharedManager;
 }
 
-- (NSMutableArray *)getProductKindArray{
+- (NSMutableArray *)fetchProductKindArray{
     return self.productKindArray;
 }
 
-- (NSMutableArray *)getProductTypeArray{
+- (NSMutableArray *)fetchProductTypeArray{
     return self.productTypeArray;
 }
 
-- (NSMutableArray *)getProductArray{
+- (NSMutableArray *)fetchProductArray{
     return self.productArray;
 }
 

@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProductKind.h"
 @class News;
 @class Sales;
+@class ProductKind;
 @interface NewsCell : UITableViewCell
 @property (nonatomic, strong) News *mynews;
 @property (nonatomic, strong) Sales *sale;
+@property (nonatomic, strong) ProductKind *product;
 @end

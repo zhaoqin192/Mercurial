@@ -16,6 +16,7 @@
 #import "RegisterViewController.h"
 #import "WXWebViewController.h"
 #import "Sales.h"
+#import "ProductViewController.h"
 
 @interface HomePageViewController () <SDCycleScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *scrollAdView;
@@ -45,9 +46,11 @@
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
-        case 102:
-            NSLog(@"产品介绍");
+        case 102:{
+            UITableViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"ProductViewController"];
+            [self.navigationController pushViewController:vc animated:YES];
             break;
+        }
         case 103:
             NSLog(@"产品推荐");
             break;

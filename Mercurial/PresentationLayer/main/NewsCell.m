@@ -43,4 +43,11 @@
     self.myTextLabel.text = _sale.title;
 }
 
+- (void)setProduct:(ProductKind *)product{
+    _product = product;
+    [self.myImageView sd_setImageWithURL:[NSURL URLWithString:_product.imageURL] placeholderImage:[UIImage imageNamed:@"placehold"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    }];
+    self.myTextLabel.text = _product.name;
+}
+
 @end

@@ -25,10 +25,10 @@
 
 + (ProductManager *)sharedManager;
 
-- (NSMutableArray *)getProductKindArray;
+- (NSMutableArray *)fetchProductKindArray;
 
-- (NSMutableArray *)getProductTypeArray;
+- (NSMutableArray *)fetchProductTypeArray;
 
-- (NSMutableArray *)getProductArray;
+- (NSMutableArray *)fetchProductArray;
 
 @end
