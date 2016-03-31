@@ -52,9 +52,13 @@
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
-        case 103:
+        case 103:{
+            ProductViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"ProductViewController"];
+            vc.mytitle = @"产品品牌";
+            [self.navigationController pushViewController:vc animated:YES];
             NSLog(@"产品推荐");
             break;
+        }
         case 104:{
             NewsViewController *vc = [[NewsViewController alloc] initWithStyle:UITableViewStylePlain];
             vc.isNews = NO;
