@@ -8,6 +8,9 @@
 
 #import "TestViewController.h"
 #import "NetworkRequest.h"
+#import "AssetsLibrary/AssetsLibrary.h"
+#import "Order.h"
+#import "MJExtension.h"
 
 @interface TestViewController ()
 
@@ -145,5 +148,81 @@
         
     }];
     
+}
+
+- (IBAction)uploadAvatar:(id)sender {
+    
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    imagePickerController.delegate = self;
+    [self presentViewController:imagePickerController animated:YES completion:nil];
+    
+}
+
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    
+    NSString *mediaType = [info objectForKey: UIImagePickerControllerMediaType];
+    UIImage *originalImage, *editedImage, *imageToUse;
+    // Handle a still image picked from a photo album
+    if (CFStringCompare ((CFStringRef) mediaType, kUTTypeImage, 0)
+        == kCFCompareEqualTo) {
+        
+        editedImage = (UIImage *) [info objectForKey:
+                                   UIImagePickerControllerEditedImage];
+        originalImage = (UIImage *) [info objectForKey:
+                                     UIImagePickerControllerOriginalImage];
+        
+        if (editedImage) {
+            imageToUse = editedImage;
+        } else {
+            imageToUse = originalImage;
+        }
+        // Do something with imageToUse
+        self.pickImage.image = imageToUse;
+        
+    }
+    [picker dismissViewControllerAnimated:YES completion:^{
+       [NetworkRequest uploadAvatar:imageToUse success:^{
+           
+       } failure:^{
+           
+       }];
+    }];
+}
+
+- (IBAction)orderList:(id)sender {
+    [NetworkRequest requestOrderListWithSuccess:^{
+        
+    } failure:^{
+        
+    }];
+}
+
+- (IBAction)addOrder:(id)sender {
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    for(int i = 0; i < 4; i++){
+        Order *order = [[Order alloc] init];
+        order.product_usage = @"1";
+        order.product_name = @"2";
+        order.product_level = @"3";
+        order.product_price = [NSNumber numberWithInteger:4];
+        order.product_amount = [NSNumber numberWithInteger:5];
+        [array addObject:order];
+    }
+    
+    [NetworkRequest requestAddOrderWithID:@"201603312123" name:@"sd" province:@"asdf" city:@"asdf" district:@"asdf" address:@"sdfds" phone:@"18810541555" date:@"2015-10-20" item:array success:^{
+        
+    } failure:^{
+        
+    }];
+    
+}
+
+- (IBAction)recommendList:(id)sender {
+    [NetworkRequest requestCommendList:^{
+        
+    } failure:^{
+        
+    }];
 }
 @end

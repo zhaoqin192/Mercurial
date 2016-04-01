@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="x8e-XB-6vk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="x8e-XB-6vk">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -116,7 +116,7 @@
                                                     <constraint firstAttribute="height" constant="20" id="qZF-9Z-mvK"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainmenu_company" translatesAutoresizingMaskIntoConstraints="NO" id="4u2-ej-CuI">
@@ -142,19 +142,19 @@
                                             <outletCollection property="gestureRecognizers" destination="y6j-kr-RTT" appends="YES" id="Ujv-6R-j4r"/>
                                         </connections>
                                     </view>
-                                    <view tag="104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oVj-va-mK4">
+                                    <view tag="104" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oVj-va-mK4">
                                         <rect key="frame" x="127" y="96" width="121" height="91"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="促销信息" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cy3-ON-jBg">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="促销信息" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cy3-ON-jBg">
                                                 <rect key="frame" x="0.0" y="60" width="121" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="YUu-lr-TVC"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainmenu_sale" translatesAutoresizingMaskIntoConstraints="NO" id="Grj-pL-CX5">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="mainmenu_sale" translatesAutoresizingMaskIntoConstraints="NO" id="Grj-pL-CX5">
                                                 <rect key="frame" x="10" y="-5" width="101" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="jCc-KJ-E97"/>
@@ -187,7 +187,7 @@
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="IFG-gN-Af9"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainmenu_usercenter" translatesAutoresizingMaskIntoConstraints="NO" id="7L4-PI-LrR">
@@ -213,19 +213,19 @@
                                             <outletCollection property="gestureRecognizers" destination="OuC-yY-cxA" appends="YES" id="9Mg-F3-rnS"/>
                                         </connections>
                                     </view>
-                                    <view tag="105" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wyl-De-sR9">
+                                    <view tag="105" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wyl-De-sR9">
                                         <rect key="frame" x="251" y="96" width="121" height="91"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商城" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78h-to-YvP">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="商城" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78h-to-YvP">
                                                 <rect key="frame" x="0.0" y="60" width="121" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="Fd9-z0-62B"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainmenu_mall" translatesAutoresizingMaskIntoConstraints="NO" id="KzI-W5-kGM">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="mainmenu_mall" translatesAutoresizingMaskIntoConstraints="NO" id="KzI-W5-kGM">
                                                 <rect key="frame" x="10" y="-5" width="101" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="M84-MY-nOH"/>
@@ -258,7 +258,7 @@
                                                     <constraint firstAttribute="height" constant="20" id="Vla-8e-BAP"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainmenu_scan" translatesAutoresizingMaskIntoConstraints="NO" id="ffG-MT-WgA">
@@ -294,7 +294,7 @@
                                                     <constraint firstAttribute="height" constant="20" id="ZAw-9L-Muu"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainmenu_news" translatesAutoresizingMaskIntoConstraints="NO" id="1vj-Gb-03p">
@@ -330,7 +330,7 @@
                                                     <constraint firstAttribute="height" constant="20" id="llH-iA-MxL"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainmenu_message" translatesAutoresizingMaskIntoConstraints="NO" id="8vl-95-70b">
@@ -356,20 +356,20 @@
                                             <outletCollection property="gestureRecognizers" destination="IYj-Cr-KC2" appends="YES" id="2Tn-bI-d40"/>
                                         </connections>
                                     </view>
-                                    <view tag="103" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QcF-pn-QSx">
+                                    <view tag="103" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QcF-pn-QSx">
                                         <rect key="frame" x="3" y="96" width="121" height="91"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新产品推荐" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llb-6T-Hqe">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="新产品推荐" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llb-6T-Hqe">
                                                 <rect key="frame" x="0.0" y="60" width="121" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="3JT-tk-iQR"/>
                                                     <constraint firstAttribute="height" constant="20" id="as7-7E-nhz"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainmenu_promote" translatesAutoresizingMaskIntoConstraints="NO" id="Mqk-t1-tQ4">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="mainmenu_promote" translatesAutoresizingMaskIntoConstraints="NO" id="Mqk-t1-tQ4">
                                                 <rect key="frame" x="10" y="-5" width="101" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="3zJ-Ob-teN"/>
@@ -402,7 +402,7 @@
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="tfB-7G-Rxf"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainmenu_product" translatesAutoresizingMaskIntoConstraints="NO" id="Z9q-Fu-z5f">
@@ -709,11 +709,43 @@
                                     <action selector="setProduct:" destination="Mfs-y6-O86" eventType="touchUpInside" id="pwi-w3-b4D"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ff-8c-RqX">
+                                <rect key="frame" x="130" y="50" width="90" height="30"/>
+                                <state key="normal" title="uploadAvatar"/>
+                                <connections>
+                                    <action selector="uploadAvatar:" destination="Mfs-y6-O86" eventType="touchUpInside" id="8s5-6W-Hjv"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="balance" translatesAutoresizingMaskIntoConstraints="NO" id="o92-Nc-7jO">
+                                <rect key="frame" x="130" y="83" width="100" height="100"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzr-OB-DgM">
+                                <rect key="frame" x="130" y="202" width="62" height="30"/>
+                                <state key="normal" title="orderList"/>
+                                <connections>
+                                    <action selector="orderList:" destination="Mfs-y6-O86" eventType="touchUpInside" id="50h-LP-4VD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2a1-4i-WQB">
+                                <rect key="frame" x="130" y="240" width="63" height="30"/>
+                                <state key="normal" title="addorder"/>
+                                <connections>
+                                    <action selector="addOrder:" destination="Mfs-y6-O86" eventType="touchUpInside" id="2tj-PT-JYG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmT-db-aGB">
+                                <rect key="frame" x="130" y="285" width="93" height="30"/>
+                                <state key="normal" title="commendList"/>
+                                <connections>
+                                    <action selector="recommendList:" destination="Mfs-y6-O86" eventType="touchUpInside" id="qsp-i5-mMi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="getProduct" destination="jyd-sI-a1N" id="KNQ-do-C5u"/>
+                        <outlet property="pickImage" destination="o92-Nc-7jO" id="l7r-Kj-EPD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yH-Mi-uu8" userLabel="First Responder" sceneMemberID="firstResponder"/>

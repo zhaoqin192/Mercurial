@@ -28,7 +28,6 @@ static SalesManager *sharedManager;
 }
 
 - (NSMutableArray *) fetchSalesArray{
-    NSLog(@"aaaa %zd",self.salesArray.count);
     return self.salesArray;
 }
 

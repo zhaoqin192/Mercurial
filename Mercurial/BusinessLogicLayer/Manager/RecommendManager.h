@@ -1,0 +1,24 @@
+//
+//  RecommendManager.h
+//  Mercurial
+//
+//  Created by zhaoqin on 4/1/16.
+//  Copyright © 2016 muggins. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "Recommend.h"
+
+@interface RecommendManager : NSObject
+
+@property (nonatomic, strong) NSMutableArray *commendArray;
+
++ (RecommendManager *) sharedManager;
+
+- (NSMutableArray *) fetchCommendArray;
+
+- (void) addToCommendArray:(Recommend *)commend;
+
+- (void) cleanCommendArray;
+
+@end

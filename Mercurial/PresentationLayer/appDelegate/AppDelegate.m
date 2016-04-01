@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HomePageViewController.h"
+#import "TestViewController.h"
 
 @interface AppDelegate () <EAIntroDelegate>
 
@@ -20,7 +21,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     
-    HomePageViewController *vc = [[UIStoryboard storyboardWithName:@"Home" bundle:nil] instantiateInitialViewController];
+//    HomePageViewController *vc = [[UIStoryboard storyboardWithName:@"Home" bundle:nil] instantiateInitialViewController];
+    TestViewController *vc = [[UIStoryboard storyboardWithName:@"Home" bundle:nil] instantiateInitialViewController];
+    
+    
     self.window.rootViewController =vc;
     
     [self configureNavigationItem];

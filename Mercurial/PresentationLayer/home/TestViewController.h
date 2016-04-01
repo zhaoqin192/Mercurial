@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TestViewController : UIViewController
+@interface TestViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 - (IBAction)register:(id)sender;
 - (IBAction)login:(id)sender;
 - (IBAction)logout:(id)sender;
@@ -23,5 +23,10 @@
 - (IBAction)requestMall:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *getProduct;
 - (IBAction)setProduct:(id)sender;
+- (IBAction)uploadAvatar:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *pickImage;
+- (IBAction)orderList:(id)sender;
+- (IBAction)addOrder:(id)sender;
+- (IBAction)recommendList:(id)sender;
 
 @end
