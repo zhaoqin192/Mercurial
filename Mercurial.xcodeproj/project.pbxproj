@@ -39,6 +39,7 @@
 		30D18F261C9ADDAF00559866 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D18F251C9ADDAF00559866 /* LoginViewController.m */; };
 		30D18F291C9ADDC100559866 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D18F281C9ADDC100559866 /* RegisterViewController.m */; };
 		30D18F2C1C9E484F00559866 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D18F2B1C9E484F00559866 /* HomePageViewController.m */; };
+		30D407731CAD641B0068FD85 /* HomeLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D407721CAD641B0068FD85 /* HomeLeftViewController.m */; };
 		8D036F0D3D5D69D4249794B4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8BCBA5CED9CE1AD81A140B /* libPods.a */; };
 		AC5182621CAE4DFB0095BAB6 /* Recommend.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5182611CAE4DFB0095BAB6 /* Recommend.m */; };
 		AC5182651CAE4E6A0095BAB6 /* RecommendManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5182641CAE4E6A0095BAB6 /* RecommendManager.m */; };
@@ -137,6 +138,8 @@
 		30D18F281C9ADDC100559866 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		30D18F2A1C9E484F00559866 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
 		30D18F2B1C9E484F00559866 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
+		30D407711CAD641B0068FD85 /* HomeLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeLeftViewController.h; sourceTree = "<group>"; };
+		30D407721CAD641B0068FD85 /* HomeLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeLeftViewController.m; sourceTree = "<group>"; };
 		59A6001685EAEFD7AF2127DC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6A8BCBA5CED9CE1AD81A140B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC5182601CAE4DFB0095BAB6 /* Recommend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recommend.h; sourceTree = "<group>"; };
@@ -489,6 +492,8 @@
 				ACC205141C9A4FA500B26CDD /* Home.storyboard */,
 				30D18F2A1C9E484F00559866 /* HomePageViewController.h */,
 				30D18F2B1C9E484F00559866 /* HomePageViewController.m */,
+				30D407711CAD641B0068FD85 /* HomeLeftViewController.h */,
+				30D407721CAD641B0068FD85 /* HomeLeftViewController.m */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -688,6 +693,7 @@
 				ACC3D7F91CAD4132000FBE93 /* Order.m in Sources */,
 				30A3A9271CA96FD70076208B /* NewsCell.m in Sources */,
 				30D18F291C9ADDC100559866 /* RegisterViewController.m in Sources */,
+				30D407731CAD641B0068FD85 /* HomeLeftViewController.m in Sources */,
 				30A4A6741C96A0D800BF5EA1 /* AddProductViewController.m in Sources */,
 				30A4A6711C96A00F00BF5EA1 /* FansCommandViewController.m in Sources */,
 				AC5182681CAE5F670095BAB6 /* Topic.m in Sources */,
@@ -796,12 +802,15 @@
 			baseConfigurationReference = 59A6001685EAEFD7AF2127DC /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jianwei Shu (5CT8R4N349)";
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = Mercurial/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.muggins.Mercurial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "96f0d9c8-cbfa-4001-b39d-5c4232fb0bc5";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -810,12 +819,15 @@
 			baseConfigurationReference = F13185264FDB502171C80DA5 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jianwei Shu (5CT8R4N349)";
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = Mercurial/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.muggins.Mercurial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "96f0d9c8-cbfa-4001-b39d-5c4232fb0bc5";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

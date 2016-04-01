@@ -9,9 +9,11 @@
 #import "AppDelegate.h"
 #import "HomePageViewController.h"
 #import "TestViewController.h"
+#import "MMDrawerController.h"
+#import "HomeLeftViewController.h"
 
 @interface AppDelegate () <EAIntroDelegate>
-
+@property (nonatomic,strong) MMDrawerController * drawerController;
 @end
 
 @implementation AppDelegate
@@ -22,10 +24,18 @@
     [self.window makeKeyAndVisible];
     
 //    HomePageViewController *vc = [[UIStoryboard storyboardWithName:@"Home" bundle:nil] instantiateInitialViewController];
-    TestViewController *vc = [[UIStoryboard storyboardWithName:@"Home" bundle:nil] instantiateInitialViewController];
+//    TestViewController *vc = [[UIStoryboard storyboardWithName:@"Home" bundle:nil] instantiateInitialViewController];
+//    self.window.rootViewController =vc;
     
     
-    self.window.rootViewController =vc;
+    HomePageViewController *vc = [[UIStoryboard storyboardWithName:@"Home" bundle:nil] instantiateInitialViewController];
+    HomeLeftViewController *leftvc = [[UIStoryboard storyboardWithName:@"Home" bundle:nil] instantiateViewControllerWithIdentifier:@"HomeLeftViewController"];
+    self.drawerController = [[MMDrawerController alloc]
+                             initWithCenterViewController:vc
+                             leftDrawerViewController:leftvc
+                             rightDrawerViewController:leftvc];
+    
+    self.window.rootViewController = self.drawerController;
     
     [self configureNavigationItem];
     [self configureIntroView];

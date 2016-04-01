@@ -594,6 +594,80 @@
             </objects>
             <point key="canvasLocation" x="635.5" y="2398.5"/>
         </scene>
+        <!--Home Left View Controller-->
+        <scene sceneID="n0Q-AV-Rmk">
+            <objects>
+                <viewController storyboardIdentifier="HomeLeftViewController" id="SqH-2l-0od" customClass="HomeLeftViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xQS-nj-Lz2"/>
+                        <viewControllerLayoutGuide type="bottom" id="DCp-Cc-HTk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c9Z-Ho-qfO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n0r-2d-E2S">
+                                <rect key="frame" x="0.0" y="259" width="375" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nv3-wn-AmV">
+                                        <rect key="frame" x="30" y="30" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="22N-7K-rwe"/>
+                                            <constraint firstAttribute="width" constant="30" id="lf1-6w-YbU"/>
+                                        </constraints>
+                                        <state key="normal" title="登录">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginButtonClicked" destination="SqH-2l-0od" eventType="touchUpInside" id="9s9-gp-Yyj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eV2-5x-pkk">
+                                        <rect key="frame" x="30" y="90" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="bS4-06-Moz"/>
+                                            <constraint firstAttribute="height" constant="30" id="o59-X2-hwe"/>
+                                        </constraints>
+                                        <state key="normal" title="注册">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="registerButtonClicked" destination="SqH-2l-0od" eventType="touchUpInside" id="Ow8-eo-si7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="nv3-wn-AmV" firstAttribute="top" secondItem="n0r-2d-E2S" secondAttribute="top" constant="30" id="UHm-YW-od4"/>
+                                    <constraint firstAttribute="height" constant="150" id="We2-QZ-oUi"/>
+                                    <constraint firstAttribute="bottom" secondItem="eV2-5x-pkk" secondAttribute="bottom" constant="30" id="alx-61-o8M"/>
+                                    <constraint firstItem="nv3-wn-AmV" firstAttribute="leading" secondItem="n0r-2d-E2S" secondAttribute="leading" constant="30" id="pNa-oz-Bq3"/>
+                                    <constraint firstItem="eV2-5x-pkk" firstAttribute="leading" secondItem="n0r-2d-E2S" secondAttribute="leading" constant="30" id="xVp-GC-HO6"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n0r-2d-E2S" firstAttribute="leading" secondItem="c9Z-Ho-qfO" secondAttribute="leading" id="H7d-t0-aty"/>
+                            <constraint firstItem="n0r-2d-E2S" firstAttribute="centerY" secondItem="c9Z-Ho-qfO" secondAttribute="centerY" id="Qdw-Ff-0jN"/>
+                            <constraint firstAttribute="trailing" secondItem="n0r-2d-E2S" secondAttribute="trailing" id="ffT-M2-ASb"/>
+                            <constraint firstItem="n0r-2d-E2S" firstAttribute="centerX" secondItem="c9Z-Ho-qfO" secondAttribute="centerX" id="iea-Qd-kHF"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="iea-Qd-kHF"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="MiddleView" destination="n0r-2d-E2S" id="msL-Kd-5SH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AZ2-EJ-FcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="687" y="3226"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gdm-S1-j54">
             <objects>

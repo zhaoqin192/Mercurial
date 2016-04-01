@@ -17,6 +17,7 @@
 #import "WXWebViewController.h"
 #import "Sales.h"
 #import "ProductViewController.h"
+#import "UIViewController+MMDrawerController.h"
 
 @interface HomePageViewController () <SDCycleScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *scrollAdView;
@@ -29,6 +30,11 @@
 - (IBAction)viewTapped:(UITapGestureRecognizer *)sender {
     UIView *view = sender.view;
     [self buttonClicked:view];
+}
+
+- (void)configureNotifacation{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginButtonClicked) name:@"loginButtonClicked" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registerButtonClicked) name:@"registerButtonClicked" object:nil];
 }
 
 - (void)buttonClicked:(UIView *)sender {
@@ -52,9 +58,13 @@
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
-        case 103:
+        case 103:{
+            ProductViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"ProductViewController"];
+            vc.mytitle = @"产品品牌";
+            [self.navigationController pushViewController:vc animated:YES];
             NSLog(@"产品推荐");
             break;
+        }
         case 104:{
             NewsViewController *vc = [[NewsViewController alloc] initWithStyle:UITableViewStylePlain];
             vc.isNews = NO;
@@ -94,6 +104,7 @@
     [super viewDidLoad];
     self.salesArray = [[NSMutableArray alloc] init];
     [self configureScrollView];
+    [self configureNotifacation];
 }
 
 - (void)configureScrollView{
@@ -116,21 +127,23 @@
 }
 
 - (IBAction)barButtonClicked:(UIBarButtonItem *)sender {
-    NSArray *menuItems =
-    @[
-      [KxMenuItem menuItem:@"注册"
-                     image:nil
-                    target:self
-                    action:@selector(registerButtonClicked)],
-      
-      [KxMenuItem menuItem:@"登录"
-                     image:nil
-                    target:self
-                    action:@selector(loginButtonClicked)],
-      ];
-    [KxMenu showMenuInView:self.view
-                  fromRect:CGRectMake(KScreen_width-40, 44, 20, 20)
-                 menuItems:menuItems];
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+    
+//    NSArray *menuItems =
+//    @[
+//      [KxMenuItem menuItem:@"注册"
+//                     image:nil
+//                    target:self
+//                    action:@selector(registerButtonClicked)],
+//      
+//      [KxMenuItem menuItem:@"登录"
+//                     image:nil
+//                    target:self
+//                    action:@selector(loginButtonClicked)],
+//      ];
+//    [KxMenu showMenuInView:self.view
+//                  fromRect:CGRectMake(KScreen_width-40, 44, 20, 20)
+//                 menuItems:menuItems];
 }
 
 - (void)loginButtonClicked{
@@ -151,6 +164,10 @@
     vc.mytitle = @"促销信息";
     vc.url = sale.webURL;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
