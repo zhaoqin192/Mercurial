@@ -7,6 +7,8 @@
 //
 
 #import "LoginViewController.h"
+#import "AccountDao.h"
+#import "Account.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
@@ -21,11 +23,22 @@
     [super viewDidLoad];
     self.navigationItem.title = @"用户登录";
     self.automaticallyAdjustsScrollViewInsets = NO;
-    [self.nameTextField becomeFirstResponder];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"menu_bg"]]];
     [self configureLoginButton];
+    [self configureTextField];
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+}
+
+- (void)configureTextField{
+    Account *account = [[[AccountDao alloc] init] getAccount];
+    if (account) {
+        self.nameTextField.text = account.accountName;
+        [self.passwordTextField becomeFirstResponder];
+    }
+    else{
+        [self.nameTextField becomeFirstResponder];
+    }
 }
 
 - (void)configureLoginButton{
