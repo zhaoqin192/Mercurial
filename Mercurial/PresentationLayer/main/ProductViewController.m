@@ -141,11 +141,10 @@
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if([self.mytitle isEqualToString:@"产品列表"]){
-//        ProductDetailViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"ProductDetailViewController"];
-//        Product *product = self.list[indexPath.row];
-//        vc.identify = product.identifier;
-//        [self.navigationController pushViewController:vc animated:YES];
-        NSLog(@"产品详情");
+        ProductDetailViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"ProductDetailViewController"];
+        Product *product = self.list[indexPath.row];
+        vc.identify = product.identifier;
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 

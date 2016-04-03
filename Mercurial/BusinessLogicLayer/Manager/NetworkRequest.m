@@ -236,7 +236,7 @@
         NSLog(@"JSON: %@", responseObject);
         NSDictionary *dic = responseObject;
         ProductManager *manager = [ProductManager sharedManager];
-        manager.product.imageURL = [dic objectForKey:@"image"];
+        manager.product.imageURLArray = [dic objectForKey:@"image"];
         manager.product.productInfo = [dic objectForKey:@"product_intro"];
         success();
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

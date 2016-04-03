@@ -245,33 +245,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9hi-AL-RaZ">
-                                <rect key="frame" x="57" y="60" width="260" height="260"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m0E-xE-Lk4" customClass="SDCycleScrollView">
+                                <rect key="frame" x="37" y="60" width="300" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="260" id="6zO-WI-x3c"/>
-                                    <constraint firstAttribute="height" constant="260" id="f72-TP-PNq"/>
+                                    <constraint firstAttribute="height" constant="250" id="8u9-GC-Sl4"/>
+                                    <constraint firstAttribute="width" constant="300" id="ZhY-Gc-EyA"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLr-dU-KFq">
-                                <rect key="frame" x="57" y="350" width="260" height="21"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLr-dU-KFq">
+                                <rect key="frame" x="37" y="340" width="300" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jLr-dU-KFq" firstAttribute="top" secondItem="9hi-AL-RaZ" secondAttribute="bottom" constant="30" id="FjH-ed-Y50"/>
-                            <constraint firstItem="9hi-AL-RaZ" firstAttribute="top" secondItem="4CI-QK-wdi" secondAttribute="bottom" constant="40" id="KNm-g0-FjJ"/>
-                            <constraint firstItem="jLr-dU-KFq" firstAttribute="leading" secondItem="9hi-AL-RaZ" secondAttribute="leading" id="Kel-64-mLl"/>
-                            <constraint firstItem="jLr-dU-KFq" firstAttribute="trailing" secondItem="9hi-AL-RaZ" secondAttribute="trailing" id="bmv-mL-bW3"/>
-                            <constraint firstItem="9hi-AL-RaZ" firstAttribute="centerX" secondItem="0rr-Ne-EUG" secondAttribute="centerX" id="qIT-Gs-x5z"/>
+                            <constraint firstItem="jLr-dU-KFq" firstAttribute="trailing" secondItem="m0E-xE-Lk4" secondAttribute="trailing" id="9V6-ZZ-XLe"/>
+                            <constraint firstItem="jLr-dU-KFq" firstAttribute="top" secondItem="m0E-xE-Lk4" secondAttribute="bottom" constant="30" id="M0s-bO-RFn"/>
+                            <constraint firstItem="jLr-dU-KFq" firstAttribute="leading" secondItem="m0E-xE-Lk4" secondAttribute="leading" id="MQ2-Uf-cdV"/>
+                            <constraint firstItem="m0E-xE-Lk4" firstAttribute="top" secondItem="4CI-QK-wdi" secondAttribute="bottom" constant="40" id="kU1-FP-huA"/>
+                            <constraint firstItem="m0E-xE-Lk4" firstAttribute="centerX" secondItem="0rr-Ne-EUG" secondAttribute="centerX" id="pro-tm-W99"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="cycleView" destination="m0E-xE-Lk4" id="0CI-O4-JnU"/>
                         <outlet property="introductText" destination="jLr-dU-KFq" id="9hR-86-1sf"/>
-                        <outlet property="picView" destination="9hi-AL-RaZ" id="abT-mB-oea"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v4y-KQ-F0F" userLabel="First Responder" sceneMemberID="firstResponder"/>

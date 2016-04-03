@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSString *identifier;
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, copy) NSArray *imageURLArray;
 @property (nonatomic, strong) NSString *imageURL;
 @property (nonatomic, strong) NSString *productInfo;
 

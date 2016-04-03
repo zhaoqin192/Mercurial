@@ -9,9 +9,10 @@
 #import "ProductDetailViewController.h"
 #import "ProductManager.h"
 #import "Product.h"
+#import "SDCycleScrollView.h"
 
 @interface ProductDetailViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *picView;
+@property (weak, nonatomic) IBOutlet SDCycleScrollView *cycleView;
 @property (weak, nonatomic) IBOutlet UILabel *introductText;
 @property (strong, nonatomic) Product *product;
 
@@ -22,14 +23,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"商品详情";
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.cycleView.autoScroll = NO;
+    self.cycleView.infiniteLoop = NO;
     [self loadData];
 }
 
 - (void)loadData{
     [NetworkRequest requestProductDetailWithID:self.identify success:^{
         self.product = [ProductManager sharedManager].product;
-        
         self.introductText.text = self.product.productInfo;
+        self.cycleView.imageURLStringsGroup = self.product.imageURLArray;
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
