@@ -10,9 +10,13 @@
 #import "UIViewController+MMDrawerController.h"
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
+#import "AccountDao.h"
+#import "Account.h"
 
 @interface HomeLeftViewController ()
 @property (weak, nonatomic) IBOutlet UIView *MiddleView;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
 
 @end
 
@@ -22,6 +26,13 @@
     [super viewDidLoad];
     self.MiddleView.backgroundColor = [UIColor clearColor];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"menu_bg"]]];
+}
+
+- (void)configureButton{
+    Account *account = [[[AccountDao alloc] init] getAccount];
+    if (account) {
+        
+    }
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

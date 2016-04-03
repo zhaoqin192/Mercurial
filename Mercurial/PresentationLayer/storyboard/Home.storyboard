@@ -662,6 +662,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="MiddleView" destination="n0r-2d-E2S" id="msL-Kd-5SH"/>
+                        <outlet property="loginButton" destination="nv3-wn-AmV" id="SgT-Ej-3PU"/>
+                        <outlet property="registerButton" destination="eV2-5x-pkk" id="aVl-Jc-X2H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AZ2-EJ-FcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
