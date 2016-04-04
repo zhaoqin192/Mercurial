@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		305F859A1CB2524600F42B33 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 305F85981CB2524600F42B33 /* NSDate+Helper.m */; };
+		305F859B1CB2524600F42B33 /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = 305F85991CB2524600F42B33 /* README.textile */; };
+		305F859E1CB252DC00F42B33 /* NSDate+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 305F859D1CB252DC00F42B33 /* NSDate+Common.m */; };
+		305F85A11CB2530C00F42B33 /* NSDate+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 305F85A01CB2530C00F42B33 /* NSDate+convenience.m */; };
 		30A3A9271CA96FD70076208B /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A3A9251CA96FD70076208B /* NewsCell.m */; };
 		30A3A9281CA96FD70076208B /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A3A9261CA96FD70076208B /* NewsCell.xib */; };
 		30A3A92C1CAA44980076208B /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A3A92A1CAA44980076208B /* ProductViewController.m */; };
@@ -79,6 +83,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		305F85971CB2524600F42B33 /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
+		305F85981CB2524600F42B33 /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
+		305F85991CB2524600F42B33 /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
+		305F859C1CB252DC00F42B33 /* NSDate+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Common.h"; sourceTree = "<group>"; };
+		305F859D1CB252DC00F42B33 /* NSDate+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Common.m"; sourceTree = "<group>"; };
+		305F859F1CB2530C00F42B33 /* NSDate+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+convenience.h"; sourceTree = "<group>"; };
+		305F85A01CB2530C00F42B33 /* NSDate+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+convenience.m"; sourceTree = "<group>"; };
 		30A3A9241CA96FD70076208B /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
 		30A3A9251CA96FD70076208B /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
 		30A3A9261CA96FD70076208B /* NewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
@@ -225,6 +236,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		305F85961CB2524600F42B33 /* NSDate+Helper */ = {
+			isa = PBXGroup;
+			children = (
+				305F859F1CB2530C00F42B33 /* NSDate+convenience.h */,
+				305F85A01CB2530C00F42B33 /* NSDate+convenience.m */,
+				305F859C1CB252DC00F42B33 /* NSDate+Common.h */,
+				305F859D1CB252DC00F42B33 /* NSDate+Common.m */,
+				305F85971CB2524600F42B33 /* NSDate+Helper.h */,
+				305F85981CB2524600F42B33 /* NSDate+Helper.m */,
+				305F85991CB2524600F42B33 /* README.textile */,
+			);
+			path = "NSDate+Helper";
+			sourceTree = "<group>";
+		};
 		30A4A6481C96938100BF5EA1 /* main */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +289,7 @@
 		30A4A65B1C96980200BF5EA1 /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
+				305F85961CB2524600F42B33 /* NSDate+Helper */,
 				30ACF6661CA6A661005B56EC /* UIColor+expanded */,
 				30ACF6491CA58773005B56EC /* ActionSheetPicker */,
 				30D18F1B1C9AD79500559866 /* KxMenu */,
@@ -592,6 +618,7 @@
 				30A4A67C1C97F61000BF5EA1 /* ShoppingViewController.xib in Resources */,
 				AC5E1CEC1C904484008D91E5 /* Assets.xcassets in Resources */,
 				30D18F211C9ADBE500559866 /* LoginStoryboard.storyboard in Resources */,
+				305F859B1CB2524600F42B33 /* README.textile in Resources */,
 				30A4A6591C96939100BF5EA1 /* User.storyboard in Resources */,
 				30A4A6581C96939100BF5EA1 /* ScanViewController.xib in Resources */,
 			);
@@ -664,6 +691,7 @@
 				ACC204F11C99283A00B26CDD /* AccountDao.m in Sources */,
 				AC5182741CAE69F90095BAB6 /* Type.m in Sources */,
 				ACC204E41C99037C00B26CDD /* Utility.m in Sources */,
+				305F85A11CB2530C00F42B33 /* NSDate+convenience.m in Sources */,
 				ACC205111C9A479100B26CDD /* ProductManager.m in Sources */,
 				30ACF6621CA58773005B56EC /* SWActionSheet.m in Sources */,
 				ACC2050A1C99587A00B26CDD /* NewsManager.m in Sources */,
@@ -688,6 +716,7 @@
 				ACC205191C9A50D600B26CDD /* TestViewController.m in Sources */,
 				ACC204E71C99065C00B26CDD /* NetworkRequest.m in Sources */,
 				ACC2051C1C9A99DD00B26CDD /* Sales.m in Sources */,
+				305F859A1CB2524600F42B33 /* NSDate+Helper.m in Sources */,
 				AC5182651CAE4E6A0095BAB6 /* RecommendManager.m in Sources */,
 				ACC205021C9956D000B26CDD /* News.m in Sources */,
 				ACC3D7F91CAD4132000FBE93 /* Order.m in Sources */,
@@ -703,6 +732,7 @@
 				30D18F2C1C9E484F00559866 /* HomePageViewController.m in Sources */,
 				30D18F1E1C9AD79500559866 /* KxMenu.m in Sources */,
 				ACC3D7FC1CAD50D2000FBE93 /* AddOrder.m in Sources */,
+				305F859E1CB252DC00F42B33 /* NSDate+Common.m in Sources */,
 				30ACF6471CA51E5C005B56EC /* WXWebViewController.m in Sources */,
 				30ACF6611CA58773005B56EC /* DistancePickerView.m in Sources */,
 				AC5182711CAE65A30095BAB6 /* AnswerManager.m in Sources */,
