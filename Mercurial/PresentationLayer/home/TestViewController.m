@@ -11,6 +11,7 @@
 #import "AssetsLibrary/AssetsLibrary.h"
 #import "Order.h"
 #import "MJExtension.h"
+#import "DatabaseManager.h"
 
 @interface TestViewController ()
 
@@ -88,7 +89,6 @@
 //    } failure:^{
 //        
 //    }];
-    
 }
 
 - (IBAction)productKind:(id)sender {

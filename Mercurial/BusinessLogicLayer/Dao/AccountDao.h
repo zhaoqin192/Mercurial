@@ -15,7 +15,6 @@
 @interface AccountDao : NSObject
 
 - (void) insertWithAccountName:(NSString *)accountName
-                      password:(NSString *)password
                          phone:(NSString *)phone
                            sex:(NSString *)sex
                            age:(NSInteger)age
@@ -31,7 +30,7 @@
                           city:(NSString *)city
                       district:(NSString *)district
                        address:(NSString *)address
-                      isBought:(NSNumber *)isBought
+                      isBought:(NSInteger)isBought
                          brand:(NSString *)brand
                            way:(NSString *)way
                     experience:(NSString *)experience
@@ -48,5 +47,7 @@
 
 - (void) deleteAccountSuccess:(void (^)())success
                       failure:(void (^)())failure;
+
+- (BOOL) isLogin;
 
 @end

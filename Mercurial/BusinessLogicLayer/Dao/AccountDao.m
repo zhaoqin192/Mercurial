@@ -21,7 +21,6 @@
 }
 
 - (void) insertWithAccountName:(NSString *)accountName
-                      password:(NSString *)password
                          phone:(NSString *)phone
                            sex:(NSString *)sex
                            age:(NSInteger)age
@@ -37,7 +36,7 @@
                           city:(NSString *)city
                       district:(NSString *)district
                        address:(NSString *)address
-                      isBought:(NSNumber *)isBought
+                      isBought:(NSInteger)isBought
                          brand:(NSString *)brand
                            way:(NSString *)way
                     experience:(NSString *)experience
@@ -52,7 +51,6 @@
         account = [array objectAtIndex:0];
     }
     account.accountName = accountName;
-    account.password = password;
     account.phone = phone;
     account.sex = sex;
     account.age = [NSNumber numberWithInteger:age];
@@ -67,7 +65,7 @@
     account.city = city;
     account.district = district;
     account.address = address;
-    account.isBought = isBought;
+    account.isBought = [NSNumber numberWithInteger:isBought];
     account.brand = brand;
     account.way = way;
     account.experience = experience;
@@ -126,6 +124,15 @@
         success();
     }else{
         failure();
+    }
+}
+
+- (BOOL) isLogin{
+    Account *account = [self getAccount];
+    if (account.token != nil) {
+        return YES;
+    }else{
+        return NO;
     }
 }
 

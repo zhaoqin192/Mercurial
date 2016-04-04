@@ -47,12 +47,17 @@
     [manager POST:url.absoluteString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"JSON: %@", responseObject);
         NSDictionary *dic = responseObject;
-        NSString *token = [dic objectForKey:@"sid"];
-        [[DatabaseManager sharedAccount] insertWithAccountName:accountName password:password token:token success:^{
-            success();
-        }];
+        if([[responseObject objectForKey:@"status"] isEqualToString:@"200"]){
+            NSString *token = [dic objectForKey:@"sid"];
+            [[DatabaseManager sharedAccount] insertWithAccountName:accountName password:password token:token success:^{
+                success();
+            }];
+        }else{
+            [[DatabaseManager sharedAccount] insertWithAccountName:accountName password:password token:nil success:^{
+                failure();
+            }];
+        }
         
-
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"Error: %@", error);
         failure();
@@ -125,8 +130,7 @@
     }];
 }
 
-+ (void) requestUserInformationWithToken:(NSString *)token
-                                 success:(void (^)())success
++ (void) requestUserInformationWithToken:(void (^)())success
                                  failure:(void (^)())failure{
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
     NSURL *url = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/User/Index/get_user_info"]];
@@ -134,8 +138,16 @@
     NSDictionary *parameters = @{@"sid": [[[DatabaseManager sharedAccount] getAccount] token]};
     [manager POST:url.absoluteString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"JSON: %@", responseObject);
-
+        NSArray *array = responseObject;
+        NSDictionary *dic = [array objectAtIndex:0];
+        
+        NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+        f.numberStyle = NSNumberFormatterDecimalStyle;
+        
+        [[DatabaseManager sharedAccount] insertWithAccountName:[dic objectForKey:@"name"] phone:[dic objectForKey:@"phone"] sex:[dic objectForKey:@"sex"] age:[[dic objectForKey:@"age"] intValue] Email:[dic objectForKey:@"mail"] fixedTel:[dic objectForKey:@"fix_phone"] avatar:[dic objectForKey:@"photo"] name:[dic objectForKey:@"realname"] birth:[dic objectForKey:@"birth"] cardID:[dic objectForKey:@"card_number"] degree:[dic objectForKey:@"degree"] job:[dic objectForKey:@"job"] province:[dic objectForKey:@"province"] city:[dic objectForKey:@"city"] district:[dic objectForKey:@"district"] address:[dic objectForKey:@"address"] isBought:[[dic objectForKey:@"has_bought"] intValue] brand:[dic objectForKey:@"bought_brand"] way:[dic objectForKey:@"know_way"] experience:[dic objectForKey:@"decro_experence"] recommendName:[dic objectForKey:@"recomm_name"] recommendPhone:[dic objectForKey:@"recomm_phone"] success:success];
+        
         success();
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"Error: %@", error);
         failure();

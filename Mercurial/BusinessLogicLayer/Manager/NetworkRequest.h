@@ -101,8 +101,7 @@
  *  @param success
  *  @param failure
  */
-+ (void) requestUserInformationWithToken:(NSString *)token
-                                 success:(void (^)())success
++ (void) requestUserInformationWithToken:(void (^)())success
                                  failure:(void (^)())failure;
 
 /**
