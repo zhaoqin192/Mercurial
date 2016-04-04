@@ -35,6 +35,7 @@
 - (void)configureNotifacation{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginButtonClicked) name:@"loginButtonClicked" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registerButtonClicked) name:@"registerButtonClicked" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginOutButtonClicked) name:@"loginOutButtonClicked" object:nil];
 }
 
 - (void)buttonClicked:(UIView *)sender {
@@ -156,6 +157,16 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"RegisterStoryBoard" bundle:nil];
     RegisterViewController *vc = [sb instantiateInitialViewController];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)loginOutButtonClicked{
+    [NetworkRequest userLogoutWithSuccess:^{
+        [SVProgressHUD showErrorWithStatus:@"退出成功"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+    } failure:^{
+        [SVProgressHUD showErrorWithStatus:@"退出失败，请重新尝试"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+    }];
 }
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
