@@ -97,7 +97,7 @@
 
 - (Account *) getAccount{
     NSArray *array = [self fetchAccount];
-    if (array == nil) {
+    if (array.count == 0) {
         return nil;
     }else{
         return [array objectAtIndex:0];
