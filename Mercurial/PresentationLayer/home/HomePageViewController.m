@@ -18,6 +18,7 @@
 #import "Sales.h"
 #import "ProductViewController.h"
 #import "UIViewController+MMDrawerController.h"
+#import "AccountDao.h"
 
 @interface HomePageViewController () <SDCycleScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *scrollAdView;
@@ -91,9 +92,13 @@
             break;
         }
         case 108:{
-            UITableViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateInitialViewController];
-            [self.navigationController pushViewController:vc animated:YES];
-            NSLog(@"用户中心");
+            if([[[AccountDao alloc] init] isLogin]){
+                UITableViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateInitialViewController];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+            else{
+                [self showLoginAlert];
+            }
             break;
         }
         default:
@@ -107,6 +112,17 @@
     self.salesArray = [[NSMutableArray alloc] init];
     [self configureScrollView];
     [self configureNotifacation];
+}
+
+- (void)showLoginAlert{
+    UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"请登录" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *sure = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self loginButtonClicked];
+    }];
+    [vc addAction:cancel];
+    [vc addAction:sure];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)configureScrollView{
