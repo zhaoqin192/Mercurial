@@ -92,11 +92,7 @@
 }
 
 - (IBAction)productKind:(id)sender {
-    [NetworkRequest requestProductKindSuccess:^{
-        
-    } failure:^{
-        
-    }];
+    
 }
 
 - (IBAction)productType:(id)sender {

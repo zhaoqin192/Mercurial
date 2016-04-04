@@ -62,6 +62,7 @@
         case 103:{
             ProductViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"ProductViewController"];
             vc.mytitle = @"产品品牌";
+            vc.isNews = YES;
             [self.navigationController pushViewController:vc animated:YES];
             NSLog(@"产品推荐");
             break;

@@ -38,43 +38,34 @@
 }
 
 - (void)loadTableViewData{
-    if (self.isNews) {
-//        [NetworkRequest requestNewsWithSuccess:^{
-//            self.news = [[NewsManager sharedManager] fetchArray];
-//            [self.myTableView reloadData];
-//        } failure:^{
-//            [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
-//            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
-//        }];
+    if ([self.mytitle isEqualToString:@"产品类型"]) {
+        [NetworkRequest requestProductTypeWithKind:self.identify success:^{
+            self.types = [[ProductManager sharedManager] fetchProductTypeArray];
+            [self.myTableView reloadData];
+        } failure:^{
+            [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        }];
     }
-    else{
-        if ([self.mytitle isEqualToString:@"产品类型"]) {
-            [NetworkRequest requestProductTypeWithKind:self.identify success:^{
-                self.types = [[ProductManager sharedManager] fetchProductTypeArray];
-                [self.myTableView reloadData];
-            } failure:^{
-                [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
-                [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
-            }];
+    else if([self.mytitle isEqualToString:@"产品品牌"]){
+        [NetworkRequest requestProductKindSuccess:self.isNews success:^{
+            self.logo = [[ProductManager sharedManager] fetchProductKindArray];
+            [self.myTableView reloadData];
+        } failure:^{
+            [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        }];
+    }
+    else if ([self.mytitle isEqualToString:@"产品列表"]){
+        [NetworkRequest requestProductListWithKind:self.identify type:self.Typeidentify
+        success:^{
+            self.list = [[ProductManager sharedManager] fetchProductArray];
+            [self.myTableView reloadData];
         }
-        else if([self.mytitle isEqualToString:@"产品品牌"]){
-            [NetworkRequest requestProductKindSuccess:^{
-                self.logo = [[ProductManager sharedManager] fetchProductKindArray];
-                [self.myTableView reloadData];
-            } failure:^{
-                [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
-                [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
-            }];
-        }
-        else if ([self.mytitle isEqualToString:@"产品列表"]){
-            [NetworkRequest requestProductListWithKind:self.identify type:self.Typeidentify success:^{
-                self.list = [[ProductManager sharedManager] fetchProductArray];
-                [self.myTableView reloadData];
-            } failure:^{
-                [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
-                [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
-            }];
-        }
+        failure:^{
+            [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        }];
     }
 }
 
@@ -103,23 +94,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NewsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"newsCell"];
-    if (self.isNews) {
-//        News *new = self.news[indexPath.row];
-//        cell.mynews = new;
+    if([self.mytitle isEqualToString:@"产品品牌"]){
+        ProductKind *productKind = self.logo[indexPath.row];
+        cell.productKind = productKind;
     }
-    else{
-        if([self.mytitle isEqualToString:@"产品品牌"]){
-            ProductKind *productKind = self.logo[indexPath.row];
-            cell.productKind = productKind;
-        }
-        else if ([self.mytitle isEqualToString:@"产品类型"]){
-            ProductType *type = self.types[indexPath.row];
-            cell.productType = type;
-        }
-        else if ([self.mytitle isEqualToString:@"产品列表"]){
-            Product *product = self.list[indexPath.row];
-            cell.product = product;
-        }
+    else if ([self.mytitle isEqualToString:@"产品类型"]){
+        ProductType *type = self.types[indexPath.row];
+        cell.productType = type;
+    }
+    else if ([self.mytitle isEqualToString:@"产品列表"]){
+        Product *product = self.list[indexPath.row];
+        cell.product = product;
     }
     return cell;
 }

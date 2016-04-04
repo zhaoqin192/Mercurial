@@ -155,12 +155,16 @@
 
 }
 
-+ (void) requestProductKindSuccess:(void (^)()) success
++ (void) requestProductKindSuccess:(BOOL)isCommand
+                           success:(void (^)()) success
                            failure:(void (^)()) failure{
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
     NSURL *URL = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/Product/Index/get_product_kind"]];
-    
-    [manager POST:URL.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    NSDictionary *parameters = nil;
+    if (isCommand) {
+        parameters = @{@"product_recommed": @"true"};
+    }
+    [manager POST:URL.absoluteString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"JSON: %@", responseObject);
         NSArray *array = responseObject;
         ProductManager *manager = [ProductManager sharedManager];

@@ -138,7 +138,8 @@
  *  @param success
  *  @param failure
  */
-+ (void) requestProductKindSuccess:(void (^)()) success
++ (void) requestProductKindSuccess:(BOOL)isCommand
+                           success:(void (^)()) success
                            failure:(void (^)()) failure;
 
 /**
