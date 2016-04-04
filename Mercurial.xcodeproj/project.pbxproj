@@ -11,6 +11,7 @@
 		305F859B1CB2524600F42B33 /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = 305F85991CB2524600F42B33 /* README.textile */; };
 		305F859E1CB252DC00F42B33 /* NSDate+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 305F859D1CB252DC00F42B33 /* NSDate+Common.m */; };
 		305F85A11CB2530C00F42B33 /* NSDate+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 305F85A01CB2530C00F42B33 /* NSDate+convenience.m */; };
+		305F85A41CB2619000F42B33 /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305F85A31CB2619000F42B33 /* UserDetailViewController.m */; };
 		30A3A9271CA96FD70076208B /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A3A9251CA96FD70076208B /* NewsCell.m */; };
 		30A3A9281CA96FD70076208B /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A3A9261CA96FD70076208B /* NewsCell.xib */; };
 		30A3A92C1CAA44980076208B /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A3A92A1CAA44980076208B /* ProductViewController.m */; };
@@ -90,6 +91,8 @@
 		305F859D1CB252DC00F42B33 /* NSDate+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Common.m"; sourceTree = "<group>"; };
 		305F859F1CB2530C00F42B33 /* NSDate+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+convenience.h"; sourceTree = "<group>"; };
 		305F85A01CB2530C00F42B33 /* NSDate+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+convenience.m"; sourceTree = "<group>"; };
+		305F85A21CB2619000F42B33 /* UserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailViewController.h; sourceTree = "<group>"; };
+		305F85A31CB2619000F42B33 /* UserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailViewController.m; sourceTree = "<group>"; };
 		30A3A9241CA96FD70076208B /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
 		30A3A9251CA96FD70076208B /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
 		30A3A9261CA96FD70076208B /* NewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
@@ -274,6 +277,8 @@
 				30A4A6511C96939100BF5EA1 /* User.storyboard */,
 				30A4A6521C96939100BF5EA1 /* UserInformationViewController.h */,
 				30A4A6531C96939100BF5EA1 /* UserInformationViewController.m */,
+				305F85A21CB2619000F42B33 /* UserDetailViewController.h */,
+				305F85A31CB2619000F42B33 /* UserDetailViewController.m */,
 				30A4A66C1C969F6600BF5EA1 /* FriendsIntroduceViewController.h */,
 				30A4A66D1C969F6600BF5EA1 /* FriendsIntroduceViewController.m */,
 				30A4A66F1C96A00F00BF5EA1 /* FansCommandViewController.h */,
@@ -722,6 +727,7 @@
 				ACC3D7F91CAD4132000FBE93 /* Order.m in Sources */,
 				30A3A9271CA96FD70076208B /* NewsCell.m in Sources */,
 				30D18F291C9ADDC100559866 /* RegisterViewController.m in Sources */,
+				305F85A41CB2619000F42B33 /* UserDetailViewController.m in Sources */,
 				30D407731CAD641B0068FD85 /* HomeLeftViewController.m in Sources */,
 				30A4A6741C96A0D800BF5EA1 /* AddProductViewController.m in Sources */,
 				30A4A6711C96A00F00BF5EA1 /* FansCommandViewController.m in Sources */,

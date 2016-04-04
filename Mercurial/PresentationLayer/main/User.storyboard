@@ -279,6 +279,56 @@
             </objects>
             <point key="canvasLocation" x="-311.5" y="1552.5"/>
         </scene>
+        <!--User Detail View Controller-->
+        <scene sceneID="KuS-5a-xU4">
+            <objects>
+                <viewController storyboardIdentifier="UserDetailViewController" id="MWS-q6-SwF" customClass="UserDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ohx-gn-bga"/>
+                        <viewControllerLayoutGuide type="bottom" id="oob-pv-xH6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="539-qg-ffx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I3K-fh-8hP">
+                                <rect key="frame" x="20" y="40" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upN-kB-qlH">
+                                <rect key="frame" x="305" y="100" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="KN2-7z-sLR"/>
+                                    <constraint firstAttribute="width" constant="50" id="RwO-FA-rcc"/>
+                                </constraints>
+                                <state key="normal" title="保存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked" destination="MWS-q6-SwF" eventType="touchUpInside" id="9ET-4M-DFh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I3K-fh-8hP" firstAttribute="top" secondItem="Ohx-gn-bga" secondAttribute="bottom" constant="20" id="3em-F3-jh9"/>
+                            <constraint firstAttribute="trailing" secondItem="I3K-fh-8hP" secondAttribute="trailing" constant="20" id="HcW-fg-q1W"/>
+                            <constraint firstItem="upN-kB-qlH" firstAttribute="top" secondItem="I3K-fh-8hP" secondAttribute="bottom" constant="30" id="PCm-pq-16T"/>
+                            <constraint firstItem="I3K-fh-8hP" firstAttribute="leading" secondItem="539-qg-ffx" secondAttribute="leading" constant="20" id="S1E-Tu-Lg9"/>
+                            <constraint firstItem="upN-kB-qlH" firstAttribute="trailing" secondItem="I3K-fh-8hP" secondAttribute="trailing" id="fiJ-ZG-l05"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="saveButton" destination="upN-kB-qlH" id="eho-x4-dlO"/>
+                        <outlet property="textField" destination="I3K-fh-8hP" id="D2X-kK-3k5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dvv-hP-MC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="293.5" y="1622.5"/>
+        </scene>
         <!--Friends Introduce View Controller-->
         <scene sceneID="IK3-B8-beq">
             <objects>
