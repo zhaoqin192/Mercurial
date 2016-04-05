@@ -407,7 +407,9 @@
         
     } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"JSON: %@", responseObject);
+        success();
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure();
         NSLog(@"Error: %@", error);
     }];
     

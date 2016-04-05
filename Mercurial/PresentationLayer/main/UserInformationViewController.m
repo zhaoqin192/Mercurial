@@ -12,8 +12,11 @@
 #import "Account.h"
 #import "AccountDao.h"
 #import "UserDetailViewController.h"
+#import "userIconCell.h"
 
 @interface UserInformationViewController ()
+<UIActionSheetDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+
 @property (nonatomic, strong) Account *myAccount;
 @end
 
@@ -22,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"用户信息";
+    [self.tableView registerNib:[UINib nibWithNibName:@"userIconCell" bundle:nil] forCellReuseIdentifier:@"userIconCell"];
     [self loadData];
 }
 
@@ -65,13 +69,21 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"informationCell"];
-    
+    UITableViewCell *cell;
+    if (indexPath.row == 0) {
+        cell = (userIconCell *)[self.tableView dequeueReusableCellWithIdentifier:@"userIconCell"];
+    }
+    else{
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"informationCell"];
+    }
     switch (indexPath.row) {
         case 0:{
-            cell.textLabel.text = @"用户名";
-            cell.detailTextLabel.text = self.myAccount.accountName;
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            userIconCell *ucell = (userIconCell *)cell;
+            ucell.iconUrl = self.myAccount.avatar;
+            return ucell;
+//            cell.textLabel.text = @"用户名";
+//            cell.detailTextLabel.text = self.myAccount.accountName;
+//            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             break;
         }
         case 1:
@@ -145,10 +157,22 @@
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 0) {
+        return 100;
+    }
+    return 44;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     __weak typeof(self) weakSelf = self;
     switch (indexPath.row) {
+        case 0:{
+            UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"更换头像" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照", @"从相册选择", nil];
+            [actionSheet showInView:self.view];
+            break;
+        }
         case 1:{
             UserDetailViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"UserDetailViewController"];
             vc.myTitle = @"真实姓名";
@@ -317,5 +341,61 @@
             break;
     }
 }
+
+#pragma mark UIActionSheetDelegate M
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 2) {
+        return;
+    }
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;//设置可编辑
+    
+    if (buttonIndex == 0) {
+        //        拍照
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }else if (buttonIndex == 1){
+        //        相册
+        picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    }
+    [self presentViewController:picker animated:YES completion:nil];//进入照相界面
+    
+}
+
+#pragma mark UIImagePickerControllerDelegate
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    
+    NSString *mediaType = [info objectForKey: UIImagePickerControllerMediaType];
+    UIImage *originalImage, *editedImage, *imageToUse;
+    // Handle a still image picked from a photo album
+    if (CFStringCompare ((CFStringRef) mediaType, kUTTypeImage, 0)
+        == kCFCompareEqualTo) {
+        
+        editedImage = (UIImage *) [info objectForKey:
+                                   UIImagePickerControllerEditedImage];
+        originalImage = (UIImage *) [info objectForKey:
+                                     UIImagePickerControllerOriginalImage];
+        
+        if (editedImage) {
+            imageToUse = editedImage;
+        } else {
+            imageToUse = originalImage;
+        }
+        // Do something with imageToUse
+    }
+    [picker dismissViewControllerAnimated:YES completion:^{
+        [NetworkRequest uploadAvatar:imageToUse success:^{
+            [self loadData];
+        } failure:^{
+            [SVProgressHUD showErrorWithStatus:@"更新头像失败，请重新尝试"];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        }];
+    }];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 @end
