@@ -10,6 +10,7 @@
 #import "Account.h"
 
 @interface FriendsIntroduceViewController ()
+@property (nonatomic, copy) NSArray *list;
 @property (weak, nonatomic) IBOutlet UITextField *nameTF;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTF;
 @property (weak, nonatomic) IBOutlet UITextField *addressTF;
@@ -31,6 +32,25 @@
     [self.nameTF becomeFirstResponder];
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+    if (self.identify) {
+        [self configureTextField];
+    }
+}
+
+- (void)configureTextField{
+    [NetworkRequest requestCommendItem:self.identify success:^{
+        self.list = [[RecommendManager sharedManager] fetchCommendArray];
+        NSLog(@"%d",self.list.count);
+        Recommend *recommend = [self.list firstObject];
+        self.nameTF.text = recommend.recomm_name;
+        self.phoneTF.text = recommend.recomm_phone;
+        self.addressTF.text = recommend.address;
+        self.productTF.text = recommend.recomm_product_name;
+        self.reasonTF.text = recommend.recomm_reason;
+    } failure:^{
+        [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+    }];
 }
 
 - (void)configureRegisterButton{

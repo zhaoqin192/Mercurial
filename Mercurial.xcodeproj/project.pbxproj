@@ -16,6 +16,7 @@
 		305F85DF1CB3A7C400F42B33 /* userIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305F85DE1CB3A7C400F42B33 /* userIconCell.xib */; };
 		305F85E41CB3D38700F42B33 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305F85E31CB3D38700F42B33 /* AssetsLibrary.framework */; };
 		305F861A1CB53E4100F42B33 /* FriendsIntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305F86191CB53E4100F42B33 /* FriendsIntroduceViewController.m */; };
+		305F861D1CB5468400F42B33 /* AddOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305F861C1CB5468400F42B33 /* AddOrderViewController.m */; };
 		30A3A9271CA96FD70076208B /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A3A9251CA96FD70076208B /* NewsCell.m */; };
 		30A3A9281CA96FD70076208B /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A3A9261CA96FD70076208B /* NewsCell.xib */; };
 		30A3A92C1CAA44980076208B /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A3A92A1CAA44980076208B /* ProductViewController.m */; };
@@ -38,6 +39,8 @@
 		30ACF6611CA58773005B56EC /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF6581CA58773005B56EC /* DistancePickerView.m */; };
 		30ACF6621CA58773005B56EC /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF65A1CA58773005B56EC /* SWActionSheet.m */; };
 		30ACF6651CA6A658005B56EC /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF6641CA6A658005B56EC /* UIColor+expanded.m */; };
+		30CADF521CB5501F003E0F7F /* FriendsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CADF511CB5501F003E0F7F /* FriendsListViewController.m */; };
+		30CADF551CB5537B003E0F7F /* OrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CADF541CB5537B003E0F7F /* OrderListViewController.m */; };
 		30D18F1E1C9AD79500559866 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D18F1D1C9AD79500559866 /* KxMenu.m */; };
 		30D18F211C9ADBE500559866 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D18F201C9ADBE500559866 /* LoginStoryboard.storyboard */; };
 		30D18F231C9ADBF000559866 /* RegisterStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D18F221C9ADBF000559866 /* RegisterStoryBoard.storyboard */; };
@@ -99,6 +102,8 @@
 		305F85E31CB3D38700F42B33 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		305F86181CB53E4100F42B33 /* FriendsIntroduceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsIntroduceViewController.h; sourceTree = "<group>"; };
 		305F86191CB53E4100F42B33 /* FriendsIntroduceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsIntroduceViewController.m; sourceTree = "<group>"; };
+		305F861B1CB5468400F42B33 /* AddOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddOrderViewController.h; sourceTree = "<group>"; };
+		305F861C1CB5468400F42B33 /* AddOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddOrderViewController.m; sourceTree = "<group>"; };
 		30A3A9241CA96FD70076208B /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
 		30A3A9251CA96FD70076208B /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
 		30A3A9261CA96FD70076208B /* NewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
@@ -139,6 +144,10 @@
 		30ACF65A1CA58773005B56EC /* SWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWActionSheet.m; sourceTree = "<group>"; };
 		30ACF6631CA6A658005B56EC /* UIColor+expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+expanded.h"; sourceTree = "<group>"; };
 		30ACF6641CA6A658005B56EC /* UIColor+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+expanded.m"; sourceTree = "<group>"; };
+		30CADF501CB5501F003E0F7F /* FriendsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsListViewController.h; sourceTree = "<group>"; };
+		30CADF511CB5501F003E0F7F /* FriendsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsListViewController.m; sourceTree = "<group>"; };
+		30CADF531CB5537B003E0F7F /* OrderListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListViewController.h; sourceTree = "<group>"; };
+		30CADF541CB5537B003E0F7F /* OrderListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListViewController.m; sourceTree = "<group>"; };
 		30D18F1C1C9AD79500559866 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
 		30D18F1D1C9AD79500559866 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		30D18F1F1C9AD98400559866 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = ../PrefixHeader.pch; sourceTree = "<group>"; };
@@ -318,6 +327,12 @@
 				305F85A31CB2619000F42B33 /* UserDetailViewController.m */,
 				305F86181CB53E4100F42B33 /* FriendsIntroduceViewController.h */,
 				305F86191CB53E4100F42B33 /* FriendsIntroduceViewController.m */,
+				30CADF501CB5501F003E0F7F /* FriendsListViewController.h */,
+				30CADF511CB5501F003E0F7F /* FriendsListViewController.m */,
+				305F861B1CB5468400F42B33 /* AddOrderViewController.h */,
+				305F861C1CB5468400F42B33 /* AddOrderViewController.m */,
+				30CADF531CB5537B003E0F7F /* OrderListViewController.h */,
+				30CADF541CB5537B003E0F7F /* OrderListViewController.m */,
 			);
 			name = user;
 			sourceTree = "<group>";
@@ -741,6 +756,7 @@
 				ACC204F11C99283A00B26CDD /* AccountDao.m in Sources */,
 				AC5182741CAE69F90095BAB6 /* Type.m in Sources */,
 				ACC204E41C99037C00B26CDD /* Utility.m in Sources */,
+				30CADF551CB5537B003E0F7F /* OrderListViewController.m in Sources */,
 				305F85A11CB2530C00F42B33 /* NSDate+convenience.m in Sources */,
 				ACC205111C9A479100B26CDD /* ProductManager.m in Sources */,
 				30ACF6621CA58773005B56EC /* SWActionSheet.m in Sources */,
@@ -769,6 +785,7 @@
 				305F859A1CB2524600F42B33 /* NSDate+Helper.m in Sources */,
 				AC5182651CAE4E6A0095BAB6 /* RecommendManager.m in Sources */,
 				ACC205021C9956D000B26CDD /* News.m in Sources */,
+				30CADF521CB5501F003E0F7F /* FriendsListViewController.m in Sources */,
 				ACC3D7F91CAD4132000FBE93 /* Order.m in Sources */,
 				30A3A9271CA96FD70076208B /* NewsCell.m in Sources */,
 				30D18F291C9ADDC100559866 /* RegisterViewController.m in Sources */,
@@ -779,6 +796,7 @@
 				305F85DD1CB3A7AA00F42B33 /* userIconCell.m in Sources */,
 				AC5182621CAE4DFB0095BAB6 /* Recommend.m in Sources */,
 				ACC204FC1C99526700B26CDD /* ProductKind.m in Sources */,
+				305F861D1CB5468400F42B33 /* AddOrderViewController.m in Sources */,
 				30D18F2C1C9E484F00559866 /* HomePageViewController.m in Sources */,
 				30D18F1E1C9AD79500559866 /* KxMenu.m in Sources */,
 				ACC3D7FC1CAD50D2000FBE93 /* AddOrder.m in Sources */,
