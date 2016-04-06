@@ -15,6 +15,7 @@
 		305F85DD1CB3A7AA00F42B33 /* userIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 305F85DC1CB3A7AA00F42B33 /* userIconCell.m */; };
 		305F85DF1CB3A7C400F42B33 /* userIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305F85DE1CB3A7C400F42B33 /* userIconCell.xib */; };
 		305F85E41CB3D38700F42B33 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305F85E31CB3D38700F42B33 /* AssetsLibrary.framework */; };
+		305F861A1CB53E4100F42B33 /* FriendsIntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305F86191CB53E4100F42B33 /* FriendsIntroduceViewController.m */; };
 		30A3A9271CA96FD70076208B /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A3A9251CA96FD70076208B /* NewsCell.m */; };
 		30A3A9281CA96FD70076208B /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A3A9261CA96FD70076208B /* NewsCell.xib */; };
 		30A3A92C1CAA44980076208B /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A3A92A1CAA44980076208B /* ProductViewController.m */; };
@@ -24,10 +25,6 @@
 		30A4A6581C96939100BF5EA1 /* ScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A4A6501C96939100BF5EA1 /* ScanViewController.xib */; };
 		30A4A6591C96939100BF5EA1 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A4A6511C96939100BF5EA1 /* User.storyboard */; };
 		30A4A65A1C96939100BF5EA1 /* UserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6531C96939100BF5EA1 /* UserInformationViewController.m */; };
-		30A4A66E1C969F6600BF5EA1 /* FriendsIntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A66D1C969F6600BF5EA1 /* FriendsIntroduceViewController.m */; };
-		30A4A6711C96A00F00BF5EA1 /* FansCommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6701C96A00F00BF5EA1 /* FansCommandViewController.m */; };
-		30A4A6741C96A0D800BF5EA1 /* AddProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6731C96A0D800BF5EA1 /* AddProductViewController.m */; };
-		30A4A6771C96A25700BF5EA1 /* UserOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6761C96A25700BF5EA1 /* UserOrderViewController.m */; };
 		30A4A67B1C97F61000BF5EA1 /* ShoppingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6791C97F61000BF5EA1 /* ShoppingViewController.m */; };
 		30A4A67C1C97F61000BF5EA1 /* ShoppingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A4A67A1C97F61000BF5EA1 /* ShoppingViewController.xib */; };
 		30ACF6471CA51E5C005B56EC /* WXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF6451CA51E5C005B56EC /* WXWebViewController.m */; };
@@ -100,6 +97,8 @@
 		305F85DC1CB3A7AA00F42B33 /* userIconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userIconCell.m; sourceTree = "<group>"; };
 		305F85DE1CB3A7C400F42B33 /* userIconCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = userIconCell.xib; sourceTree = "<group>"; };
 		305F85E31CB3D38700F42B33 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		305F86181CB53E4100F42B33 /* FriendsIntroduceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsIntroduceViewController.h; sourceTree = "<group>"; };
+		305F86191CB53E4100F42B33 /* FriendsIntroduceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsIntroduceViewController.m; sourceTree = "<group>"; };
 		30A3A9241CA96FD70076208B /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
 		30A3A9251CA96FD70076208B /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
 		30A3A9261CA96FD70076208B /* NewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
@@ -115,14 +114,6 @@
 		30A4A6511C96939100BF5EA1 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		30A4A6521C96939100BF5EA1 /* UserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInformationViewController.h; sourceTree = "<group>"; };
 		30A4A6531C96939100BF5EA1 /* UserInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInformationViewController.m; sourceTree = "<group>"; };
-		30A4A66C1C969F6600BF5EA1 /* FriendsIntroduceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsIntroduceViewController.h; sourceTree = "<group>"; };
-		30A4A66D1C969F6600BF5EA1 /* FriendsIntroduceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsIntroduceViewController.m; sourceTree = "<group>"; };
-		30A4A66F1C96A00F00BF5EA1 /* FansCommandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FansCommandViewController.h; sourceTree = "<group>"; };
-		30A4A6701C96A00F00BF5EA1 /* FansCommandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FansCommandViewController.m; sourceTree = "<group>"; };
-		30A4A6721C96A0D800BF5EA1 /* AddProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddProductViewController.h; sourceTree = "<group>"; };
-		30A4A6731C96A0D800BF5EA1 /* AddProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddProductViewController.m; sourceTree = "<group>"; };
-		30A4A6751C96A25700BF5EA1 /* UserOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserOrderViewController.h; sourceTree = "<group>"; };
-		30A4A6761C96A25700BF5EA1 /* UserOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserOrderViewController.m; sourceTree = "<group>"; };
 		30A4A6781C97F61000BF5EA1 /* ShoppingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingViewController.h; sourceTree = "<group>"; };
 		30A4A6791C97F61000BF5EA1 /* ShoppingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingViewController.m; sourceTree = "<group>"; };
 		30A4A67A1C97F61000BF5EA1 /* ShoppingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingViewController.xib; sourceTree = "<group>"; };
@@ -325,14 +316,8 @@
 				30A4A6531C96939100BF5EA1 /* UserInformationViewController.m */,
 				305F85A21CB2619000F42B33 /* UserDetailViewController.h */,
 				305F85A31CB2619000F42B33 /* UserDetailViewController.m */,
-				30A4A66C1C969F6600BF5EA1 /* FriendsIntroduceViewController.h */,
-				30A4A66D1C969F6600BF5EA1 /* FriendsIntroduceViewController.m */,
-				30A4A66F1C96A00F00BF5EA1 /* FansCommandViewController.h */,
-				30A4A6701C96A00F00BF5EA1 /* FansCommandViewController.m */,
-				30A4A6721C96A0D800BF5EA1 /* AddProductViewController.h */,
-				30A4A6731C96A0D800BF5EA1 /* AddProductViewController.m */,
-				30A4A6751C96A25700BF5EA1 /* UserOrderViewController.h */,
-				30A4A6761C96A25700BF5EA1 /* UserOrderViewController.m */,
+				305F86181CB53E4100F42B33 /* FriendsIntroduceViewController.h */,
+				305F86191CB53E4100F42B33 /* FriendsIntroduceViewController.m */,
 			);
 			name = user;
 			sourceTree = "<group>";
@@ -746,7 +731,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				30D18F261C9ADDAF00559866 /* LoginViewController.m in Sources */,
-				30A4A6771C96A25700BF5EA1 /* UserOrderViewController.m in Sources */,
 				30A3A92C1CAA44980076208B /* ProductViewController.m in Sources */,
 				ACC204EC1C99251400B26CDD /* Account+CoreDataProperties.m in Sources */,
 				30A4A6571C96939100BF5EA1 /* ScanViewController.m in Sources */,
@@ -761,9 +745,9 @@
 				ACC205111C9A479100B26CDD /* ProductManager.m in Sources */,
 				30ACF6621CA58773005B56EC /* SWActionSheet.m in Sources */,
 				ACC2050A1C99587A00B26CDD /* NewsManager.m in Sources */,
-				30A4A66E1C969F6600BF5EA1 /* FriendsIntroduceViewController.m in Sources */,
 				ACCA4CC91C91171A00121269 /* Constant.m in Sources */,
 				ACC2051F1C9A9A1D00B26CDD /* SalesManager.m in Sources */,
+				305F861A1CB53E4100F42B33 /* FriendsIntroduceViewController.m in Sources */,
 				30A4A6541C96939100BF5EA1 /* NewsViewController.m in Sources */,
 				ACC204ED1C99251400B26CDD /* Account.m in Sources */,
 				AC51826B1CAE5FD50095BAB6 /* TopicManager.m in Sources */,
@@ -790,8 +774,6 @@
 				30D18F291C9ADDC100559866 /* RegisterViewController.m in Sources */,
 				305F85A41CB2619000F42B33 /* UserDetailViewController.m in Sources */,
 				30D407731CAD641B0068FD85 /* HomeLeftViewController.m in Sources */,
-				30A4A6741C96A0D800BF5EA1 /* AddProductViewController.m in Sources */,
-				30A4A6711C96A00F00BF5EA1 /* FansCommandViewController.m in Sources */,
 				AC5182681CAE5F670095BAB6 /* Topic.m in Sources */,
 				AC5E1CDE1C904484008D91E5 /* main.m in Sources */,
 				305F85DD1CB3A7AA00F42B33 /* userIconCell.m in Sources */,
