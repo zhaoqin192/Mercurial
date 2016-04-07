@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "Order.h"
+#import "SearchOrder.h"
 
 @interface OrderManager : NSObject
 
 @property (nonatomic, strong) NSMutableArray *orderArray;
+@property (nonatomic, strong) SearchOrder *searchOrder;
 
 + (OrderManager *) sharedManager;
 
@@ -20,5 +22,7 @@
 - (void) addToOrderArray:(Order *)order;
 
 - (void) cleanOrderArray;
+
+- (SearchOrder *) fetchSearchOrder;
 
 @end

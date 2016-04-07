@@ -38,4 +38,9 @@ static OrderManager *sharedManager;
     [self.orderArray removeAllObjects];
 }
 
+- (SearchOrder *) fetchSearchOrder{
+    return self.searchOrder;
+}
+
+
 @end

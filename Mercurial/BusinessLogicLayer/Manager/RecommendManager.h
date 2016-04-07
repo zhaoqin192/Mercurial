@@ -12,6 +12,7 @@
 @interface RecommendManager : NSObject
 
 @property (nonatomic, strong) NSMutableArray *commendArray;
+@property (nonatomic, strong) Recommend *recommend;
 
 + (RecommendManager *) sharedManager;
 
@@ -20,5 +21,7 @@
 - (void) addToCommendArray:(Recommend *)commend;
 
 - (void) cleanCommendArray;
+
+- (Recommend *) fetchRecommend;
 
 @end

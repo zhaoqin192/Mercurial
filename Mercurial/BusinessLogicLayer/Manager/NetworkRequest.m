@@ -503,8 +503,8 @@
         NSLog(@"%@", responseObject);
         NSDictionary *dic = responseObject;
         OrderManager *orderManager = [OrderManager sharedManager];
-        [orderManager cleanOrderArray];
-        orderManager.orderArray = [dic objectForKey:@"items"];
+        orderManager.searchOrder = [SearchOrder mj_objectWithKeyValues:dic];
+
         success();
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error);
@@ -592,8 +592,7 @@
     [manager POST:URL.absoluteString parameters:parames progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
         RecommendManager *manager = [RecommendManager sharedManager];
-        manager.commendArray = [Recommend mj_objectArrayWithKeyValuesArray:responseObject];
-        NSLog(@"%d aaaaaaaaaaa",manager.commendArray.count);
+        manager.recommend = [Recommend mj_objectWithKeyValues:responseObject];
         success();
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error);

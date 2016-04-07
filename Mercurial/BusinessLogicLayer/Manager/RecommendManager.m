@@ -38,4 +38,9 @@ static RecommendManager *sharedManager;
     [self.commendArray removeAllObjects];
 }
 
+- (Recommend *) fetchRecommend{
+    return self.recommend;
+}
+
+
 @end

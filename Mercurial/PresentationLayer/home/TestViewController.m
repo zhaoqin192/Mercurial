@@ -95,6 +95,12 @@
 //    } failure:^{
 //        
 //    }];
+    
+    [NetworkRequest requestCommendItem:@"41c4520320814d4321a130a451f6af3679e8db5b47d75053d3d2c6b79407b177" success:^{
+        
+    } failure:^{
+        
+    }];
 }
 
 - (IBAction)productKind:(id)sender {
