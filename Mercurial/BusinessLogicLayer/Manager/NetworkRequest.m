@@ -288,7 +288,7 @@
 }
 
 + (void) requestMallWithName:(NSString *)platform
-                     success:(void (^)(NSString *))success
+                     success:(void (^)(NSString *text))success
                      failure:(void (^)())failure{
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
     NSURL *URL = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/Company/Index/companyMall"]];
@@ -579,6 +579,7 @@
         NSLog(@"%@", responseObject);
         RecommendManager *manager = [RecommendManager sharedManager];
         manager.commendArray = [Recommend mj_objectArrayWithKeyValuesArray:responseObject];
+        NSLog(@"%d aaaaaaaaaaa",manager.commendArray.count);
         success();
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error);

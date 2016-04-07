@@ -77,7 +77,10 @@
             break;
         }
         case 105:{
-            ShoppingViewController *vc = [[ShoppingViewController alloc] init];
+//            ShoppingViewController *vc = [[ShoppingViewController alloc] init];
+//            [self.navigationController pushViewController:vc animated:YES];
+            WXWebViewController *vc = [[WXWebViewController alloc] init];
+            vc.mytitle = @"商城";
             [self.navigationController pushViewController:vc animated:YES];
             NSLog(@"商城");
             break;
