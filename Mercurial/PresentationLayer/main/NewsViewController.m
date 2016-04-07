@@ -37,7 +37,7 @@
         [NetworkRequest requestNewsWithSuccess:^{
             self.news = [[NewsManager sharedManager] fetchArray];
             [self.tableView reloadData];
-        } failure:^{
+        } failure:^(NSString *error){
             [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
             [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
         }];

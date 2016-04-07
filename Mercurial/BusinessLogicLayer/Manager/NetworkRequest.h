@@ -52,7 +52,7 @@
                                age:(NSInteger)age
                              Email:(NSString *)email
                            success:(void(^)())success
-                           failure:(void(^)())failure;
+                           failure:(void(^)(NSString *error))failure;
 
 /**
  *  登陆
@@ -65,7 +65,7 @@
 + (void) userLoginWithName:(NSString *)accountName
                   password:(NSString *)password
                    success:(void (^)())success
-                   failure:(void (^)())failure;
+                   failure:(void (^)(NSString *error))failure;
 
 /**
  *  注销
@@ -74,7 +74,7 @@
  *  @param failure
  */
 + (void) userLogoutWithSuccess:(void (^)())success
-                       failure:(void (^)())failure;
+                       failure:(void (^)(NSString *error))failure;
 
 /**
  *  获取新闻
@@ -83,7 +83,7 @@
  *  @param failure
  */
 + (void) requestNewsWithSuccess:(void (^)())success
-                        failure:(void (^)())failure;
+                        failure:(void (^)(NSString *error))failure;
 
 /**
  *  获取公司介绍
@@ -92,7 +92,7 @@
  *  @param failure
  */
 + (void) requestIntroduceWithSuccess:(void (^)(NSString *url))success
-                             failure:(void (^)())failure;
+                             failure:(void (^)(NSString *error))failure;
 
 /**
  *  获取用户信息
@@ -130,7 +130,7 @@
                         recommendName:(NSString *)recommendName
                        recommendPhone:(NSString *)recommendPhone
                               success:(void (^)())success
-                              failure:(void (^)())failure;
+                              failure:(void (^)(NSString *error))failure;
 
 /**
  *  获取产品种类列表
@@ -441,26 +441,3 @@
                     success:(void (^)())success
                     failure:(void (^)())failure;
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -44,31 +44,37 @@
 - (IBAction)login:(id)sender {
     [NetworkRequest userLoginWithName:@"muggins" password:@"123456" success:^{
         
-    } failure:^{
+    } failure:^(NSString *error){
         
     }];
 }
 
 - (IBAction)logout:(id)sender {
-    [NetworkRequest userLogoutWithSuccess:^{
-        
-    } failure:^{
-        
-    }];
+//    [NetworkRequest userLogoutWithSuccess:^{
+//        
+//    } failure:^{
+//        
+//    }];
 }
 
 - (IBAction)registerButton:(id)sender {
     [NetworkRequest userRegisterWithName:@"muggins" password:@"123456" phone:@"18845678901" sex:@"男" age:11 Email:@"12345678@qq.com" success:^{
         
-    } failure:^{
+    } failure:^(NSString *error){
         
     }];
+    
+//    NetworkRequest userRegisterWithName:(NSString *) password:(NSString *) phone:(NSString *) sex:(NSString *) age:(NSInteger) Email:(NSString *) success:^{
+//        
+//    } failure:^(NSString *) {
+//        
+//    }
 }
 
 - (IBAction)news:(id)sender {
    [NetworkRequest requestNewsWithSuccess:^{
        
-   } failure:^{
+   } failure:^(NSString *error){
        
    }];
 }
@@ -76,7 +82,7 @@
 - (IBAction)introduce:(id)sender {
    [NetworkRequest requestIntroduceWithSuccess:^(NSString *webUrl) {
        NSLog(@"%@", webUrl);
-   } failure:^{
+   } failure:^(NSString *error){
        
    }];
 }

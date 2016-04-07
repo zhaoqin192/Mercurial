@@ -72,7 +72,7 @@
         [SVProgressHUD showSuccessWithStatus:@"注册成功!"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
         [self.navigationController popViewControllerAnimated:YES];
-    } failure:^{
+    } failure:^(NSString *error){
         [SVProgressHUD showErrorWithStatus:@"注册失败"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
     }];

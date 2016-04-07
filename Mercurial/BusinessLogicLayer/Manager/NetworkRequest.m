@@ -18,19 +18,21 @@
                           age:(NSInteger)age
                         Email:(NSString *)email
                       success:(void (^)())success
-                      failure:(void (^)())failure{
+                      failure:(void (^)(NSString *error))failure{
     
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
     NSURL *url = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/User/Index/register"]];
     NSDictionary *parameters = @{@"name":name, @"passwd":[Utility md5:password], @"phone":phone, @"sex":sex, @"age":[NSNumber numberWithInteger:age], @"mail":email};
     
     [manager POST:url.absoluteString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-        NSLog(@"%@", manager.requestSerializer);
-        success();
+        NSDictionary *dic = responseObject;
+        if([[dic objectForKey:@"status"] isEqualToString:@"200"]){
+            success();
+        }else{
+            failure([dic objectForKey:@"error"]);
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"Error: %@", error);
-        failure();
+        failure(@"Network Error");
     }];
     
 }
@@ -38,14 +40,13 @@
 + (void) userLoginWithName:(NSString *)accountName
                   password:(NSString *)password
                    success:(void (^)())success
-                   failure:(void (^)())failure{
+                   failure:(void (^)(NSString *error))failure{
     
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
     NSURL *url = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/User/Index/login"]];
     NSDictionary *parameters = @{@"name":accountName, @"passwd":[Utility md5:password]};
     
     [manager POST:url.absoluteString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"JSON: %@", responseObject);
         NSDictionary *dic = responseObject;
         if([[responseObject objectForKey:@"status"] isEqualToString:@"200"]){
             NSString *token = [dic objectForKey:@"sid"];
@@ -54,18 +55,17 @@
             }];
         }else{
             [[DatabaseManager sharedAccount] insertWithAccountName:accountName password:password token:nil success:^{
-                failure();
+                failure([dic objectForKey:@"error"]);
             }];
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"Error: %@", error);
-        failure();
+        failure(@"Network Error");
     }];
 }
 
 + (void) userLogoutWithSuccess:(void (^)())success
-                       failure:(void (^)())failure{
+                       failure:(void (^)(NSString *error))failure{
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
     NSURL *url = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/User/Index/logout"]];
 
@@ -76,27 +76,31 @@
     NSDictionary *parameters = @{@"sid": token};
     
     [manager POST:url.absoluteString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-        [[DatabaseManager sharedAccount] deleteAccountSuccess:^{
-            success();
-        } failure:^{
-            
-        }];
+        NSDictionary *dic = responseObject;
+        if([[dic objectForKey:@"status"] isEqualToString:@"200"]){
+            [[DatabaseManager sharedAccount] deleteAccountSuccess:^{
+                success();
+            } failure:^{
+                failure(@"Database Error");
+            }];
+        }else{
+            failure([dic objectForKey:@"error"]);
+        }
+        
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"Error: %@", error);
-        failure();
+        failure(@"Network Error");
     }];
 }
 
 + (void) requestNewsWithSuccess:(void (^)())success
-                        failure:(void (^)())failure{
+                        failure:(void (^)(NSString *error))failure{
     
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
     NSURL *url = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/Company/Index/news"]];
     
     [manager POST:url.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"JSON: %@", responseObject);
+        
         NewsManager *manager = [NewsManager sharedManager];
         [manager.newsArray removeAllObjects];
         NSArray *array = responseObject;
@@ -109,14 +113,15 @@
             [manager.newsArray addObject:news];
         }
         success();
+        
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"Error: %@", error);
-        failure();
+        failure(@"Network Error");
     }];
 }
 
 + (void) requestIntroduceWithSuccess:(void (^)(NSString *url))success
-                             failure:(void (^)())failure{
+                             failure:(void (^)(NSString *error))failure{
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
     NSURL *url = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/Company/Index/companyAbout"]];
     
@@ -126,7 +131,7 @@
         success([dic objectForKey:@"html_url"]);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"Error: %@", error);
-        failure();
+        failure(@"Network Error");
     }];
 }
 
@@ -364,7 +369,7 @@
                         recommendName:(NSString *)recommendName
                        recommendPhone:(NSString *)recommendPhone
                               success:(void (^)())success
-                              failure:(void (^)())failure{
+                              failure:(void (^)(NSString *error))failure{
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
     NSURL *URL = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/User/Index/save_user_info"]];
     
@@ -376,10 +381,15 @@
     
     [manager POST:URL.absoluteString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"JSON: %@", responseObject);
-        success();
+        NSDictionary *dic = responseObject;
+        if([[dic objectForKey:@"status"] isEqualToString:@"200"]){
+            success();
+        }else{
+            failure([dic objectForKey:@"error"]);
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"Error: %@", error);
-        failure();
+        failure(@"Network Error");
     }];
 
 }
@@ -485,6 +495,10 @@
     NSDictionary *parames = @{@"sid": account.token, @"order_id": orderID};
     [manager POST:URL.absoluteString parameters:parames progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
+        NSDictionary *dic = responseObject;
+        OrderManager *orderManager = [OrderManager sharedManager];
+        [orderManager cleanOrderArray];
+        orderManager.orderArray = [dic objectForKey:@"items"];
         success();
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error);
