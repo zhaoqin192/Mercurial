@@ -16,6 +16,8 @@
 #import "SVProgressHUD.h"
 #import "NetworkRequest.h"
 #import "UIImageView+WebCache.h"
+#import "NSDate+Helper.h"
+#import "NSDate+Common.h"
 
 #define KScreen_width [UIScreen mainScreen].bounds.size.width
 #define KScreen_height [UIScreen mainScreen].bounds.size.height

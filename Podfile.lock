@@ -30,6 +30,7 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.5.7):
     - MMDrawerController/Core
+  - QRCodeReaderViewController (3.5.2)
   - ReactiveCocoa (2.3.1):
     - ReactiveCocoa/UI (= 2.3.1)
   - ReactiveCocoa/Core (2.3.1):
@@ -49,10 +50,20 @@ DEPENDENCIES:
   - EAIntroView (~> 2.8.0)
   - MJExtension
   - MMDrawerController (~> 0.5.7)
+  - QRCodeReaderViewController (from `https://github.com/zhengjinghua/MQRCodeReaderViewController.git`)
   - ReactiveCocoa (= 2.3.1)
   - SDCycleScrollView (~> 1.61)
   - SDWebImage
   - SVProgressHUD
+
+EXTERNAL SOURCES:
+  QRCodeReaderViewController:
+    :git: https://github.com/zhengjinghua/MQRCodeReaderViewController.git
+
+CHECKOUT OPTIONS:
+  QRCodeReaderViewController:
+    :commit: 0b6af2738ea2cc393060704554b9ac2ec7f0bd53
+    :git: https://github.com/zhengjinghua/MQRCodeReaderViewController.git
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
@@ -60,6 +71,7 @@ SPEC CHECKSUMS:
   EARestrictedScrollView: f86d61e16c61d3e93c84f8e96e83122a2a3b7631
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
   MMDrawerController: 7a4cf8e25596bf2434e03ce50d22a8608ddee6a1
+  QRCodeReaderViewController: 557e3291d8fe8adf20d62b7f6bd79a3941f8ec31
   ReactiveCocoa: 3fe9b233ca6db810e86681b5749488564c1179a1
   SDCycleScrollView: a002d85b30cfa9d0ac74069cd3973ca19ff4f22f
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461

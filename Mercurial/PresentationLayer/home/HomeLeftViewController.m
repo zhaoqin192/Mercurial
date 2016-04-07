@@ -28,10 +28,17 @@
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"menu_bg"]]];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self configureButton];
+}
+
 - (void)configureButton{
-    Account *account = [[[AccountDao alloc] init] getAccount];
-    if (account) {
-        
+    if ([[[AccountDao alloc] init] isLogin]) {
+        [self.loginButton setTitle:@"退出" forState:UIControlStateNormal];
+    }
+    else{
+        [self.loginButton setTitle:@"登录" forState:UIControlStateNormal];
     }
 }
 
@@ -41,9 +48,16 @@
 }
 
 - (IBAction)loginButtonClicked {
-    [self.mm_drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"loginButtonClicked" object:nil];
-    }];
+    if ([self.loginButton.titleLabel.text isEqualToString:@"登录"]) {
+        [self.mm_drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"loginButtonClicked" object:nil];
+        }];
+    }
+    else{
+        [self.mm_drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"loginOutButtonClicked" object:nil];
+        }];
+    }
 }
 
 - (IBAction)registerButtonClicked {

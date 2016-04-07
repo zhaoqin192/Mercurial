@@ -149,7 +149,7 @@
         NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
         f.numberStyle = NSNumberFormatterDecimalStyle;
         
-        [[DatabaseManager sharedAccount] insertWithAccountName:[dic objectForKey:@"name"] phone:[dic objectForKey:@"phone"] sex:[dic objectForKey:@"sex"] age:[[dic objectForKey:@"age"] intValue] Email:[dic objectForKey:@"mail"] fixedTel:[dic objectForKey:@"fix_phone"] avatar:[dic objectForKey:@"photo"] name:[dic objectForKey:@"realname"] birth:[dic objectForKey:@"birth"] cardID:[dic objectForKey:@"card_number"] degree:[dic objectForKey:@"degree"] job:[dic objectForKey:@"job"] province:[dic objectForKey:@"province"] city:[dic objectForKey:@"city"] district:[dic objectForKey:@"district"] address:[dic objectForKey:@"address"] isBought:[[dic objectForKey:@"has_bought"] intValue] brand:[dic objectForKey:@"bought_brand"] way:[dic objectForKey:@"know_way"] experience:[dic objectForKey:@"decro_experence"] recommendName:[dic objectForKey:@"recomm_name"] recommendPhone:[dic objectForKey:@"recomm_phone"] success:success];
+        [[DatabaseManager sharedAccount] insertWithAccountName:[dic objectForKey:@"name"] phone:[dic objectForKey:@"phone"] sex:[dic objectForKey:@"sex"] age:[[dic objectForKey:@"age"] intValue] Email:[dic objectForKey:@"mail"] fixedTel:[dic objectForKey:@"fix_phone"] avatar:[dic objectForKey:@"photo"] name:[dic objectForKey:@"realname"] birth:[dic objectForKey:@"birth"] cardID:[dic objectForKey:@"card_number"] degree:[dic objectForKey:@"degree"] job:[dic objectForKey:@"job"] province:[dic objectForKey:@"province"] city:[dic objectForKey:@"city"] district:[dic objectForKey:@"district"] address:[dic objectForKey:@"address"] isBought:[[dic objectForKey:@"has_bought"] intValue] brand:[dic objectForKey:@"bought_brand"] way:[dic objectForKey:@"know_way"] experience:[dic objectForKey:@"decro_experience"] recommendName:[dic objectForKey:@"recomm_name"] recommendPhone:[dic objectForKey:@"recomm_phone"] success:success];
         
         success();
         
@@ -160,12 +160,16 @@
 
 }
 
-+ (void) requestProductKindSuccess:(void (^)()) success
++ (void) requestProductKindSuccess:(BOOL)isCommand
+                           success:(void (^)()) success
                            failure:(void (^)()) failure{
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
     NSURL *URL = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/Product/Index/get_product_kind"]];
-    
-    [manager POST:URL.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    NSDictionary *parameters = nil;
+    if (isCommand) {
+        parameters = @{@"product_recommed": @"true"};
+    }
+    [manager POST:URL.absoluteString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"JSON: %@", responseObject);
         NSArray *array = responseObject;
         ProductManager *manager = [ProductManager sharedManager];
@@ -289,7 +293,7 @@
 }
 
 + (void) requestMallWithName:(NSString *)platform
-                     success:(void (^)(NSString *))success
+                     success:(void (^)(NSString *text))success
                      failure:(void (^)())failure{
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
     NSURL *URL = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/Company/Index/companyMall"]];
@@ -377,7 +381,7 @@
     
     NSString *has_bought = (isBought)? @"true":@"false";
     
-    NSDictionary *parameters = @{@"sid": account.token, @"sex": sex, @"mail": email, @"fix_phone": phone, @"photo": photo, @"realname": name, @"birth": birth, @"card_number": cardID, @"degree": degree, @"job": job, @"province": province, @"city": city, @"district": district, @"address": address, @"has_bought": has_bought, @"bought_brand": brand, @"know_way": way, @"decro_experience": experience, @"recomm_name": recommendName, @"recomm_phone": recommendPhone};
+    NSDictionary *parameters = @{@"sid": account.token, @"sex": sex,@"age":age,@"has_bought":isBought? @(1):@(0),@"mail": email, @"fix_phone": phone, @"photo": photo, @"realname": name, @"birth": birth, @"card_number": cardID, @"degree": degree, @"job": job, @"province": province, @"city": city, @"district": district, @"address": address, @"has_bought": has_bought, @"bought_brand": brand, @"know_way": way, @"decro_experience": experience, @"recomm_name": recommendName, @"recomm_phone": recommendPhone};
     
     [manager POST:URL.absoluteString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"JSON: %@", responseObject);
@@ -413,7 +417,9 @@
         
     } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"JSON: %@", responseObject);
+        success();
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure();
         NSLog(@"Error: %@", error);
     }];
     
@@ -587,6 +593,7 @@
         NSLog(@"%@", responseObject);
         RecommendManager *manager = [RecommendManager sharedManager];
         manager.commendArray = [Recommend mj_objectArrayWithKeyValuesArray:responseObject];
+        NSLog(@"%d aaaaaaaaaaa",manager.commendArray.count);
         success();
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error);

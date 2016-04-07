@@ -18,6 +18,7 @@
 #import "Sales.h"
 #import "ProductViewController.h"
 #import "UIViewController+MMDrawerController.h"
+#import "AccountDao.h"
 
 @interface HomePageViewController () <SDCycleScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *scrollAdView;
@@ -35,6 +36,7 @@
 - (void)configureNotifacation{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginButtonClicked) name:@"loginButtonClicked" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registerButtonClicked) name:@"registerButtonClicked" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginOutButtonClicked) name:@"loginOutButtonClicked" object:nil];
 }
 
 - (void)buttonClicked:(UIView *)sender {
@@ -61,6 +63,7 @@
         case 103:{
             ProductViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"ProductViewController"];
             vc.mytitle = @"产品品牌";
+            vc.isNews = YES;
             [self.navigationController pushViewController:vc animated:YES];
             NSLog(@"产品推荐");
             break;
@@ -74,7 +77,10 @@
             break;
         }
         case 105:{
-            ShoppingViewController *vc = [[ShoppingViewController alloc] init];
+//            ShoppingViewController *vc = [[ShoppingViewController alloc] init];
+//            [self.navigationController pushViewController:vc animated:YES];
+            WXWebViewController *vc = [[WXWebViewController alloc] init];
+            vc.mytitle = @"商城";
             [self.navigationController pushViewController:vc animated:YES];
             NSLog(@"商城");
             break;
@@ -89,9 +95,13 @@
             break;
         }
         case 108:{
-            UITableViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateInitialViewController];
-            [self.navigationController pushViewController:vc animated:YES];
-            NSLog(@"用户中心");
+            if([[[AccountDao alloc] init] isLogin]){
+                UITableViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateInitialViewController];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+            else{
+                [self showLoginAlert];
+            }
             break;
         }
         default:
@@ -105,6 +115,17 @@
     self.salesArray = [[NSMutableArray alloc] init];
     [self configureScrollView];
     [self configureNotifacation];
+}
+
+- (void)showLoginAlert{
+    UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"请登录" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *sure = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self loginButtonClicked];
+    }];
+    [vc addAction:cancel];
+    [vc addAction:sure];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)configureScrollView{
@@ -156,6 +177,16 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"RegisterStoryBoard" bundle:nil];
     RegisterViewController *vc = [sb instantiateInitialViewController];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)loginOutButtonClicked{
+    [NetworkRequest userLogoutWithSuccess:^{
+        [SVProgressHUD showErrorWithStatus:@"退出成功"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+    } failure:^(NSString *error){
+        [SVProgressHUD showErrorWithStatus:@"退出失败，请重新尝试"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+    }];
 }
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{

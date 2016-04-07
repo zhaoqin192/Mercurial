@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		305F859A1CB2524600F42B33 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 305F85981CB2524600F42B33 /* NSDate+Helper.m */; };
+		305F859B1CB2524600F42B33 /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = 305F85991CB2524600F42B33 /* README.textile */; };
+		305F859E1CB252DC00F42B33 /* NSDate+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 305F859D1CB252DC00F42B33 /* NSDate+Common.m */; };
+		305F85A11CB2530C00F42B33 /* NSDate+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 305F85A01CB2530C00F42B33 /* NSDate+convenience.m */; };
+		305F85A41CB2619000F42B33 /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305F85A31CB2619000F42B33 /* UserDetailViewController.m */; };
+		305F85DD1CB3A7AA00F42B33 /* userIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 305F85DC1CB3A7AA00F42B33 /* userIconCell.m */; };
+		305F85DF1CB3A7C400F42B33 /* userIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305F85DE1CB3A7C400F42B33 /* userIconCell.xib */; };
+		305F85E41CB3D38700F42B33 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305F85E31CB3D38700F42B33 /* AssetsLibrary.framework */; };
+		305F861A1CB53E4100F42B33 /* FriendsIntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305F86191CB53E4100F42B33 /* FriendsIntroduceViewController.m */; };
+		305F861D1CB5468400F42B33 /* AddOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305F861C1CB5468400F42B33 /* AddOrderViewController.m */; };
 		30A3A9271CA96FD70076208B /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A3A9251CA96FD70076208B /* NewsCell.m */; };
 		30A3A9281CA96FD70076208B /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A3A9261CA96FD70076208B /* NewsCell.xib */; };
 		30A3A92C1CAA44980076208B /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A3A92A1CAA44980076208B /* ProductViewController.m */; };
@@ -16,10 +26,6 @@
 		30A4A6581C96939100BF5EA1 /* ScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A4A6501C96939100BF5EA1 /* ScanViewController.xib */; };
 		30A4A6591C96939100BF5EA1 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A4A6511C96939100BF5EA1 /* User.storyboard */; };
 		30A4A65A1C96939100BF5EA1 /* UserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6531C96939100BF5EA1 /* UserInformationViewController.m */; };
-		30A4A66E1C969F6600BF5EA1 /* FriendsIntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A66D1C969F6600BF5EA1 /* FriendsIntroduceViewController.m */; };
-		30A4A6711C96A00F00BF5EA1 /* FansCommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6701C96A00F00BF5EA1 /* FansCommandViewController.m */; };
-		30A4A6741C96A0D800BF5EA1 /* AddProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6731C96A0D800BF5EA1 /* AddProductViewController.m */; };
-		30A4A6771C96A25700BF5EA1 /* UserOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6761C96A25700BF5EA1 /* UserOrderViewController.m */; };
 		30A4A67B1C97F61000BF5EA1 /* ShoppingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4A6791C97F61000BF5EA1 /* ShoppingViewController.m */; };
 		30A4A67C1C97F61000BF5EA1 /* ShoppingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A4A67A1C97F61000BF5EA1 /* ShoppingViewController.xib */; };
 		30ACF6471CA51E5C005B56EC /* WXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF6451CA51E5C005B56EC /* WXWebViewController.m */; };
@@ -33,6 +39,8 @@
 		30ACF6611CA58773005B56EC /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF6581CA58773005B56EC /* DistancePickerView.m */; };
 		30ACF6621CA58773005B56EC /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF65A1CA58773005B56EC /* SWActionSheet.m */; };
 		30ACF6651CA6A658005B56EC /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF6641CA6A658005B56EC /* UIColor+expanded.m */; };
+		30CADF521CB5501F003E0F7F /* FriendsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CADF511CB5501F003E0F7F /* FriendsListViewController.m */; };
+		30CADF551CB5537B003E0F7F /* OrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CADF541CB5537B003E0F7F /* OrderListViewController.m */; };
 		30D18F1E1C9AD79500559866 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D18F1D1C9AD79500559866 /* KxMenu.m */; };
 		30D18F211C9ADBE500559866 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D18F201C9ADBE500559866 /* LoginStoryboard.storyboard */; };
 		30D18F231C9ADBF000559866 /* RegisterStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D18F221C9ADBF000559866 /* RegisterStoryBoard.storyboard */; };
@@ -79,6 +87,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		305F85971CB2524600F42B33 /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
+		305F85981CB2524600F42B33 /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
+		305F85991CB2524600F42B33 /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
+		305F859C1CB252DC00F42B33 /* NSDate+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Common.h"; sourceTree = "<group>"; };
+		305F859D1CB252DC00F42B33 /* NSDate+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Common.m"; sourceTree = "<group>"; };
+		305F859F1CB2530C00F42B33 /* NSDate+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+convenience.h"; sourceTree = "<group>"; };
+		305F85A01CB2530C00F42B33 /* NSDate+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+convenience.m"; sourceTree = "<group>"; };
+		305F85A21CB2619000F42B33 /* UserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailViewController.h; sourceTree = "<group>"; };
+		305F85A31CB2619000F42B33 /* UserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailViewController.m; sourceTree = "<group>"; };
+		305F85DB1CB3A7AA00F42B33 /* userIconCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userIconCell.h; sourceTree = "<group>"; };
+		305F85DC1CB3A7AA00F42B33 /* userIconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userIconCell.m; sourceTree = "<group>"; };
+		305F85DE1CB3A7C400F42B33 /* userIconCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = userIconCell.xib; sourceTree = "<group>"; };
+		305F85E31CB3D38700F42B33 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		305F86181CB53E4100F42B33 /* FriendsIntroduceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsIntroduceViewController.h; sourceTree = "<group>"; };
+		305F86191CB53E4100F42B33 /* FriendsIntroduceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsIntroduceViewController.m; sourceTree = "<group>"; };
+		305F861B1CB5468400F42B33 /* AddOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddOrderViewController.h; sourceTree = "<group>"; };
+		305F861C1CB5468400F42B33 /* AddOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddOrderViewController.m; sourceTree = "<group>"; };
 		30A3A9241CA96FD70076208B /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
 		30A3A9251CA96FD70076208B /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
 		30A3A9261CA96FD70076208B /* NewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
@@ -94,14 +119,6 @@
 		30A4A6511C96939100BF5EA1 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		30A4A6521C96939100BF5EA1 /* UserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInformationViewController.h; sourceTree = "<group>"; };
 		30A4A6531C96939100BF5EA1 /* UserInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInformationViewController.m; sourceTree = "<group>"; };
-		30A4A66C1C969F6600BF5EA1 /* FriendsIntroduceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsIntroduceViewController.h; sourceTree = "<group>"; };
-		30A4A66D1C969F6600BF5EA1 /* FriendsIntroduceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsIntroduceViewController.m; sourceTree = "<group>"; };
-		30A4A66F1C96A00F00BF5EA1 /* FansCommandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FansCommandViewController.h; sourceTree = "<group>"; };
-		30A4A6701C96A00F00BF5EA1 /* FansCommandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FansCommandViewController.m; sourceTree = "<group>"; };
-		30A4A6721C96A0D800BF5EA1 /* AddProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddProductViewController.h; sourceTree = "<group>"; };
-		30A4A6731C96A0D800BF5EA1 /* AddProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddProductViewController.m; sourceTree = "<group>"; };
-		30A4A6751C96A25700BF5EA1 /* UserOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserOrderViewController.h; sourceTree = "<group>"; };
-		30A4A6761C96A25700BF5EA1 /* UserOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserOrderViewController.m; sourceTree = "<group>"; };
 		30A4A6781C97F61000BF5EA1 /* ShoppingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingViewController.h; sourceTree = "<group>"; };
 		30A4A6791C97F61000BF5EA1 /* ShoppingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingViewController.m; sourceTree = "<group>"; };
 		30A4A67A1C97F61000BF5EA1 /* ShoppingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingViewController.xib; sourceTree = "<group>"; };
@@ -127,6 +144,10 @@
 		30ACF65A1CA58773005B56EC /* SWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWActionSheet.m; sourceTree = "<group>"; };
 		30ACF6631CA6A658005B56EC /* UIColor+expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+expanded.h"; sourceTree = "<group>"; };
 		30ACF6641CA6A658005B56EC /* UIColor+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+expanded.m"; sourceTree = "<group>"; };
+		30CADF501CB5501F003E0F7F /* FriendsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsListViewController.h; sourceTree = "<group>"; };
+		30CADF511CB5501F003E0F7F /* FriendsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsListViewController.m; sourceTree = "<group>"; };
+		30CADF531CB5537B003E0F7F /* OrderListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListViewController.h; sourceTree = "<group>"; };
+		30CADF541CB5537B003E0F7F /* OrderListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListViewController.m; sourceTree = "<group>"; };
 		30D18F1C1C9AD79500559866 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
 		30D18F1D1C9AD79500559866 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		30D18F1F1C9AD98400559866 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = ../PrefixHeader.pch; sourceTree = "<group>"; };
@@ -218,6 +239,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				305F85E41CB3D38700F42B33 /* AssetsLibrary.framework in Frameworks */,
 				8D036F0D3D5D69D4249794B4 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,38 +247,105 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		30A4A6481C96938100BF5EA1 /* main */ = {
+		305F85961CB2524600F42B33 /* NSDate+Helper */ = {
+			isa = PBXGroup;
+			children = (
+				305F859F1CB2530C00F42B33 /* NSDate+convenience.h */,
+				305F85A01CB2530C00F42B33 /* NSDate+convenience.m */,
+				305F859C1CB252DC00F42B33 /* NSDate+Common.h */,
+				305F859D1CB252DC00F42B33 /* NSDate+Common.m */,
+				305F85971CB2524600F42B33 /* NSDate+Helper.h */,
+				305F85981CB2524600F42B33 /* NSDate+Helper.m */,
+				305F85991CB2524600F42B33 /* README.textile */,
+			);
+			path = "NSDate+Helper";
+			sourceTree = "<group>";
+		};
+		305F85D21CB3A58000F42B33 /* introduce */ = {
 			isa = PBXGroup;
 			children = (
 				30ACF6441CA51E5C005B56EC /* WXWebViewController.h */,
 				30ACF6451CA51E5C005B56EC /* WXWebViewController.m */,
 				30ACF6461CA51E5C005B56EC /* WXWebViewController.xib */,
+			);
+			name = introduce;
+			sourceTree = "<group>";
+		};
+		305F85D31CB3A5AB00F42B33 /* news */ = {
+			isa = PBXGroup;
+			children = (
 				30A4A6491C96939100BF5EA1 /* NewsViewController.h */,
 				30A4A64A1C96939100BF5EA1 /* NewsViewController.m */,
 				30A3A9241CA96FD70076208B /* NewsCell.h */,
 				30A3A9251CA96FD70076208B /* NewsCell.m */,
 				30A3A9261CA96FD70076208B /* NewsCell.xib */,
+			);
+			name = news;
+			sourceTree = "<group>";
+		};
+		305F85D41CB3A5BC00F42B33 /* product */ = {
+			isa = PBXGroup;
+			children = (
 				30A3A9291CAA44980076208B /* ProductViewController.h */,
 				30A3A92A1CAA44980076208B /* ProductViewController.m */,
 				30A3A92E1CAA69E20076208B /* ProductDetailViewController.h */,
 				30A3A92F1CAA69E20076208B /* ProductDetailViewController.m */,
+			);
+			name = product;
+			sourceTree = "<group>";
+		};
+		305F85D51CB3A5D300F42B33 /* scan */ = {
+			isa = PBXGroup;
+			children = (
 				30A4A64E1C96939100BF5EA1 /* ScanViewController.h */,
 				30A4A64F1C96939100BF5EA1 /* ScanViewController.m */,
 				30A4A6501C96939100BF5EA1 /* ScanViewController.xib */,
+			);
+			name = scan;
+			sourceTree = "<group>";
+		};
+		305F85D61CB3A5DC00F42B33 /* shopping */ = {
+			isa = PBXGroup;
+			children = (
 				30A4A6781C97F61000BF5EA1 /* ShoppingViewController.h */,
 				30A4A6791C97F61000BF5EA1 /* ShoppingViewController.m */,
 				30A4A67A1C97F61000BF5EA1 /* ShoppingViewController.xib */,
+			);
+			name = shopping;
+			sourceTree = "<group>";
+		};
+		305F85D71CB3A61B00F42B33 /* user */ = {
+			isa = PBXGroup;
+			children = (
 				30A4A6511C96939100BF5EA1 /* User.storyboard */,
+				305F85DB1CB3A7AA00F42B33 /* userIconCell.h */,
+				305F85DC1CB3A7AA00F42B33 /* userIconCell.m */,
+				305F85DE1CB3A7C400F42B33 /* userIconCell.xib */,
 				30A4A6521C96939100BF5EA1 /* UserInformationViewController.h */,
 				30A4A6531C96939100BF5EA1 /* UserInformationViewController.m */,
-				30A4A66C1C969F6600BF5EA1 /* FriendsIntroduceViewController.h */,
-				30A4A66D1C969F6600BF5EA1 /* FriendsIntroduceViewController.m */,
-				30A4A66F1C96A00F00BF5EA1 /* FansCommandViewController.h */,
-				30A4A6701C96A00F00BF5EA1 /* FansCommandViewController.m */,
-				30A4A6721C96A0D800BF5EA1 /* AddProductViewController.h */,
-				30A4A6731C96A0D800BF5EA1 /* AddProductViewController.m */,
-				30A4A6751C96A25700BF5EA1 /* UserOrderViewController.h */,
-				30A4A6761C96A25700BF5EA1 /* UserOrderViewController.m */,
+				305F85A21CB2619000F42B33 /* UserDetailViewController.h */,
+				305F85A31CB2619000F42B33 /* UserDetailViewController.m */,
+				305F86181CB53E4100F42B33 /* FriendsIntroduceViewController.h */,
+				305F86191CB53E4100F42B33 /* FriendsIntroduceViewController.m */,
+				30CADF501CB5501F003E0F7F /* FriendsListViewController.h */,
+				30CADF511CB5501F003E0F7F /* FriendsListViewController.m */,
+				305F861B1CB5468400F42B33 /* AddOrderViewController.h */,
+				305F861C1CB5468400F42B33 /* AddOrderViewController.m */,
+				30CADF531CB5537B003E0F7F /* OrderListViewController.h */,
+				30CADF541CB5537B003E0F7F /* OrderListViewController.m */,
+			);
+			name = user;
+			sourceTree = "<group>";
+		};
+		30A4A6481C96938100BF5EA1 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				305F85D21CB3A58000F42B33 /* introduce */,
+				305F85D31CB3A5AB00F42B33 /* news */,
+				305F85D41CB3A5BC00F42B33 /* product */,
+				305F85D51CB3A5D300F42B33 /* scan */,
+				305F85D61CB3A5DC00F42B33 /* shopping */,
+				305F85D71CB3A61B00F42B33 /* user */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -264,6 +353,7 @@
 		30A4A65B1C96980200BF5EA1 /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
+				305F85961CB2524600F42B33 /* NSDate+Helper */,
 				30ACF6661CA6A661005B56EC /* UIColor+expanded */,
 				30ACF6491CA58773005B56EC /* ActionSheetPicker */,
 				30D18F1B1C9AD79500559866 /* KxMenu */,
@@ -317,6 +407,7 @@
 		51E4ABF6D2D0F2A61EE86E89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				305F85E31CB3D38700F42B33 /* AssetsLibrary.framework */,
 				6A8BCBA5CED9CE1AD81A140B /* libPods.a */,
 			);
 			name = Frameworks;
@@ -592,6 +683,8 @@
 				30A4A67C1C97F61000BF5EA1 /* ShoppingViewController.xib in Resources */,
 				AC5E1CEC1C904484008D91E5 /* Assets.xcassets in Resources */,
 				30D18F211C9ADBE500559866 /* LoginStoryboard.storyboard in Resources */,
+				305F85DF1CB3A7C400F42B33 /* userIconCell.xib in Resources */,
+				305F859B1CB2524600F42B33 /* README.textile in Resources */,
 				30A4A6591C96939100BF5EA1 /* User.storyboard in Resources */,
 				30A4A6581C96939100BF5EA1 /* ScanViewController.xib in Resources */,
 			);
@@ -653,7 +746,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				30D18F261C9ADDAF00559866 /* LoginViewController.m in Sources */,
-				30A4A6771C96A25700BF5EA1 /* UserOrderViewController.m in Sources */,
 				30A3A92C1CAA44980076208B /* ProductViewController.m in Sources */,
 				ACC204EC1C99251400B26CDD /* Account+CoreDataProperties.m in Sources */,
 				30A4A6571C96939100BF5EA1 /* ScanViewController.m in Sources */,
@@ -664,12 +756,14 @@
 				ACC204F11C99283A00B26CDD /* AccountDao.m in Sources */,
 				AC5182741CAE69F90095BAB6 /* Type.m in Sources */,
 				ACC204E41C99037C00B26CDD /* Utility.m in Sources */,
+				30CADF551CB5537B003E0F7F /* OrderListViewController.m in Sources */,
+				305F85A11CB2530C00F42B33 /* NSDate+convenience.m in Sources */,
 				ACC205111C9A479100B26CDD /* ProductManager.m in Sources */,
 				30ACF6621CA58773005B56EC /* SWActionSheet.m in Sources */,
 				ACC2050A1C99587A00B26CDD /* NewsManager.m in Sources */,
-				30A4A66E1C969F6600BF5EA1 /* FriendsIntroduceViewController.m in Sources */,
 				ACCA4CC91C91171A00121269 /* Constant.m in Sources */,
 				ACC2051F1C9A9A1D00B26CDD /* SalesManager.m in Sources */,
+				305F861A1CB53E4100F42B33 /* FriendsIntroduceViewController.m in Sources */,
 				30A4A6541C96939100BF5EA1 /* NewsViewController.m in Sources */,
 				ACC204ED1C99251400B26CDD /* Account.m in Sources */,
 				AC51826B1CAE5FD50095BAB6 /* TopicManager.m in Sources */,
@@ -688,21 +782,25 @@
 				ACC205191C9A50D600B26CDD /* TestViewController.m in Sources */,
 				ACC204E71C99065C00B26CDD /* NetworkRequest.m in Sources */,
 				ACC2051C1C9A99DD00B26CDD /* Sales.m in Sources */,
+				305F859A1CB2524600F42B33 /* NSDate+Helper.m in Sources */,
 				AC5182651CAE4E6A0095BAB6 /* RecommendManager.m in Sources */,
 				ACC205021C9956D000B26CDD /* News.m in Sources */,
+				30CADF521CB5501F003E0F7F /* FriendsListViewController.m in Sources */,
 				ACC3D7F91CAD4132000FBE93 /* Order.m in Sources */,
 				30A3A9271CA96FD70076208B /* NewsCell.m in Sources */,
 				30D18F291C9ADDC100559866 /* RegisterViewController.m in Sources */,
+				305F85A41CB2619000F42B33 /* UserDetailViewController.m in Sources */,
 				30D407731CAD641B0068FD85 /* HomeLeftViewController.m in Sources */,
-				30A4A6741C96A0D800BF5EA1 /* AddProductViewController.m in Sources */,
-				30A4A6711C96A00F00BF5EA1 /* FansCommandViewController.m in Sources */,
 				AC5182681CAE5F670095BAB6 /* Topic.m in Sources */,
 				AC5E1CDE1C904484008D91E5 /* main.m in Sources */,
+				305F85DD1CB3A7AA00F42B33 /* userIconCell.m in Sources */,
 				AC5182621CAE4DFB0095BAB6 /* Recommend.m in Sources */,
 				ACC204FC1C99526700B26CDD /* ProductKind.m in Sources */,
+				305F861D1CB5468400F42B33 /* AddOrderViewController.m in Sources */,
 				30D18F2C1C9E484F00559866 /* HomePageViewController.m in Sources */,
 				30D18F1E1C9AD79500559866 /* KxMenu.m in Sources */,
 				ACC3D7FC1CAD50D2000FBE93 /* AddOrder.m in Sources */,
+				305F859E1CB252DC00F42B33 /* NSDate+Common.m in Sources */,
 				30ACF6471CA51E5C005B56EC /* WXWebViewController.m in Sources */,
 				30ACF6611CA58773005B56EC /* DistancePickerView.m in Sources */,
 				AC5182711CAE65A30095BAB6 /* AnswerManager.m in Sources */,
@@ -802,14 +900,15 @@
 			baseConfigurationReference = 59A6001685EAEFD7AF2127DC /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jianwei Shu (5CT8R4N349)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = Mercurial/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.muggins.Mercurial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "96f0d9c8-cbfa-4001-b39d-5c4232fb0bc5";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -819,14 +918,15 @@
 			baseConfigurationReference = F13185264FDB502171C80DA5 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jianwei Shu (5CT8R4N349)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = Mercurial/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.muggins.Mercurial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "96f0d9c8-cbfa-4001-b39d-5c4232fb0bc5";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
