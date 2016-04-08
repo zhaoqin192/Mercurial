@@ -439,6 +439,7 @@
         NSLog(@"JSON: %@", responseObject);
         NSArray *array = responseObject;
         OrderManager *manager = [OrderManager sharedManager];
+        [manager cleanOrderArray];
         for(NSDictionary *dic in array){
             [manager.orderArray addObject:[dic objectForKey:@"order_id"]];
         }
