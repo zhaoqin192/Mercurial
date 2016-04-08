@@ -8,6 +8,7 @@
 
 #import "AddOrderViewController.h"
 #import "Account.h"
+#import "SearchOrder.h"
 
 @interface AddOrderViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *numTF;
@@ -19,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *modifyButton;
 @property (weak, nonatomic) IBOutlet UIButton *createButton;
 @property (nonatomic, strong) Account *myAccount;
-
+@property (nonatomic, strong) SearchOrder *searchOrder;
 @end
 
 @implementation AddOrderViewController
@@ -84,9 +85,15 @@
 
 - (void)configureTextField{
     [NetworkRequest requestSearchOrder:self.identify success:^{
-        NSLog(@"成功");
+        self.searchOrder = [[OrderManager sharedManager] searchOrder];
+        self.numTF.text = self.searchOrder.order_id;
+        self.phoneTF.text = self.searchOrder.phone;
+        self.nameTF.text = self.searchOrder.username;
+        self.addressTF.text = self.searchOrder.delivery_address;
+        self.dateTF.text = self.searchOrder.buy_date;
     } failure:^{
-        ;
+        [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
     }];
 }
 

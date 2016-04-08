@@ -10,7 +10,7 @@
 #import "Account.h"
 
 @interface FriendsIntroduceViewController ()
-@property (nonatomic, copy) NSArray *list;
+@property (nonatomic, strong) Recommend *recommend;
 @property (weak, nonatomic) IBOutlet UITextField *nameTF;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTF;
 @property (weak, nonatomic) IBOutlet UITextField *addressTF;
@@ -39,14 +39,12 @@
 
 - (void)configureTextField{
     [NetworkRequest requestCommendItem:self.identify success:^{
-        self.list = [[RecommendManager sharedManager] fetchCommendArray];
-        NSLog(@"%d",self.list.count);
-        Recommend *recommend = [self.list firstObject];
-        self.nameTF.text = recommend.recomm_name;
-        self.phoneTF.text = recommend.recomm_phone;
-        self.addressTF.text = recommend.address;
-        self.productTF.text = recommend.recomm_product_name;
-        self.reasonTF.text = recommend.recomm_reason;
+        self.recommend = [[RecommendManager sharedManager] recommend];
+        self.nameTF.text = self.recommend.recomm_name;
+        self.phoneTF.text = self.recommend.recomm_phone;
+        self.addressTF.text = self.recommend.address;
+        self.productTF.text = self.recommend.recomm_product_name;
+        self.reasonTF.text = self.recommend.recomm_reason;
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
