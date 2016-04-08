@@ -70,7 +70,7 @@
     [NetworkRequest requestFakeSearch:self.productTextField.text success:^{
         [SVProgressHUD showSuccessWithStatus:@"已查到该产品"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
-    } failure:^{
+    } failure:^(NSString *error){
         [SVProgressHUD showErrorWithStatus:@"未查询到该产品"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.0f];
     }];

@@ -220,7 +220,7 @@
     
     [NetworkRequest requestAddOrderWithID:@"201603312123" name:@"sd" province:@"asdf" city:@"asdf" district:@"asdf" address:@"sdfds" phone:@"18810541555" date:@"2015-10-20" item:array success:^{
         
-    } failure:^{
+    } failure:^(NSString *error){
         
     }];
     

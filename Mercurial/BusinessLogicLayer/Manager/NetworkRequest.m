@@ -459,7 +459,7 @@
                           date:(NSString *)buy_date
                           item:(NSMutableArray *)items
                        success:(void (^)())success
-                       failure:(void (^)())failure{
+                       failure:(void (^)(NSString *error))failure{
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
     NSURL *URL = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/Product/Index/add_order"]];
     Account *account = [[DatabaseManager sharedAccount] getAccount];
@@ -483,10 +483,15 @@
     
     [manager POST:URL.absoluteString parameters:parames progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
-        success();
+        NSDictionary *dic = responseObject;
+        if([[dic objectForKey:@"status"] isEqualToString:@"200"]){
+            success();
+        }else{
+            failure([dic objectForKey:@"error"]);
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error);
-        failure();
+        failure(@"Network Error");
     }];
     
 }
@@ -542,7 +547,7 @@
                       date:(NSString *)date
                     reason:(NSString *)recomm_reason
                    success:(void (^)())success
-                   failure:(void (^)())failure{
+                   failure:(void (^)(NSString *error))failure{
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
     NSURL *URL = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/User/Index/add_user_recomm"]];
     Account *account = [[DatabaseManager sharedAccount] getAccount];
@@ -551,10 +556,15 @@
     
     [manager POST:URL.absoluteString parameters:parames progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
-        success();
+        NSDictionary *dic = responseObject;
+        if([[dic objectForKey:@"status"] isEqualToString:@"200"]){
+            success();
+        }else{
+            failure([dic objectForKey:@"error"]);
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error);
-        failure();
+        failure(@"Network Error");
     }];
 
 }
@@ -603,7 +613,7 @@
 
 + (void) requestFakeSearch:(NSString *)productID
                    success:(void (^)())success
-                   failure:(void (^)())failure{
+                   failure:(void (^)(NSString *error))failure{
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
     NSURL *URL = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/Product/Index/anti_fake_search"]];
     
@@ -611,10 +621,15 @@
     
     [manager POST:URL.absoluteString parameters:parames progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
-        success();
+        NSDictionary *dic = responseObject;
+        if([[dic objectForKey:@"status"] isEqualToString:@"200"]){
+            success();
+        }else{
+            failure([dic objectForKey:@"error"]);
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error);
-        failure();
+        failure(@"Network Error");
     }];
 
 }

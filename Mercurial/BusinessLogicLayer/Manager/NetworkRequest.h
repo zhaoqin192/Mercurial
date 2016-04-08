@@ -259,7 +259,7 @@
                           date:(NSString *)buy_date
                           item:(NSMutableArray *)items
                        success:(void (^)())success
-                       failure:(void (^)())failure;
+                       failure:(void (^)(NSString *error))failure;
 
 /**
  *  根据id查询订单
@@ -307,7 +307,7 @@
                       date:(NSString *)date
                     reason:(NSString *)recomm_reason
                    success:(void (^)())success
-                   failure:(void (^)())failure;
+                   failure:(void (^)(NSString *error))failure;
 
 /**
  *  获取客户推荐列表
@@ -338,7 +338,7 @@
  */
 + (void) requestFakeSearch:(NSString *)productID
                    success:(void (^)())success
-                   failure:(void (^)())failure;
+                   failure:(void (^)(NSString *error))failure;
 
 /**
  *  帖子列表
