@@ -18,5 +18,6 @@
 @property (nonatomic, strong) NSString *answer_time;
 @property (nonatomic, strong) NSString *topic_id;
 @property (nonatomic, strong) NSArray *url;
+@property (nonatomic, assign) CGFloat cellHeight;
 
 @end

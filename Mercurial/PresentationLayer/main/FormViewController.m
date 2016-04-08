@@ -10,6 +10,7 @@
 #import "TopicCell.h"
 #import "Topic.h"
 #import "TopicManager.h"
+#import "FormDetailViewController.h"
 
 @interface FormViewController ()
 @property (nonatomic, copy) NSArray *list;
@@ -49,6 +50,13 @@
     Topic *topic = self.list[indexPath.row];
     cell.topic = topic;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    Topic *topic = self.list[indexPath.row];
+    FormDetailViewController *vc = [[FormDetailViewController alloc] init];
+    vc.topic_id = topic.topic_id;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
