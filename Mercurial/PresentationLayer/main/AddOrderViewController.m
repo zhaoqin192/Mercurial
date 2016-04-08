@@ -59,13 +59,21 @@
     [SVProgressHUD show];
     self.myAccount = [[[AccountDao alloc] init] getAccount];
     
-    [NetworkRequest requestAddOrderWithID:self.numTF.text name:self.nameTF.text province:[self notNil:self.myAccount.province] city:[self notNil:self.myAccount.city] district:[self notNil:self.myAccount.district] address:self.addressTF.text phone:self.phoneTF.text date:self.dateTF.text item:nil success:^{
+    NSDate *date1 = [NSDate date];
+    //然后您需要定义一个NSDataFormat的对象
+    NSDateFormatter * dateFormat = [[NSDateFormatter alloc]init];
+    //然后设置这个类的dataFormate属性为一个字符串，系统就可以因此自动识别年月日时间
+    dateFormat.dateFormat = @"yyyy-MM-dd";
+    //之后定义一个字符串，使用stringFromDate方法将日期转换为字符串
+    NSString * dateToString = [dateFormat stringFromDate:date1];
+    
+    [NetworkRequest requestAddOrderWithID:self.numTF.text name:self.nameTF.text province:[self notNil:self.myAccount.province] city:[self notNil:self.myAccount.city] district:[self notNil:self.myAccount.district] address:self.addressTF.text phone:self.phoneTF.text date:dateToString item:nil success:^{
         [SVProgressHUD showSuccessWithStatus:@"创建订单成功!"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
         [self.navigationController popViewControllerAnimated:YES];
     } failure:^(NSString *error){
-        [SVProgressHUD showErrorWithStatus:@"创建失败"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [SVProgressHUD showErrorWithStatus:error];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
     }];
 }
 
