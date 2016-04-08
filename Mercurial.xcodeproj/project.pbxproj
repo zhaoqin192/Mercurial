@@ -48,6 +48,9 @@
 		30D18F291C9ADDC100559866 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D18F281C9ADDC100559866 /* RegisterViewController.m */; };
 		30D18F2C1C9E484F00559866 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D18F2B1C9E484F00559866 /* HomePageViewController.m */; };
 		30D407731CAD641B0068FD85 /* HomeLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D407721CAD641B0068FD85 /* HomeLeftViewController.m */; };
+		30ECBFE01CB77B580020164B /* FormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ECBFDF1CB77B580020164B /* FormViewController.m */; };
+		30ECBFE81CB7819C0020164B /* TopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ECBFE61CB7819C0020164B /* TopicCell.m */; };
+		30ECBFE91CB7819C0020164B /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30ECBFE71CB7819C0020164B /* TopicCell.xib */; };
 		8D036F0D3D5D69D4249794B4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8BCBA5CED9CE1AD81A140B /* libPods.a */; };
 		AC516A2C1CB69E4100B0A6AB /* SearchOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = AC516A2B1CB69E4100B0A6AB /* SearchOrder.m */; };
 		AC5182621CAE4DFB0095BAB6 /* Recommend.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5182611CAE4DFB0095BAB6 /* Recommend.m */; };
@@ -162,6 +165,11 @@
 		30D18F2B1C9E484F00559866 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
 		30D407711CAD641B0068FD85 /* HomeLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeLeftViewController.h; sourceTree = "<group>"; };
 		30D407721CAD641B0068FD85 /* HomeLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeLeftViewController.m; sourceTree = "<group>"; };
+		30ECBFDE1CB77B580020164B /* FormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormViewController.h; sourceTree = "<group>"; };
+		30ECBFDF1CB77B580020164B /* FormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormViewController.m; sourceTree = "<group>"; };
+		30ECBFE51CB7819C0020164B /* TopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicCell.h; sourceTree = "<group>"; };
+		30ECBFE61CB7819C0020164B /* TopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicCell.m; sourceTree = "<group>"; };
+		30ECBFE71CB7819C0020164B /* TopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicCell.xib; sourceTree = "<group>"; };
 		59A6001685EAEFD7AF2127DC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6A8BCBA5CED9CE1AD81A140B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC516A2A1CB69E4100B0A6AB /* SearchOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchOrder.h; sourceTree = "<group>"; };
@@ -321,21 +329,12 @@
 			isa = PBXGroup;
 			children = (
 				30A4A6511C96939100BF5EA1 /* User.storyboard */,
-				305F85DB1CB3A7AA00F42B33 /* userIconCell.h */,
-				305F85DC1CB3A7AA00F42B33 /* userIconCell.m */,
-				305F85DE1CB3A7C400F42B33 /* userIconCell.xib */,
-				30A4A6521C96939100BF5EA1 /* UserInformationViewController.h */,
-				30A4A6531C96939100BF5EA1 /* UserInformationViewController.m */,
-				305F85A21CB2619000F42B33 /* UserDetailViewController.h */,
-				305F85A31CB2619000F42B33 /* UserDetailViewController.m */,
-				305F86181CB53E4100F42B33 /* FriendsIntroduceViewController.h */,
-				305F86191CB53E4100F42B33 /* FriendsIntroduceViewController.m */,
-				30CADF501CB5501F003E0F7F /* FriendsListViewController.h */,
-				30CADF511CB5501F003E0F7F /* FriendsListViewController.m */,
-				305F861B1CB5468400F42B33 /* AddOrderViewController.h */,
-				305F861C1CB5468400F42B33 /* AddOrderViewController.m */,
-				30CADF531CB5537B003E0F7F /* OrderListViewController.h */,
-				30CADF541CB5537B003E0F7F /* OrderListViewController.m */,
+				30ECBFE41CB781780020164B /* cell */,
+				30ECBFE31CB781620020164B /* information */,
+				30ECBFE11CB781330020164B /* introduce */,
+				30ECBFE21CB781540020164B /* order */,
+				30ECBFDE1CB77B580020164B /* FormViewController.h */,
+				30ECBFDF1CB77B580020164B /* FormViewController.m */,
 			);
 			name = user;
 			sourceTree = "<group>";
@@ -405,6 +404,52 @@
 			);
 			name = KxMenu;
 			path = Source;
+			sourceTree = "<group>";
+		};
+		30ECBFE11CB781330020164B /* introduce */ = {
+			isa = PBXGroup;
+			children = (
+				305F86181CB53E4100F42B33 /* FriendsIntroduceViewController.h */,
+				305F86191CB53E4100F42B33 /* FriendsIntroduceViewController.m */,
+				30CADF501CB5501F003E0F7F /* FriendsListViewController.h */,
+				30CADF511CB5501F003E0F7F /* FriendsListViewController.m */,
+			);
+			name = introduce;
+			sourceTree = "<group>";
+		};
+		30ECBFE21CB781540020164B /* order */ = {
+			isa = PBXGroup;
+			children = (
+				305F861B1CB5468400F42B33 /* AddOrderViewController.h */,
+				305F861C1CB5468400F42B33 /* AddOrderViewController.m */,
+				30CADF531CB5537B003E0F7F /* OrderListViewController.h */,
+				30CADF541CB5537B003E0F7F /* OrderListViewController.m */,
+			);
+			name = order;
+			sourceTree = "<group>";
+		};
+		30ECBFE31CB781620020164B /* information */ = {
+			isa = PBXGroup;
+			children = (
+				30A4A6521C96939100BF5EA1 /* UserInformationViewController.h */,
+				30A4A6531C96939100BF5EA1 /* UserInformationViewController.m */,
+				305F85A21CB2619000F42B33 /* UserDetailViewController.h */,
+				305F85A31CB2619000F42B33 /* UserDetailViewController.m */,
+			);
+			name = information;
+			sourceTree = "<group>";
+		};
+		30ECBFE41CB781780020164B /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				305F85DB1CB3A7AA00F42B33 /* userIconCell.h */,
+				305F85DC1CB3A7AA00F42B33 /* userIconCell.m */,
+				305F85DE1CB3A7C400F42B33 /* userIconCell.xib */,
+				30ECBFE51CB7819C0020164B /* TopicCell.h */,
+				30ECBFE61CB7819C0020164B /* TopicCell.m */,
+				30ECBFE71CB7819C0020164B /* TopicCell.xib */,
+			);
+			name = cell;
 			sourceTree = "<group>";
 		};
 		51E4ABF6D2D0F2A61EE86E89 /* Frameworks */ = {
@@ -686,6 +731,7 @@
 				30A3A9281CA96FD70076208B /* NewsCell.xib in Resources */,
 				30ACF6481CA51E5C005B56EC /* WXWebViewController.xib in Resources */,
 				30A4A67C1C97F61000BF5EA1 /* ShoppingViewController.xib in Resources */,
+				30ECBFE91CB7819C0020164B /* TopicCell.xib in Resources */,
 				AC5E1CEC1C904484008D91E5 /* Assets.xcassets in Resources */,
 				30D18F211C9ADBE500559866 /* LoginStoryboard.storyboard in Resources */,
 				305F85DF1CB3A7C400F42B33 /* userIconCell.xib in Resources */,
@@ -762,9 +808,11 @@
 				AC5182741CAE69F90095BAB6 /* Type.m in Sources */,
 				ACC204E41C99037C00B26CDD /* Utility.m in Sources */,
 				30CADF551CB5537B003E0F7F /* OrderListViewController.m in Sources */,
+				30ECBFE01CB77B580020164B /* FormViewController.m in Sources */,
 				305F85A11CB2530C00F42B33 /* NSDate+convenience.m in Sources */,
 				ACC205111C9A479100B26CDD /* ProductManager.m in Sources */,
 				30ACF6621CA58773005B56EC /* SWActionSheet.m in Sources */,
+				30ECBFE81CB7819C0020164B /* TopicCell.m in Sources */,
 				ACC2050A1C99587A00B26CDD /* NewsManager.m in Sources */,
 				ACCA4CC91C91171A00121269 /* Constant.m in Sources */,
 				ACC2051F1C9A9A1D00B26CDD /* SalesManager.m in Sources */,

@@ -349,7 +349,7 @@
  *  @param failure
  */
 + (void) requestTopicList:(NSString *)type
-                       id:(NSString *)typeID
+                       identify:(NSString *)typeID
                   success:(void (^)())success
                   failure:(void (^)())failure;
 

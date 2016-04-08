@@ -19,6 +19,7 @@
 #import "ProductViewController.h"
 #import "UIViewController+MMDrawerController.h"
 #import "AccountDao.h"
+#import "FormViewController.h"
 
 @interface HomePageViewController () <SDCycleScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *scrollAdView;
@@ -85,9 +86,11 @@
             NSLog(@"商城");
             break;
         }
-        case 106:
-            NSLog(@"互动留言");
+        case 106:{
+            FormViewController *vc = [[FormViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
             break;
+        }
         case 107:{
             ScanViewController * vc = [[ScanViewController alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
