@@ -54,6 +54,7 @@
 		30ECBFEF1CB7DA490020164B /* FormDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ECBFEE1CB7DA490020164B /* FormDetailViewController.m */; };
 		30ECBFF31CB7DF780020164B /* AnwserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ECBFF11CB7DF780020164B /* AnwserCell.m */; };
 		30ECBFF41CB7DF780020164B /* AnwserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30ECBFF21CB7DF780020164B /* AnwserCell.xib */; };
+		30ECBFF71CB8A57F0020164B /* SelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ECBFF61CB8A57F0020164B /* SelectionViewController.m */; };
 		8D036F0D3D5D69D4249794B4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8BCBA5CED9CE1AD81A140B /* libPods.a */; };
 		AC516A2C1CB69E4100B0A6AB /* SearchOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = AC516A2B1CB69E4100B0A6AB /* SearchOrder.m */; };
 		AC5182621CAE4DFB0095BAB6 /* Recommend.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5182611CAE4DFB0095BAB6 /* Recommend.m */; };
@@ -178,6 +179,8 @@
 		30ECBFF01CB7DF780020164B /* AnwserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnwserCell.h; sourceTree = "<group>"; };
 		30ECBFF11CB7DF780020164B /* AnwserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnwserCell.m; sourceTree = "<group>"; };
 		30ECBFF21CB7DF780020164B /* AnwserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnwserCell.xib; sourceTree = "<group>"; };
+		30ECBFF51CB8A57F0020164B /* SelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionViewController.h; sourceTree = "<group>"; };
+		30ECBFF61CB8A57F0020164B /* SelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionViewController.m; sourceTree = "<group>"; };
 		59A6001685EAEFD7AF2127DC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6A8BCBA5CED9CE1AD81A140B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC516A2A1CB69E4100B0A6AB /* SearchOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchOrder.h; sourceTree = "<group>"; };
@@ -345,6 +348,8 @@
 				30ECBFDF1CB77B580020164B /* FormViewController.m */,
 				30ECBFED1CB7DA490020164B /* FormDetailViewController.h */,
 				30ECBFEE1CB7DA490020164B /* FormDetailViewController.m */,
+				30ECBFF51CB8A57F0020164B /* SelectionViewController.h */,
+				30ECBFF61CB8A57F0020164B /* SelectionViewController.m */,
 			);
 			name = user;
 			sourceTree = "<group>";
@@ -865,6 +870,7 @@
 				AC5182621CAE4DFB0095BAB6 /* Recommend.m in Sources */,
 				AC516A2C1CB69E4100B0A6AB /* SearchOrder.m in Sources */,
 				ACC204FC1C99526700B26CDD /* ProductKind.m in Sources */,
+				30ECBFF71CB8A57F0020164B /* SelectionViewController.m in Sources */,
 				305F861D1CB5468400F42B33 /* AddOrderViewController.m in Sources */,
 				30D18F2C1C9E484F00559866 /* HomePageViewController.m in Sources */,
 				30D18F1E1C9AD79500559866 /* KxMenu.m in Sources */,

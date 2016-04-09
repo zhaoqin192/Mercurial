@@ -87,8 +87,19 @@
             break;
         }
         case 106:{
-            FormViewController *vc = [[FormViewController alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
+            UIAlertController *vc = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+            UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+            UIAlertAction *formAction = [UIAlertAction actionWithTitle:@"进入论坛" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                FormViewController *vc = [[FormViewController alloc] init];
+                [self.navigationController pushViewController:vc animated:YES];
+            }];
+            UIAlertAction *answerAction = [UIAlertAction actionWithTitle:@"查看回复" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [self loginButtonClicked];
+            }];
+            [vc addAction:cancel];
+            [vc addAction:formAction];
+            [vc addAction:answerAction];
+            [self presentViewController:vc animated:YES completion:nil];
             break;
         }
         case 107:{

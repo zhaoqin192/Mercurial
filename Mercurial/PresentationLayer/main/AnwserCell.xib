@@ -39,10 +39,10 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2zo-rG-qIG">
                         <rect key="frame" x="0.0" y="184" width="393" height="30"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 楼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bnk-ji-wux">
-                                <rect key="frame" x="10" y="4" width="32" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000 楼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bnk-ji-wux">
+                                <rect key="frame" x="10" y="4" width="60" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="SX2-99-I2V"/>
+                                    <constraint firstAttribute="width" constant="60" id="SX2-99-I2V"/>
                                     <constraint firstAttribute="height" constant="21" id="jdL-HF-cQW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
