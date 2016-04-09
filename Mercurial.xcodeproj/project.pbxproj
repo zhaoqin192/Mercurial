@@ -55,6 +55,7 @@
 		30ECBFF31CB7DF780020164B /* AnwserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ECBFF11CB7DF780020164B /* AnwserCell.m */; };
 		30ECBFF41CB7DF780020164B /* AnwserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30ECBFF21CB7DF780020164B /* AnwserCell.xib */; };
 		30ECBFF71CB8A57F0020164B /* SelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ECBFF61CB8A57F0020164B /* SelectionViewController.m */; };
+		30ECBFFA1CB8B8CA0020164B /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ECBFF91CB8B8CA0020164B /* MessageViewController.m */; };
 		8D036F0D3D5D69D4249794B4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8BCBA5CED9CE1AD81A140B /* libPods.a */; };
 		AC516A2C1CB69E4100B0A6AB /* SearchOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = AC516A2B1CB69E4100B0A6AB /* SearchOrder.m */; };
 		AC5182621CAE4DFB0095BAB6 /* Recommend.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5182611CAE4DFB0095BAB6 /* Recommend.m */; };
@@ -181,6 +182,8 @@
 		30ECBFF21CB7DF780020164B /* AnwserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnwserCell.xib; sourceTree = "<group>"; };
 		30ECBFF51CB8A57F0020164B /* SelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionViewController.h; sourceTree = "<group>"; };
 		30ECBFF61CB8A57F0020164B /* SelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionViewController.m; sourceTree = "<group>"; };
+		30ECBFF81CB8B8CA0020164B /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		30ECBFF91CB8B8CA0020164B /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		59A6001685EAEFD7AF2127DC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6A8BCBA5CED9CE1AD81A140B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC516A2A1CB69E4100B0A6AB /* SearchOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchOrder.h; sourceTree = "<group>"; };
@@ -350,6 +353,8 @@
 				30ECBFEE1CB7DA490020164B /* FormDetailViewController.m */,
 				30ECBFF51CB8A57F0020164B /* SelectionViewController.h */,
 				30ECBFF61CB8A57F0020164B /* SelectionViewController.m */,
+				30ECBFF81CB8B8CA0020164B /* MessageViewController.h */,
+				30ECBFF91CB8B8CA0020164B /* MessageViewController.m */,
 			);
 			name = user;
 			sourceTree = "<group>";
@@ -818,6 +823,7 @@
 				30D18F261C9ADDAF00559866 /* LoginViewController.m in Sources */,
 				30A3A92C1CAA44980076208B /* ProductViewController.m in Sources */,
 				ACC204EC1C99251400B26CDD /* Account+CoreDataProperties.m in Sources */,
+				30ECBFFA1CB8B8CA0020164B /* MessageViewController.m in Sources */,
 				30A4A6571C96939100BF5EA1 /* ScanViewController.m in Sources */,
 				30A4A65A1C96939100BF5EA1 /* UserInformationViewController.m in Sources */,
 				AC5E1CE11C904484008D91E5 /* AppDelegate.m in Sources */,

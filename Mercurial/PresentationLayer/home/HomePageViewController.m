@@ -20,12 +20,13 @@
 #import "UIViewController+MMDrawerController.h"
 #import "AccountDao.h"
 #import "FormViewController.h"
+#import "MessageViewController.h"
 
 @interface HomePageViewController () <SDCycleScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *scrollAdView;
 @property (strong, nonatomic) NSMutableArray *salesArray;
 @property (strong, nonatomic) NSMutableArray *imageUrlArray;
-
+@property (copy, nonatomic) NSArray *messageList;
 @end
 
 @implementation HomePageViewController
@@ -94,7 +95,7 @@
                 [self.navigationController pushViewController:vc animated:YES];
             }];
             UIAlertAction *answerAction = [UIAlertAction actionWithTitle:@"查看回复" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [self loginButtonClicked];
+                [self fetchMessage];
             }];
             [vc addAction:cancel];
             [vc addAction:formAction];
@@ -129,6 +130,29 @@
     self.salesArray = [[NSMutableArray alloc] init];
     [self configureScrollView];
     [self configureNotifacation];
+}
+
+- (void)fetchMessage{
+    if([[[AccountDao alloc] init] isLogin]){
+        [NetworkRequest requestMessageList:^{
+            self.messageList = [[MessageManager sharedManager] fetchMessageArray];
+            if (self.messageList.count == 0) {
+                [SVProgressHUD showWithStatus:@"没有新消息"];
+                [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+            }
+            else{
+                MessageViewController *vc = [[MessageViewController alloc] init];
+                vc.messageList = self.messageList;
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+        } failure:^{
+            [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        }];
+    }
+    else{
+        [self showLoginAlert];
+    }
 }
 
 - (void)showLoginAlert{

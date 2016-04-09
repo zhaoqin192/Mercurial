@@ -12,5 +12,5 @@
 
 @property (nonatomic, strong) NSString *topic_id;
 @property (nonatomic, strong) NSNumber *readed;
-
+@property (nonatomic, copy) NSString *main_title;
 @end
