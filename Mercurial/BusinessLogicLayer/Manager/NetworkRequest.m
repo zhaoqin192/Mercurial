@@ -647,7 +647,6 @@
     if(type != nil) {
         parames[type] = typeID;
     }
-    
     [manager POST:URL.absoluteString parameters:parames progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
         

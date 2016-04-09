@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface FormViewController : UITableViewController
-
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSString *identify;
+@property (nonatomic, assign) BOOL isPost;
 @end

@@ -9,6 +9,7 @@
 #import "SelectionViewController.h"
 #import "TypeManager.h"
 #import "Type.h"
+#import "FormViewController.h"
 
 @interface SelectionViewController ()
 @property (nonatomic, copy) NSArray *list;
@@ -66,6 +67,27 @@
     return cell;
 }
 
-//筛选条件包括区域（type = product_area）、系列（type = product_type）、价位（type = product_price）、装修经验（type = product_decro_experience）、其他（type = product_other）
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    FormViewController *vc = [[FormViewController alloc] init];
+    Type *type = self.list[indexPath.row];
+    if ([self.type isEqualToString:@"product_area"]) {
+        vc.identify = type.product_area_id;
+    }
+    else if ([self.type isEqualToString:@"product_type"]) {
+        vc.identify = type.product_type_id;
+    }
+    else if ([self.type isEqualToString:@"product_price"]) {
+        vc.identify = type.product_price_id;
+    }
+    else if ([self.type isEqualToString:@"product_decro_experience"]) {
+        vc.identify = type.product_decro_experience_id;
+    }
+    else if ([self.type isEqualToString:@"product_other"]) {
+        vc.identify = type.product_other_id;
+    }
+    vc.type = [NSString stringWithFormat:@"%@_id",self.type];
+    vc.isPost = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 @end

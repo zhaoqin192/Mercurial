@@ -21,14 +21,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"用户互动";
+    [self configureNavigationItem];
     [self.tableView registerNib:[UINib nibWithNibName:@"TopicCell" bundle:nil] forCellReuseIdentifier:@"TopicCell"];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"add" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonClicked)];
     self.tableView.rowHeight = 90;
     [self loadData];
 }
 
+- (void)configureNavigationItem{
+    self.navigationItem.title = @"用户互动";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"add" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonClicked)];
+}
+
 - (void)rightBarButtonClicked{
+    if (self.isPost) {
+        [self postActionSheetShow];
+    }
+    else{
+        [self selectActionSheetShow];
+    }
+}
+
+- (void)postActionSheetShow{
+    UIAlertController *vc = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *post = [UIAlertAction actionWithTitle:@"发帖" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"发帖");
+       // [self.navigationController pushViewController:vc animated:YES];
+    }];
+    [vc addAction:cancel];
+    [vc addAction:post];
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+- (void)selectActionSheetShow{
     UIAlertController *vc = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
     UIAlertAction *area = [UIAlertAction actionWithTitle:@"产品区域" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -66,7 +91,7 @@
 }
 
 - (void)loadData{
-    [NetworkRequest requestTopicList:nil identify:nil success:^{
+    [NetworkRequest requestTopicList:self.type identify:self.identify success:^{
         self.list = [[TopicManager sharedManager] fetchTopicArray];
         [self.tableView reloadData];
     } failure:^{

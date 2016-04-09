@@ -12,8 +12,12 @@
 
 @property (nonatomic, strong) NSString *product_area_id;
 @property (nonatomic, strong) NSString *product_area_name;
+@property (nonatomic, strong) NSString *product_type_id;
 @property (nonatomic, strong) NSString *product_type_name;
+@property (nonatomic, strong) NSString *product_price_id;
 @property (nonatomic, strong) NSString *product_price_name;
+@property (nonatomic, strong) NSString *product_decro_experience_id;
 @property (nonatomic, strong) NSString *product_decro_experience_name;
+@property (nonatomic, strong) NSString *product_other_id;
 @property (nonatomic, strong) NSString *product_other_name;
 @end
