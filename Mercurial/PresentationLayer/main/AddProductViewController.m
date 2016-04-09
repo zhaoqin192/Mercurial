@@ -61,6 +61,7 @@
         self.order.product_amount = [NSNumber numberWithInteger:[self.numTF.text integerValue]];
         self.order.product_price = [NSNumber numberWithInteger:[self.priceTF.text integerValue]];
         self.order.product_usage = self.usageTF.text;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"SaveOrder" object:nil];
     }
     [self returnButtonClicked];
 }

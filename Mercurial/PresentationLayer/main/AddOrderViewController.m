@@ -98,6 +98,8 @@
     [self.numTF becomeFirstResponder];
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createButtonClicked) name:@"SaveOrder" object:nil];
+    
     if (self.identify) {
         [self configureTextField];
     }
@@ -147,6 +149,10 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark -<VerficationCode>
