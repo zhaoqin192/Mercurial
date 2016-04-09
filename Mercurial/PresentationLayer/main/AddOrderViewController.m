@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *createButton;
 @property (nonatomic, strong) Account *myAccount;
 @property (nonatomic, strong) SearchOrder *searchOrder;
+@property (nonatomic, copy) NSArray *items;
 @end
 
 @implementation AddOrderViewController

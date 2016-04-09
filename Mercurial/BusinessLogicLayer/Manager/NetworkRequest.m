@@ -825,6 +825,10 @@
         if([[responseObject objectForKey:@"status"] isEqualToString:@"200"]){
             success();
         }
+        else{
+            failure();
+        }
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error);
         failure();

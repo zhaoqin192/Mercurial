@@ -56,6 +56,7 @@
 		30ECBFF41CB7DF780020164B /* AnwserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30ECBFF21CB7DF780020164B /* AnwserCell.xib */; };
 		30ECBFF71CB8A57F0020164B /* SelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ECBFF61CB8A57F0020164B /* SelectionViewController.m */; };
 		30ECBFFA1CB8B8CA0020164B /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ECBFF91CB8B8CA0020164B /* MessageViewController.m */; };
+		30ECBFFD1CB8C7520020164B /* AddProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ECBFFC1CB8C7520020164B /* AddProductViewController.m */; };
 		8D036F0D3D5D69D4249794B4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8BCBA5CED9CE1AD81A140B /* libPods.a */; };
 		AC516A2C1CB69E4100B0A6AB /* SearchOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = AC516A2B1CB69E4100B0A6AB /* SearchOrder.m */; };
 		AC5182621CAE4DFB0095BAB6 /* Recommend.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5182611CAE4DFB0095BAB6 /* Recommend.m */; };
@@ -184,6 +185,8 @@
 		30ECBFF61CB8A57F0020164B /* SelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionViewController.m; sourceTree = "<group>"; };
 		30ECBFF81CB8B8CA0020164B /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		30ECBFF91CB8B8CA0020164B /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		30ECBFFB1CB8C7520020164B /* AddProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddProductViewController.h; sourceTree = "<group>"; };
+		30ECBFFC1CB8C7520020164B /* AddProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddProductViewController.m; sourceTree = "<group>"; };
 		59A6001685EAEFD7AF2127DC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6A8BCBA5CED9CE1AD81A140B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC516A2A1CB69E4100B0A6AB /* SearchOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchOrder.h; sourceTree = "<group>"; };
@@ -444,6 +447,8 @@
 				305F861C1CB5468400F42B33 /* AddOrderViewController.m */,
 				30CADF531CB5537B003E0F7F /* OrderListViewController.h */,
 				30CADF541CB5537B003E0F7F /* OrderListViewController.m */,
+				30ECBFFB1CB8C7520020164B /* AddProductViewController.h */,
+				30ECBFFC1CB8C7520020164B /* AddProductViewController.m */,
 			);
 			name = order;
 			sourceTree = "<group>";
@@ -866,6 +871,7 @@
 				30CADF521CB5501F003E0F7F /* FriendsListViewController.m in Sources */,
 				ACC3D7F91CAD4132000FBE93 /* Order.m in Sources */,
 				30A3A9271CA96FD70076208B /* NewsCell.m in Sources */,
+				30ECBFFD1CB8C7520020164B /* AddProductViewController.m in Sources */,
 				30D18F291C9ADDC100559866 /* RegisterViewController.m in Sources */,
 				305F85A41CB2619000F42B33 /* UserDetailViewController.m in Sources */,
 				30ECBFEF1CB7DA490020164B /* FormDetailViewController.m in Sources */,

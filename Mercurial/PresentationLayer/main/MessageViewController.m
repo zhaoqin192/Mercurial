@@ -48,6 +48,16 @@
     FormDetailViewController *vc = [[FormDetailViewController alloc] init];
     vc.topic_id = msg.topic_id;
     [self.navigationController pushViewController:vc animated:YES];
+    
+//    [NetworkRequest requestReadMessage:msg.topic_id success:^{
+//    } failure:^{
+//        [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
+//        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+//    }];
+}
+
+- (void)dismiss {
+    [SVProgressHUD dismiss];
 }
 
 
