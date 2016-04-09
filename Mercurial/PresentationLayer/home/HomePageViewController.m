@@ -21,6 +21,7 @@
 #import "AccountDao.h"
 #import "FormViewController.h"
 #import "MessageViewController.h"
+#import "DatabaseManager.h"
 
 @interface HomePageViewController () <SDCycleScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *scrollAdView;
@@ -218,10 +219,10 @@
 }
 
 - (void)loginOutButtonClicked{
-    [NetworkRequest userLogoutWithSuccess:^{
+    [[DatabaseManager sharedAccount] deleteAccountSuccess:^{
         [SVProgressHUD showErrorWithStatus:@"退出成功"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
-    } failure:^(NSString *error){
+    } failure:^{
         [SVProgressHUD showErrorWithStatus:@"退出失败，请重新尝试"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
     }];

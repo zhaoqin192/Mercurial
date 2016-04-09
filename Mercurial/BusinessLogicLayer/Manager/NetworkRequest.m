@@ -636,17 +636,18 @@
 }
 
 + (void) requestTopicList:(NSString *)type
-                       identify:(NSString *)typeID
+                 identify:(NSString *)typeID
                   success:(void (^)())success
                   failure:(void (^)())failure{
     
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
     NSURL *URL = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/Forum/Index/topic_list"]];
-    NSMutableDictionary *parames = nil;
+    NSMutableDictionary *parames = [NSMutableDictionary dictionaryWithCapacity:1];;
 
     if(type != nil) {
-        parames[type] = typeID;
+        [parames setObject:typeID forKey:type];
     }
+    
     [manager POST:URL.absoluteString parameters:parames progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
         
@@ -818,7 +819,7 @@
     Account *account = [[DatabaseManager sharedAccount] getAccount];
     
     NSDictionary *parames = @{@"sid": account.token, @"topic_id": topicID};
-    
+    NSLog(@"%@", parames);
     [manager POST:URL.absoluteString parameters:parames progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
         
@@ -836,30 +837,3 @@
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
