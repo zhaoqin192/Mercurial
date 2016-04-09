@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Order;
 
 @interface AddProductViewController : UIViewController
 @property (nonatomic, copy) NSString *identify;
+@property (nonatomic, copy) void(^addOrder)(Order *order);
 @end

@@ -26,6 +26,10 @@
     [super viewDidLoad];
     self.navigationItem.title = @"用户信息";
     [self.tableView registerNib:[UINib nibWithNibName:@"userIconCell" bundle:nil] forCellReuseIdentifier:@"userIconCell"];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
     [self loadData];
 }
 
@@ -105,6 +109,7 @@
         case 5:
             cell.textLabel.text = @"身份证号";
             cell.detailTextLabel.text = self.myAccount.cardID;
+            NSLog(@"%@",self.myAccount.cardID);
             break;
         case 6:
             cell.textLabel.text = @"固定电话";

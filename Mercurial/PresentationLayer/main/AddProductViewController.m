@@ -47,8 +47,16 @@
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
         return;
     }
-    //Order
-    
+    Order *order = [[Order alloc] init];
+    order.product_name = self.nameTF.text;
+    order.product_level = self.rankTF.text;
+    order.product_amount = [NSNumber numberWithInteger:[self.numTF.text integerValue]];
+    order.product_price = [NSNumber numberWithInteger:[self.priceTF.text integerValue]];
+    order.product_usage = self.usageTF.text;
+    if (self.addOrder) {
+        self.addOrder(order);
+    }
+    [self returnButtonClicked];
 }
 
 - (IBAction)returnButtonClicked {

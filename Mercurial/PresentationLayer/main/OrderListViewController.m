@@ -12,7 +12,7 @@
 #import "FriendsIntroduceViewController.h"
 
 @interface OrderListViewController ()
-@property (nonatomic, copy) NSArray *list;
+@property (nonatomic, strong) NSMutableArray *list;
 @end
 
 @implementation OrderListViewController
