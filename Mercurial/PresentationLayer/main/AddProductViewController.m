@@ -55,6 +55,7 @@
     order.product_usage = self.usageTF.text;
     if (self.addOrder) {
         self.addOrder(order);
+         [self returnButtonClicked];
     }else{
         self.order.product_name = self.nameTF.text;
         self.order.product_level = self.rankTF.text;
@@ -63,7 +64,6 @@
         self.order.product_usage = self.usageTF.text;
         [[NSNotificationCenter defaultCenter] postNotificationName:@"SaveOrder" object:nil];
     }
-    [self returnButtonClicked];
 }
 
 - (IBAction)returnButtonClicked {

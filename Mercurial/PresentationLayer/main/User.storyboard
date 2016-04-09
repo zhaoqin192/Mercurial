@@ -865,7 +865,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonClicked" destination="SQd-iw-nVj" eventType="touchUpInside" id="kup-hO-FQp"/>
                                     <action selector="returnButtonClicked" destination="SQd-iw-nVj" eventType="touchUpInside" id="2Ob-he-Zpv"/>
                                 </connections>
                             </button>
