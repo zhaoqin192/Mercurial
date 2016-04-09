@@ -8,6 +8,7 @@
 
 #import "ModifyProductViewController.h"
 #import "Order.h"
+#import "AddProductViewController.h"
 
 @interface ModifyProductViewController ()
 
@@ -17,8 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.tableView reloadData];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"menu_bg"]]];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -39,6 +44,13 @@
     cell.detailTextLabel.text = order.product_name;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    Order *order = self.productList[indexPath.row];
+    AddProductViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"AddProductViewController"];
+    vc.order = order;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

@@ -509,7 +509,7 @@
         NSDictionary *dic = responseObject;
         OrderManager *orderManager = [OrderManager sharedManager];
         orderManager.searchOrder = [SearchOrder mj_objectWithKeyValues:dic];
-
+        orderManager.searchOrder.items = [Order mj_objectArrayWithKeyValuesArray:dic[@"items"]];
         success();
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error);

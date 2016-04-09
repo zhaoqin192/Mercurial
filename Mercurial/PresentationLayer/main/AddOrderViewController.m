@@ -31,6 +31,7 @@
     AddProductViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"AddProductViewController"];
     vc.addOrder = ^(Order *order){
         [self.items addObject:order];
+        [self createButtonClicked];
     };
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -80,7 +81,7 @@
     
     [NetworkRequest requestAddOrderWithID:self.numTF.text name:self.nameTF.text province:[self notNil:self.myAccount.province] city:[self notNil:self.myAccount.city] district:[self notNil:self.myAccount.district] address:self.addressTF.text phone:self.phoneTF.text date:dateToString item:self.items success:^{
         [SVProgressHUD showSuccessWithStatus:@"创建订单成功!"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         [self.navigationController popViewControllerAnimated:YES];
     } failure:^(NSString *error){
         [SVProgressHUD showErrorWithStatus:error];

@@ -353,14 +353,7 @@
 				30ECBFE31CB781620020164B /* information */,
 				30ECBFE11CB781330020164B /* introduce */,
 				30ECBFE21CB781540020164B /* order */,
-				30ECBFDE1CB77B580020164B /* FormViewController.h */,
-				30ECBFDF1CB77B580020164B /* FormViewController.m */,
-				30ECBFED1CB7DA490020164B /* FormDetailViewController.h */,
-				30ECBFEE1CB7DA490020164B /* FormDetailViewController.m */,
-				30ECBFF51CB8A57F0020164B /* SelectionViewController.h */,
-				30ECBFF61CB8A57F0020164B /* SelectionViewController.m */,
-				30ECBFF81CB8B8CA0020164B /* MessageViewController.h */,
-				30ECBFF91CB8B8CA0020164B /* MessageViewController.m */,
+				30ECC0011CB903350020164B /* form */,
 			);
 			name = user;
 			sourceTree = "<group>";
@@ -483,6 +476,21 @@
 				30ECBFF21CB7DF780020164B /* AnwserCell.xib */,
 			);
 			name = cell;
+			sourceTree = "<group>";
+		};
+		30ECC0011CB903350020164B /* form */ = {
+			isa = PBXGroup;
+			children = (
+				30ECBFDE1CB77B580020164B /* FormViewController.h */,
+				30ECBFDF1CB77B580020164B /* FormViewController.m */,
+				30ECBFED1CB7DA490020164B /* FormDetailViewController.h */,
+				30ECBFEE1CB7DA490020164B /* FormDetailViewController.m */,
+				30ECBFF51CB8A57F0020164B /* SelectionViewController.h */,
+				30ECBFF61CB8A57F0020164B /* SelectionViewController.m */,
+				30ECBFF81CB8B8CA0020164B /* MessageViewController.h */,
+				30ECBFF91CB8B8CA0020164B /* MessageViewController.m */,
+			);
+			name = form;
 			sourceTree = "<group>";
 		};
 		51E4ABF6D2D0F2A61EE86E89 /* Frameworks */ = {
