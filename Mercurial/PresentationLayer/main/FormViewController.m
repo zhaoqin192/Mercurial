@@ -53,6 +53,7 @@
         PostTopicViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"PostTopicViewController"];
         vc.identify = self.identify;
         vc.type = self.type;
+        vc.myTitle = @"发帖";
         [self.navigationController pushViewController:vc animated:YES];
     }];
     [vc addAction:cancel];

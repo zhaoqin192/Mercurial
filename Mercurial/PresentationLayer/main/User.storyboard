@@ -165,6 +165,7 @@
                     <connections>
                         <outlet property="contentTextView" destination="ibF-3i-hRc" id="ttT-5q-PGN"/>
                         <outlet property="picImageView" destination="Rv5-Gg-bab" id="Kcw-uJ-2Zu"/>
+                        <outlet property="titleLabel" destination="NOn-j7-ocA" id="lJu-f9-SYi"/>
                         <outlet property="titleTF" destination="Pfb-3F-eZb" id="KKO-6j-MsE"/>
                     </connections>
                 </viewController>

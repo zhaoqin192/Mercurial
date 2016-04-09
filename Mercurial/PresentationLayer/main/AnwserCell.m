@@ -22,7 +22,9 @@
 @implementation AnwserCell
 
 - (IBAction)answerButtonClicked {
-    
+    if (self.reply) {
+        self.reply();
+    }
 }
 
 - (void)awakeFromNib {
