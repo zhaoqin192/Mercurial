@@ -142,15 +142,26 @@
     //之后定义一个字符串，使用stringFromDate方法将日期转换为字符串
     NSString * dateToString = [dateFormat stringFromDate:date1];
     
-    
-    [NetworkRequest requestAddCommend:self.nameTF.text phone:self.phoneTF.text province:[self notNil:self.myAccount.province] city:[self notNil:self.myAccount.city] district:[self notNil:self.myAccount.district] address:self.addressTF.text commendName:self.productTF.text date:dateToString reason:self.reasonTF.text success:^{
-        [SVProgressHUD showSuccessWithStatus:@"推荐成功!"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
-        [self.navigationController popViewControllerAnimated:YES];
-    } failure:^(NSString *error){
-        [SVProgressHUD showErrorWithStatus:error];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
-    }];
+    if(!self.identify){
+        [NetworkRequest requestAddCommend:self.nameTF.text phone:self.phoneTF.text province:[self notNil:self.myAccount.province] city:[self notNil:self.myAccount.city] district:[self notNil:self.myAccount.district] address:self.addressTF.text commendName:self.productTF.text date:dateToString reason:self.reasonTF.text success:^{
+            [SVProgressHUD showSuccessWithStatus:@"推荐成功!"];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+            [self.navigationController popViewControllerAnimated:YES];
+        } failure:^(NSString *error){
+            [SVProgressHUD showErrorWithStatus:error];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+        }];
+    }
+    else{
+        [NetworkRequest requestUpdateCommend:self.nameTF.text phone:self.phoneTF.text province:[self notNil:self.myAccount.province] city:[self notNil:self.myAccount.city] district:[self notNil:self.myAccount.district] address:self.addressTF.text commendName:self.productTF.text date:dateToString reason:self.reasonTF.text recommentID:self.identify success:^{
+            [SVProgressHUD showSuccessWithStatus:@"推荐成功!"];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+            [self.navigationController popViewControllerAnimated:YES];
+        } failure:^(NSString *error) {
+            [SVProgressHUD showErrorWithStatus:error];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+        }];
+    }
 }
 
 - (IBAction)backButtonClicked {
