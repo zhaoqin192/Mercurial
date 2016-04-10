@@ -569,6 +569,42 @@
 
 }
 
++ (void) requestUpdateCommend:(NSString *)recomm_name
+                        phone:(NSString *)recomm_phone
+                     province:(NSString *)province
+                         city:(NSString *)city
+                     district:(NSString *)district
+                      address:(NSString *)address
+                  commendName:(NSString *)recomm_product_name
+                         date:(NSString *)date
+                       reason:(NSString *)recomm_reason
+                  recommentID:(NSString *)recommentID
+                      success:(void (^)())success
+                      failure:(void (^)(NSString *error))failure{
+    
+    AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
+    NSURL *URL = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/User/Index/add_user_recomm"]];
+    Account *account = [[DatabaseManager sharedAccount] getAccount];
+    
+    NSDictionary *parames = @{@"sid": account.token, @"recomm_name": recomm_name, @"recomm_phone": recomm_phone, @"province": province, @"city": city, @"district": district, @"address": address, @"recomm_product_name": recomm_product_name, @"date": date, @"recomm_reason": recomm_reason, @"user_recomm_id": recommentID};
+    
+    [manager POST:URL.absoluteString parameters:parames progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", responseObject);
+        NSDictionary *dic = responseObject;
+        if([[dic objectForKey:@"status"] isEqualToString:@"200"]){
+            success();
+        }else{
+            failure([dic objectForKey:@"error"]);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@", error);
+        failure(@"Network Error");
+    }];
+    
+    
+}
+
+
 
 + (void) requestCommendList:(void (^)())success
                     failure:(void (^)())failure{
@@ -740,7 +776,7 @@
                 success:(void (^)())success
                 failure:(void (^)())failure{
     NSData *imageData = UIImageJPEGRepresentation(image, 0.001);
-    
+    NSLog(@"uploadTopicPic");
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
     Account *account = [[DatabaseManager sharedAccount] getAccount];
     
@@ -842,5 +878,7 @@
         failure();
     }];
 }
+
+
 
 @end

@@ -67,13 +67,13 @@
                 [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
             }
             else{
-                [NetworkRequest uploadTopicPic:topic_id forumAnswerID:forum_answer_id success:^{
-                    [SVProgressHUD showSuccessWithStatus:@"发帖成功"];
-                    [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
-                } failure:^{
-                    [SVProgressHUD showErrorWithStatus:@"发帖失败请重新尝试"];
-                    [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
-                }];
+//                [NetworkRequest uploadTopicPic:topic_id forumAnswerID:forum_answer_id image:self.image success:^{
+//                    [SVProgressHUD showSuccessWithStatus:@"发帖成功"];
+//                    [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+//                } failure:^{
+//                    [SVProgressHUD showErrorWithStatus:@"发帖失败请重新尝试"];
+//                    [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+//                }];
             }
         } failure:^{
             [SVProgressHUD showErrorWithStatus:@"发帖失败请重新尝试"];

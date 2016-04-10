@@ -310,6 +310,35 @@
                    failure:(void (^)(NSString *error))failure;
 
 /**
+ *  修改用户推荐
+ *
+ *  @param recomm_name
+ *  @param recomm_phone
+ *  @param province
+ *  @param city
+ *  @param district
+ *  @param address
+ *  @param recomm_product_name
+ *  @param date
+ *  @param recomm_reason
+ *  @param recommentID
+ *  @param success
+ *  @param failure
+ */
++ (void) requestUpdateCommend:(NSString *)recomm_name
+                        phone:(NSString *)recomm_phone
+                     province:(NSString *)province
+                         city:(NSString *)city
+                     district:(NSString *)district
+                      address:(NSString *)address
+                  commendName:(NSString *)recomm_product_name
+                         date:(NSString *)date
+                       reason:(NSString *)recomm_reason
+                  recommentID:(NSString *)recommentID
+                      success:(void (^)())success
+                      failure:(void (^)(NSString *error))failure;
+
+/**
  *  获取客户推荐列表
  *
  *  @param success
