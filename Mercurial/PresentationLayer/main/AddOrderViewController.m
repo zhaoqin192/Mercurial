@@ -9,6 +9,8 @@
 #import "AddOrderViewController.h"
 #import "Account.h"
 #import "SearchOrder.h"
+#import "AddProductViewController.h"
+#import "ModifyProductViewController.h"
 
 @interface AddOrderViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *numTF;
@@ -21,14 +23,23 @@
 @property (weak, nonatomic) IBOutlet UIButton *createButton;
 @property (nonatomic, strong) Account *myAccount;
 @property (nonatomic, strong) SearchOrder *searchOrder;
-@property (nonatomic, copy) NSArray *items;
+@property (nonatomic, strong) NSMutableArray *items;
 @end
 
 @implementation AddOrderViewController
 - (IBAction)addButtonClicked {
+    AddProductViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"AddProductViewController"];
+    vc.addOrder = ^(Order *order){
+        [self.items addObject:order];
+        [self createButtonClicked];
+    };
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)modifyButtonClicked {
+    ModifyProductViewController *vc = [[ModifyProductViewController alloc] init];
+    vc.productList = self.items;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)createButtonClicked {
@@ -68,9 +79,9 @@
     //之后定义一个字符串，使用stringFromDate方法将日期转换为字符串
     NSString * dateToString = [dateFormat stringFromDate:date1];
     
-    [NetworkRequest requestAddOrderWithID:self.numTF.text name:self.nameTF.text province:[self notNil:self.myAccount.province] city:[self notNil:self.myAccount.city] district:[self notNil:self.myAccount.district] address:self.addressTF.text phone:self.phoneTF.text date:dateToString item:nil success:^{
+    [NetworkRequest requestAddOrderWithID:self.numTF.text name:self.nameTF.text province:[self notNil:self.myAccount.province] city:[self notNil:self.myAccount.city] district:[self notNil:self.myAccount.district] address:self.addressTF.text phone:self.phoneTF.text date:dateToString item:self.items success:^{
         [SVProgressHUD showSuccessWithStatus:@"创建订单成功!"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         [self.navigationController popViewControllerAnimated:YES];
     } failure:^(NSString *error){
         [SVProgressHUD showErrorWithStatus:error];
@@ -87,8 +98,13 @@
     [self.numTF becomeFirstResponder];
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createButtonClicked) name:@"SaveOrder" object:nil];
+    
     if (self.identify) {
         [self configureTextField];
+    }
+    else{
+        self.items = [[NSMutableArray alloc] init];
     }
 }
 
@@ -100,6 +116,7 @@
         self.nameTF.text = self.searchOrder.username;
         self.addressTF.text = self.searchOrder.delivery_address;
         self.dateTF.text = self.searchOrder.buy_date;
+        self.items = self.searchOrder.items;
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
@@ -132,6 +149,10 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark -<VerficationCode>

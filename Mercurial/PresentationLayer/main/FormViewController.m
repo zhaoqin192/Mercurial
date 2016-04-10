@@ -12,6 +12,7 @@
 #import "TopicManager.h"
 #import "FormDetailViewController.h"
 #import "SelectionViewController.h"
+#import "PostTopicViewController.h"
 
 @interface FormViewController ()
 @property (nonatomic, copy) NSArray *list;
@@ -24,6 +25,10 @@
     [self configureNavigationItem];
     [self.tableView registerNib:[UINib nibWithNibName:@"TopicCell" bundle:nil] forCellReuseIdentifier:@"TopicCell"];
     self.tableView.rowHeight = 90;
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
     [self loadData];
 }
 
@@ -45,8 +50,11 @@
     UIAlertController *vc = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
     UIAlertAction *post = [UIAlertAction actionWithTitle:@"发帖" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSLog(@"发帖");
-       // [self.navigationController pushViewController:vc animated:YES];
+        PostTopicViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"PostTopicViewController"];
+        vc.identify = self.identify;
+        vc.type = self.type;
+        vc.myTitle = @"发帖";
+        [self.navigationController pushViewController:vc animated:YES];
     }];
     [vc addAction:cancel];
     [vc addAction:post];

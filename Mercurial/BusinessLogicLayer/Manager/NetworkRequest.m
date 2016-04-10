@@ -150,7 +150,6 @@
         f.numberStyle = NSNumberFormatterDecimalStyle;
         
         [[DatabaseManager sharedAccount] insertWithAccountName:[dic objectForKey:@"name"] phone:[dic objectForKey:@"phone"] sex:[dic objectForKey:@"sex"] age:[[dic objectForKey:@"age"] intValue] Email:[dic objectForKey:@"mail"] fixedTel:[dic objectForKey:@"fix_phone"] avatar:[dic objectForKey:@"photo"] name:[dic objectForKey:@"realname"] birth:[dic objectForKey:@"birth"] cardID:[dic objectForKey:@"card_number"] degree:[dic objectForKey:@"degree"] job:[dic objectForKey:@"job"] province:[dic objectForKey:@"province"] city:[dic objectForKey:@"city"] district:[dic objectForKey:@"district"] address:[dic objectForKey:@"address"] isBought:[[dic objectForKey:@"has_bought"] intValue] brand:[dic objectForKey:@"bought_brand"] way:[dic objectForKey:@"know_way"] experience:[dic objectForKey:@"decro_experience"] recommendName:[dic objectForKey:@"recomm_name"] recommendPhone:[dic objectForKey:@"recomm_phone"] success:success];
-        
         success();
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -510,7 +509,7 @@
         NSDictionary *dic = responseObject;
         OrderManager *orderManager = [OrderManager sharedManager];
         orderManager.searchOrder = [SearchOrder mj_objectWithKeyValues:dic];
-
+        orderManager.searchOrder.items = [Order mj_objectArrayWithKeyValuesArray:dic[@"items"]];
         success();
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error);
@@ -710,7 +709,7 @@
                      text:(NSString *)text
                      type:(NSString *)type
                    typeID:(NSString *)typeID
-                  success:(void (^)(NSString *, NSString *))success
+                  success:(void (^)(NSString *topic_id, NSString *forum_answer_id))success
                   failure:(void (^)())failure{
     
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];

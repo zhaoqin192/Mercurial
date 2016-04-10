@@ -10,6 +10,7 @@
 #import "AnswerManager.h"
 #import "AnwserCell.h"
 #import "Answer.h"
+#import "PostTopicViewController.h"
 
 @interface FormDetailViewController ()
 @property (nonatomic, copy) NSArray *list;
@@ -20,7 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:@"AnwserCell" bundle:nil] forCellReuseIdentifier:@"AnwserCell"];
-    [self loadData];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+     [self loadData];
 }
 
 - (void)loadData{
@@ -48,6 +53,15 @@
     AnwserCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AnwserCell"];
     Answer *answer = self.list[indexPath.row];
     cell.answer = answer;
+    cell.reply = ^{
+        PostTopicViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"PostTopicViewController"];
+        vc.myTitle = @"回复";
+        vc.topic_id = self.topic_id;
+        vc.toFloor = [NSNumber numberWithInteger:indexPath.row];
+        vc.answerName = answer.answer_name;
+        vc.isReply = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    };
     return cell;
 }
 
@@ -58,6 +72,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 120;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

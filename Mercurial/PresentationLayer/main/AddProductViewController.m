@@ -47,8 +47,23 @@
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
         return;
     }
-    //Order
-    
+    Order *order = [[Order alloc] init];
+    order.product_name = self.nameTF.text;
+    order.product_level = self.rankTF.text;
+    order.product_amount = [NSNumber numberWithInteger:[self.numTF.text integerValue]];
+    order.product_price = [NSNumber numberWithInteger:[self.priceTF.text integerValue]];
+    order.product_usage = self.usageTF.text;
+    if (self.addOrder) {
+        self.addOrder(order);
+         [self returnButtonClicked];
+    }else{
+        self.order.product_name = self.nameTF.text;
+        self.order.product_level = self.rankTF.text;
+        self.order.product_amount = [NSNumber numberWithInteger:[self.numTF.text integerValue]];
+        self.order.product_price = [NSNumber numberWithInteger:[self.priceTF.text integerValue]];
+        self.order.product_usage = self.usageTF.text;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"SaveOrder" object:nil];
+    }
 }
 
 - (IBAction)returnButtonClicked {
@@ -64,24 +79,18 @@
     [self.numTF becomeFirstResponder];
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
-//    if (self.identify) {
-//        [self configureTextField];
-//    }
+    if (self.order) {
+        [self configureTextField];
+    }
 }
 
-//- (void)configureTextField{
-//    [NetworkRequest requestSearchOrder:self.identify success:^{
-//        self.searchOrder = [[OrderManager sharedManager] searchOrder];
-//        self.numTF.text = self.searchOrder.order_id;
-//        self.phoneTF.text = self.searchOrder.phone;
-//        self.nameTF.text = self.searchOrder.username;
-//        self.addressTF.text = self.searchOrder.delivery_address;
-//        self.dateTF.text = self.searchOrder.buy_date;
-//    } failure:^{
-//        [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
-//        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
-//    }];
-//}
+- (void)configureTextField{
+    self.numTF.text = [NSString stringWithFormat:@"%@",self.order.product_amount];
+    self.nameTF.text = self.order.product_name;
+    self.rankTF.text = self.order.product_level;
+    self.usageTF.text = self.order.product_usage;
+    self.priceTF.text = [NSString stringWithFormat:@"%@",self.order.product_price];
+}
 
 - (void)configureRegisterButton{
     self.saveButton.backgroundColor = [UIColor clearColor];

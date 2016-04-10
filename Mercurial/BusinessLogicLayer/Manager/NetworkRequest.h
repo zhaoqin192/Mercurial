@@ -389,7 +389,7 @@
                      text:(NSString *)text
                      type:(NSString *)type
                    typeID:(NSString *)typeID
-                  success:(void (^)(NSString *, NSString *))success
+                  success:(void (^)(NSString *topic_id, NSString *forum_answer_id))success
                   failure:(void (^)())failure;
 
 /**
