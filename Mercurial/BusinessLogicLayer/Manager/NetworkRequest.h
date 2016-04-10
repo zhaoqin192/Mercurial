@@ -402,6 +402,7 @@
  */
 + (void) uploadTopicPic:(NSString *)topicID
           forumAnswerID:(NSString *)forumAnswerID
+                  image:(UIImage *)image
                 success:(void (^)())success
                 failure:(void (^)())failure;
 

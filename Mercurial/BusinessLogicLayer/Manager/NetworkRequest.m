@@ -737,26 +737,34 @@
 
 + (void) uploadTopicPic:(NSString *)topicID
           forumAnswerID:(NSString *)forumAnswerID
+                  image:(UIImage *)image
                 success:(void (^)())success
                 failure:(void (^)())failure{
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.001);
+    
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
-    NSURL *URL = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/Forum/Index/upload"]];
     Account *account = [[DatabaseManager sharedAccount] getAccount];
     
     NSDictionary *parames = @{@"sid": account.token,
                               @"topic_id": topicID,
                               @"forum_answer_id": forumAnswerID};
     
-    [manager POST:URL.absoluteString parameters:parames progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"%@", responseObject);
+    [manager POST:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/Forum/Index/upload"] parameters:parames constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        formatter.dateFormat = @"yyyyMMddHHmmss";
+        NSString *str = [formatter stringFromDate:[NSDate date]];
+        NSString *fileName = [NSString stringWithFormat:@"%@.jpg", str];
         
-        if([[responseObject objectForKey:@"status"] isEqualToString:@"200"]){
-            success();
-        }
+        [formData appendPartWithFileData:imageData name:@"file" fileName:fileName mimeType:@"image/png"];
+        
+    } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        success();
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"%@", error);
         failure();
+        NSLog(@"Error: %@", error);
     }];
+    
 }
 
 + (void) requestReplyTopic:(NSString *)topicID
