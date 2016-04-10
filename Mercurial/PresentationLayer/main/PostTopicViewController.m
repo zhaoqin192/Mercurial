@@ -62,18 +62,18 @@
             return;
         }
         [NetworkRequest requestSendTopic:self.titleTF.text text:self.contentTextView.text type:self.type typeID:self.identify success:^(NSString *topic_id, NSString *forum_answer_id) {
-            if (self.image) {
+            if (!self.image) {
                 [SVProgressHUD showSuccessWithStatus:@"发帖成功"];
                 [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
             }
             else{
-//                [NetworkRequest uploadTopicPic:topic_id forumAnswerID:forum_answer_id image:self.image success:^{
-//                    [SVProgressHUD showSuccessWithStatus:@"发帖成功"];
-//                    [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
-//                } failure:^{
-//                    [SVProgressHUD showErrorWithStatus:@"发帖失败请重新尝试"];
-//                    [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
-//                }];
+                [NetworkRequest uploadTopicPic:topic_id forumAnswerID:forum_answer_id image:self.image success:^{
+                    [SVProgressHUD showSuccessWithStatus:@"发帖成功"];
+                    [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+                } failure:^{
+                    [SVProgressHUD showErrorWithStatus:@"发帖失败请重新尝试"];
+                    [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+                }];
             }
         } failure:^{
             [SVProgressHUD showErrorWithStatus:@"发帖失败请重新尝试"];
@@ -86,9 +86,20 @@
             [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
             return;
         }
-        [NetworkRequest requestReplyTopic:self.topic_id text:self.contentTextView.text answerToUsername:self.answerName toFloor:self.toFloor success:^(NSString *test) {
-            [SVProgressHUD showSuccessWithStatus:@"回复成功"];
-            [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+        [NetworkRequest requestReplyTopic:self.topic_id text:self.contentTextView.text answerToUsername:self.answerName toFloor:self.toFloor success:^(NSString *forum_answer_id) {
+            if (!self.image) {
+                [SVProgressHUD showSuccessWithStatus:@"回复成功"];
+                [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+            }
+            else{
+                [NetworkRequest uploadTopicPic:self.topic_id forumAnswerID:forum_answer_id image:self.image success:^{
+                    [SVProgressHUD showSuccessWithStatus:@"回帖成功"];
+                    [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+                } failure:^{
+                    [SVProgressHUD showErrorWithStatus:@"回帖失败请重新尝试"];
+                    [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+                }];
+            }
         } failure:^{
             [SVProgressHUD showErrorWithStatus:@"回复失败请重新尝试"];
             [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
