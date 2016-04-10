@@ -131,6 +131,26 @@
     self.salesArray = [[NSMutableArray alloc] init];
     [self configureScrollView];
     [self configureNotifacation];
+    [self configureLogin];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+}
+
+- (void)configureLogin{
+    Account *account = [[DatabaseManager sharedAccount] getAccount];
+    if (account) {
+        [NetworkRequest userLoginWithName:account.accountName password:account.password success:^{
+           // [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+        } failure:^(NSString *error) {
+            [SVProgressHUD showErrorWithStatus:@"登录失败"];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+        }];
+    }
+    else{
+        NSLog(@"no user");
+    }
 }
 
 - (void)fetchMessage{

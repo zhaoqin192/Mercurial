@@ -31,7 +31,8 @@
 }
 
 - (void)configureTextField{
-    Account *account = [[[AccountDao alloc] init] getAccount];
+    NSLog(@"login");
+    Account *account = [[DatabaseManager sharedAccount] getAccount];
     if (account) {
         self.nameTextField.text = account.accountName;
         [self.passwordTextField becomeFirstResponder];
