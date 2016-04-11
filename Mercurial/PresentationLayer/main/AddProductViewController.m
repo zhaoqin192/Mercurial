@@ -8,8 +8,9 @@
 
 #import "AddProductViewController.h"
 #import "Order.h"
+#import "ActionSheetStringPicker.h"
 
-@interface AddProductViewController ()
+@interface AddProductViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameTF;
 @property (weak, nonatomic) IBOutlet UITextField *rankTF;
 @property (weak, nonatomic) IBOutlet UITextField *numTF;
@@ -75,13 +76,36 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationItem.title = @"修改订单";
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"menu_bg"]]];
+    self.rankTF.delegate = self;
+    self.rankTF.inputView = [[UIView alloc] init];
+    self.usageTF.delegate = self;
+    self.usageTF.inputView = [[UIView alloc] init];
     [self configureRegisterButton];
-    [self.numTF becomeFirstResponder];
+    [self.nameTF becomeFirstResponder];
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
     if (self.order) {
         [self configureTextField];
     }
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    if (textField == self.rankTF) {
+        [ActionSheetStringPicker showPickerWithTitle:nil rows:@[@[@"AA", @"A", @"B"]] initialSelection:@[@(0)] doneBlock:^(ActionSheetStringPicker *picker, NSArray * selectedIndex, NSArray *selectedValue) {
+            self.rankTF.text = [selectedValue firstObject];
+            [self.rankTF resignFirstResponder];
+        } cancelBlock:nil origin:self.view];
+    }
+    else if (textField == self.usageTF){
+        [ActionSheetStringPicker showPickerWithTitle:nil rows:@[@[@"客厅/餐厅用砖", @"卧室/书房用砖", @"厨房/卫生间用砖",@"阳台花园用砖",@"其他"]] initialSelection:@[@(0)] doneBlock:^(ActionSheetStringPicker *picker, NSArray * selectedIndex, NSArray *selectedValue) {
+            self.usageTF.text = [selectedValue firstObject];
+            [self.usageTF resignFirstResponder];
+        } cancelBlock:nil origin:self.view];
+    }
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    return NO;
 }
 
 - (void)configureTextField{
