@@ -34,7 +34,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     Message *msg = self.messageList[indexPath.row];
-    if (msg.readed) {
+    if ([msg.readed  isEqual: @(1)]) {
         cell.textLabel.text = [NSString stringWithFormat:@"已读 %@",msg.main_title];
     }
     else{

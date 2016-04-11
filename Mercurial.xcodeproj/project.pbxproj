@@ -364,7 +364,6 @@
 				30ECBFE31CB781620020164B /* information */,
 				30ECBFE11CB781330020164B /* introduce */,
 				30ECBFE21CB781540020164B /* order */,
-				30ECC0011CB903350020164B /* form */,
 			);
 			name = user;
 			sourceTree = "<group>";
@@ -377,6 +376,7 @@
 				305F85D41CB3A5BC00F42B33 /* product */,
 				305F85D51CB3A5D300F42B33 /* scan */,
 				305F85D61CB3A5DC00F42B33 /* shopping */,
+				30ECC0011CB903350020164B /* form */,
 				305F85D71CB3A61B00F42B33 /* user */,
 			);
 			path = main;

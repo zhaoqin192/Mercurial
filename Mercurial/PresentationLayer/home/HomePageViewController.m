@@ -27,7 +27,9 @@
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *scrollAdView;
 @property (strong, nonatomic) NSMutableArray *salesArray;
 @property (strong, nonatomic) NSMutableArray *imageUrlArray;
+@property (weak, nonatomic) IBOutlet UIView *AlertView;
 @property (copy, nonatomic) NSArray *messageList;
+@property (strong, nonatomic) NSTimer *timer;
 @end
 
 @implementation HomePageViewController
@@ -136,6 +138,39 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    [self configureMessage];
+}
+
+- (void)configureTimer{
+    self.timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(alertMessage) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+}
+
+- (void)alertMessage{
+    NSLog(@"timer");
+    if (self.AlertView.backgroundColor == [UIColor redColor]) {
+        self.AlertView.backgroundColor = [UIColor whiteColor];
+    }
+    else{
+        self.AlertView.backgroundColor = [UIColor redColor];
+    }
+}
+
+- (void)configureMessage{
+    if ([[[AccountDao alloc] init] isLogin]) {
+        [NetworkRequest requestMessageList:^{
+            self.messageList = [[MessageManager sharedManager] fetchMessageArray];
+            for (Message *msg in self.messageList) {
+                if ([msg.readed  isEqual: @(0)]) {
+                    [self configureTimer];
+                    return;
+                }
+            }
+        } failure:^{
+            [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        }];
+    }
 }
 
 - (void)configureLogin{
@@ -159,16 +194,18 @@
             self.messageList = [[MessageManager sharedManager] fetchMessageArray];
             if (self.messageList.count == 0) {
                 [SVProgressHUD showWithStatus:@"没有新消息"];
-                [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+                [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
             }
             else{
                 MessageViewController *vc = [[MessageViewController alloc] init];
                 vc.messageList = self.messageList;
+                [self.timer invalidate];
+                self.AlertView.backgroundColor = [UIColor whiteColor];
                 [self.navigationController pushViewController:vc animated:YES];
             }
         } failure:^{
             [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
-            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         }];
     }
     else{
