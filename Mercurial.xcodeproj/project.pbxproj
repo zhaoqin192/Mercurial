@@ -60,6 +60,8 @@
 		30ECC0001CB8F5560020164B /* ModifyProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ECBFFF1CB8F5560020164B /* ModifyProductViewController.m */; };
 		30ECC0041CB932D60020164B /* PostTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ECC0031CB932D60020164B /* PostTopicViewController.m */; };
 		30F43C631CBB472D004C48C0 /* OldFriendIntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F43C621CBB472D004C48C0 /* OldFriendIntroduceViewController.m */; };
+		30F43C681CBB7576004C48C0 /* Address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30F43C651CBB7576004C48C0 /* Address.plist */; };
+		30F43C691CBB7576004C48C0 /* CityPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F43C671CBB7576004C48C0 /* CityPickView.m */; };
 		8D036F0D3D5D69D4249794B4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8BCBA5CED9CE1AD81A140B /* libPods.a */; };
 		AC516A2C1CB69E4100B0A6AB /* SearchOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = AC516A2B1CB69E4100B0A6AB /* SearchOrder.m */; };
 		AC5182621CAE4DFB0095BAB6 /* Recommend.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5182611CAE4DFB0095BAB6 /* Recommend.m */; };
@@ -196,6 +198,9 @@
 		30ECC0031CB932D60020164B /* PostTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTopicViewController.m; sourceTree = "<group>"; };
 		30F43C611CBB472D004C48C0 /* OldFriendIntroduceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OldFriendIntroduceViewController.h; sourceTree = "<group>"; };
 		30F43C621CBB472D004C48C0 /* OldFriendIntroduceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OldFriendIntroduceViewController.m; sourceTree = "<group>"; };
+		30F43C651CBB7576004C48C0 /* Address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Address.plist; sourceTree = "<group>"; };
+		30F43C661CBB7576004C48C0 /* CityPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityPickView.h; sourceTree = "<group>"; };
+		30F43C671CBB7576004C48C0 /* CityPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityPickView.m; sourceTree = "<group>"; };
 		59A6001685EAEFD7AF2127DC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6A8BCBA5CED9CE1AD81A140B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC516A2A1CB69E4100B0A6AB /* SearchOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchOrder.h; sourceTree = "<group>"; };
@@ -380,6 +385,7 @@
 		30A4A65B1C96980200BF5EA1 /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
+				30F43C641CBB7576004C48C0 /* pincker */,
 				305F85961CB2524600F42B33 /* NSDate+Helper */,
 				30ACF6661CA6A661005B56EC /* UIColor+expanded */,
 				30ACF6491CA58773005B56EC /* ActionSheetPicker */,
@@ -503,6 +509,16 @@
 			name = form;
 			sourceTree = "<group>";
 		};
+		30F43C641CBB7576004C48C0 /* pincker */ = {
+			isa = PBXGroup;
+			children = (
+				30F43C651CBB7576004C48C0 /* Address.plist */,
+				30F43C661CBB7576004C48C0 /* CityPickView.h */,
+				30F43C671CBB7576004C48C0 /* CityPickView.m */,
+			);
+			path = pincker;
+			sourceTree = "<group>";
+		};
 		51E4ABF6D2D0F2A61EE86E89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -536,8 +552,6 @@
 				AC8C1F7B1C9046A000D61A3F /* PresentationLayer */,
 				AC8C1F7A1C90469700D61A3F /* PersistenceLayer */,
 				AC8C1F791C90468C00D61A3F /* BusinessLogicLayer */,
-				AC5E1CF01C904484008D91E5 /* Info.plist */,
-				AC5E1CEB1C904484008D91E5 /* Assets.xcassets */,
 				AC5E1CDC1C904484008D91E5 /* Supporting Files */,
 			);
 			path = Mercurial;
@@ -546,6 +560,8 @@
 		AC5E1CDC1C904484008D91E5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AC5E1CF01C904484008D91E5 /* Info.plist */,
+				AC5E1CEB1C904484008D91E5 /* Assets.xcassets */,
 				30D18F1F1C9AD98400559866 /* PrefixHeader.pch */,
 				AC5E1CDD1C904484008D91E5 /* main.m */,
 			);
@@ -790,6 +806,7 @@
 				305F859B1CB2524600F42B33 /* README.textile in Resources */,
 				30A4A6591C96939100BF5EA1 /* User.storyboard in Resources */,
 				30A4A6581C96939100BF5EA1 /* ScanViewController.xib in Resources */,
+				30F43C681CBB7576004C48C0 /* Address.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -860,6 +877,7 @@
 				30ACF65D1CA58773005B56EC /* ActionSheetDatePicker.m in Sources */,
 				ACC204F11C99283A00B26CDD /* AccountDao.m in Sources */,
 				AC5182741CAE69F90095BAB6 /* Type.m in Sources */,
+				30F43C691CBB7576004C48C0 /* CityPickView.m in Sources */,
 				ACC204E41C99037C00B26CDD /* Utility.m in Sources */,
 				30CADF551CB5537B003E0F7F /* OrderListViewController.m in Sources */,
 				30ECC0001CB8F5560020164B /* ModifyProductViewController.m in Sources */,

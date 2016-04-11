@@ -9,8 +9,11 @@
 #import "FriendsIntroduceViewController.h"
 #import "Account.h"
 #import "ActionSheetDatePicker.h"
+#import "CityPickView.h"
 
-@interface FriendsIntroduceViewController () <UITextFieldDelegate>
+@interface FriendsIntroduceViewController ()
+<UITextFieldDelegate,CityPickViewDelegate>
+
 @property (nonatomic, strong) Recommend *recommend;
 @property (weak, nonatomic) IBOutlet UITextField *nameTF;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTF;
@@ -23,14 +26,22 @@
 @property (weak, nonatomic) IBOutlet UITextField *longAddressTF;
 @property (weak, nonatomic) IBOutlet UITextField *dateTF;
 @property (strong, nonatomic) ActionSheetDatePicker *picker;
+@property (nonatomic,strong) CityPickView *pickView;
+@property (nonatomic, copy) NSString *province;
+@property (nonatomic, copy) NSString *city;
+@property (nonatomic, copy) NSString *district;
 @end
 
 @implementation FriendsIntroduceViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.pickView = [[CityPickView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 180)];;
+    self.pickView.delegate = self;
     self.dateTF.delegate = self;
     self.dateTF.inputView = [[UIView alloc] init];
+    self.longAddressTF.delegate = self;
+    self.longAddressTF.inputView = self.pickView;
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationItem.title = @"用户推荐";
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"menu_bg"]]];
@@ -47,8 +58,8 @@
 - (void)configurePicker{
     NSDate *curDate = [NSDate dateFromString:@"1990-01-01" withFormat:@"yyyy-MM-dd"];
     self.picker = [[ActionSheetDatePicker alloc] initWithTitle:nil datePickerMode:UIDatePickerModeDate selectedDate:curDate doneBlock:^(ActionSheetDatePicker *picker, NSDate *selectedDate, id origin) {
-        NSLog(@"%@",[selectedDate string_yyyy_MM_dd]);
-        [self.dateTF setValue:[selectedDate string_yyyy_MM_dd] forKey:@"text"];
+       // NSLog(@"%@",[selectedDate string_yyyy_MM_dd]);
+        self.dateTF.text = [selectedDate string_yyyy_MM_dd];
         [self.dateTF resignFirstResponder];
     } cancelBlock:^(ActionSheetDatePicker *picker) {
         
@@ -66,7 +77,7 @@
         self.productTF.text = self.recommend.recomm_product_name;
         self.reasonTF.text = self.recommend.recomm_reason;
         self.dateTF.text = self.recommend.date;
-        self.longAddressTF.text = [[self.recommend.city stringByAppendingString:self.recommend.province] stringByAppendingString:self.recommend.district];
+        self.longAddressTF.text = [[self.recommend.province stringByAppendingString:self.recommend.city] stringByAppendingString:self.recommend.district];
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
@@ -93,6 +104,18 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
+}
+
+- (void)selectCity:(NSString *)city{
+    self.longAddressTF.text = city;
+}
+
+- (void)fetchDetail:(NSString *)province city:(NSString *)city district:(NSString *)district{
+    NSLog(@"fetch");
+    self.province = province;
+    self.city = city;
+    self.district = district;
+    [self.longAddressTF resignFirstResponder];
 }
 
 #pragma mark -<TextFieldDelegate>
@@ -177,17 +200,8 @@
     }
     [SVProgressHUD show];
     self.myAccount = [[[AccountDao alloc] init] getAccount];
-    
-    NSDate *date1 = [NSDate date];
-    //然后您需要定义一个NSDataFormat的对象
-    NSDateFormatter * dateFormat = [[NSDateFormatter alloc]init];
-    //然后设置这个类的dataFormate属性为一个字符串，系统就可以因此自动识别年月日时间
-    dateFormat.dateFormat = @"yyyy-MM-dd";
-    //之后定义一个字符串，使用stringFromDate方法将日期转换为字符串
-    NSString * dateToString = [dateFormat stringFromDate:date1];
-    
     if(!self.identify){
-        [NetworkRequest requestAddCommend:self.nameTF.text phone:self.phoneTF.text province:[self notNil:self.myAccount.province] city:[self notNil:self.myAccount.city] district:[self notNil:self.myAccount.district] address:self.addressTF.text commendName:self.productTF.text date:dateToString reason:self.reasonTF.text success:^{
+        [NetworkRequest requestAddCommend:self.nameTF.text phone:self.phoneTF.text province:self.province city:self.city district:self.district address:self.addressTF.text commendName:self.productTF.text date:self.dateTF.text reason:self.reasonTF.text success:^{
             [SVProgressHUD showSuccessWithStatus:@"推荐成功!"];
             [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
             [self.navigationController popViewControllerAnimated:YES];
@@ -197,7 +211,7 @@
         }];
     }
     else{
-        [NetworkRequest requestUpdateCommend:self.nameTF.text phone:self.phoneTF.text province:[self notNil:self.myAccount.province] city:[self notNil:self.myAccount.city] district:[self notNil:self.myAccount.district] address:self.addressTF.text commendName:self.productTF.text date:dateToString reason:self.reasonTF.text recommentID:self.identify success:^{
+        [NetworkRequest requestUpdateCommend:self.nameTF.text phone:self.phoneTF.text province:self.province city:self.city district:self.district address:self.addressTF.text commendName:self.productTF.text date:self.dateTF.text reason:self.reasonTF.text recommentID:self.identify success:^{
             [SVProgressHUD showSuccessWithStatus:@"修改推荐成功!"];
             [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
             [self.navigationController popViewControllerAnimated:YES];
