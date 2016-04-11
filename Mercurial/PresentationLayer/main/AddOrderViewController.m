@@ -161,6 +161,9 @@
         self.addressTF.text = self.searchOrder.delivery_address;
         self.dateTF.text = self.searchOrder.buy_date;
         self.items = self.searchOrder.items;
+        self.province = self.searchOrder.delivery_province;
+        self.city = self.searchOrder.delivery_city;
+        self.district = self.searchOrder.delivery_district;
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];

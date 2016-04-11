@@ -78,6 +78,9 @@
         self.reasonTF.text = self.recommend.recomm_reason;
         self.dateTF.text = self.recommend.date;
         self.longAddressTF.text = [[self.recommend.province stringByAppendingString:self.recommend.city] stringByAppendingString:self.recommend.district];
+        self.province = self.recommend.province;
+        self.city = self.recommend.city;
+        self.district = self.recommend.district;
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
