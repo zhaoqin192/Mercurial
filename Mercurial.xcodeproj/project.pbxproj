@@ -59,6 +59,7 @@
 		30ECBFFD1CB8C7520020164B /* AddProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ECBFFC1CB8C7520020164B /* AddProductViewController.m */; };
 		30ECC0001CB8F5560020164B /* ModifyProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ECBFFF1CB8F5560020164B /* ModifyProductViewController.m */; };
 		30ECC0041CB932D60020164B /* PostTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ECC0031CB932D60020164B /* PostTopicViewController.m */; };
+		30F43C631CBB472D004C48C0 /* OldFriendIntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F43C621CBB472D004C48C0 /* OldFriendIntroduceViewController.m */; };
 		8D036F0D3D5D69D4249794B4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8BCBA5CED9CE1AD81A140B /* libPods.a */; };
 		AC516A2C1CB69E4100B0A6AB /* SearchOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = AC516A2B1CB69E4100B0A6AB /* SearchOrder.m */; };
 		AC5182621CAE4DFB0095BAB6 /* Recommend.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5182611CAE4DFB0095BAB6 /* Recommend.m */; };
@@ -193,6 +194,8 @@
 		30ECBFFF1CB8F5560020164B /* ModifyProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyProductViewController.m; sourceTree = "<group>"; };
 		30ECC0021CB932D60020164B /* PostTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTopicViewController.h; sourceTree = "<group>"; };
 		30ECC0031CB932D60020164B /* PostTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTopicViewController.m; sourceTree = "<group>"; };
+		30F43C611CBB472D004C48C0 /* OldFriendIntroduceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OldFriendIntroduceViewController.h; sourceTree = "<group>"; };
+		30F43C621CBB472D004C48C0 /* OldFriendIntroduceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OldFriendIntroduceViewController.m; sourceTree = "<group>"; };
 		59A6001685EAEFD7AF2127DC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6A8BCBA5CED9CE1AD81A140B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC516A2A1CB69E4100B0A6AB /* SearchOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchOrder.h; sourceTree = "<group>"; };
@@ -461,6 +464,8 @@
 				30A4A6531C96939100BF5EA1 /* UserInformationViewController.m */,
 				305F85A21CB2619000F42B33 /* UserDetailViewController.h */,
 				305F85A31CB2619000F42B33 /* UserDetailViewController.m */,
+				30F43C611CBB472D004C48C0 /* OldFriendIntroduceViewController.h */,
+				30F43C621CBB472D004C48C0 /* OldFriendIntroduceViewController.m */,
 			);
 			name = information;
 			sourceTree = "<group>";
@@ -904,6 +909,7 @@
 				ACC204FC1C99526700B26CDD /* ProductKind.m in Sources */,
 				30ECBFF71CB8A57F0020164B /* SelectionViewController.m in Sources */,
 				305F861D1CB5468400F42B33 /* AddOrderViewController.m in Sources */,
+				30F43C631CBB472D004C48C0 /* OldFriendIntroduceViewController.m in Sources */,
 				30D18F2C1C9E484F00559866 /* HomePageViewController.m in Sources */,
 				30D18F1E1C9AD79500559866 /* KxMenu.m in Sources */,
 				ACC3D7FC1CAD50D2000FBE93 /* AddOrder.m in Sources */,

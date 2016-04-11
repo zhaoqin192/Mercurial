@@ -59,6 +59,7 @@
     account.avatar = avatar;
     account.name = name;
     account.birth = birth;
+    account.cardID = cardID;
     account.degree = degree;
     account.job = job;
     account.province = province;
@@ -72,7 +73,7 @@
     account.recommendName = recommendName;
     account.recommendPhone = recommendPhone;
     [appDelegate saveContext];
-    success();
+    success(); 
 }
 
 - (void) insertWithAccountName:(NSString *)accountName

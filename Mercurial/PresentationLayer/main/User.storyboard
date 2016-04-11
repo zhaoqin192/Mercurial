@@ -109,7 +109,7 @@
                                     <constraint firstAttribute="height" constant="30" id="pDX-aS-acb"/>
                                     <constraint firstAttribute="width" constant="46" id="xWK-99-POB"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="图片"/>
                                 <connections>
                                     <action selector="photoButtonClicked" destination="2UZ-9n-VFN" eventType="touchUpInside" id="iQ6-aB-RAb"/>
                                 </connections>
@@ -120,7 +120,7 @@
                                     <constraint firstAttribute="height" constant="30" id="Inu-JK-ldB"/>
                                     <constraint firstAttribute="width" constant="46" id="deh-0h-txy"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="完成"/>
                                 <connections>
                                     <action selector="postButtonClicked" destination="2UZ-9n-VFN" eventType="touchUpInside" id="5fK-wa-AS6"/>
                                 </connections>
@@ -131,7 +131,7 @@
                                     <constraint firstAttribute="width" constant="46" id="Knt-pn-9uj"/>
                                     <constraint firstAttribute="height" constant="30" id="as8-d3-6NR"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="相机"/>
                                 <connections>
                                     <action selector="cameraButtonClicked" destination="2UZ-9n-VFN" eventType="touchUpInside" id="BiI-fh-f8H"/>
                                 </connections>
@@ -921,6 +921,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Yz-yq-OlM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1037.5" y="-322.5"/>
+        </scene>
+        <!--Old Friend Introduce View Controller-->
+        <scene sceneID="mg4-yj-Ow6">
+            <objects>
+                <viewController storyboardIdentifier="OldFriendIntroduceViewController" id="ahA-Yw-oHd" customClass="OldFriendIntroduceViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mXn-wH-qLo"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cla-ZO-TPM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Wd-cH-yDd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="熟人姓名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dHU-qb-gpf">
+                                <rect key="frame" x="20" y="40" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="熟人电话" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fXT-X9-ZP0">
+                                <rect key="frame" x="20" y="100" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXL-vG-DTU">
+                                <rect key="frame" x="305" y="160" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="5eW-SR-Km0"/>
+                                    <constraint firstAttribute="height" constant="50" id="p5z-06-XqH"/>
+                                </constraints>
+                                <state key="normal" title="保存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked" destination="ahA-Yw-oHd" eventType="touchUpInside" id="0FI-GE-YG5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fXT-X9-ZP0" firstAttribute="trailing" secondItem="dHU-qb-gpf" secondAttribute="trailing" id="1PV-Dz-pJB"/>
+                            <constraint firstItem="fXT-X9-ZP0" firstAttribute="leading" secondItem="dHU-qb-gpf" secondAttribute="leading" id="31r-ie-4b6"/>
+                            <constraint firstItem="fXT-X9-ZP0" firstAttribute="top" secondItem="dHU-qb-gpf" secondAttribute="bottom" constant="30" id="4Lc-8Z-6kd"/>
+                            <constraint firstItem="dHU-qb-gpf" firstAttribute="top" secondItem="mXn-wH-qLo" secondAttribute="bottom" constant="20" id="Cym-De-C2L"/>
+                            <constraint firstItem="XXL-vG-DTU" firstAttribute="top" secondItem="fXT-X9-ZP0" secondAttribute="bottom" constant="30" id="FKq-Yj-Rhp"/>
+                            <constraint firstAttribute="trailing" secondItem="dHU-qb-gpf" secondAttribute="trailing" constant="20" id="LfI-HU-9BJ"/>
+                            <constraint firstItem="XXL-vG-DTU" firstAttribute="top" secondItem="dHU-qb-gpf" secondAttribute="bottom" constant="30" id="d96-xL-7hz"/>
+                            <constraint firstItem="dHU-qb-gpf" firstAttribute="leading" secondItem="4Wd-cH-yDd" secondAttribute="leading" constant="20" id="y7O-Oh-qXZ"/>
+                            <constraint firstItem="XXL-vG-DTU" firstAttribute="trailing" secondItem="dHU-qb-gpf" secondAttribute="trailing" id="zkO-8z-kU9"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="d96-xL-7hz"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="nameTF" destination="dHU-qb-gpf" id="apw-CM-dXA"/>
+                        <outlet property="phoneTF" destination="fXT-X9-ZP0" id="Wbi-DP-KI6"/>
+                        <outlet property="saveButton" destination="XXL-vG-DTU" id="hxA-dK-rmp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6K4-jF-E6D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="83.5" y="2472.5"/>
         </scene>
     </scenes>
 </document>

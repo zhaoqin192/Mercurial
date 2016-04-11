@@ -13,6 +13,7 @@
 #import "AccountDao.h"
 #import "UserDetailViewController.h"
 #import "userIconCell.h"
+#import "OldFriendIntroduceViewController.h"
 
 @interface UserInformationViewController ()
 <UIActionSheetDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate>
@@ -315,9 +316,21 @@
         }
         case 12:{
             [ActionSheetStringPicker showPickerWithTitle:@"了解渠道" rows:@[@[@"海报、宣传单张",@"电视",@"广播",@"网站及网络推广",@"进店了解",@"熟人介绍",@"其他渠道"]] initialSelection:@[@(0)] doneBlock:^(ActionSheetStringPicker *picker, NSArray * selectedIndex, NSArray *selectedValue) {
-                weakSelf.myAccount.way = [selectedValue firstObject];
-                [weakSelf.tableView reloadData];
-                [self uploadData];
+                if (![[selectedValue firstObject] isEqualToString:@"熟人介绍"]) {
+                    weakSelf.myAccount.way = [selectedValue firstObject];
+                    [weakSelf.tableView reloadData];
+                    [self uploadData];
+                }
+                else{
+                    OldFriendIntroduceViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"OldFriendIntroduceViewController"];
+                    vc.myAccount = self.myAccount;
+                    vc.returnString = ^(NSString *name, NSString *phone){
+                        self.myAccount.recommendName = name;
+                        self.myAccount.recommendPhone = phone;
+                        [self uploadData];
+                    };
+                    [self.navigationController pushViewController:vc animated:YES];
+                }
             } cancelBlock:nil origin:self.view];
             break;
         }

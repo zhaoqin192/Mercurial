@@ -145,7 +145,7 @@
         NSLog(@"JSON: %@", responseObject);
         NSArray *array = responseObject;
         NSDictionary *dic = [array objectAtIndex:0];
-        
+        NSLog(@"%@",[dic objectForKey:@"card_number"]);
         NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
         f.numberStyle = NSNumberFormatterDecimalStyle;
         
