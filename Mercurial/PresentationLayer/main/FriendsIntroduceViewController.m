@@ -8,8 +8,9 @@
 
 #import "FriendsIntroduceViewController.h"
 #import "Account.h"
+#import "ActionSheetDatePicker.h"
 
-@interface FriendsIntroduceViewController ()
+@interface FriendsIntroduceViewController () <UITextFieldDelegate>
 @property (nonatomic, strong) Recommend *recommend;
 @property (weak, nonatomic) IBOutlet UITextField *nameTF;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTF;
@@ -19,22 +20,41 @@
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (nonatomic, strong) Account *myAccount;
+@property (weak, nonatomic) IBOutlet UITextField *longAddressTF;
+@property (weak, nonatomic) IBOutlet UITextField *dateTF;
+@property (strong, nonatomic) ActionSheetDatePicker *picker;
 @end
 
 @implementation FriendsIntroduceViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.dateTF.delegate = self;
+    self.dateTF.inputView = [[UIView alloc] init];
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationItem.title = @"用户推荐";
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"menu_bg"]]];
     [self configureRegisterButton];
+    [self configurePicker];
     [self.nameTF becomeFirstResponder];
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
     if (self.identify) {
         [self configureTextField];
     }
+}
+
+- (void)configurePicker{
+    NSDate *curDate = [NSDate dateFromString:@"1990-01-01" withFormat:@"yyyy-MM-dd"];
+    self.picker = [[ActionSheetDatePicker alloc] initWithTitle:nil datePickerMode:UIDatePickerModeDate selectedDate:curDate doneBlock:^(ActionSheetDatePicker *picker, NSDate *selectedDate, id origin) {
+        NSLog(@"%@",[selectedDate string_yyyy_MM_dd]);
+        [self.dateTF setValue:[selectedDate string_yyyy_MM_dd] forKey:@"text"];
+        [self.dateTF resignFirstResponder];
+    } cancelBlock:^(ActionSheetDatePicker *picker) {
+        
+    } origin:self.view];
+    self.picker.minimumDate = [[NSDate date] offsetYear:-120];
+    self.picker.maximumDate = [NSDate date];
 }
 
 - (void)configureTextField{
@@ -45,6 +65,8 @@
         self.addressTF.text = self.recommend.address;
         self.productTF.text = self.recommend.recomm_product_name;
         self.reasonTF.text = self.recommend.recomm_reason;
+        self.dateTF.text = self.recommend.date;
+        self.longAddressTF.text = [[self.recommend.city stringByAppendingString:self.recommend.province] stringByAppendingString:self.recommend.district];
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
@@ -71,6 +93,18 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
+}
+
+#pragma mark -<TextFieldDelegate>
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    if(textField == self.dateTF){
+        [self.picker showActionSheetPicker];
+    }
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    return NO;
 }
 
 #pragma mark -<VerficationCode>
@@ -117,7 +151,7 @@
         return;
     }
     if (self.addressTF.text.length == 0) {
-        [SVProgressHUD showErrorWithStatus:@"请输入推荐人地址"];
+        [SVProgressHUD showErrorWithStatus:@"请输入详细地址"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
         return;
     }
@@ -128,6 +162,16 @@
     }
     if (self.reasonTF.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入推荐理由"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        return;
+    }
+    if (self.dateTF.text.length == 0) {
+        [SVProgressHUD showErrorWithStatus:@"请输入推荐日期"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        return;
+    }
+    if (self.longAddressTF.text.length == 0) {
+        [SVProgressHUD showErrorWithStatus:@"请输入推荐人地址"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
         return;
     }
@@ -154,7 +198,7 @@
     }
     else{
         [NetworkRequest requestUpdateCommend:self.nameTF.text phone:self.phoneTF.text province:[self notNil:self.myAccount.province] city:[self notNil:self.myAccount.city] district:[self notNil:self.myAccount.district] address:self.addressTF.text commendName:self.productTF.text date:dateToString reason:self.reasonTF.text recommentID:self.identify success:^{
-            [SVProgressHUD showSuccessWithStatus:@"推荐成功!"];
+            [SVProgressHUD showSuccessWithStatus:@"修改推荐成功!"];
             [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
             [self.navigationController popViewControllerAnimated:YES];
         } failure:^(NSString *error) {
