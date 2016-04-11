@@ -11,8 +11,11 @@
 #import "SearchOrder.h"
 #import "AddProductViewController.h"
 #import "ModifyProductViewController.h"
+#import "ActionSheetDatePicker.h"
+#import "CityPickView.h"
 
-@interface AddOrderViewController ()
+@interface AddOrderViewController ()<UITextFieldDelegate,CityPickViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *numTF;
 @property (weak, nonatomic) IBOutlet UITextField *nameTF;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTF;
@@ -24,6 +27,11 @@
 @property (nonatomic, strong) Account *myAccount;
 @property (nonatomic, strong) SearchOrder *searchOrder;
 @property (nonatomic, strong) NSMutableArray *items;
+@property (strong, nonatomic) ActionSheetDatePicker *picker;
+@property (nonatomic,strong) CityPickView *pickView;
+@property (nonatomic, copy) NSString *province;
+@property (nonatomic, copy) NSString *city;
+@property (nonatomic, copy) NSString *district;
 @end
 
 @implementation AddOrderViewController
@@ -71,15 +79,7 @@
     [SVProgressHUD show];
     self.myAccount = [[[AccountDao alloc] init] getAccount];
     
-    NSDate *date1 = [NSDate date];
-    //然后您需要定义一个NSDataFormat的对象
-    NSDateFormatter * dateFormat = [[NSDateFormatter alloc]init];
-    //然后设置这个类的dataFormate属性为一个字符串，系统就可以因此自动识别年月日时间
-    dateFormat.dateFormat = @"yyyy-MM-dd";
-    //之后定义一个字符串，使用stringFromDate方法将日期转换为字符串
-    NSString * dateToString = [dateFormat stringFromDate:date1];
-    
-    [NetworkRequest requestAddOrderWithID:self.numTF.text name:self.nameTF.text province:[self notNil:self.myAccount.province] city:[self notNil:self.myAccount.city] district:[self notNil:self.myAccount.district] address:self.addressTF.text phone:self.phoneTF.text date:dateToString item:self.items success:^{
+    [NetworkRequest requestAddOrderWithID:self.numTF.text name:self.nameTF.text province:self.province city:self.city district:self.district address:self.addressTF.text phone:self.phoneTF.text date:self.dateTF.text item:self.items success:^{
         [SVProgressHUD showSuccessWithStatus:@"创建订单成功!"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         [self.navigationController popViewControllerAnimated:YES];
@@ -91,10 +91,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.pickView = [[CityPickView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 180)];;
+    self.pickView.delegate = self;
+    self.dateTF.delegate = self;
+    self.dateTF.inputView = [[UIView alloc] init];
+    self.addressTF.delegate = self;
+    self.addressTF.inputView = self.pickView;
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationItem.title = @"修改订单";
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"menu_bg"]]];
     [self configureRegisterButton];
+    [self configurePicker];
     [self.numTF becomeFirstResponder];
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
@@ -106,6 +113,43 @@
     else{
         self.items = [[NSMutableArray alloc] init];
     }
+}
+
+- (void)configurePicker{
+    NSDate *curDate = [NSDate dateFromString:@"1990-01-01" withFormat:@"yyyy-MM-dd"];
+    self.picker = [[ActionSheetDatePicker alloc] initWithTitle:nil datePickerMode:UIDatePickerModeDate selectedDate:curDate doneBlock:^(ActionSheetDatePicker *picker, NSDate *selectedDate, id origin) {
+        // NSLog(@"%@",[selectedDate string_yyyy_MM_dd]);
+        self.dateTF.text = [selectedDate string_yyyy_MM_dd];
+        [self.dateTF resignFirstResponder];
+    } cancelBlock:^(ActionSheetDatePicker *picker) {
+        
+    } origin:self.view];
+    self.picker.minimumDate = [[NSDate date] offsetYear:-120];
+    self.picker.maximumDate = [NSDate date];
+}
+
+- (void)selectCity:(NSString *)city{
+    self.addressTF.text = city;
+}
+
+- (void)fetchDetail:(NSString *)province city:(NSString *)city district:(NSString *)district{
+    NSLog(@"fetch");
+    self.province = province;
+    self.city = city;
+    self.district = district;
+    [self.addressTF resignFirstResponder];
+}
+
+#pragma mark -<TextFieldDelegate>
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    if(textField == self.dateTF){
+        [self.picker showActionSheetPicker];
+    }
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    return NO;
 }
 
 - (void)configureTextField{
