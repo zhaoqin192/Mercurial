@@ -10,9 +10,9 @@
 #import "Answer.h"
 
 @interface AnwserCell()
+@property (weak, nonatomic) IBOutlet UIScrollView *myScrollView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLable;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *myImageView;
 @property (weak, nonatomic) IBOutlet UILabel *FloorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *toFloorLabel;
@@ -45,18 +45,27 @@
     }
     [self layoutIfNeeded];
     
+    CGFloat itemW = 80;
+    CGFloat itemH = 80;
+    CGFloat margin = 5;
     if (self.answer.url.count != 0) {
-        [self.myImageView sd_setImageWithURL:self.answer.url[0] placeholderImage:[UIImage imageNamed:@"answerCellPlacehold"] completed:nil];
-        answer.cellHeight = CGRectGetMaxY(self.myImageView.frame) + 40;
+        for(int i = 0; i<self.answer.url.count; i++){
+            UIImageView *imageView = [UIImageView new];
+            [imageView sd_setImageWithURL:self.answer.url[i] placeholderImage:[UIImage imageNamed:@"answerCellPlacehold"] completed:nil];
+            imageView.frame = CGRectMake(i * (itemW + margin), (self.myScrollView.frame.size.height - itemH)/2, itemW, itemH);
+            [self.myScrollView addSubview:imageView];
+            self.myScrollView.contentSize = CGSizeMake((i+1) * itemW, 0);
+        }
+        answer.cellHeight = CGRectGetMaxY(self.myScrollView.frame) + 40;
     }
     else{
-        self.myImageView.hidden = YES;
+        self.myScrollView.hidden = YES;
         answer.cellHeight = CGRectGetMaxY(self.contentLabel.frame) + 50;
     }
 }
 
 - (void)prepareForReuse{
-    self.myImageView.hidden = NO;
+    self.myScrollView.hidden = NO;
 }
 
 @end
