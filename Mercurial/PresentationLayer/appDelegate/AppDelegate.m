@@ -38,7 +38,7 @@
     self.window.rootViewController = self.drawerController;
     
     [self configureNavigationItem];
-    [self configureIntroView];
+  //  [self configureIntroView];
     return YES;
 }
 
