@@ -46,7 +46,7 @@
     [self layoutIfNeeded];
     
     CGFloat itemW = 100;
-    CGFloat itemH = 100;
+    CGFloat itemH = 100; 
     CGFloat margin = 15;
     if (self.answer.url.count != 0) {
         for(int i = 0; i<self.answer.url.count; i++){

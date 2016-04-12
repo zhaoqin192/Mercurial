@@ -779,7 +779,9 @@
     NSLog(@"uploadTopicPic");
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
     Account *account = [[DatabaseManager sharedAccount] getAccount];
-    
+//    manager.responseSerializer = [AFJSONResponseSerializer
+//                                  serializerWithReadingOptions:NSJSONReadingAllowFragments];
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     NSDictionary *parames = @{@"sid": account.token,
                               @"topic_id": topicID,
                               @"forum_answer_id": forumAnswerID};

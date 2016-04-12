@@ -11,17 +11,17 @@
 @interface PostTopicViewController ()
 <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-
+@property (weak, nonatomic) IBOutlet UIScrollView *myScrollView;
 @property (weak, nonatomic) IBOutlet UITextField *titleTF;
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;
-@property (weak, nonatomic) IBOutlet UIImageView *picImageView;
-@property (strong, nonatomic) UIImage *image;
+@property (strong, nonatomic) NSMutableArray *images;
 @end
 
 @implementation PostTopicViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.images = [NSMutableArray array];
     self.navigationItem.title = self.myTitle;
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"menu_bg"]]];
     if(self.isReply){
@@ -49,6 +49,31 @@
     [self presentViewController:picker animated:YES completion:nil];//进入照相界面
 }
 
+- (void)postImage:(NSString *)topic_id form_id:(NSString *)forum_answer_id imageIndex:(NSUInteger )index{
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+    [SVProgressHUD show];
+    if (index < self.images.count) {
+        [NetworkRequest uploadTopicPic:topic_id forumAnswerID:forum_answer_id image:self.images[index] success:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                if (self.images[index] == self.images.lastObject) {
+                    [SVProgressHUD showSuccessWithStatus:@"上传图片成功"];
+                    [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+                    [self.navigationController popViewControllerAnimated:YES];
+                }
+                else{
+                    [self postImage:topic_id form_id:forum_answer_id imageIndex:index+1];
+                }
+            });
+        } failure:^{
+            [SVProgressHUD showErrorWithStatus:@"上传图片失败请重新尝试"];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+             [self.navigationController popViewControllerAnimated:YES];
+            return;
+        }];
+    }
+}
+
 - (IBAction)postButtonClicked {
     if (!self.isReply) {
         if (self.titleTF.text.length == 0) {
@@ -62,54 +87,70 @@
             return;
         }
         [NetworkRequest requestSendTopic:self.titleTF.text text:self.contentTextView.text type:self.type typeID:self.identify success:^(NSString *topic_id, NSString *forum_answer_id) {
-            if (!self.image) {
+            if (self.images.count == 0) {
                 [SVProgressHUD showSuccessWithStatus:@"发帖成功"];
                 [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
             }
             else{
-                [NetworkRequest uploadTopicPic:topic_id forumAnswerID:forum_answer_id image:self.image success:^{
-                    [SVProgressHUD showSuccessWithStatus:@"发帖成功"];
-                    [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
-                } failure:^{
-                    [SVProgressHUD showErrorWithStatus:@"发帖失败请重新尝试"];
-                    [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
-                }];
+                [self postImage:topic_id form_id:forum_answer_id imageIndex:0];
             }
         } failure:^{
             [SVProgressHUD showErrorWithStatus:@"发帖失败请重新尝试"];
-            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         }];
     }
     else{
         if (self.contentTextView.text.length == 0) {
             [SVProgressHUD showErrorWithStatus:@"请输入内容"];
-            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
             return;
         }
         [NetworkRequest requestReplyTopic:self.topic_id text:self.contentTextView.text answerToUsername:self.answerName toFloor:self.toFloor success:^(NSString *forum_answer_id) {
-            if (!self.image) {
+            if (self.images.count == 0) {
                 [SVProgressHUD showSuccessWithStatus:@"回复成功"];
                 [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
             }
             else{
-                [NetworkRequest uploadTopicPic:self.topic_id forumAnswerID:forum_answer_id image:self.image success:^{
-                    [SVProgressHUD showSuccessWithStatus:@"回帖成功"];
-                    [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
-                } failure:^{
-                    [SVProgressHUD showErrorWithStatus:@"回帖失败请重新尝试"];
-                    [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
-                }];
+                for (UIImage *image in self.images) {
+                    [NetworkRequest uploadTopicPic:self.topic_id forumAnswerID:forum_answer_id image:image success:^{
+                        if (image == [self.images lastObject]) {
+                            [SVProgressHUD showSuccessWithStatus:@"回帖成功"];
+                            [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+                        }
+                    } failure:^{
+                        [SVProgressHUD showErrorWithStatus:@"上传图片失败请重新尝试"];
+                        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+                        return;
+                    }];
+                }
             }
         } failure:^{
             [SVProgressHUD showErrorWithStatus:@"回复失败请重新尝试"];
             [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         }];
     }
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)dismiss {
     [SVProgressHUD dismiss];
+}
+
+- (void)configureScrollView{
+    self.myScrollView.hidden = NO;
+    CGFloat itemW = 100;
+    CGFloat itemH = 100;
+    CGFloat margin = 15;
+    if (self.images.count != 0) {
+        for(int i = 0; i<self.images.count; i++){
+            UIImageView *imageView = [[UIImageView alloc] initWithImage:self.images[i]];
+            imageView.frame = CGRectMake(i * (itemW + margin), (self.myScrollView.frame.size.height - itemH)/2, itemW, itemH);
+            [self.myScrollView addSubview:imageView];
+            self.myScrollView.contentSize = CGSizeMake(CGRectGetMaxX(imageView.frame), 0);
+        }
+    }
+    else{
+        self.myScrollView.hidden = YES;
+    }
 }
 
 #pragma mark UIImagePickerControllerDelegate
@@ -127,13 +168,12 @@
                                      UIImagePickerControllerOriginalImage];
         
         if (editedImage) {
-            self.image = editedImage;
+            [self.images addObject:editedImage];
         } else {
-            self.image = originalImage;
+            [self.images addObject:originalImage];
         }
         // Do something with imageToUse
-        self.picImageView.image = self.image;
-        
+        [self configureScrollView];
         [picker dismissViewControllerAnimated:YES completion:nil];
     }
 }

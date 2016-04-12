@@ -289,6 +289,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3058EF461CBCA93500C2E746 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				30ECBFE51CB7819C0020164B /* TopicCell.h */,
+				30ECBFE61CB7819C0020164B /* TopicCell.m */,
+				30ECBFE71CB7819C0020164B /* TopicCell.xib */,
+				30ECBFF01CB7DF780020164B /* AnwserCell.h */,
+				30ECBFF11CB7DF780020164B /* AnwserCell.m */,
+				30ECBFF21CB7DF780020164B /* AnwserCell.xib */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
 		305F85961CB2524600F42B33 /* NSDate+Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -482,12 +495,6 @@
 				305F85DB1CB3A7AA00F42B33 /* userIconCell.h */,
 				305F85DC1CB3A7AA00F42B33 /* userIconCell.m */,
 				305F85DE1CB3A7C400F42B33 /* userIconCell.xib */,
-				30ECBFE51CB7819C0020164B /* TopicCell.h */,
-				30ECBFE61CB7819C0020164B /* TopicCell.m */,
-				30ECBFE71CB7819C0020164B /* TopicCell.xib */,
-				30ECBFF01CB7DF780020164B /* AnwserCell.h */,
-				30ECBFF11CB7DF780020164B /* AnwserCell.m */,
-				30ECBFF21CB7DF780020164B /* AnwserCell.xib */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -495,6 +502,7 @@
 		30ECC0011CB903350020164B /* form */ = {
 			isa = PBXGroup;
 			children = (
+				3058EF461CBCA93500C2E746 /* cell */,
 				30ECBFDE1CB77B580020164B /* FormViewController.h */,
 				30ECBFDF1CB77B580020164B /* FormViewController.m */,
 				30ECBFED1CB7DA490020164B /* FormDetailViewController.h */,
