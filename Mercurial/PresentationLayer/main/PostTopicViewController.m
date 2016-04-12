@@ -74,6 +74,31 @@
     }
 }
 
+- (void)replyImage:(NSString *)topic_id forumAnswerID:(NSString *)forum_answer_id imageIndex:(NSUInteger )index{
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+    [SVProgressHUD show];
+    if (index < self.images.count) {
+        [NetworkRequest uploadTopicPic:topic_id forumAnswerID:forum_answer_id image:self.images[index] success:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                if (self.images[index] == self.images.lastObject) {
+                    [SVProgressHUD showSuccessWithStatus:@"上传图片成功"];
+                    [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+                    [self.navigationController popViewControllerAnimated:YES];
+                }
+                else{
+                    [self replyImage:topic_id forumAnswerID:forum_answer_id imageIndex:index+1];
+                }
+            });
+        } failure:^{
+            [SVProgressHUD showErrorWithStatus:@"上传图片失败请重新尝试"];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+            [self.navigationController popViewControllerAnimated:YES];
+            return;
+        }];
+    }
+}
+
 - (IBAction)postButtonClicked {
     if (!self.isReply) {
         if (self.titleTF.text.length == 0) {
@@ -111,18 +136,7 @@
                 [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
             }
             else{
-                for (UIImage *image in self.images) {
-                    [NetworkRequest uploadTopicPic:self.topic_id forumAnswerID:forum_answer_id image:image success:^{
-                        if (image == [self.images lastObject]) {
-                            [SVProgressHUD showSuccessWithStatus:@"回帖成功"];
-                            [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
-                        }
-                    } failure:^{
-                        [SVProgressHUD showErrorWithStatus:@"上传图片失败请重新尝试"];
-                        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
-                        return;
-                    }];
-                }
+                [self replyImage:self.topic_id forumAnswerID:forum_answer_id imageIndex:0];
             }
         } failure:^{
             [SVProgressHUD showErrorWithStatus:@"回复失败请重新尝试"];
