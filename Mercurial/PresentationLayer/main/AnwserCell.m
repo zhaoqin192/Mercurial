@@ -45,16 +45,16 @@
     }
     [self layoutIfNeeded];
     
-    CGFloat itemW = 80;
-    CGFloat itemH = 80;
-    CGFloat margin = 5;
+    CGFloat itemW = 100;
+    CGFloat itemH = 100;
+    CGFloat margin = 15;
     if (self.answer.url.count != 0) {
         for(int i = 0; i<self.answer.url.count; i++){
             UIImageView *imageView = [UIImageView new];
             [imageView sd_setImageWithURL:self.answer.url[i] placeholderImage:[UIImage imageNamed:@"answerCellPlacehold"] completed:nil];
             imageView.frame = CGRectMake(i * (itemW + margin), (self.myScrollView.frame.size.height - itemH)/2, itemW, itemH);
             [self.myScrollView addSubview:imageView];
-            self.myScrollView.contentSize = CGSizeMake((i+1) * itemW, 0);
+            self.myScrollView.contentSize = CGSizeMake(CGRectGetMaxX(imageView.frame), 0);
         }
         answer.cellHeight = CGRectGetMaxY(self.myScrollView.frame) + 40;
     }
@@ -65,6 +65,9 @@
 }
 
 - (void)prepareForReuse{
+    for (UIView *view in self.myScrollView.subviews) {
+        [view removeFromSuperview];
+    }
     self.myScrollView.hidden = NO;
 }
 

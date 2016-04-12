@@ -32,6 +32,8 @@
     [NetworkRequest requestTopicAnswerList:self.topic_id success:^{
         self.list = [[AnswerManager sharedManager] fetchAnswerArray];
         [self.tableView reloadData];
+        Answer *an = self.list[5];
+        NSLog(@"%d",an.url.count);
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
