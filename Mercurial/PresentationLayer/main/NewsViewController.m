@@ -39,7 +39,7 @@
             [self.tableView reloadData];
         } failure:^(NSString *error){
             [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
-            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         }];
     }
     else{
@@ -49,7 +49,7 @@
             [self.tableView reloadData];
         } failure:^{
             [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
-            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         }];
     }
 }

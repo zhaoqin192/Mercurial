@@ -25,27 +25,27 @@
 - (IBAction)saveButtonClicked {
     if(self.nameTF.text.length == 0){
         [SVProgressHUD showErrorWithStatus:@"请输入产品名称"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     if (self.rankTF.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入产品等级"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     if (self.numTF.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入产品数量"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     if (self.priceTF.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入产品价格"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     if (self.usageTF.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入产品用途"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     Order *order = [[Order alloc] init];

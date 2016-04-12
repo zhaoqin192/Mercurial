@@ -44,7 +44,7 @@
             [self.myTableView reloadData];
         } failure:^{
             [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
-            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         }];
     }
     else if([self.mytitle isEqualToString:@"产品品牌"]){
@@ -53,7 +53,7 @@
             [self.myTableView reloadData];
         } failure:^{
             [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
-            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         }];
     }
     else if ([self.mytitle isEqualToString:@"产品列表"]){
@@ -64,7 +64,7 @@
         }
         failure:^{
             [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
-            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         }];
     }
 }

@@ -53,22 +53,22 @@
 - (IBAction)loginButtonClicked {
     if(![self isValidPhoneNumber:self.nameTextField.text]){
         [SVProgressHUD showErrorWithStatus:@"请输入正确的电话号码"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     if (self.passwordTextField.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入密码"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     [SVProgressHUD show];
     [NetworkRequest userLoginWithName:self.nameTextField.text password:self.passwordTextField.text success:^{
         [SVProgressHUD showSuccessWithStatus:@"登录成功!"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         [self.navigationController popViewControllerAnimated:YES];
     } failure:^(NSString *error){
         [SVProgressHUD showErrorWithStatus:@"登录失败"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
     }];
 }
 

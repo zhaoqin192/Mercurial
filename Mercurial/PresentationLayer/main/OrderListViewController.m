@@ -34,7 +34,7 @@
         [self.tableView reloadData];
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"退出失败，请重新尝试"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
     }];
 }
 

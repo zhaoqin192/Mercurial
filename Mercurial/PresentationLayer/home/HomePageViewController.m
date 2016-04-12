@@ -168,7 +168,7 @@
             }
         } failure:^{
             [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
-            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         }];
     }
 }
@@ -235,7 +235,7 @@
         self.scrollAdView.imageURLStringsGroup = self.imageUrlArray;
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
     }];
 }
 
@@ -278,10 +278,10 @@
 - (void)loginOutButtonClicked{
     [[DatabaseManager sharedAccount] deleteAccountSuccess:^{
         [SVProgressHUD showErrorWithStatus:@"退出成功"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"退出失败，请重新尝试"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
     }];
 }
 

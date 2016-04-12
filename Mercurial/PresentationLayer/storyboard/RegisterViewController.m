@@ -42,27 +42,27 @@
 - (IBAction)registerButtonClicked {
     if(![self isValidPhoneNumber:self.phoneNumTextField.text]){
         [SVProgressHUD showErrorWithStatus:@"请输入正确的电话号码"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     if (self.nameTextField.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入姓名"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     if (self.passwordTextField.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入密码"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     if (self.mailTextField.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入邮箱"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     if (![self isValidAgeNumber:self.ageTextField.text]) {
         [SVProgressHUD showErrorWithStatus:@"请输入年龄"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     [SVProgressHUD show];
@@ -70,11 +70,11 @@
     NSLog(@"%@",sex);
     [NetworkRequest userRegisterWithName:self.nameTextField.text password:self.passwordTextField.text phone:self.phoneNumTextField.text sex:sex age:[self.ageTextField.text integerValue] Email:self.mailTextField.text success:^{
         [SVProgressHUD showSuccessWithStatus:@"注册成功!"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         [self.navigationController popViewControllerAnimated:YES];
     } failure:^(NSString *error){
-        [SVProgressHUD showErrorWithStatus:@"注册失败"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [SVProgressHUD showErrorWithStatus:error];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
     }];
 }
 

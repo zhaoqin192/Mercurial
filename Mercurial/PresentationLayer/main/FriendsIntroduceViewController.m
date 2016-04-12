@@ -83,7 +83,7 @@
         self.district = self.recommend.district;
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
     }];
 }
 
@@ -168,37 +168,37 @@
 - (IBAction)saveButtonClicked {
     if(![self isValidPhoneNumber:self.phoneTF.text]){
         [SVProgressHUD showErrorWithStatus:@"请输入正确的推荐人电话号码"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     if (self.nameTF.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入推荐人姓名"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     if (self.addressTF.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入详细地址"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     if (self.productTF.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入推荐产品"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     if (self.reasonTF.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入推荐理由"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     if (self.dateTF.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入推荐日期"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     if (self.longAddressTF.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入推荐人地址"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     [SVProgressHUD show];
@@ -206,7 +206,7 @@
     if(!self.identify){
         [NetworkRequest requestAddCommend:self.nameTF.text phone:self.phoneTF.text province:self.province city:self.city district:self.district address:self.addressTF.text commendName:self.productTF.text date:self.dateTF.text reason:self.reasonTF.text success:^{
             [SVProgressHUD showSuccessWithStatus:@"推荐成功!"];
-            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
             [self.navigationController popViewControllerAnimated:YES];
         } failure:^(NSString *error){
             [SVProgressHUD showErrorWithStatus:error];
@@ -216,7 +216,7 @@
     else{
         [NetworkRequest requestUpdateCommend:self.nameTF.text phone:self.phoneTF.text province:self.province city:self.city district:self.district address:self.addressTF.text commendName:self.productTF.text date:self.dateTF.text reason:self.reasonTF.text recommentID:self.identify success:^{
             [SVProgressHUD showSuccessWithStatus:@"修改推荐成功!"];
-            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
             [self.navigationController popViewControllerAnimated:YES];
         } failure:^(NSString *error) {
             [SVProgressHUD showErrorWithStatus:error];

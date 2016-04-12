@@ -53,27 +53,27 @@
 - (IBAction)createButtonClicked {
     if(![self isValidPhoneNumber:self.phoneTF.text]){
         [SVProgressHUD showErrorWithStatus:@"请输入正确的电话号码"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     if (self.nameTF.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入姓名"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     if (self.addressTF.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入配送地址"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     if (self.numTF.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入订单号"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     if (self.dateTF.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入购买日期"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     [SVProgressHUD show];
@@ -166,7 +166,7 @@
         self.district = self.searchOrder.delivery_district;
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
     }];
 }
 

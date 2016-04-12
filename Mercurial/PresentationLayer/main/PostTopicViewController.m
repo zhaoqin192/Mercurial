@@ -103,12 +103,12 @@
     if (!self.isReply) {
         if (self.titleTF.text.length == 0) {
             [SVProgressHUD showErrorWithStatus:@"请输入主题"];
-            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
             return;
         }
         if (self.contentTextView.text.length == 0) {
             [SVProgressHUD showErrorWithStatus:@"请输入内容"];
-            [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
             return;
         }
         [NetworkRequest requestSendTopic:self.titleTF.text text:self.contentTextView.text type:self.type typeID:self.identify success:^(NSString *topic_id, NSString *forum_answer_id) {
