@@ -7,6 +7,8 @@
 //
 
 #import "ProductManager.h"
+#import "ProductKind.h"
+#import "Product.h"
 
 @implementation ProductManager
 

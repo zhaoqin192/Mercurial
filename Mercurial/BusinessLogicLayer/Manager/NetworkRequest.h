@@ -7,27 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NetworkManager.h"
 #import "AFNetworking.h"
-#import "MJExtension.h"
-#import "Utility.h"
-#import "DatabaseManager.h"
-#import "NewsManager.h"
-#import "ProductManager.h"
-#import "SalesManager.h"
-#import "News.h"
-#import "ProductKind.h"
-#import "ProductType.h"
-#import "Product.h"
-#import "Sales.h"
-#import "Order.h"
-#import "OrderManager.h"
-#import "AddOrder.h"
-#import "RecommendManager.h"
-#import "TopicManager.h"
-#import "AnswerManager.h"
-#import "TypeManager.h"
-#import "MessageManager.h"
 
 #define URLPREFIX @"http://yyzwt.cn:12345"
 

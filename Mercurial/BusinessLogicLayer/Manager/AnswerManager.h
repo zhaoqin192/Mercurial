@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Answer.h"
+@class Answer;
 
 @interface AnswerManager : NSObject
 

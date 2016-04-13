@@ -11,6 +11,8 @@
 #import "Sales.h"
 #import "ProductType.h"
 #import "Product.h"
+#import "ProductKind.h"
+
 @interface NewsCell()
 @property (weak, nonatomic) IBOutlet UIImageView *myImageView;
 @property (weak, nonatomic) IBOutlet UILabel *myTextLabel;

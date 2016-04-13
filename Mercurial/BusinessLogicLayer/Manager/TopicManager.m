@@ -7,6 +7,8 @@
 //
 
 #import "TopicManager.h"
+#import "Topic.h"
+
 
 @implementation TopicManager
 

@@ -7,10 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
-#import "AppDelegate.h"
-#import "Account.h"
 
+@class Account;
 
 @interface AccountDao : NSObject
 

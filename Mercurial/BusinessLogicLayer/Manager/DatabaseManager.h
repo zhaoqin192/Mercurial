@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AccountDao.h"
+
+@class AccountDao;
 
 @interface DatabaseManager : NSObject
 

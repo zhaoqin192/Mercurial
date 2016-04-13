@@ -8,6 +8,8 @@
 
 #import "OldFriendIntroduceViewController.h"
 #import "Account.h"
+#import "DatabaseManager.h"
+#import "AccountDao.h"
 
 @interface OldFriendIntroduceViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameTF;

@@ -7,6 +7,9 @@
 //
 
 #import "AccountDao.h"
+#import "Account.h"
+#import "AppDelegate.h"
+#import <CoreData/CoreData.h>
 
 @implementation AccountDao{
     AppDelegate *appDelegate;

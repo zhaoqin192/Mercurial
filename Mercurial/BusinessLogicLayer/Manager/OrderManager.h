@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Order.h"
-#import "SearchOrder.h"
+
+@class Order;
+@class SearchOrder;
 
 @interface OrderManager : NSObject
 

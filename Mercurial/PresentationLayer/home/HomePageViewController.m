@@ -21,7 +21,11 @@
 #import "AccountDao.h"
 #import "FormViewController.h"
 #import "MessageViewController.h"
+#import "Message.h"
 #import "DatabaseManager.h"
+#import "SalesManager.h"
+#import "MessageManager.h"
+#import "Account.h"
 
 @interface HomePageViewController () <SDCycleScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *scrollAdView;

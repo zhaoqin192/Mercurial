@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "AccountDao.h"
 #import "Account.h"
+#import "DatabaseManager.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;

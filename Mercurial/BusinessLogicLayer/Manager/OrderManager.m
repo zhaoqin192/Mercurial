@@ -7,6 +7,8 @@
 //
 
 #import "OrderManager.h"
+#import "Order.h"
+#import "SearchOrder.h"
 
 @implementation OrderManager
 

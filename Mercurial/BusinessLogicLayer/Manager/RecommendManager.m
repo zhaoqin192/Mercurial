@@ -7,6 +7,7 @@
 //
 
 #import "RecommendManager.h"
+#import "Recommend.h"
 
 @implementation RecommendManager
 

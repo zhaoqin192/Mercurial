@@ -13,6 +13,9 @@
 #import "ModifyProductViewController.h"
 #import "ActionSheetDatePicker.h"
 #import "CityPickView.h"
+#import "DatabaseManager.h"
+#import "AccountDao.h"
+#import "OrderManager.h"
 
 @interface AddOrderViewController ()<UITextFieldDelegate,CityPickViewDelegate>
 

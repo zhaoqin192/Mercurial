@@ -7,6 +7,7 @@
 //
 
 #import "MessageManager.h"
+#import "Message.h"
 
 @implementation MessageManager
 

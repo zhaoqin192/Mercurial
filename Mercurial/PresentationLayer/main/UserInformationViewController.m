@@ -14,6 +14,7 @@
 #import "UserDetailViewController.h"
 #import "userIconCell.h"
 #import "OldFriendIntroduceViewController.h"
+#import "DatabaseManager.h"
 
 @interface UserInformationViewController ()
 <UIActionSheetDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate>

@@ -7,6 +7,7 @@
 //
 
 #import "Utility.h"
+#import <CommonCrypto/CommonDigest.h>
 
 @implementation Utility
 

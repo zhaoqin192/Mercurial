@@ -78,6 +78,7 @@
 		AC5E1CE11C904484008D91E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5E1CE01C904484008D91E5 /* AppDelegate.m */; };
 		AC5E1CEA1C904484008D91E5 /* Mercurial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC5E1CE81C904484008D91E5 /* Mercurial.xcdatamodeld */; };
 		AC5E1CEC1C904484008D91E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC5E1CEB1C904484008D91E5 /* Assets.xcassets */; };
+		AC8B92601CBDF37A006CBF1F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC8B925F1CBDF37A006CBF1F /* Home.storyboard */; };
 		ACB3DD541CAB997000CBC586 /* OrderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB3DD531CAB997000CBC586 /* OrderManager.m */; };
 		ACC204E01C98F35A00B26CDD /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC204DF1C98F35A00B26CDD /* NetworkManager.m */; };
 		ACC204E41C99037C00B26CDD /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC204E31C99037C00B26CDD /* Utility.m */; };
@@ -92,8 +93,6 @@
 		ACC205021C9956D000B26CDD /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC205011C9956D000B26CDD /* News.m */; };
 		ACC2050A1C99587A00B26CDD /* NewsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC205091C99587A00B26CDD /* NewsManager.m */; };
 		ACC205111C9A479100B26CDD /* ProductManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC205101C9A479100B26CDD /* ProductManager.m */; };
-		ACC205161C9A4FA500B26CDD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC205141C9A4FA500B26CDD /* Home.storyboard */; };
-		ACC205191C9A50D600B26CDD /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC205181C9A50D600B26CDD /* TestViewController.m */; };
 		ACC2051C1C9A99DD00B26CDD /* Sales.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC2051B1C9A99DD00B26CDD /* Sales.m */; };
 		ACC2051F1C9A9A1D00B26CDD /* SalesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC2051E1C9A9A1D00B26CDD /* SalesManager.m */; };
 		ACC3D7F91CAD4132000FBE93 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC3D7F81CAD4132000FBE93 /* Order.m */; };
@@ -232,6 +231,7 @@
 		AC5E1CE91C904484008D91E5 /* Mercurial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mercurial.xcdatamodel; sourceTree = "<group>"; };
 		AC5E1CEB1C904484008D91E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC5E1CF01C904484008D91E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC8B925F1CBDF37A006CBF1F /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		ACB3DD521CAB997000CBC586 /* OrderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderManager.h; sourceTree = "<group>"; };
 		ACB3DD531CAB997000CBC586 /* OrderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderManager.m; sourceTree = "<group>"; };
 		ACC204DE1C98F35A00B26CDD /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
@@ -260,9 +260,6 @@
 		ACC205091C99587A00B26CDD /* NewsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsManager.m; sourceTree = "<group>"; };
 		ACC2050F1C9A479100B26CDD /* ProductManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductManager.h; sourceTree = "<group>"; };
 		ACC205101C9A479100B26CDD /* ProductManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductManager.m; sourceTree = "<group>"; };
-		ACC205141C9A4FA500B26CDD /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = ../storyboard/Home.storyboard; sourceTree = "<group>"; };
-		ACC205171C9A50D600B26CDD /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		ACC205181C9A50D600B26CDD /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		ACC2051A1C9A99DD00B26CDD /* Sales.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sales.h; sourceTree = "<group>"; };
 		ACC2051B1C9A99DD00B26CDD /* Sales.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sales.m; sourceTree = "<group>"; };
 		ACC2051D1C9A9A1D00B26CDD /* SalesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesManager.h; sourceTree = "<group>"; };
@@ -703,9 +700,7 @@
 		ACCA4CD91C9156D200121269 /* home */ = {
 			isa = PBXGroup;
 			children = (
-				ACC205171C9A50D600B26CDD /* TestViewController.h */,
-				ACC205181C9A50D600B26CDD /* TestViewController.m */,
-				ACC205141C9A4FA500B26CDD /* Home.storyboard */,
+				AC8B925F1CBDF37A006CBF1F /* Home.storyboard */,
 				30D18F2A1C9E484F00559866 /* HomePageViewController.h */,
 				30D18F2B1C9E484F00559866 /* HomePageViewController.m */,
 				30D407711CAD641B0068FD85 /* HomeLeftViewController.h */,
@@ -802,11 +797,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				30ECBFF41CB7DF780020164B /* AnwserCell.xib in Resources */,
-				ACC205161C9A4FA500B26CDD /* Home.storyboard in Resources */,
 				30D18F231C9ADBF000559866 /* RegisterStoryBoard.storyboard in Resources */,
 				30A3A9281CA96FD70076208B /* NewsCell.xib in Resources */,
 				30ACF6481CA51E5C005B56EC /* WXWebViewController.xib in Resources */,
 				30A4A67C1C97F61000BF5EA1 /* ShoppingViewController.xib in Resources */,
+				AC8B92601CBDF37A006CBF1F /* Home.storyboard in Resources */,
 				30ECBFE91CB7819C0020164B /* TopicCell.xib in Resources */,
 				AC5E1CEC1C904484008D91E5 /* Assets.xcassets in Resources */,
 				30D18F211C9ADBE500559866 /* LoginStoryboard.storyboard in Resources */,
@@ -913,7 +908,6 @@
 				ACB3DD541CAB997000CBC586 /* OrderManager.m in Sources */,
 				30ACF65C1CA58773005B56EC /* ActionSheetCustomPicker.m in Sources */,
 				30ACF65E1CA58773005B56EC /* ActionSheetDistancePicker.m in Sources */,
-				ACC205191C9A50D600B26CDD /* TestViewController.m in Sources */,
 				ACC204E71C99065C00B26CDD /* NetworkRequest.m in Sources */,
 				ACC2051C1C9A99DD00B26CDD /* Sales.m in Sources */,
 				305F859A1CB2524600F42B33 /* NSDate+Helper.m in Sources */,

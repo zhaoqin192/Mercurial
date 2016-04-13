@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ProductKind.h"
-#import "Product.h"
+
+
+@class Product;
+@class ProductKind;
 
 @interface ProductManager : NSObject
 

@@ -10,6 +10,11 @@
 #import "Account.h"
 #import "ActionSheetDatePicker.h"
 #import "CityPickView.h"
+#import "AccountDao.h"
+#import "DatabaseManager.h"
+#import "Recommend.h"
+#import "RecommendManager.h"
+
 
 @interface FriendsIntroduceViewController ()
 <UITextFieldDelegate,CityPickViewDelegate>

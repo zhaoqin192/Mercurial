@@ -7,6 +7,8 @@
 //
 
 #import "TypeManager.h"
+#import "Type.h"
+
 
 @implementation TypeManager
 

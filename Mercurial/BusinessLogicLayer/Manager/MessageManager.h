@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Message.h"
+@class Message;
 
 @interface MessageManager : NSObject
 

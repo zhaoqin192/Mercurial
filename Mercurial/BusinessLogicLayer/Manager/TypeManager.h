@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Type.h"
-
+@class Type;
 
 @interface TypeManager : NSObject
 

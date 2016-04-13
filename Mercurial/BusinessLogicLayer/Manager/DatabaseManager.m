@@ -7,6 +7,7 @@
 //
 
 #import "DatabaseManager.h"
+#import "AccountDao.h"
 
 @implementation DatabaseManager
 

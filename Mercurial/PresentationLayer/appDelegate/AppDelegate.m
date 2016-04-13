@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "HomePageViewController.h"
-#import "TestViewController.h"
 #import "MMDrawerController.h"
 #import "HomeLeftViewController.h"
 
@@ -22,12 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
-    
-//    HomePageViewController *vc = [[UIStoryboard storyboardWithName:@"Home" bundle:nil] instantiateInitialViewController];
-//    TestViewController *vc = [[UIStoryboard storyboardWithName:@"Home" bundle:nil] instantiateInitialViewController];
-//    self.window.rootViewController =vc;
-    
-    
+        
     HomePageViewController *vc = [[UIStoryboard storyboardWithName:@"Home" bundle:nil] instantiateInitialViewController];
     HomeLeftViewController *leftvc = [[UIStoryboard storyboardWithName:@"Home" bundle:nil] instantiateViewControllerWithIdentifier:@"HomeLeftViewController"];
     self.drawerController = [[MMDrawerController alloc]

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Topic.h"
+@class Topic;
 
 @interface TopicManager : NSObject
 

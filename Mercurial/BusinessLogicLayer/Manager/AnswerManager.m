@@ -7,6 +7,8 @@
 //
 
 #import "AnswerManager.h"
+#import "Answer.h"
+
 
 @implementation AnswerManager
 

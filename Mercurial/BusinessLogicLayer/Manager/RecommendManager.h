@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Recommend.h"
+
+@class Recommend;
 
 @interface RecommendManager : NSObject
 
