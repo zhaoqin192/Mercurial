@@ -111,14 +111,31 @@ CG_INLINE BOOL isIPhone4()
         else
             NSAssert(NO, @"Invalid origin provided to ActionSheetPicker ( %@ )", origin);
 
-        UIBarButtonItem *sysDoneButton = [self createButtonWithType:UIBarButtonSystemItemDone target:self
-                                                             action:@selector(actionPickerDone:)];
+        UIButton *doneButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        doneButton.frame = CGRectMake(0, 0, 50, 50);
+        [doneButton setTitle:@"确定" forState:UIControlStateNormal];
+        [doneButton setTintColor:[UIColor grayColor]];
+        UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithCustomView:doneButton];
+        [doneButton addTarget:self action:@selector(actionPickerDone:) forControlEvents:UIControlEventTouchUpInside];
+        [self setDoneBarButtonItem:doneItem];
+        
+        
+        UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        cancelButton.frame = CGRectMake(0, 0, 50, 50);
+        [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
+        [cancelButton setTintColor:[UIColor grayColor]];
+        UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
+        [cancelButton addTarget:self action:@selector(actionPickerCancel:) forControlEvents:UIControlEventTouchUpInside];
+        [self setCancelBarButtonItem:cancelItem];
+        
+//        UIBarButtonItem *sysDoneButton = [self createButtonWithType:UIBarButtonSystemItemDone target:self
+//                                                             action:@selector(actionPickerDone:)];
 
-        UIBarButtonItem *sysCancelButton = [self createButtonWithType:UIBarButtonSystemItemCancel target:self
-                                                               action:@selector(actionPickerCancel:)];
-
-        [self setCancelBarButtonItem:sysCancelButton];
-        [self setDoneBarButtonItem:sysDoneButton];
+//        UIBarButtonItem *sysCancelButton = [self createButtonWithType:UIBarButtonSystemItemDone target:self
+//                                                               action:@selector(actionPickerCancel:)];
+//
+//        [self setCancelBarButtonItem:sysCancelButton];
+       // [self setDoneBarButtonItem:sysDoneButton];
 
         //allows us to use this without needing to store a reference in calling class
         self.selfReference = self;
