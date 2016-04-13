@@ -77,7 +77,7 @@
         return;
     }
     [SVProgressHUD show];
-    self.myAccount = [[[AccountDao alloc] init] getAccount];
+    self.myAccount = [[DatabaseManager sharedAccount] getAccount];
     
     [NetworkRequest requestAddOrderWithID:self.numTF.text name:self.nameTF.text province:self.province city:self.city district:self.district address:self.addressTF.text phone:self.phoneTF.text date:self.dateTF.text item:self.items success:^{
         [SVProgressHUD showSuccessWithStatus:@"创建订单成功!"];

@@ -27,7 +27,7 @@
 }
 
 - (void)configureTextField{
-    self.myAccount = [[[AccountDao alloc] init] getAccount];
+    self.myAccount = [[DatabaseManager sharedAccount] getAccount];
     self.nameTF.text = self.myAccount.recommendName;
     self.phoneTF.text = self.myAccount.recommendPhone;
 }

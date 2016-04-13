@@ -45,7 +45,7 @@
 
 - (void)loadData{
     [NetworkRequest requestUserInformationWithToken:^{
-        self.myAccount = [[[AccountDao alloc] init] getAccount];
+        self.myAccount = [[DatabaseManager sharedAccount] getAccount];
         [self.tableView reloadData];
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"获取数据失败，请重新尝试"];

@@ -10,4 +10,5 @@
 
 @interface SelectionViewController : UITableViewController
 @property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSString *myTitle;
 @end

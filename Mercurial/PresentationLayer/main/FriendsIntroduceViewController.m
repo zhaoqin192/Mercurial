@@ -202,7 +202,7 @@
         return;
     }
     [SVProgressHUD show];
-    self.myAccount = [[[AccountDao alloc] init] getAccount];
+    self.myAccount = [[DatabaseManager sharedAccount] getAccount];
     if(!self.identify){
         [NetworkRequest requestAddCommend:self.nameTF.text phone:self.phoneTF.text province:self.province city:self.city district:self.district address:self.addressTF.text commendName:self.productTF.text date:self.dateTF.text reason:self.reasonTF.text success:^{
             [SVProgressHUD showSuccessWithStatus:@"推荐成功!"];

@@ -34,7 +34,8 @@
 
 - (void)configureNavigationItem{
     self.navigationItem.title = @"用户互动";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"add" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonClicked)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(rightBarButtonClicked)];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonSystemItemAdd target:self action:@selector(rightBarButtonClicked)];
 }
 
 - (void)rightBarButtonClicked{
@@ -67,26 +68,31 @@
     UIAlertAction *area = [UIAlertAction actionWithTitle:@"产品区域" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         SelectionViewController *vc = [[SelectionViewController alloc] init];
         vc.type = @"product_area";
+        vc.myTitle = @"产品区域";
         [self.navigationController pushViewController:vc animated:YES];
     }];
     UIAlertAction *serial = [UIAlertAction actionWithTitle:@"产品系列" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         SelectionViewController *vc = [[SelectionViewController alloc] init];
         vc.type = @"product_type";
+        vc.myTitle = @"产品系列";
         [self.navigationController pushViewController:vc animated:YES];
     }];
     UIAlertAction *price = [UIAlertAction actionWithTitle:@"产品价位" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         SelectionViewController *vc = [[SelectionViewController alloc] init];
         vc.type = @"product_price";
+        vc.myTitle = @"产品价位";
         [self.navigationController pushViewController:vc animated:YES];
     }];
     UIAlertAction *exprience = [UIAlertAction actionWithTitle:@"装修经验" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         SelectionViewController *vc = [[SelectionViewController alloc] init];
         vc.type = @"product_decro_experience";
+        vc.myTitle = @"装修经验";
         [self.navigationController pushViewController:vc animated:YES];
     }];
     UIAlertAction *other = [UIAlertAction actionWithTitle:@"其他版块" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         SelectionViewController *vc = [[SelectionViewController alloc] init];
         vc.type = @"product_other";
+        vc.myTitle = @"其他版块";
         [self.navigationController pushViewController:vc animated:YES];
     }];
     [vc addAction:cancel];
