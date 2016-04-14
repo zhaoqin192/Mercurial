@@ -12,7 +12,7 @@
 
 static SalesManager *sharedManager;
 
-- (id)init{
+- (instancetype)init{
     self = [super init];
     self.salesArray = [[NSMutableArray alloc] init];
     self.roundArray = [[NSMutableArray alloc] init];
@@ -26,14 +26,5 @@ static SalesManager *sharedManager;
     });
     return sharedManager;
 }
-
-- (NSMutableArray *) fetchSalesArray{
-    return self.salesArray;
-}
-
-- (NSMutableArray *) fetchRoundArray{
-    return self.roundArray;
-}
-
 
 @end

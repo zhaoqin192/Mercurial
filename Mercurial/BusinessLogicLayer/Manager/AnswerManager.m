@@ -28,16 +28,4 @@ static AnswerManager *sharedManager;
     return sharedManager;
 }
 
-- (NSMutableArray *) fetchAnswerArray{
-    return self.answerArray;
-}
-
-- (void) addToAnswerArray:(Answer *) answer{
-    [self.answerArray addObject:answer];
-}
-
-- (void) cleanAnswerArray{
-    [self.answerArray removeAllObjects];
-}
-
 @end

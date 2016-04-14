@@ -7,6 +7,7 @@
 //
 
 #import "WXWebViewController.h"
+#import "NetworkRequest+Others.h"
 
 @interface WXWebViewController ()
 @property (weak, nonatomic) IBOutlet UIWebView *myWebView;

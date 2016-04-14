@@ -15,10 +15,4 @@
 
 + (TypeManager *) sharedManager;
 
-- (NSMutableArray *) fetchTypeArray;
-
-- (void) addToTypeArray:(Type *) type;
-
-- (void) cleanTypeArray;
-
 @end

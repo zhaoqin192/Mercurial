@@ -10,6 +10,8 @@
 #import "OrderManager.h"
 #import "AddOrderViewController.h"
 #import "FriendsIntroduceViewController.h"
+#import "NetworkRequest+Order.h"
+
 
 @interface OrderListViewController ()
 @property (nonatomic, strong) NSMutableArray *list;
@@ -30,7 +32,7 @@
 
 - (void)loadData{
     [NetworkRequest requestOrderListWithSuccess:^{
-        self.list = [[OrderManager sharedManager] fetchOrderArray];
+        self.list = [OrderManager sharedManager].orderArray;
         [self.tableView reloadData];
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"退出失败，请重新尝试"];

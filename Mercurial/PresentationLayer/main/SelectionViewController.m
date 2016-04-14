@@ -10,6 +10,8 @@
 #import "TypeManager.h"
 #import "Type.h"
 #import "FormViewController.h"
+#import "NetworkRequest+BBS.h"
+
 
 @interface SelectionViewController ()
 @property (nonatomic, copy) NSArray *list;
@@ -25,7 +27,7 @@
 
 - (void)loadData{
     [NetworkRequest requestTopicCondition:self.type success:^{
-        self.list = [[TypeManager sharedManager] fetchTypeArray];
+        self.list = [TypeManager sharedManager].typeArray;
         [self.tableView reloadData];
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"加载数据失败"];

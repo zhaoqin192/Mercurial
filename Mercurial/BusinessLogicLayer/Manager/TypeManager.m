@@ -28,16 +28,4 @@ static TypeManager *sharedManager;
     return sharedManager;
 }
 
-- (NSMutableArray *) fetchTypeArray{
-    return self.typeArray;
-}
-
-- (void) addToTypeArray:(Type *) type{
-    [self.typeArray addObject:type];
-}
-
-- (void) cleanTypeArray{
-    [self.typeArray removeAllObjects];
-}
-
 @end

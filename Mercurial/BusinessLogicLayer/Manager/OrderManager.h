@@ -18,12 +18,4 @@
 
 + (OrderManager *) sharedManager;
 
-- (NSMutableArray *) fetchOrderArray;
-
-- (void) addToOrderArray:(Order *)order;
-
-- (void) cleanOrderArray;
-
-- (SearchOrder *) fetchSearchOrder;
-
 @end

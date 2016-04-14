@@ -27,16 +27,4 @@ static MessageManager *sharedManager;
     return sharedManager;
 }
 
-- (NSMutableArray *) fetchMessageArray{
-    return self.messageArray;
-}
-
-- (void) addToMessageArray:(Message *)message{
-    [self.messageArray addObject:message];
-}
-
-- (void) cleanMessageArray{
-    [self.messageArray removeAllObjects];
-}
-
 @end

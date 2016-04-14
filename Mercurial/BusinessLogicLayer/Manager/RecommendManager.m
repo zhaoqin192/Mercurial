@@ -13,7 +13,7 @@
 
 static RecommendManager *sharedManager;
 
-- (id)init{
+- (instancetype)init{
     self = [super init];
     self.commendArray = [[NSMutableArray alloc] init];
     return self;
@@ -25,22 +25,6 @@ static RecommendManager *sharedManager;
         sharedManager = [[RecommendManager alloc] init];
     });
     return sharedManager;
-}
-
-- (NSMutableArray *) fetchCommendArray{
-    return self.commendArray;
-}
-
-- (void) addToCommendArray:(Recommend *)commend{
-    [self.commendArray addObject:commend];
-}
-
-- (void) cleanCommendArray{
-    [self.commendArray removeAllObjects];
-}
-
-- (Recommend *) fetchRecommend{
-    return self.recommend;
 }
 
 

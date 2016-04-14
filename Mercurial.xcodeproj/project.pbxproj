@@ -79,6 +79,7 @@
 		AC5E1CEA1C904484008D91E5 /* Mercurial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC5E1CE81C904484008D91E5 /* Mercurial.xcdatamodeld */; };
 		AC5E1CEC1C904484008D91E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC5E1CEB1C904484008D91E5 /* Assets.xcassets */; };
 		AC8B92601CBDF37A006CBF1F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC8B925F1CBDF37A006CBF1F /* Home.storyboard */; };
+		ACAE9F6A1CBE8D6C0056179C /* NetworkRequest+User.m in Sources */ = {isa = PBXBuildFile; fileRef = ACAE9F691CBE8D6C0056179C /* NetworkRequest+User.m */; };
 		ACB3DD541CAB997000CBC586 /* OrderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB3DD531CAB997000CBC586 /* OrderManager.m */; };
 		ACC204E01C98F35A00B26CDD /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC204DF1C98F35A00B26CDD /* NetworkManager.m */; };
 		ACC204E41C99037C00B26CDD /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC204E31C99037C00B26CDD /* Utility.m */; };
@@ -98,6 +99,10 @@
 		ACC3D7F91CAD4132000FBE93 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC3D7F81CAD4132000FBE93 /* Order.m */; };
 		ACC3D7FC1CAD50D2000FBE93 /* AddOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC3D7FB1CAD50D2000FBE93 /* AddOrder.m */; };
 		ACCA4CC91C91171A00121269 /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCA4CC81C91171A00121269 /* Constant.m */; };
+		ACF83E161CBF6AB700A962BD /* NetworkRequest+Product.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF83E151CBF6AB700A962BD /* NetworkRequest+Product.m */; };
+		ACF83E191CBF6B5700A962BD /* NetworkRequest+BBS.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF83E181CBF6B5700A962BD /* NetworkRequest+BBS.m */; };
+		ACF83E1C1CBF6C8600A962BD /* NetworkRequest+Order.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF83E1B1CBF6C8600A962BD /* NetworkRequest+Order.m */; };
+		ACF83E1F1CBF6DF400A962BD /* NetworkRequest+Others.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF83E1E1CBF6DF400A962BD /* NetworkRequest+Others.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -232,6 +237,8 @@
 		AC5E1CEB1C904484008D91E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC5E1CF01C904484008D91E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC8B925F1CBDF37A006CBF1F /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		ACAE9F681CBE8D6C0056179C /* NetworkRequest+User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetworkRequest+User.h"; sourceTree = "<group>"; };
+		ACAE9F691CBE8D6C0056179C /* NetworkRequest+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetworkRequest+User.m"; sourceTree = "<group>"; };
 		ACB3DD521CAB997000CBC586 /* OrderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderManager.h; sourceTree = "<group>"; };
 		ACB3DD531CAB997000CBC586 /* OrderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderManager.m; sourceTree = "<group>"; };
 		ACC204DE1C98F35A00B26CDD /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
@@ -270,6 +277,14 @@
 		ACC3D7FB1CAD50D2000FBE93 /* AddOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddOrder.m; sourceTree = "<group>"; };
 		ACCA4CC71C91171A00121269 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		ACCA4CC81C91171A00121269 /* Constant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constant.m; sourceTree = "<group>"; };
+		ACF83E141CBF6AB700A962BD /* NetworkRequest+Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetworkRequest+Product.h"; sourceTree = "<group>"; };
+		ACF83E151CBF6AB700A962BD /* NetworkRequest+Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetworkRequest+Product.m"; sourceTree = "<group>"; };
+		ACF83E171CBF6B5700A962BD /* NetworkRequest+BBS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetworkRequest+BBS.h"; sourceTree = "<group>"; };
+		ACF83E181CBF6B5700A962BD /* NetworkRequest+BBS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetworkRequest+BBS.m"; sourceTree = "<group>"; };
+		ACF83E1A1CBF6C8600A962BD /* NetworkRequest+Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetworkRequest+Order.h"; sourceTree = "<group>"; };
+		ACF83E1B1CBF6C8600A962BD /* NetworkRequest+Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetworkRequest+Order.m"; sourceTree = "<group>"; };
+		ACF83E1D1CBF6DF400A962BD /* NetworkRequest+Others.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetworkRequest+Others.h"; sourceTree = "<group>"; };
+		ACF83E1E1CBF6DF400A962BD /* NetworkRequest+Others.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetworkRequest+Others.m"; sourceTree = "<group>"; };
 		F13185264FDB502171C80DA5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -586,37 +601,8 @@
 		AC8C1F7A1C90469700D61A3F /* PersistenceLayer */ = {
 			isa = PBXGroup;
 			children = (
-				AC5E1CE81C904484008D91E5 /* Mercurial.xcdatamodeld */,
-				ACC204E81C99251400B26CDD /* Account+CoreDataProperties.h */,
-				ACC204E91C99251400B26CDD /* Account+CoreDataProperties.m */,
-				ACC204EA1C99251400B26CDD /* Account.h */,
-				ACC204EB1C99251400B26CDD /* Account.m */,
-				ACC204F71C99515C00B26CDD /* Product.h */,
-				ACC204F81C99515C00B26CDD /* Product.m */,
-				ACC204FA1C99526700B26CDD /* ProductKind.h */,
-				ACC204FB1C99526700B26CDD /* ProductKind.m */,
-				ACC204FD1C99527200B26CDD /* ProductType.h */,
-				ACC204FE1C99527200B26CDD /* ProductType.m */,
-				ACC205001C9956D000B26CDD /* News.h */,
-				ACC205011C9956D000B26CDD /* News.m */,
-				ACC2051A1C9A99DD00B26CDD /* Sales.h */,
-				ACC2051B1C9A99DD00B26CDD /* Sales.m */,
-				ACC3D7F71CAD4132000FBE93 /* Order.h */,
-				ACC3D7F81CAD4132000FBE93 /* Order.m */,
-				ACC3D7FA1CAD50D2000FBE93 /* AddOrder.h */,
-				ACC3D7FB1CAD50D2000FBE93 /* AddOrder.m */,
-				AC5182601CAE4DFB0095BAB6 /* Recommend.h */,
-				AC5182611CAE4DFB0095BAB6 /* Recommend.m */,
-				AC5182661CAE5F670095BAB6 /* Topic.h */,
-				AC5182671CAE5F670095BAB6 /* Topic.m */,
-				AC51826C1CAE65720095BAB6 /* Answer.h */,
-				AC51826D1CAE65720095BAB6 /* Answer.m */,
-				AC5182721CAE69F90095BAB6 /* Type.h */,
-				AC5182731CAE69F90095BAB6 /* Type.m */,
-				AC5182781CAE8BF30095BAB6 /* Message.h */,
-				AC5182791CAE8BF30095BAB6 /* Message.m */,
-				AC516A2A1CB69E4100B0A6AB /* SearchOrder.h */,
-				AC516A2B1CB69E4100B0A6AB /* SearchOrder.m */,
+				ACF83E241CBF6F8900A962BD /* Model */,
+				ACF83E231CBF6F7C00A962BD /* CoreData */,
 			);
 			path = PersistenceLayer;
 			sourceTree = "<group>";
@@ -646,30 +632,8 @@
 		ACC205061C99578F00B26CDD /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				ACC204F21C99401600B26CDD /* DatabaseManager.h */,
-				ACC204F31C99401600B26CDD /* DatabaseManager.m */,
-				ACC204DE1C98F35A00B26CDD /* NetworkManager.h */,
-				ACC204DF1C98F35A00B26CDD /* NetworkManager.m */,
-				ACC204E51C99065C00B26CDD /* NetworkRequest.h */,
-				ACC204E61C99065C00B26CDD /* NetworkRequest.m */,
-				ACC205081C99587A00B26CDD /* NewsManager.h */,
-				ACC205091C99587A00B26CDD /* NewsManager.m */,
-				ACC2050F1C9A479100B26CDD /* ProductManager.h */,
-				ACC205101C9A479100B26CDD /* ProductManager.m */,
-				ACC2051D1C9A9A1D00B26CDD /* SalesManager.h */,
-				ACC2051E1C9A9A1D00B26CDD /* SalesManager.m */,
-				ACB3DD521CAB997000CBC586 /* OrderManager.h */,
-				ACB3DD531CAB997000CBC586 /* OrderManager.m */,
-				AC5182631CAE4E6A0095BAB6 /* RecommendManager.h */,
-				AC5182641CAE4E6A0095BAB6 /* RecommendManager.m */,
-				AC5182691CAE5FD50095BAB6 /* TopicManager.h */,
-				AC51826A1CAE5FD50095BAB6 /* TopicManager.m */,
-				AC51826F1CAE65A30095BAB6 /* AnswerManager.h */,
-				AC5182701CAE65A30095BAB6 /* AnswerManager.m */,
-				AC5182751CAE6A970095BAB6 /* TypeManager.h */,
-				AC5182761CAE6A970095BAB6 /* TypeManager.m */,
-				AC51827B1CAE8C210095BAB6 /* MessageManager.h */,
-				AC51827C1CAE8C210095BAB6 /* MessageManager.m */,
+				ACF83E221CBF6F6000A962BD /* ModelManager */,
+				ACF83E201CBF6F3200A962BD /* NetworkManager */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -725,6 +689,99 @@
 				ACCA4CC81C91171A00121269 /* Constant.m */,
 			);
 			path = utility;
+			sourceTree = "<group>";
+		};
+		ACF83E201CBF6F3200A962BD /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				ACAE9F681CBE8D6C0056179C /* NetworkRequest+User.h */,
+				ACAE9F691CBE8D6C0056179C /* NetworkRequest+User.m */,
+				ACF83E141CBF6AB700A962BD /* NetworkRequest+Product.h */,
+				ACF83E151CBF6AB700A962BD /* NetworkRequest+Product.m */,
+				ACF83E171CBF6B5700A962BD /* NetworkRequest+BBS.h */,
+				ACF83E181CBF6B5700A962BD /* NetworkRequest+BBS.m */,
+				ACF83E1A1CBF6C8600A962BD /* NetworkRequest+Order.h */,
+				ACF83E1B1CBF6C8600A962BD /* NetworkRequest+Order.m */,
+				ACF83E1D1CBF6DF400A962BD /* NetworkRequest+Others.h */,
+				ACF83E1E1CBF6DF400A962BD /* NetworkRequest+Others.m */,
+				ACC204DE1C98F35A00B26CDD /* NetworkManager.h */,
+				ACC204DF1C98F35A00B26CDD /* NetworkManager.m */,
+				ACC204E51C99065C00B26CDD /* NetworkRequest.h */,
+				ACC204E61C99065C00B26CDD /* NetworkRequest.m */,
+			);
+			name = NetworkManager;
+			sourceTree = "<group>";
+		};
+		ACF83E221CBF6F6000A962BD /* ModelManager */ = {
+			isa = PBXGroup;
+			children = (
+				ACC204F21C99401600B26CDD /* DatabaseManager.h */,
+				ACC204F31C99401600B26CDD /* DatabaseManager.m */,
+				ACC205081C99587A00B26CDD /* NewsManager.h */,
+				ACC205091C99587A00B26CDD /* NewsManager.m */,
+				ACC2050F1C9A479100B26CDD /* ProductManager.h */,
+				ACC205101C9A479100B26CDD /* ProductManager.m */,
+				ACC2051D1C9A9A1D00B26CDD /* SalesManager.h */,
+				ACC2051E1C9A9A1D00B26CDD /* SalesManager.m */,
+				ACB3DD521CAB997000CBC586 /* OrderManager.h */,
+				ACB3DD531CAB997000CBC586 /* OrderManager.m */,
+				AC5182631CAE4E6A0095BAB6 /* RecommendManager.h */,
+				AC5182641CAE4E6A0095BAB6 /* RecommendManager.m */,
+				AC5182691CAE5FD50095BAB6 /* TopicManager.h */,
+				AC51826A1CAE5FD50095BAB6 /* TopicManager.m */,
+				AC51826F1CAE65A30095BAB6 /* AnswerManager.h */,
+				AC5182701CAE65A30095BAB6 /* AnswerManager.m */,
+				AC5182751CAE6A970095BAB6 /* TypeManager.h */,
+				AC5182761CAE6A970095BAB6 /* TypeManager.m */,
+				AC51827B1CAE8C210095BAB6 /* MessageManager.h */,
+				AC51827C1CAE8C210095BAB6 /* MessageManager.m */,
+			);
+			name = ModelManager;
+			sourceTree = "<group>";
+		};
+		ACF83E231CBF6F7C00A962BD /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				AC5E1CE81C904484008D91E5 /* Mercurial.xcdatamodeld */,
+				ACC204E81C99251400B26CDD /* Account+CoreDataProperties.h */,
+				ACC204E91C99251400B26CDD /* Account+CoreDataProperties.m */,
+				ACC204EA1C99251400B26CDD /* Account.h */,
+				ACC204EB1C99251400B26CDD /* Account.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		ACF83E241CBF6F8900A962BD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ACC204F71C99515C00B26CDD /* Product.h */,
+				ACC204F81C99515C00B26CDD /* Product.m */,
+				ACC204FA1C99526700B26CDD /* ProductKind.h */,
+				ACC204FB1C99526700B26CDD /* ProductKind.m */,
+				ACC204FD1C99527200B26CDD /* ProductType.h */,
+				ACC204FE1C99527200B26CDD /* ProductType.m */,
+				ACC205001C9956D000B26CDD /* News.h */,
+				ACC205011C9956D000B26CDD /* News.m */,
+				ACC2051A1C9A99DD00B26CDD /* Sales.h */,
+				ACC2051B1C9A99DD00B26CDD /* Sales.m */,
+				ACC3D7F71CAD4132000FBE93 /* Order.h */,
+				ACC3D7F81CAD4132000FBE93 /* Order.m */,
+				ACC3D7FA1CAD50D2000FBE93 /* AddOrder.h */,
+				ACC3D7FB1CAD50D2000FBE93 /* AddOrder.m */,
+				AC5182601CAE4DFB0095BAB6 /* Recommend.h */,
+				AC5182611CAE4DFB0095BAB6 /* Recommend.m */,
+				AC5182661CAE5F670095BAB6 /* Topic.h */,
+				AC5182671CAE5F670095BAB6 /* Topic.m */,
+				AC51826C1CAE65720095BAB6 /* Answer.h */,
+				AC51826D1CAE65720095BAB6 /* Answer.m */,
+				AC5182721CAE69F90095BAB6 /* Type.h */,
+				AC5182731CAE69F90095BAB6 /* Type.m */,
+				AC5182781CAE8BF30095BAB6 /* Message.h */,
+				AC5182791CAE8BF30095BAB6 /* Message.m */,
+				AC516A2A1CB69E4100B0A6AB /* SearchOrder.h */,
+				AC516A2B1CB69E4100B0A6AB /* SearchOrder.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		F5A1E370065FCA7CEA751987 /* Pods */ = {
@@ -869,6 +926,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30D18F261C9ADDAF00559866 /* LoginViewController.m in Sources */,
+				ACF83E161CBF6AB700A962BD /* NetworkRequest+Product.m in Sources */,
 				30A3A92C1CAA44980076208B /* ProductViewController.m in Sources */,
 				ACC204EC1C99251400B26CDD /* Account+CoreDataProperties.m in Sources */,
 				30ECBFFA1CB8B8CA0020164B /* MessageViewController.m in Sources */,
@@ -901,9 +959,12 @@
 				ACC204F91C99515C00B26CDD /* Product.m in Sources */,
 				30A3A9301CAA69E20076208B /* ProductDetailViewController.m in Sources */,
 				30ACF6651CA6A658005B56EC /* UIColor+expanded.m in Sources */,
+				ACF83E1C1CBF6C8600A962BD /* NetworkRequest+Order.m in Sources */,
+				ACAE9F6A1CBE8D6C0056179C /* NetworkRequest+User.m in Sources */,
 				ACC204F41C99401600B26CDD /* DatabaseManager.m in Sources */,
 				ACC204E01C98F35A00B26CDD /* NetworkManager.m in Sources */,
 				AC5E1CEA1C904484008D91E5 /* Mercurial.xcdatamodeld in Sources */,
+				ACF83E191CBF6B5700A962BD /* NetworkRequest+BBS.m in Sources */,
 				AC51827A1CAE8BF30095BAB6 /* Message.m in Sources */,
 				ACB3DD541CAB997000CBC586 /* OrderManager.m in Sources */,
 				30ACF65C1CA58773005B56EC /* ActionSheetCustomPicker.m in Sources */,
@@ -917,6 +978,7 @@
 				ACC3D7F91CAD4132000FBE93 /* Order.m in Sources */,
 				30A3A9271CA96FD70076208B /* NewsCell.m in Sources */,
 				30ECBFFD1CB8C7520020164B /* AddProductViewController.m in Sources */,
+				ACF83E1F1CBF6DF400A962BD /* NetworkRequest+Others.m in Sources */,
 				30D18F291C9ADDC100559866 /* RegisterViewController.m in Sources */,
 				305F85A41CB2619000F42B33 /* UserDetailViewController.m in Sources */,
 				30ECBFEF1CB7DA490020164B /* FormDetailViewController.m in Sources */,

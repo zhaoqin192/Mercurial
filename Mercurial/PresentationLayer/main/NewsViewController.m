@@ -13,6 +13,8 @@
 #import "Sales.h"
 #import "WXWebViewController.h"
 #import "NewsCell.h"
+#import "NetworkRequest+Others.h"
+
 
 @interface NewsViewController ()
 
@@ -35,7 +37,7 @@
 - (void)loadTableViewData{
     if (self.isNews) {
         [NetworkRequest requestNewsWithSuccess:^{
-            self.news = [[NewsManager sharedManager] fetchArray];
+            self.news = [NewsManager sharedManager].newsArray;
             [self.tableView reloadData];
         } failure:^(NSString *error){
             [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
@@ -44,8 +46,7 @@
     }
     else{
         [NetworkRequest requestSalesType:@(1) success:^{
-            self.news = [[SalesManager sharedManager] fetchSalesArray];
-            NSLog(@"%zd %zd",self.news.count,[[SalesManager sharedManager] fetchSalesArray].count);
+            self.news = [SalesManager sharedManager].salesArray;
             [self.tableView reloadData];
         } failure:^{
             [SVProgressHUD showErrorWithStatus:@"加载数据失败"];

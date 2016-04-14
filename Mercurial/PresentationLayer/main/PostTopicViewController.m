@@ -7,6 +7,8 @@
 //
 
 #import "PostTopicViewController.h"
+#import "NetworkRequest+BBS.h"
+
 
 @interface PostTopicViewController ()
 <UIImagePickerControllerDelegate,UINavigationControllerDelegate>

@@ -27,10 +27,4 @@
 
 + (ProductManager *)sharedManager;
 
-- (NSMutableArray *)fetchProductKindArray;
-
-- (NSMutableArray *)fetchProductTypeArray;
-
-- (NSMutableArray *)fetchProductArray;
-
 @end

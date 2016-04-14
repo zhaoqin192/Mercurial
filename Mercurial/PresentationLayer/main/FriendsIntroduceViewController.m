@@ -14,6 +14,7 @@
 #import "DatabaseManager.h"
 #import "Recommend.h"
 #import "RecommendManager.h"
+#import "NetworkRequest+Order.h"
 
 
 @interface FriendsIntroduceViewController ()

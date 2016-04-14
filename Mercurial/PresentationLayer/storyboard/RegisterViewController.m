@@ -7,6 +7,7 @@
 //
 
 #import "RegisterViewController.h"
+#import "NetworkRequest+User.h"
 
 @interface RegisterViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;

@@ -28,16 +28,4 @@ static TopicManager *sharedMananger;
     return sharedMananger;
 }
 
-- (NSMutableArray *) fetchTopicArray{
-    return self.topicArray;
-}
-
-- (void) addToTopicArray:(Topic *) topic{
-    [self.topicArray addObject:topic];
-}
-
-- (void) cleanTopicArray{
-    [self.topicArray removeAllObjects];
-}
-
 @end

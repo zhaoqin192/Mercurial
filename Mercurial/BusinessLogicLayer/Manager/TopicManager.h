@@ -15,10 +15,4 @@
 
 + (TopicManager *) sharedManager;
 
-- (NSMutableArray *) fetchTopicArray;
-
-- (void) addToTopicArray:(Topic *) topic;
-
-- (void) cleanTopicArray;
-
 @end

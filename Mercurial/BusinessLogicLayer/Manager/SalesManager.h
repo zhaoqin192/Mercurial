@@ -17,9 +17,5 @@
 
 + (SalesManager *) sharedManager;
 
-- (NSMutableArray *) fetchSalesArray;
-
-- (NSMutableArray *) fetchRoundArray;
-
 
 @end

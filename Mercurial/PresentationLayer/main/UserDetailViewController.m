@@ -8,6 +8,7 @@
 
 #import "UserDetailViewController.h"
 #import "Account.h"
+#import "NetworkRequest+User.h"
 
 @interface UserDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;

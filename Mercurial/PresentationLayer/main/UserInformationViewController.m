@@ -15,6 +15,8 @@
 #import "userIconCell.h"
 #import "OldFriendIntroduceViewController.h"
 #import "DatabaseManager.h"
+#import "NetworkRequest.h"
+#import "NetworkRequest+User.h"
 
 @interface UserInformationViewController ()
 <UIActionSheetDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate>
@@ -51,7 +53,7 @@
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"获取数据失败，请重新尝试"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
-    }]; 
+    }];
 }
 
 - (void)dismiss {

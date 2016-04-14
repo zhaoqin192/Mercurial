@@ -9,6 +9,7 @@
 #import "ScanViewController.h"
 #import "QRCodeReaderViewController.h"
 #import "QRCodeReader.h"
+#import "NetworkRequest+Others.h"
 
 @interface ScanViewController () <QRCodeReaderDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *scanButton;

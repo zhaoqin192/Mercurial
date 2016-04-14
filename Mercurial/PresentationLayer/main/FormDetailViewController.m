@@ -11,6 +11,8 @@
 #import "AnwserCell.h"
 #import "Answer.h"
 #import "PostTopicViewController.h"
+#import "NetworkRequest+BBS.h"
+
 
 @interface FormDetailViewController ()
 @property (nonatomic, copy) NSArray *list;
@@ -30,7 +32,7 @@
 
 - (void)loadData{
     [NetworkRequest requestTopicAnswerList:self.topic_id success:^{
-        self.list = [[AnswerManager sharedManager] fetchAnswerArray];
+        self.list = [AnswerManager sharedManager].answerArray;
         [self.tableView reloadData];
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"加载数据失败"];

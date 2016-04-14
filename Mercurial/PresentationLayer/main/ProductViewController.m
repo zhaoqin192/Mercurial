@@ -13,6 +13,8 @@
 #import "ProductType.h"
 #import "Product.h"
 #import "ProductDetailViewController.h"
+#import "NetworkRequest+Product.h"
+
 
 @interface ProductViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
@@ -40,7 +42,7 @@
 - (void)loadTableViewData{
     if ([self.mytitle isEqualToString:@"产品类型"]) {
         [NetworkRequest requestProductTypeWithKind:self.identify success:^{
-            self.types = [[ProductManager sharedManager] fetchProductTypeArray];
+            self.types = [ProductManager sharedManager].productTypeArray;
             [self.myTableView reloadData];
         } failure:^{
             [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
@@ -49,7 +51,7 @@
     }
     else if([self.mytitle isEqualToString:@"产品品牌"]){
         [NetworkRequest requestProductKindSuccess:self.isNews success:^{
-            self.logo = [[ProductManager sharedManager] fetchProductKindArray];
+            self.logo = [ProductManager sharedManager].productKindArray;
             [self.myTableView reloadData];
         } failure:^{
             [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
@@ -59,7 +61,7 @@
     else if ([self.mytitle isEqualToString:@"产品列表"]){
         [NetworkRequest requestProductListWithKind:self.identify type:self.Typeidentify
         success:^{
-            self.list = [[ProductManager sharedManager] fetchProductArray];
+            self.list = [ProductManager sharedManager].productArray;
             [self.myTableView reloadData];
         }
         failure:^{

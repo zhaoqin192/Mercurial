@@ -16,6 +16,7 @@
 #import "DatabaseManager.h"
 #import "AccountDao.h"
 #import "OrderManager.h"
+#import "NetworkRequest+Order.h"
 
 @interface AddOrderViewController ()<UITextFieldDelegate,CityPickViewDelegate>
 

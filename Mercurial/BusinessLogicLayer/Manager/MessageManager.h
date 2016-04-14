@@ -15,10 +15,4 @@
 
 + (MessageManager *) sharedManager;
 
-- (NSMutableArray *) fetchMessageArray;
-
-- (void) addToMessageArray:(Message *)message;
-
-- (void) cleanMessageArray;
-
 @end

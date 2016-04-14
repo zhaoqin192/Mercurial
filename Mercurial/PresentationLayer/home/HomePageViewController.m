@@ -26,6 +26,11 @@
 #import "SalesManager.h"
 #import "MessageManager.h"
 #import "Account.h"
+#import "NetworkRequest+User.h"
+#import "NetworkRequest+BBS.h"
+#import "NetworkRequest+Others.h"
+
+
 
 @interface HomePageViewController () <SDCycleScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *scrollAdView;
@@ -163,7 +168,7 @@
 - (void)configureMessage{
     if ([[[AccountDao alloc] init] isLogin]) {
         [NetworkRequest requestMessageList:^{
-            self.messageList = [[MessageManager sharedManager] fetchMessageArray];
+            self.messageList = [MessageManager sharedManager].messageArray;
             for (Message *msg in self.messageList) {
                 if ([msg.readed  isEqual: @(0)]) {
                     [self configureTimer];
@@ -195,7 +200,7 @@
 - (void)fetchMessage{
     if([[[AccountDao alloc] init] isLogin]){
         [NetworkRequest requestMessageList:^{
-            self.messageList = [[MessageManager sharedManager] fetchMessageArray];
+            self.messageList = [MessageManager sharedManager].messageArray;
             if (self.messageList.count == 0) {
                 [SVProgressHUD showWithStatus:@"没有新消息"];
                 [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
@@ -231,7 +236,7 @@
 - (void)configureScrollView{
     self.scrollAdView.delegate = self;
     [NetworkRequest requestSalesType:@(0) success:^{
-        self.salesArray = [[SalesManager sharedManager] fetchRoundArray];
+        self.salesArray = [SalesManager sharedManager].roundArray;
         self.imageUrlArray = [[NSMutableArray alloc] init];
         for (Sales *sale in self.salesArray) {
             [self.imageUrlArray addObject:sale.imageURL];

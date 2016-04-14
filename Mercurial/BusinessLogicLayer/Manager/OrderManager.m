@@ -14,7 +14,7 @@
 
 static OrderManager *sharedManager;
 
-- (id)init{
+- (instancetype)init{
     self = [super init];
     self.orderArray = [[NSMutableArray alloc] init];
     return self;
@@ -28,21 +28,6 @@ static OrderManager *sharedManager;
     return sharedManager;
 }
 
-- (NSMutableArray *) fetchOrderArray{
-    return self.orderArray;
-}
-
-- (void) addToOrderArray:(Order *)order{
-    [self.orderArray addObject:order];
-}
-
-- (void) cleanOrderArray{
-    [self.orderArray removeAllObjects];
-}
-
-- (SearchOrder *) fetchSearchOrder{
-    return self.searchOrder;
-}
 
 
 @end

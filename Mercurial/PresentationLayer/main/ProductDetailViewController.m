@@ -10,6 +10,8 @@
 #import "ProductManager.h"
 #import "Product.h"
 #import "SDCycleScrollView.h"
+#import "NetworkRequest+Product.h"
+
 
 @interface ProductDetailViewController ()
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *cycleView;

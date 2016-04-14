@@ -10,6 +10,8 @@
 #import "AccountDao.h"
 #import "Account.h"
 #import "DatabaseManager.h"
+#import "NetworkRequest+User.h"
+
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;

@@ -10,6 +10,7 @@
 #import "RecommendManager.h"
 #import "Recommend.h"
 #import "FriendsIntroduceViewController.h"
+#import "NetworkRequest+Order.h"
 
 @interface FriendsListViewController ()
 @property (nonatomic, copy) NSArray *list;
@@ -30,7 +31,7 @@
 
 - (void)loadData{
     [NetworkRequest requestCommendList:^{
-        self.list = [[RecommendManager sharedManager] fetchCommendArray];
+        self.list = [RecommendManager sharedManager].commendArray;
         [self.tableView reloadData];
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"退出失败，请重新尝试"];

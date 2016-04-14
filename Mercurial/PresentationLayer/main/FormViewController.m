@@ -13,6 +13,8 @@
 #import "FormDetailViewController.h"
 #import "SelectionViewController.h"
 #import "PostTopicViewController.h"
+#import "NetworkRequest+BBS.h"
+
 
 @interface FormViewController ()
 @property (nonatomic, copy) NSArray *list;
@@ -106,7 +108,7 @@
 
 - (void)loadData{
     [NetworkRequest requestTopicList:self.type identify:self.identify success:^{
-        self.list = [[TopicManager sharedManager] fetchTopicArray];
+        self.list = [TopicManager sharedManager].topicArray;
         [self.tableView reloadData];
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"加载数据失败"];

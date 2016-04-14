@@ -10,6 +10,7 @@
 #import "Account.h"
 #import "DatabaseManager.h"
 #import "AccountDao.h"
+#import "NetworkRequest+User.h"
 
 @interface OldFriendIntroduceViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameTF;

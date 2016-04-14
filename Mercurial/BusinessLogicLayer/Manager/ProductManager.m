@@ -14,7 +14,7 @@
 
 static ProductManager *sharedManager;
 
-- (id)init{
+- (instancetype)init{
     self = [super init];
     self.productKindArray = [[NSMutableArray alloc] init];
     self.productTypeArray = [[NSMutableArray alloc] init];
@@ -31,18 +31,5 @@ static ProductManager *sharedManager;
     });
     return sharedManager;
 }
-
-- (NSMutableArray *)fetchProductKindArray{
-    return self.productKindArray;
-}
-
-- (NSMutableArray *)fetchProductTypeArray{
-    return self.productTypeArray;
-}
-
-- (NSMutableArray *)fetchProductArray{
-    return self.productArray;
-}
-
 
 @end

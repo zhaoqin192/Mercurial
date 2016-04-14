@@ -12,7 +12,7 @@
 
 static NewsManager *sharedManager;
 
-- (id)init{
+- (instancetype)init{
     self = [super init];
     self.newsArray = [[NSMutableArray alloc] init];
     return self;
@@ -24,10 +24,6 @@ static NewsManager *sharedManager;
         sharedManager = [[NewsManager alloc] init];
     });
     return sharedManager;
-}
-
-- (NSMutableArray *) fetchArray{
-    return self.newsArray;
 }
 
 @end

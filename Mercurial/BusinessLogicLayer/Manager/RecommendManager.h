@@ -17,12 +17,4 @@
 
 + (RecommendManager *) sharedManager;
 
-- (NSMutableArray *) fetchCommendArray;
-
-- (void) addToCommendArray:(Recommend *)commend;
-
-- (void) cleanCommendArray;
-
-- (Recommend *) fetchRecommend;
-
 @end

@@ -9,6 +9,8 @@
 #import "MessageViewController.h"
 #import "Message.h"
 #import "FormDetailViewController.h"
+#import "NetworkRequest+BBS.h"
+
 
 @interface MessageViewController ()
 

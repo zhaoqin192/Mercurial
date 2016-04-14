@@ -15,10 +15,4 @@
 
 + (AnswerManager *) sharedManager;
 
-- (NSMutableArray *) fetchAnswerArray;
-
-- (void) addToAnswerArray:(Answer *) answer;
-
-- (void) cleanAnswerArray;
-
 @end

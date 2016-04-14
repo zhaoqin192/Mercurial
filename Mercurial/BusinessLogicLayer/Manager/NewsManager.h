@@ -15,6 +15,4 @@
 
 + (NewsManager *) sharedManager;
 
-- (NSMutableArray *) fetchArray;
-
 @end
