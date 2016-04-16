@@ -13,4 +13,5 @@
 @property (nonatomic ,copy) NSString *myTitle;
 @property (nonatomic ,copy) void(^returnString)(NSString *text);
 @property (nonatomic ,strong) Account *myAccount;
+@property (nonatomic ,copy) NSString *originContent;
 @end

@@ -186,6 +186,7 @@
             UserDetailViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"UserDetailViewController"];
             vc.myTitle = @"真实姓名";
             vc.myAccount = self.myAccount;
+            vc.originContent = self.myAccount.name;
             vc.returnString = ^(NSString *text){
                 if ([text isEqualToString:@""]) {
                     return;
@@ -208,6 +209,7 @@
             UserDetailViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"UserDetailViewController"];
             vc.myTitle = @"年龄";
             vc.myAccount = self.myAccount;
+            vc.originContent = [NSString stringWithFormat:@"%@",self.myAccount.age];
             vc.returnString = ^(NSString *text){
                 if ([text isEqualToString:@""]) {
                     return;
@@ -235,6 +237,7 @@
             UserDetailViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"UserDetailViewController"];
             vc.myTitle = @"身份证号";
             vc.myAccount = self.myAccount;
+            vc.originContent = self.myAccount.cardID;
             vc.returnString = ^(NSString *text){
                 if ([text isEqualToString:@""]) {
                     return;
@@ -249,6 +252,7 @@
             UserDetailViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"UserDetailViewController"];
             vc.myTitle = @"电话号码";
             vc.myAccount = self.myAccount;
+            vc.originContent = self.myAccount.fixedTel;
             vc.returnString = ^(NSString *text){
                 if ([text isEqualToString:@""]) {
                     return;
@@ -263,6 +267,7 @@
             UserDetailViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"UserDetailViewController"];
             vc.myTitle = @"邮箱";
             vc.myAccount = self.myAccount;
+            vc.originContent = self.myAccount.email;
             vc.returnString = ^(NSString *text){
                 if ([text isEqualToString:@""]) {
                     return;
@@ -293,6 +298,7 @@
             UserDetailViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"UserDetailViewController"];
             vc.myTitle = @"详细地址";
             vc.myAccount = self.myAccount;
+            vc.originContent = self.myAccount.address;
             vc.returnString = ^(NSString *text){
                 if ([text isEqualToString:@""]) {
                     return;
@@ -307,6 +313,7 @@
             UserDetailViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"UserDetailViewController"];
             vc.myTitle = @"装修经验";
             vc.myAccount = self.myAccount;
+            vc.originContent = self.myAccount.experience;
             vc.returnString = ^(NSString *text){
                 if ([text isEqualToString:@""]) {
                     return;
