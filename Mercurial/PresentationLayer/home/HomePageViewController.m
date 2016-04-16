@@ -122,7 +122,7 @@
             break;
         }
         case 108:{
-            if([[[AccountDao alloc] init] isLogin]){
+            if ([[DatabaseManager sharedAccount] isLogin]){
                 UITableViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateInitialViewController];
                 [self.navigationController pushViewController:vc animated:YES];
             }
@@ -166,7 +166,7 @@
 }
 
 - (void)configureMessage{
-    if ([[[AccountDao alloc] init] isLogin]) {
+    if ([[DatabaseManager sharedAccount] isLogin]) {
         [NetworkRequest requestMessageList:^{
             self.messageList = [MessageManager sharedManager].messageArray;
             for (Message *msg in self.messageList) {
@@ -198,7 +198,7 @@
 }
 
 - (void)fetchMessage{
-    if([[[AccountDao alloc] init] isLogin]){
+    if ([[DatabaseManager sharedAccount] isLogin]){
         [NetworkRequest requestMessageList:^{
             self.messageList = [MessageManager sharedManager].messageArray;
             if (self.messageList.count == 0) {

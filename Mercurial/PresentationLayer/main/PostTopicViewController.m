@@ -136,6 +136,7 @@
             if (self.images.count == 0) {
                 [SVProgressHUD showSuccessWithStatus:@"回复成功"];
                 [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+                [self.navigationController popViewControllerAnimated:YES];
             }
             else{
                 [self replyImage:self.topic_id forumAnswerID:forum_answer_id imageIndex:0];

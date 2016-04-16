@@ -10,7 +10,8 @@
 #import "Message.h"
 #import "FormDetailViewController.h"
 #import "NetworkRequest+BBS.h"
-
+#import "AccountDao.h"
+#import "MessageManager.h"
 
 @interface MessageViewController ()
 
@@ -21,7 +22,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"消息提醒";
-    [self.tableView reloadData];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self loadData];
+}
+
+- (void)loadData{
+    [NetworkRequest requestMessageList:^{
+        self.messageList = [MessageManager sharedManager].messageArray;
+        [self.tableView reloadData];
+    } failure:^{
+        [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+    }];
 }
 
 #pragma mark - Table view data source
