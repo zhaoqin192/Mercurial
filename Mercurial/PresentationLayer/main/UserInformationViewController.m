@@ -113,7 +113,7 @@
         case 5:
             cell.textLabel.text = @"身份证号";
             cell.detailTextLabel.text = self.myAccount.cardID;
-            NSLog(@"%@",self.myAccount.cardID);
+           // NSLog(@"%@",self.myAccount.cardID);
             break;
         case 6:
             cell.textLabel.text = @"固定电话";
