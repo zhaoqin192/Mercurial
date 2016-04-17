@@ -8,8 +8,9 @@
 
 #import "RegisterViewController.h"
 #import "NetworkRequest+User.h"
+#import "ActionSheetStringPicker.h"
 
-@interface RegisterViewController ()
+@interface RegisterViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
@@ -17,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *ageTextField;
 @property (weak, nonatomic) IBOutlet UITextField *mailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *confirmPasswordTF;
-@property (weak, nonatomic) IBOutlet UISwitch *sexSwitch;
+@property (weak, nonatomic) IBOutlet UITextField *sexTextField;
 @end
 
 @implementation RegisterViewController
@@ -29,6 +30,8 @@
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"menu_bg"]]];
     [self configureRegisterButton];
     [self.phoneNumTextField becomeFirstResponder];
+    self.sexTextField.inputView = [[UIView alloc] init];
+    self.sexTextField.delegate = self;
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
 }
@@ -72,15 +75,18 @@
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
+    if (self.sexTextField.text.length == 0) {
+        [SVProgressHUD showErrorWithStatus:@"请输入性别"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+        return;
+    }
     if(![self.passwordTextField.text isEqualToString:self.confirmPasswordTF.text]){
         [SVProgressHUD showErrorWithStatus:@"两次输入的密码不一致，请重新输入"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     [SVProgressHUD show];
-    NSString *sex = self.sexSwitch.isOn ? @"女" : @"男";
-    NSLog(@"%@",sex);
-    [NetworkRequest userRegisterWithName:self.nameTextField.text password:self.passwordTextField.text phone:self.phoneNumTextField.text sex:sex age:[self.ageTextField.text integerValue] Email:self.mailTextField.text success:^{
+    [NetworkRequest userRegisterWithName:self.nameTextField.text password:self.passwordTextField.text phone:self.phoneNumTextField.text sex:self.sexTextField.text age:[self.ageTextField.text integerValue] Email:self.mailTextField.text success:^{
         [SVProgressHUD showSuccessWithStatus:@"注册成功!"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         [self.navigationController popViewControllerAnimated:YES];
@@ -98,7 +104,19 @@
     [self.view endEditing:YES];
 }
 
-#pragma mark -<VerficationCode>
+#pragma mark <UITextFieldDelegate>
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    [ActionSheetStringPicker showPickerWithTitle:nil rows:@[@[@"男", @"女"]] initialSelection:@[@(0)] doneBlock:^(ActionSheetStringPicker *picker, NSArray * selectedIndex, NSArray *selectedValue) {
+        self.sexTextField.text = [selectedValue firstObject];
+        [self.sexTextField resignFirstResponder];
+    } cancelBlock:nil origin:self.view];
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    return NO;
+}
+
+#pragma mark <VerficationCode>
 
 - (BOOL)isValidPhoneNumber:(NSString *)text{
     if (text.length != 11) {
