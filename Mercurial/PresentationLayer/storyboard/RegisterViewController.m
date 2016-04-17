@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *ageTextField;
 @property (weak, nonatomic) IBOutlet UITextField *mailTextField;
+@property (weak, nonatomic) IBOutlet UITextField *confirmPasswordTF;
 @property (weak, nonatomic) IBOutlet UISwitch *sexSwitch;
 @end
 
@@ -56,6 +57,11 @@
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
+    if (self.confirmPasswordTF.text.length == 0) {
+        [SVProgressHUD showErrorWithStatus:@"请再次输入密码"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+        return;
+    }
     if (self.mailTextField.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入邮箱"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
@@ -63,6 +69,11 @@
     }
     if (![self isValidAgeNumber:self.ageTextField.text]) {
         [SVProgressHUD showErrorWithStatus:@"请输入年龄"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+        return;
+    }
+    if(![self.passwordTextField.text isEqualToString:self.confirmPasswordTF.text]){
+        [SVProgressHUD showErrorWithStatus:@"两次输入的密码不一致，请重新输入"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
