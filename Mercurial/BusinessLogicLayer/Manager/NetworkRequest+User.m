@@ -15,14 +15,40 @@
 
 @implementation NetworkRequest (User)
 
+//+ (void) userRegisterWithName:(NSString *)name
+//                     password:(NSString *)password
+//                        phone:(NSString *)phone
+//                          sex:(NSString *)sex
+//                          age:(NSInteger)age
+//                        Email:(NSString *)email
+//                      success:(void (^)())success
+//                      failure:(void (^)(NSString *error))failure{
+//    
+//    AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
+//    NSURL *url = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/User/Index/register"]];
+//    NSDictionary *parameters = @{@"name":name, @"passwd":[Utility md5:password], @"phone":phone, @"sex":sex, @"age":[NSNumber numberWithInteger:age], @"mail":email};
+//    
+//    [manager POST:url.absoluteString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        NSDictionary *dic = responseObject;
+//        if([[dic objectForKey:@"status"] isEqualToString:@"200"]){
+//            success();
+//        }else{
+//            failure([dic objectForKey:@"error"]);
+//        }
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        failure(@"Network Error");
+//    }];
+//    
+//}
+
 + (void) userRegisterWithName:(NSString *)name
                      password:(NSString *)password
                         phone:(NSString *)phone
                           sex:(NSString *)sex
                           age:(NSInteger)age
                         Email:(NSString *)email
-                      success:(void (^)())success
-                      failure:(void (^)(NSString *error))failure{
+                      success:(NetworkFetcherCompletionHandler)success
+                      failure:(NetworkFetcherErrorHandler)failure{
     
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
     NSURL *url = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/User/Index/register"]];
@@ -38,7 +64,7 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failure(@"Network Error");
     }];
-    
+
 }
 
 + (void) userLoginWithName:(NSString *)accountName
@@ -193,6 +219,28 @@
         NSLog(@"Error: %@", error);
     }];
     
+}
+
++ (void) revisePasswordWithName:(NSString *)name
+                    oldPassword:(NSString *)oldPassword
+                    newPassword:(NSString *)newPassword
+                        success:(void (^)())success
+                        failure:(void (^)(NSString *error))failure{
+    
+    AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
+    NSURL *url = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/User/Index/revise"]];
+    NSDictionary *parameters = @{@"name":name, @"old_passwd": oldPassword, @"new_passwd": newPassword};
+    
+    [manager POST:url.absoluteString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dic = responseObject;
+        if([[dic objectForKey:@"status"] isEqualToString:@"200"]){
+            success();
+        }else{
+            failure([dic objectForKey:@"error"]);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(@"Network Error");
+    }];
 }
 
 @end

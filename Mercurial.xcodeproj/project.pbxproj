@@ -78,6 +78,7 @@
 		AC5E1CE11C904484008D91E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5E1CE01C904484008D91E5 /* AppDelegate.m */; };
 		AC5E1CEA1C904484008D91E5 /* Mercurial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC5E1CE81C904484008D91E5 /* Mercurial.xcdatamodeld */; };
 		AC5E1CEC1C904484008D91E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC5E1CEB1C904484008D91E5 /* Assets.xcassets */; };
+		AC7AD4631CC672BD004D9B61 /* libMLeaksFinder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7AD4621CC66FC3004D9B61 /* libMLeaksFinder.a */; };
 		AC8B92601CBDF37A006CBF1F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC8B925F1CBDF37A006CBF1F /* Home.storyboard */; };
 		ACAE9F6A1CBE8D6C0056179C /* NetworkRequest+User.m in Sources */ = {isa = PBXBuildFile; fileRef = ACAE9F691CBE8D6C0056179C /* NetworkRequest+User.m */; };
 		ACB3DD541CAB997000CBC586 /* OrderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB3DD531CAB997000CBC586 /* OrderManager.m */; };
@@ -104,6 +105,16 @@
 		ACF83E1C1CBF6C8600A962BD /* NetworkRequest+Order.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF83E1B1CBF6C8600A962BD /* NetworkRequest+Order.m */; };
 		ACF83E1F1CBF6DF400A962BD /* NetworkRequest+Others.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF83E1E1CBF6DF400A962BD /* NetworkRequest+Others.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC7AD4611CC66FC3004D9B61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC7AD45D1CC66FC3004D9B61 /* MLeaksFinder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B3ADE16C1C1BD1D600AA4F63;
+			remoteInfo = MLeaksFinder;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		305F85971CB2524600F42B33 /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
@@ -236,6 +247,7 @@
 		AC5E1CE91C904484008D91E5 /* Mercurial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mercurial.xcdatamodel; sourceTree = "<group>"; };
 		AC5E1CEB1C904484008D91E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC5E1CF01C904484008D91E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC7AD45D1CC66FC3004D9B61 /* MLeaksFinder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MLeaksFinder.xcodeproj; path = MLeaksFinder/MLeaksFinder.xcodeproj; sourceTree = "<group>"; };
 		AC8B925F1CBDF37A006CBF1F /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		ACAE9F681CBE8D6C0056179C /* NetworkRequest+User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetworkRequest+User.h"; sourceTree = "<group>"; };
 		ACAE9F691CBE8D6C0056179C /* NetworkRequest+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetworkRequest+User.m"; sourceTree = "<group>"; };
@@ -293,6 +305,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC7AD4631CC672BD004D9B61 /* libMLeaksFinder.a in Frameworks */,
 				305F85E41CB3D38700F42B33 /* AssetsLibrary.framework in Frameworks */,
 				8D036F0D3D5D69D4249794B4 /* libPods.a in Frameworks */,
 			);
@@ -551,6 +564,7 @@
 		AC5E1CD01C904484008D91E5 = {
 			isa = PBXGroup;
 			children = (
+				AC7AD45D1CC66FC3004D9B61 /* MLeaksFinder.xcodeproj */,
 				AC5E1CDB1C904484008D91E5 /* Mercurial */,
 				AC5E1CDA1C904484008D91E5 /* Products */,
 				F5A1E370065FCA7CEA751987 /* Pods */,
@@ -586,6 +600,14 @@
 				AC5E1CDD1C904484008D91E5 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AC7AD45E1CC66FC3004D9B61 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC7AD4621CC66FC3004D9B61 /* libMLeaksFinder.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		AC8C1F791C90468C00D61A3F /* BusinessLogicLayer */ = {
@@ -827,6 +849,7 @@
 				TargetAttributes = {
 					AC5E1CD81C904484008D91E5 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = BSR7J239R5;
 					};
 				};
 			};
@@ -841,12 +864,28 @@
 			mainGroup = AC5E1CD01C904484008D91E5;
 			productRefGroup = AC5E1CDA1C904484008D91E5 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AC7AD45E1CC66FC3004D9B61 /* Products */;
+					ProjectRef = AC7AD45D1CC66FC3004D9B61 /* MLeaksFinder.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				AC5E1CD81C904484008D91E5 /* Mercurial */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AC7AD4621CC66FC3004D9B61 /* libMLeaksFinder.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMLeaksFinder.a;
+			remoteRef = AC7AD4611CC66FC3004D9B61 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		AC5E1CD71C904484008D91E5 /* Resources */ = {
@@ -1096,15 +1135,15 @@
 			baseConfigurationReference = 59A6001685EAEFD7AF2127DC /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Jianwei Shu (5CT8R4N349)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jianwei Shu (5CT8R4N349)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = Mercurial/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.muggins.Mercurial;
+				PRODUCT_BUNDLE_IDENTIFIER = com.muggins.Mercurials;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "96f0d9c8-cbfa-4001-b39d-5c4232fb0bc5";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1114,15 +1153,15 @@
 			baseConfigurationReference = F13185264FDB502171C80DA5 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Jianwei Shu (5CT8R4N349)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jianwei Shu (5CT8R4N349)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = Mercurial/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.muggins.Mercurial;
+				PRODUCT_BUNDLE_IDENTIFIER = com.muggins.Mercurials;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "96f0d9c8-cbfa-4001-b39d-5c4232fb0bc5";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

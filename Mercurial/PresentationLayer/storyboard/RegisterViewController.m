@@ -69,11 +69,20 @@
     [SVProgressHUD show];
     NSString *sex = self.sexSwitch.isOn ? @"女" : @"男";
     NSLog(@"%@",sex);
+//    [NetworkRequest userRegisterWithName:self.nameTextField.text password:self.passwordTextField.text phone:self.phoneNumTextField.text sex:sex age:[self.ageTextField.text integerValue] Email:self.mailTextField.text success:^{
+//        [SVProgressHUD showSuccessWithStatus:@"注册成功!"];
+//        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+//        [self.navigationController popViewControllerAnimated:YES];
+//    } failure:^(NSString *error){
+//        [SVProgressHUD showErrorWithStatus:error];
+//        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+//    }];
+    
     [NetworkRequest userRegisterWithName:self.nameTextField.text password:self.passwordTextField.text phone:self.phoneNumTextField.text sex:sex age:[self.ageTextField.text integerValue] Email:self.mailTextField.text success:^{
         [SVProgressHUD showSuccessWithStatus:@"注册成功!"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         [self.navigationController popViewControllerAnimated:YES];
-    } failure:^(NSString *error){
+    } failure:^(NSString *error) {
         [SVProgressHUD showErrorWithStatus:error];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
     }];
