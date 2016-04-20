@@ -28,8 +28,8 @@
                           sex:(NSString *)sex
                           age:(NSInteger)age
                         Email:(NSString *)email
-                      success:(void(^)())success
-                      failure:(void(^)(NSString *error))failure;
+                      success:(NetworkFetcherCompletionHandler)success
+                      failure:(NetworkFetcherErrorHandler)failure;
 
 /**
  *  登陆
@@ -99,5 +99,20 @@
 + (void) uploadAvatar:(UIImage *)image
               success:(void (^)())success
               failure:(void (^)())failure;
+
+/**
+ *  修改密码
+ *
+ *  @param name
+ *  @param oldPassword
+ *  @param newPassword
+ *  @param success
+ *  @param failure
+ */
++ (void) revisePasswordWithName:(NSString *)name
+                    oldPassword:(NSString *)oldPassword
+                    newPassword:(NSString *)newPassword
+                        success:(void (^)())success
+                        failure:(void (^)(NSString *error))failure;
 
 @end

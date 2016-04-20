@@ -12,4 +12,5 @@
 @interface AnwserCell : UITableViewCell
 @property (nonatomic, strong) Answer *answer;
 @property (nonatomic, copy) void(^reply)();
+
 @end

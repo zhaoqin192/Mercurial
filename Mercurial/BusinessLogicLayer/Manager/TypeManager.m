@@ -12,7 +12,6 @@
 
 @implementation TypeManager
 
-static TypeManager *sharedManager;
 
 - (instancetype)init{
     self = [super init];
@@ -21,6 +20,7 @@ static TypeManager *sharedManager;
 }
 
 + (TypeManager *) sharedManager{
+    static TypeManager *sharedManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedManager = [[TypeManager alloc] init];

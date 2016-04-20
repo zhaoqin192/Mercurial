@@ -11,7 +11,9 @@
 
 #define URLPREFIX @"http://yyzwt.cn:12345"
 
-@interface NetworkRequest : NSObject
+typedef void(^NetworkFetcherCompletionHandler)();
+typedef void(^NetworkFetcherErrorHandler)(NSString *error);
 
+@interface NetworkRequest : NSObject
 
 @end

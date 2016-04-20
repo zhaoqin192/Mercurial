@@ -85,12 +85,14 @@
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
-    [SVProgressHUD show];
+    [SVProgressHUD show];    
+   
     [NetworkRequest userRegisterWithName:self.nameTextField.text password:self.passwordTextField.text phone:self.phoneNumTextField.text sex:self.sexTextField.text age:[self.ageTextField.text integerValue] Email:self.mailTextField.text success:^{
+
         [SVProgressHUD showSuccessWithStatus:@"注册成功!"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         [self.navigationController popViewControllerAnimated:YES];
-    } failure:^(NSString *error){
+    } failure:^(NSString *error) {
         [SVProgressHUD showErrorWithStatus:error];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
     }];
