@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
@@ -14,34 +14,92 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shopping1" translatesAutoresizingMaskIntoConstraints="NO" id="0cQ-P3-mYU">
-                    <rect key="frame" x="0.0" y="109" width="375" height="150"/>
+                <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ggj-5p-1F7">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="piX-C9-Qkg">
+                            <rect key="frame" x="21" y="155" width="258" height="85"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="258" id="PK7-o6-gYi"/>
+                                <constraint firstAttribute="height" constant="85" id="mf1-s2-4SO"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="mall_ld"/>
+                            <state key="disabled" backgroundImage="mall_ld"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="150" id="ACf-Bq-R5I"/>
+                        <constraint firstItem="piX-C9-Qkg" firstAttribute="centerX" secondItem="Ggj-5p-1F7" secondAttribute="centerX" id="0cX-Sb-BL7"/>
+                        <constraint firstAttribute="height" constant="300" id="1CN-pQ-x8D"/>
+                        <constraint firstAttribute="width" constant="300" id="7Sl-sL-QNC"/>
+                        <constraint firstItem="piX-C9-Qkg" firstAttribute="centerY" secondItem="Ggj-5p-1F7" secondAttribute="centerY" id="ccg-FJ-wZz"/>
+                        <constraint firstAttribute="bottom" secondItem="piX-C9-Qkg" secondAttribute="bottom" constant="60" id="wsT-U0-03R"/>
                     </constraints>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shopping2" translatesAutoresizingMaskIntoConstraints="NO" id="13i-3N-eLm">
-                    <rect key="frame" x="0.0" y="409" width="375" height="150"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="ccg-FJ-wZz"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="wEV-0W-cCg" appends="YES" id="SYL-vT-4UO"/>
+                    </connections>
+                </view>
+                <view tag="200" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ar1-ZU-uxO">
+                    <rect key="frame" x="75" y="367" width="300" height="300"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arj-qe-L55">
+                            <rect key="frame" x="10" y="130" width="280" height="110"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="110" id="0ue-Wv-65L"/>
+                                <constraint firstAttribute="width" constant="280" id="nvY-sb-LzZ"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="mall_mk"/>
+                            <state key="disabled" backgroundImage="mall_mk"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="150" id="smv-NI-eKP"/>
+                        <constraint firstAttribute="height" constant="300" id="Geb-NZ-mR1"/>
+                        <constraint firstAttribute="width" constant="300" id="OrC-sk-Cjc"/>
+                        <constraint firstItem="arj-qe-L55" firstAttribute="centerX" secondItem="ar1-ZU-uxO" secondAttribute="centerX" id="bEx-Vt-CTB"/>
+                        <constraint firstItem="arj-qe-L55" firstAttribute="centerY" secondItem="ar1-ZU-uxO" secondAttribute="centerY" id="jmf-FQ-MvH"/>
+                        <constraint firstAttribute="bottom" secondItem="arj-qe-L55" secondAttribute="bottom" constant="60" id="pKY-Xc-O32"/>
                     </constraints>
-                </imageView>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="jmf-FQ-MvH"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="9ks-9s-thq" appends="YES" id="Ktg-mb-to3"/>
+                    </connections>
+                </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="0cQ-P3-mYU" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-150" id="B0Z-t4-IXf"/>
-                <constraint firstAttribute="trailing" secondItem="0cQ-P3-mYU" secondAttribute="trailing" id="XnM-In-IsN"/>
-                <constraint firstItem="0cQ-P3-mYU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YgY-UL-2V7"/>
-                <constraint firstItem="13i-3N-eLm" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="150" id="aik-05-7vb"/>
-                <constraint firstItem="13i-3N-eLm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vIr-8a-uaG"/>
-                <constraint firstAttribute="trailing" secondItem="13i-3N-eLm" secondAttribute="trailing" id="vhS-sv-hBZ"/>
+                <constraint firstItem="Ggj-5p-1F7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6RW-4c-drV"/>
+                <constraint firstItem="Ggj-5p-1F7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="HjW-eY-8eH"/>
+                <constraint firstAttribute="bottom" secondItem="ar1-ZU-uxO" secondAttribute="bottom" id="S94-Ij-JZr"/>
+                <constraint firstAttribute="trailing" secondItem="ar1-ZU-uxO" secondAttribute="trailing" id="s5H-OQ-c8V"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="329.5" y="380.5"/>
         </view>
+        <tapGestureRecognizer id="wEV-0W-cCg">
+            <connections>
+                <action selector="viewTapped:" destination="-1" id="fAF-5c-dHW"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="9ks-9s-thq">
+            <connections>
+                <action selector="viewTapped:" destination="-1" id="zTn-zt-G0o"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="shopping1" width="433" height="219"/>
-        <image name="shopping2" width="435" height="178"/>
+        <image name="mall_ld" width="258" height="85"/>
+        <image name="mall_mk" width="327" height="131"/>
     </resources>
 </document>
