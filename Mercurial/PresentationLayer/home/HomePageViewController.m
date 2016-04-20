@@ -188,7 +188,7 @@
         [NetworkRequest userLoginWithName:account.accountName password:account.password success:^{
            // [SVProgressHUD showSuccessWithStatus:@"登录成功"];
         } failure:^(NSString *error) {
-            [SVProgressHUD showErrorWithStatus:@"登录失败"];
+            [SVProgressHUD showErrorWithStatus:error];
             [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         }];
     }

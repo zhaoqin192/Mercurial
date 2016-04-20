@@ -40,7 +40,7 @@
             self.news = [NewsManager sharedManager].newsArray;
             [self.tableView reloadData];
         } failure:^(NSString *error){
-            [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
+            [SVProgressHUD showErrorWithStatus:error];
             [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         }];
     }

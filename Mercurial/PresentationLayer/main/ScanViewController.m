@@ -72,7 +72,7 @@
         [SVProgressHUD showSuccessWithStatus:@"已查到该产品"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
     } failure:^(NSString *error){
-        [SVProgressHUD showErrorWithStatus:@"未查询到该产品"];
+        [SVProgressHUD showErrorWithStatus:error];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
     }];
 }

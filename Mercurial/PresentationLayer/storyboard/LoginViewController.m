@@ -70,7 +70,7 @@
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         [self.navigationController popViewControllerAnimated:YES];
     } failure:^(NSString *error){
-        [SVProgressHUD showErrorWithStatus:@"登录失败"];
+        [SVProgressHUD showErrorWithStatus:error];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
     }];
 }

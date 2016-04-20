@@ -40,7 +40,7 @@
         [NetworkRequest requestIntroduceWithSuccess:^(NSString *url) {
             [self.myWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
         } failure:^(NSString *error){
-            [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
+            [SVProgressHUD showErrorWithStatus:error];
             [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         }];
     }
