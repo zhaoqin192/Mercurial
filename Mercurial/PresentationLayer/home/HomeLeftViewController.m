@@ -12,6 +12,7 @@
 #import "RegisterViewController.h"
 #import "AccountDao.h"
 #import "Account.h"
+#import "DatabaseManager.h"
 
 @interface HomeLeftViewController ()
 @property (weak, nonatomic) IBOutlet UIView *MiddleView;
@@ -34,7 +35,7 @@
 }
 
 - (void)configureButton{
-    if ([[[AccountDao alloc] init] isLogin]) {
+    if ([[DatabaseManager sharedAccount] isLogin]) {
         [self.loginButton setTitle:@"退出" forState:UIControlStateNormal];
     }
     else{

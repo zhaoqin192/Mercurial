@@ -16,6 +16,7 @@
 
 @interface FormDetailViewController ()
 @property (nonatomic, copy) NSArray *list;
+
 @end
 
 @implementation FormDetailViewController
@@ -27,16 +28,17 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-     [self loadData];
+    [self loadData];
 }
 
 - (void)loadData{
+    __weak typeof(self) weakSelf = self;
     [NetworkRequest requestTopicAnswerList:self.topic_id success:^{
-        self.list = [AnswerManager sharedManager].answerArray;
-        [self.tableView reloadData];
+        weakSelf.list = [AnswerManager sharedManager].answerArray;
+        [weakSelf.tableView reloadData];
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+        [weakSelf performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
     }];
 }
 
@@ -55,14 +57,15 @@
     AnwserCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AnwserCell"];
     Answer *answer = self.list[indexPath.row];
     cell.answer = answer;
+    __weak typeof(self) weakSelf = self;
     cell.reply = ^{
         PostTopicViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"PostTopicViewController"];
         vc.myTitle = @"回复";
-        vc.topic_id = self.topic_id;
+        vc.topic_id = weakSelf.topic_id;
         vc.toFloor = [NSNumber numberWithInteger:indexPath.row];
         vc.answerName = answer.answer_name;
         vc.isReply = YES;
-        [self.navigationController pushViewController:vc animated:YES];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     };
     return cell;
 }
