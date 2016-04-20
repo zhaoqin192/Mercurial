@@ -48,6 +48,7 @@
 		30D18F291C9ADDC100559866 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D18F281C9ADDC100559866 /* RegisterViewController.m */; };
 		30D18F2C1C9E484F00559866 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D18F2B1C9E484F00559866 /* HomePageViewController.m */; };
 		30D407731CAD641B0068FD85 /* HomeLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D407721CAD641B0068FD85 /* HomeLeftViewController.m */; };
+		30D6D2581CC7A35200FB0CFC /* RevisePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D6D2571CC7A35200FB0CFC /* RevisePasswordViewController.m */; };
 		30ECBFE01CB77B580020164B /* FormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ECBFDF1CB77B580020164B /* FormViewController.m */; };
 		30ECBFE81CB7819C0020164B /* TopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ECBFE61CB7819C0020164B /* TopicCell.m */; };
 		30ECBFE91CB7819C0020164B /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30ECBFE71CB7819C0020164B /* TopicCell.xib */; };
@@ -191,6 +192,8 @@
 		30D18F2B1C9E484F00559866 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
 		30D407711CAD641B0068FD85 /* HomeLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeLeftViewController.h; sourceTree = "<group>"; };
 		30D407721CAD641B0068FD85 /* HomeLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeLeftViewController.m; sourceTree = "<group>"; };
+		30D6D2561CC7A35200FB0CFC /* RevisePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevisePasswordViewController.h; sourceTree = "<group>"; };
+		30D6D2571CC7A35200FB0CFC /* RevisePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RevisePasswordViewController.m; sourceTree = "<group>"; };
 		30ECBFDE1CB77B580020164B /* FormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormViewController.h; sourceTree = "<group>"; };
 		30ECBFDF1CB77B580020164B /* FormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormViewController.m; sourceTree = "<group>"; };
 		30ECBFE51CB7819C0020164B /* TopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicCell.h; sourceTree = "<group>"; };
@@ -510,6 +513,8 @@
 				305F85A31CB2619000F42B33 /* UserDetailViewController.m */,
 				30F43C611CBB472D004C48C0 /* OldFriendIntroduceViewController.h */,
 				30F43C621CBB472D004C48C0 /* OldFriendIntroduceViewController.m */,
+				30D6D2561CC7A35200FB0CFC /* RevisePasswordViewController.h */,
+				30D6D2571CC7A35200FB0CFC /* RevisePasswordViewController.m */,
 			);
 			name = information;
 			sourceTree = "<group>";
@@ -995,6 +1000,7 @@
 				AC51826B1CAE5FD50095BAB6 /* TopicManager.m in Sources */,
 				AC51827D1CAE8C210095BAB6 /* MessageManager.m in Sources */,
 				30A4A67B1C97F61000BF5EA1 /* ShoppingViewController.m in Sources */,
+				30D6D2581CC7A35200FB0CFC /* RevisePasswordViewController.m in Sources */,
 				ACC204F91C99515C00B26CDD /* Product.m in Sources */,
 				30A3A9301CAA69E20076208B /* ProductDetailViewController.m in Sources */,
 				30ACF6651CA6A658005B56EC /* UIColor+expanded.m in Sources */,
