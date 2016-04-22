@@ -229,7 +229,7 @@
     
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
     NSURL *url = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/User/Index/revise"]];
-    NSDictionary *parameters = @{@"phone":name, @"old_passwd": oldPassword, @"new_passwd": newPassword};
+    NSDictionary *parameters = @{@"name":name, @"old_passwd": [Utility md5:oldPassword], @"new_passwd": [Utility md5:newPassword]};
     
     [manager POST:url.absoluteString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = responseObject;

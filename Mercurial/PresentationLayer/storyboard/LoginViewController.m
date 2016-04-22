@@ -37,7 +37,7 @@
     NSLog(@"login");
     Account *account = [[DatabaseManager sharedAccount] getAccount];
     if (account) {
-        self.nameTextField.text = account.accountName;
+        self.nameTextField.text = account.phone;
         [self.passwordTextField becomeFirstResponder];
     }
     else{

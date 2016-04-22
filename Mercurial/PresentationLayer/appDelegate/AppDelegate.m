@@ -32,8 +32,14 @@
     self.window.rootViewController = self.drawerController;
     
     [self configureNavigationItem];
+    [self configureHUD];
   //  [self configureIntroView];
     return YES;
+}
+
+- (void)configureHUD{
+    [[SVProgressHUD appearance] setDefaultStyle:SVProgressHUDStyleDark];
+    [[SVProgressHUD appearance] setDefaultMaskType:SVProgressHUDMaskTypeClear];
 }
 
 - (void)configureNavigationItem{

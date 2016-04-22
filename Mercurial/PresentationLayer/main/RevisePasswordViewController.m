@@ -60,11 +60,13 @@
     }
     
     Account *account = [[DatabaseManager sharedAccount] getAccount];
-    NSString *phone = account.phone;
+    NSString *phone = account.accountName;
     NSLog(@"%@",phone);
     [NetworkRequest revisePasswordWithName:phone oldPassword:self.originPasswordTF.text newPassword:self.PasswordTF.text success:^{
         [SVProgressHUD showSuccessWithStatus:@"修改密码成功"];
+        account.password = self.PasswordTF.text;
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+        [self.navigationController popViewControllerAnimated:YES];
     } failure:^(NSString *error) {
         [SVProgressHUD showErrorWithStatus:error];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];

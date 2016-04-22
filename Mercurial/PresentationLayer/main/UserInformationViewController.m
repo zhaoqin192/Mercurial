@@ -45,7 +45,7 @@
         return @"";
     }
 }
-
+ 
 - (void)loadData{
     [NetworkRequest requestUserInformationWithToken:^{
         self.myAccount = [[DatabaseManager sharedAccount] getAccount];

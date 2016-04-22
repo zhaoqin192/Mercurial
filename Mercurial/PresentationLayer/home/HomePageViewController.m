@@ -184,6 +184,7 @@
 
 - (void)configureLogin{
     Account *account = [[DatabaseManager sharedAccount] getAccount];
+    NSLog(@"%@",account.password);
     if (account) {
         [NetworkRequest userLoginWithName:account.accountName password:account.password success:^{
            // [SVProgressHUD showSuccessWithStatus:@"登录成功"];
