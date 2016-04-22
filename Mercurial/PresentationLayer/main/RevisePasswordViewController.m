@@ -11,6 +11,7 @@
 #import "AccountDao.h"
 #import "DatabaseManager.h"
 #import "Account.h"
+#import "AppDelegate.h"
 
 @interface RevisePasswordViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *button;
@@ -65,6 +66,8 @@
     [NetworkRequest revisePasswordWithName:phone oldPassword:self.originPasswordTF.text newPassword:self.PasswordTF.text success:^{
         [SVProgressHUD showSuccessWithStatus:@"修改密码成功"];
         account.password = self.PasswordTF.text;
+        AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+        [appDelegate saveContext];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         [self.navigationController popViewControllerAnimated:YES];
     } failure:^(NSString *error) {
