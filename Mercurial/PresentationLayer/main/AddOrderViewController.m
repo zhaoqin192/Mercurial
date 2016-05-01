@@ -102,7 +102,12 @@
     self.addressTF.delegate = self;
     self.addressTF.inputView = self.pickView;
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.navigationItem.title = @"修改订单";
+    if (!self.myTitle) {
+        self.navigationItem.title = @"新增订单";
+    }
+    else{
+        self.navigationItem.title = self.myTitle;
+    }
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"menu_bg"]]];
     [self configureRegisterButton];
     [self configurePicker];
@@ -115,8 +120,16 @@
         [self configureTextField];
     }
     else{
+        [self configureDateToday];
         self.items = [[NSMutableArray alloc] init];
     }
+}
+
+- (void)configureDateToday{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *date = [formatter stringFromDate:[NSDate date]];
+    self.dateTF.text = date;
 }
 
 - (void)configurePicker{

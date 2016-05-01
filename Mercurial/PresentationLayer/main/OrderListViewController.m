@@ -67,6 +67,7 @@
     NSString *identify = self.list[indexPath.row];
     AddOrderViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"AddOrderViewController"];
     vc.identify = identify;
+    vc.myTitle = @"修改订单";
     [self.navigationController pushViewController:vc animated:YES];
 }
 

@@ -10,4 +10,5 @@
 
 @interface AddOrderViewController : UIViewController
 @property (nonatomic, copy) NSString *identify;
+@property (nonatomic, copy) NSString *myTitle;
 @end
