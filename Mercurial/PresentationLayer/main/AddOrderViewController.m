@@ -17,8 +17,9 @@
 #import "AccountDao.h"
 #import "OrderManager.h"
 #import "NetworkRequest+Order.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface AddOrderViewController ()<UITextFieldDelegate,CityPickViewDelegate>
+@interface AddOrderViewController ()<CLLocationManagerDelegate,UITextFieldDelegate,CityPickViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *numTF;
 @property (weak, nonatomic) IBOutlet UITextField *nameTF;
@@ -36,6 +37,7 @@
 @property (nonatomic, copy) NSString *province;
 @property (nonatomic, copy) NSString *city;
 @property (nonatomic, copy) NSString *district;
+@property(nonatomic ,strong) CLLocationManager *locationM;
 @end
 
 @implementation AddOrderViewController
@@ -122,6 +124,7 @@
     else{
         [self configureDateToday];
         self.items = [[NSMutableArray alloc] init];
+        [self.locationM startUpdatingLocation];
     }
 }
 
@@ -258,6 +261,119 @@
     }
     else{
         return @"";
+    }
+}
+
+#pragma mark - 懒加载
+
+/**
+ *  位置管理者 懒加载方法
+ */
+- (CLLocationManager *)locationM
+{
+    if (!_locationM) {
+        _locationM = [[CLLocationManager alloc] init];
+        _locationM.delegate = self;
+        
+        /** ios8.0+定位适配 */
+        if ([[UIDevice currentDevice].systemVersion floatValue]
+            >= 8.0) {
+            // 请求前台定位授权
+            // 如果当前的授权状态是用户为选择状态, 那么这个方法才会有效
+            // 默认情况只能在前台获取用户位置信息
+            // 如果想要在后台获取用户位置, 需要勾选后台模式, 但是, 当APP推到后台时, 会出现一个蓝条, 不断提醒用户
+            //            [_locationM requestWhenInUseAuthorization];
+            
+            // 请求前后台定位授权
+            // 如果当前的授权状态是用户为选择状态, 那么这个方法才会有效
+            // 无论在前台, 还是后台, 都可以获取用户的位置信息, 而且不会出现蓝条, 根是否勾选了后台模式location udpates没有关系
+            [_locationM requestAlwaysAuthorization];
+        }
+        
+        // 2中适配方案
+        //        if ([_locationM respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+        //            [_locationM requestAlwaysAuthorization];
+        //        }
+        
+    }
+    return _locationM;
+}
+
+
+
+#pragma mark - CLLocationManagerDelegate
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    NSLog(@"定位到了");
+    
+    CLLocation *currentLocation = [locations lastObject]; // 最后一个值为最新位置
+    CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
+    // 根据经纬度反向得出位置城市信息
+    [geoCoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        if (placemarks.count > 0) {
+            CLPlacemark *placeMark = placemarks[0];
+            NSLog(@"定位到了%@",placeMark.locality);
+            self.addressTF.text = placeMark.locality;
+        }
+    }];
+}
+
+
+/**
+ *  当前的授权状态发生改变时调用
+ *
+ *  @param manager 位置管理者
+ *  @param status  授权状态
+ */
+-(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    switch (status) {
+        case kCLAuthorizationStatusNotDetermined:
+        {
+            NSLog(@"用户没有决定");
+            break;
+        }
+            // 系统预留字段, 暂时没有用
+        case kCLAuthorizationStatusRestricted:
+        {
+            NSLog(@"受限制");
+            break;
+        }
+        case kCLAuthorizationStatusDenied:
+        {
+            
+            // 判断是否支持定位, 或者定位服务是否开启
+            if ([CLLocationManager locationServicesEnabled])
+            {
+                NSLog(@"真正被拒绝");
+                // iOS8.0- , 截图提醒用户整个操作流程
+                // iO8.0+, 直接跳转到设置界面, 核心代码
+                // 弹框, 让用户选择之后再跳转
+                NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+                if ([[UIApplication sharedApplication] canOpenURL:url]) {
+                    [[UIApplication sharedApplication] openURL:url];
+                }
+            }else
+            {
+                NSLog(@"定位服务关闭");
+                
+            }
+            break;
+        }
+        case kCLAuthorizationStatusAuthorizedAlways:
+        {
+            NSLog(@"前后台定位授权");
+            break;
+        }
+        case kCLAuthorizationStatusAuthorizedWhenInUse:
+        {
+            NSLog(@"前台定位授权");
+            break;
+        }
+            
+            
+        default:
+            break;
     }
 }
 
