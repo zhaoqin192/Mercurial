@@ -147,7 +147,7 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self configureMessage];
+   // [self configureMessage];
 }
 
 - (void)configureTimer{
