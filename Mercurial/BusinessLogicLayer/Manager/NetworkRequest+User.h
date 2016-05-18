@@ -115,4 +115,22 @@
                         success:(void (^)())success
                         failure:(void (^)(NSString *error))failure;
 
+/**
+ *  修改密码验证码
+ *
+ *  @param phone   手机号
+ *  @param success
+ *  @param failure 
+ */
++ (void) fetchSmsCode:(NSString *)phone
+              success:(void (^)(NSString *sid))success
+              failure:(void (^)(NSString *error))failure;
+
+
+
++ (void) forgetPasswordWithSid:(NSString *)sid
+                      password:(NSString *)password
+                          code:(NSString *)code
+                       success:(void (^)())success
+                       failure:(void (^)(NSString *error))failure;
 @end

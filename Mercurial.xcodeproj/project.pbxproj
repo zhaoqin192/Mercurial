@@ -41,6 +41,8 @@
 		30ACF6651CA6A658005B56EC /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF6641CA6A658005B56EC /* UIColor+expanded.m */; };
 		30CADF521CB5501F003E0F7F /* FriendsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CADF511CB5501F003E0F7F /* FriendsListViewController.m */; };
 		30CADF551CB5537B003E0F7F /* OrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CADF541CB5537B003E0F7F /* OrderListViewController.m */; };
+		30D0183A1CEBF3F400E50B23 /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D018391CEBF3F400E50B23 /* ForgetPasswordViewController.m */; };
+		30D0183E1CEC07B900E50B23 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D0183D1CEC07B900E50B23 /* NSArray+Log.m */; };
 		30D18F1E1C9AD79500559866 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D18F1D1C9AD79500559866 /* KxMenu.m */; };
 		30D18F211C9ADBE500559866 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D18F201C9ADBE500559866 /* LoginStoryboard.storyboard */; };
 		30D18F231C9ADBF000559866 /* RegisterStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D18F221C9ADBF000559866 /* RegisterStoryBoard.storyboard */; };
@@ -179,6 +181,10 @@
 		30CADF511CB5501F003E0F7F /* FriendsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsListViewController.m; sourceTree = "<group>"; };
 		30CADF531CB5537B003E0F7F /* OrderListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListViewController.h; sourceTree = "<group>"; };
 		30CADF541CB5537B003E0F7F /* OrderListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListViewController.m; sourceTree = "<group>"; };
+		30D018381CEBF3F400E50B23 /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
+		30D018391CEBF3F400E50B23 /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
+		30D0183C1CEC07B900E50B23 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		30D0183D1CEC07B900E50B23 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
 		30D18F1C1C9AD79500559866 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
 		30D18F1D1C9AD79500559866 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		30D18F1F1C9AD98400559866 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = ../PrefixHeader.pch; sourceTree = "<group>"; };
@@ -683,6 +689,10 @@
 				30D18F251C9ADDAF00559866 /* LoginViewController.m */,
 				30D18F271C9ADDC100559866 /* RegisterViewController.h */,
 				30D18F281C9ADDC100559866 /* RegisterViewController.m */,
+				30D018381CEBF3F400E50B23 /* ForgetPasswordViewController.h */,
+				30D018391CEBF3F400E50B23 /* ForgetPasswordViewController.m */,
+				30D0183C1CEC07B900E50B23 /* NSArray+Log.h */,
+				30D0183D1CEC07B900E50B23 /* NSArray+Log.m */,
 			);
 			name = loginRegister;
 			path = storyboard;
@@ -969,6 +979,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30D0183E1CEC07B900E50B23 /* NSArray+Log.m in Sources */,
 				30D18F261C9ADDAF00559866 /* LoginViewController.m in Sources */,
 				ACF83E161CBF6AB700A962BD /* NetworkRequest+Product.m in Sources */,
 				30A3A92C1CAA44980076208B /* ProductViewController.m in Sources */,
@@ -1047,6 +1058,7 @@
 				ACC204FF1C99527200B26CDD /* ProductType.m in Sources */,
 				30ECBFF31CB7DF780020164B /* AnwserCell.m in Sources */,
 				30ACF6601CA58773005B56EC /* ActionSheetStringPicker.m in Sources */,
+				30D0183A1CEBF3F400E50B23 /* ForgetPasswordViewController.m in Sources */,
 				AC5182771CAE6A970095BAB6 /* TypeManager.m in Sources */,
 				30ACF65B1CA58773005B56EC /* AbstractActionSheetPicker.m in Sources */,
 				AC51826E1CAE65720095BAB6 /* Answer.m in Sources */,

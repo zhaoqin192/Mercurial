@@ -11,12 +11,13 @@
 #import "Account.h"
 #import "DatabaseManager.h"
 #import "NetworkRequest+User.h"
-
+#import "ForgetPasswordViewController.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UILabel *forgetPasswordLabel;
 
 @end
 
@@ -31,6 +32,14 @@
     [self configureTextField];
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+    
+    self.forgetPasswordLabel.userInteractionEnabled = YES;
+    [self.forgetPasswordLabel addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(forgetPasswordLabelTapped)]];
+}
+
+- (void)forgetPasswordLabelTapped {
+    ForgetPasswordViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"ForgetPasswordViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)configureTextField{
