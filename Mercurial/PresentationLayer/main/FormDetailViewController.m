@@ -12,7 +12,9 @@
 #import "Answer.h"
 #import "PostTopicViewController.h"
 #import "NetworkRequest+BBS.h"
-
+#import "DatabaseManager.h"
+#import "AccountDao.h"
+#import "LoginViewController.h"
 
 @interface FormDetailViewController ()
 @property (nonatomic, copy) NSArray *list;
@@ -46,6 +48,23 @@
     [SVProgressHUD dismiss];
 }
 
+- (void)showLoginAlert{
+    UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"请登录" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *sure = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self loginButtonClicked];
+    }];
+    [vc addAction:cancel];
+    [vc addAction:sure];
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+- (void)loginButtonClicked{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"LoginStoryboard" bundle:nil];
+    LoginViewController *vc = [sb instantiateInitialViewController];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -59,13 +78,19 @@
     cell.answer = answer;
     __weak typeof(self) weakSelf = self;
     cell.reply = ^{
-        PostTopicViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"PostTopicViewController"];
-        vc.myTitle = @"回复";
-        vc.topic_id = weakSelf.topic_id;
-        vc.toFloor = [NSNumber numberWithInteger:indexPath.row];
-        vc.answerName = answer.answer_name;
-        vc.isReply = YES;
-        [weakSelf.navigationController pushViewController:vc animated:YES];
+        
+        if ([[DatabaseManager sharedAccount] isLogin]) {
+            PostTopicViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"PostTopicViewController"];
+            vc.myTitle = @"回复";
+            vc.topic_id = weakSelf.topic_id;
+            vc.toFloor = [NSNumber numberWithInteger:indexPath.row];
+            vc.answerName = answer.answer_name;
+            vc.isReply = YES;
+            [weakSelf.navigationController pushViewController:vc animated:YES];
+        }
+        else {
+            [self showLoginAlert];
+        }
     };
     return cell;
 }

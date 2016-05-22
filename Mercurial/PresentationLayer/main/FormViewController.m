@@ -14,7 +14,9 @@
 #import "SelectionViewController.h"
 #import "PostTopicViewController.h"
 #import "NetworkRequest+BBS.h"
-
+#import "DatabaseManager.h"
+#import "AccountDao.h"
+#import "LoginViewController.h"
 
 @interface FormViewController ()
 @property (nonatomic, copy) NSArray *list;
@@ -53,15 +55,38 @@
     UIAlertController *vc = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
     UIAlertAction *post = [UIAlertAction actionWithTitle:@"发帖" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        PostTopicViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"PostTopicViewController"];
-        vc.identify = self.identify;
-        vc.type = self.type;
-        vc.myTitle = @"发帖";
-        [self.navigationController pushViewController:vc animated:YES];
+        
+        if ([[DatabaseManager sharedAccount] isLogin]) {
+            PostTopicViewController *vc = [[UIStoryboard storyboardWithName:@"User" bundle:nil] instantiateViewControllerWithIdentifier:@"PostTopicViewController"];
+            vc.identify = self.identify;
+            vc.type = self.type;
+            vc.myTitle = @"发帖";
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        else {
+            [self showLoginAlert];
+        }
     }];
     [vc addAction:cancel];
     [vc addAction:post];
     [self presentViewController:vc animated:YES completion:nil];
+}
+
+- (void)showLoginAlert{
+    UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"请登录" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *sure = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self loginButtonClicked];
+    }];
+    [vc addAction:cancel];
+    [vc addAction:sure];
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+- (void)loginButtonClicked{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"LoginStoryboard" bundle:nil];
+    LoginViewController *vc = [sb instantiateInitialViewController];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)selectActionSheetShow{

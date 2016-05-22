@@ -291,7 +291,6 @@ NSString * const ID = @"cycleCell";
 - (void)setImageURLStringsGroup:(NSArray *)imageURLStringsGroup
 {
     _imageURLStringsGroup = imageURLStringsGroup;
-    
     NSMutableArray *temp = [NSMutableArray new];
     [_imageURLStringsGroup enumerateObjectsUsingBlock:^(NSString * obj, NSUInteger idx, BOOL * stop) {
         NSString *urlString;
