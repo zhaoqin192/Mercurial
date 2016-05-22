@@ -30,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *modifyButton;
 @property (weak, nonatomic) IBOutlet UIButton *createButton;
 @property (nonatomic, strong) Account *myAccount;
+@property (weak, nonatomic) IBOutlet UITextField *addressMoreTF;
 @property (nonatomic, strong) SearchOrder *searchOrder;
 @property (nonatomic, strong) NSMutableArray *items;
 @property (strong, nonatomic) ActionSheetDatePicker *picker;
@@ -72,6 +73,11 @@
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
+    if (self.addressMoreTF.text.length == 0) {
+        [SVProgressHUD showErrorWithStatus:@"请输入详细地址"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+        return;
+    }
     if (self.numTF.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入订单号"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
@@ -85,7 +91,7 @@
     [SVProgressHUD show];
     self.myAccount = [[DatabaseManager sharedAccount] getAccount];
     
-    [NetworkRequest requestAddOrderWithID:self.numTF.text name:self.nameTF.text province:self.province city:self.city district:self.district address:self.addressTF.text phone:self.phoneTF.text date:self.dateTF.text item:self.items success:^{
+    [NetworkRequest requestAddOrderWithID:self.numTF.text name:self.nameTF.text province:self.province city:self.city district:self.district address:self.addressMoreTF.text phone:self.phoneTF.text date:self.dateTF.text item:self.items success:^{
         [SVProgressHUD showSuccessWithStatus:@"创建订单成功!"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         [self.navigationController popViewControllerAnimated:YES];
@@ -178,12 +184,13 @@
         self.numTF.text = self.searchOrder.order_id;
         self.phoneTF.text = self.searchOrder.phone;
         self.nameTF.text = self.searchOrder.username;
-        self.addressTF.text = self.searchOrder.delivery_address;
+        self.addressMoreTF.text = self.searchOrder.delivery_address;
         self.dateTF.text = self.searchOrder.buy_date;
         self.items = self.searchOrder.items;
         self.province = self.searchOrder.delivery_province;
         self.city = self.searchOrder.delivery_city;
         self.district = self.searchOrder.delivery_district;
+        self.addressTF.text = [[self.province stringByAppendingString:self.city] stringByAppendingString:self.district];
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
