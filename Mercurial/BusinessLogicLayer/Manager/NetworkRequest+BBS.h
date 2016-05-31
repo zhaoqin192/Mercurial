@@ -113,4 +113,15 @@
                     success:(void (^)())success
                     failure:(void (^)())failure;
 
+/**
+ *  搜索帖子
+ *
+ *  @param topic   搜索关键字
+ *  @param success
+ *  @param failure 
+ */
++ (void) requestSearchWithTopic:(NSString *)topic
+                        success:(void(^)())success
+                        failure:(void(^)())failure;
+
 @end

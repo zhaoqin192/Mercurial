@@ -235,4 +235,23 @@
     }];
 }
 
++ (void)requestSearchWithTopic:(NSString *)topic success:(void (^)())success failure:(void (^)())failure {
+    AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
+    NSURL *URL = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/Forum/Index/search_topic"]];
+    Account *account = [[DatabaseManager sharedAccount] getAccount];
+    NSDictionary *parames = @{@"sid": account.token, @"main_title": topic};
+    [manager POST:URL.absoluteString parameters:parames progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", responseObject);
+        if([[responseObject objectForKey:@"status"] isEqualToString:@"200"]){
+            success();
+        }
+        else{
+            failure();
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@", error);
+        failure();
+    }];
+}
+
 @end
