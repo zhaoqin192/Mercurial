@@ -12,6 +12,9 @@
 #import "News.h"
 #import "SalesManager.h"
 #import "Sales.h"
+#import "DatabaseManager.h"
+#import "AccountDao.h"
+#import "Account.h"
 
 @implementation NetworkRequest (Others)
 
@@ -124,24 +127,25 @@
 
 
 + (void) requestFakeSearch:(NSString *)productID
-                   success:(void (^)())success
-                   failure:(void (^)(NSString *error))failure{
+                   success:(void (^)(NSString *successContent))success
+                   failure:(void (^)(NSString *error,NSString *phone))failure{
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
     NSURL *URL = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/Product/Index/anti_fake_search"]];
-    
-    NSDictionary *parames = @{@"product_id": productID};
+    Account *acount = [[DatabaseManager sharedAccount] getAccount];
+    NSString *token = acount.token;
+    NSDictionary *parames = @{@"sid": token,@"anti_code": productID};
     
     [manager POST:URL.absoluteString parameters:parames progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
         NSDictionary *dic = responseObject;
         if([[dic objectForKey:@"status"] isEqualToString:@"200"]){
-            success();
-        }else{
-            failure([dic objectForKey:@"error"]);
+            success(dic[@"success"]);
+        }else if([[dic objectForKey:@"status"] isEqualToString:@"400"]){
+            failure([dic objectForKey:@"error"],dic[@"phone"]);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error);
-        failure(@"Network Error");
+        failure(@"Network Error",@"");
     }];
     
 }
