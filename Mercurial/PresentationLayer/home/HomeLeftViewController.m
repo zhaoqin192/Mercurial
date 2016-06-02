@@ -13,6 +13,7 @@
 #import "AccountDao.h"
 #import "Account.h"
 #import "DatabaseManager.h"
+#import "WeChatManager.h"
 
 @interface HomeLeftViewController ()
 @property (weak, nonatomic) IBOutlet UIView *MiddleView;
@@ -49,22 +50,46 @@
 }
 
 - (IBAction)loginButtonClicked {
-    if ([self.loginButton.titleLabel.text isEqualToString:@"登录"]) {
-        [self.mm_drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"loginButtonClicked" object:nil];
-        }];
+//    if ([self.loginButton.titleLabel.text isEqualToString:@"登录"]) {
+//        [self.mm_drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"loginButtonClicked" object:nil];
+//        }];
+//    }
+//    else{
+//        [self.mm_drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"loginOutButtonClicked" object:nil];
+//        }];
+//    }
+    
+    WeChatManager *manager = [[WeChatManager alloc] init];
+    
+    [manager onSelectTimelineScene];
+    
+    if ([manager sendLinkContent]) {
+        NSLog(@"send success");
     }
-    else{
-        [self.mm_drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"loginOutButtonClicked" object:nil];
-        }];
-    }
-}
+    else {
+        NSLog(@"send failure");
+    }}
 
 - (IBAction)registerButtonClicked {
-    [self.mm_drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"registerButtonClicked" object:nil];
-    }];
+//    [self.mm_drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"registerButtonClicked" object:nil];
+//    }];
+    
+    WeChatManager *manager = [[WeChatManager alloc] init];
+    
+    [manager onSelectSessionScene];
+    
+    [manager sendLinkContent];
+    
+    if ([manager sendLinkContent]) {
+        NSLog(@"send success");
+    }
+    else {
+        NSLog(@"send failure");
+    }
+    
 }
 
 @end

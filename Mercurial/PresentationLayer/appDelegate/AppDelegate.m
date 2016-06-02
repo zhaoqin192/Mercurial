@@ -10,8 +10,9 @@
 #import "HomePageViewController.h"
 #import "MMDrawerController.h"
 #import "HomeLeftViewController.h"
+#import "WXApi.h"
 
-@interface AppDelegate () <EAIntroDelegate>
+@interface AppDelegate () <EAIntroDelegate, WXApiDelegate>
 @property (nonatomic,strong) MMDrawerController * drawerController;
 @end
 
@@ -34,6 +35,16 @@
     [self configureNavigationItem];
     [self configureHUD];
   //  [self configureIntroView];
+    
+    
+    if ([WXApi registerApp:@"wxaf2bba29fbb0fcef"]) {
+     
+        NSLog(@"register success");
+    }
+    else {
+        NSLog(@"register failure");
+    }
+    
     return YES;
 }
 
@@ -203,6 +214,23 @@
             abort();
         }
     }
+}
+
+#pragma mark - WeChat callback
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [WXApi handleOpenURL:url delegate:self];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [WXApi handleOpenURL:url delegate:self];
+}
+
+- (void)onReq:(BaseReq*)req {
+    
+}
+
+- (void)onResp:(BaseResp*)resp {
+    
 }
 
 @end
