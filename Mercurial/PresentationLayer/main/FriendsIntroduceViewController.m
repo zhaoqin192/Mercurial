@@ -59,6 +59,16 @@
     if (self.identify) {
         [self configureTextField];
     }
+    else {
+        [self configureDateToday];
+    }
+}
+
+- (void)configureDateToday{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *date = [formatter stringFromDate:[NSDate date]];
+    self.dateTF.text = date;
 }
 
 - (void)configurePicker{

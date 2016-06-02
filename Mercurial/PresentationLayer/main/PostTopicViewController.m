@@ -116,6 +116,7 @@
         [NetworkRequest requestSendTopic:self.titleTF.text text:self.contentTextView.text type:self.type typeID:self.identify success:^(NSString *topic_id, NSString *forum_answer_id) {
             if (self.images.count == 0) {
                 [SVProgressHUD showSuccessWithStatus:@"发帖成功"];
+                [self.navigationController popViewControllerAnimated:YES];
                 [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
             }
             else{

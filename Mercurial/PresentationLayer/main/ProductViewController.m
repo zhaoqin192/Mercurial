@@ -16,12 +16,14 @@
 #import "NetworkRequest+Product.h"
 
 
-@interface ProductViewController () <UITableViewDelegate,UITableViewDataSource>
+@interface ProductViewController ()
+<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 @property (nonatomic, copy) NSArray *logo;
 @property (nonatomic, copy) NSArray *types;
 @property (nonatomic, copy) NSArray *list;
-
+@property (nonatomic, copy) NSArray *selectArray;
 @end
 
 @implementation ProductViewController
@@ -80,13 +82,28 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if ([self.mytitle isEqualToString:@"产品品牌"]) {
-        return self.logo.count;
+        if (!self.searchBar.isFirstResponder || self.searchBar.text.length == 0) {
+            return self.logo.count;
+        }
+        else{
+            return self.selectArray.count;
+        }
     }
     else if([self.mytitle isEqualToString:@"产品类型"]){
-        return self.types.count;
+        if (!self.searchBar.isFirstResponder || self.searchBar.text.length == 0) {
+            return self.types.count;
+        }
+        else{
+            return self.selectArray.count;
+        }
     }
     else if([self.mytitle isEqualToString:@"产品列表"]){
-        return self.list.count;
+        if (!self.searchBar.isFirstResponder || self.searchBar.text.length == 0) {
+            return self.list.count;
+        }
+        else{
+            return self.selectArray.count;
+        }
     }
     else{
         return 0;
@@ -97,16 +114,34 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NewsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"newsCell"];
     if([self.mytitle isEqualToString:@"产品品牌"]){
-        ProductKind *productKind = self.logo[indexPath.row];
-        cell.productKind = productKind;
+        if (!self.searchBar.isFirstResponder || self.searchBar.text.length == 0) {
+            ProductKind *productKind = self.logo[indexPath.row];
+            cell.productKind = productKind;
+        }
+        else{
+            ProductKind *productKind = self.selectArray[indexPath.row];
+            cell.productKind = productKind;
+        }
     }
     else if ([self.mytitle isEqualToString:@"产品类型"]){
-        ProductType *type = self.types[indexPath.row];
-        cell.productType = type;
+        if (!self.searchBar.isFirstResponder || self.searchBar.text.length == 0) {
+            ProductType *type = self.types[indexPath.row];
+            cell.productType = type;
+        }
+        else{
+            ProductType *type = self.selectArray[indexPath.row];
+            cell.productType = type;
+        }
     }
     else if ([self.mytitle isEqualToString:@"产品列表"]){
-        Product *product = self.list[indexPath.row];
-        cell.product = product;
+        if (!self.searchBar.isFirstResponder || self.searchBar.text.length == 0) {
+            Product *product = self.list[indexPath.row];
+            cell.product = product;
+        }
+        else{
+            Product *product = self.selectArray[indexPath.row];
+            cell.product = product;
+        }
     }
     return cell;
 }
@@ -133,6 +168,31 @@
         vc.identify = product.identifier;
         [self.navigationController pushViewController:vc animated:YES];
     }
+}
+
+#pragma mark <UISearchBarDelegate>
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    NSLog(@"%@",searchText);
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name CONTAINS %@",searchText];
+    if([self.mytitle isEqualToString:@"产品品牌"]){
+        self.selectArray = [self.logo filteredArrayUsingPredicate:predicate];
+        [self.myTableView reloadData];
+    }
+    else if ([self.mytitle isEqualToString:@"产品类型"]){
+        self.selectArray = [self.types filteredArrayUsingPredicate:predicate];
+        [self.myTableView reloadData];
+    }
+    else if ([self.mytitle isEqualToString:@"产品列表"]){
+        self.selectArray = [self.list filteredArrayUsingPredicate:predicate];
+        [self.myTableView reloadData];
+    }
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    self.searchBar.text = @"";
+    [self.searchBar resignFirstResponder];
+    [self.myTableView reloadData];
 }
 
 @end

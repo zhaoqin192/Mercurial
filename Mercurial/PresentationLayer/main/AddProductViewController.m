@@ -84,9 +84,18 @@
     [self.nameTF becomeFirstResponder];
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+    [self configureNameTF];
     if (self.order) {
         [self configureTextField];
     }
+}
+
+- (void)configureNameTF{
+    [self.nameTF addTarget:self action:@selector(changeName) forControlEvents:UIControlEventEditingChanged];
+}
+
+- (void)changeName{
+    self.nameTF.text = self.nameTF.text.uppercaseString;
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField{

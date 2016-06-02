@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f7g-VR-fho">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f7g-VR-fho">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -48,12 +48,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="忘记密码？" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gll-nE-ZzU">
+                                <rect key="frame" x="247" y="271" width="85" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="IEj-Ks-Pa1"/>
+                                    <constraint firstAttribute="height" constant="21" id="cgt-Mb-WxE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="tDW-ZQ-AfT" firstAttribute="centerX" secondItem="OUg-gc-d1R" secondAttribute="centerX" id="1vi-3T-kgD"/>
+                            <constraint firstItem="ghd-Nm-3fI" firstAttribute="top" secondItem="gll-nE-ZzU" secondAttribute="bottom" constant="20" id="7ep-5s-L1l"/>
                             <constraint firstItem="hFs-ed-rJV" firstAttribute="centerX" secondItem="OUg-gc-d1R" secondAttribute="centerX" id="GtC-vn-Z6L"/>
                             <constraint firstItem="ghd-Nm-3fI" firstAttribute="centerY" secondItem="OUg-gc-d1R" secondAttribute="centerY" id="a8p-FX-ETD"/>
+                            <constraint firstItem="gll-nE-ZzU" firstAttribute="trailing" secondItem="tDW-ZQ-AfT" secondAttribute="trailing" id="aQU-2w-qb5"/>
                             <constraint firstItem="ghd-Nm-3fI" firstAttribute="trailing" secondItem="tDW-ZQ-AfT" secondAttribute="trailing" id="l2B-UN-i71"/>
                             <constraint firstItem="ghd-Nm-3fI" firstAttribute="centerX" secondItem="OUg-gc-d1R" secondAttribute="centerX" id="miV-pZ-Jai"/>
                             <constraint firstItem="ghd-Nm-3fI" firstAttribute="top" secondItem="tDW-ZQ-AfT" secondAttribute="bottom" constant="77" id="pna-Ge-ane"/>
@@ -67,6 +79,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="forgetPasswordLabel" destination="gll-nE-ZzU" id="Pem-PR-2c9"/>
                         <outlet property="loginButton" destination="ghd-Nm-3fI" id="1YX-qV-q54"/>
                         <outlet property="nameTextField" destination="hFs-ed-rJV" id="qzG-aV-qcE"/>
                         <outlet property="passwordTextField" destination="tDW-ZQ-AfT" id="pMS-gy-tXT"/>

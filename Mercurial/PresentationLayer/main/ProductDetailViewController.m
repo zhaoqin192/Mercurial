@@ -35,6 +35,9 @@
     [NetworkRequest requestProductDetailWithID:self.identify success:^{
         self.product = [ProductManager sharedManager].product;
         self.introductText.text = self.product.productInfo;
+        if (self.product.imageURLArray == [NSNull null]) {
+            return ;
+        }
         self.cycleView.imageURLStringsGroup = self.product.imageURLArray;
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"加载数据失败"];

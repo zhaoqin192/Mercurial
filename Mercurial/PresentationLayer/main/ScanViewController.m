@@ -68,13 +68,30 @@
 
 - (IBAction)enquryButtonClicked {
     [SVProgressHUD show];
-    [NetworkRequest requestFakeSearch:self.productTextField.text success:^{
-        [SVProgressHUD showSuccessWithStatus:@"已查到该产品"];
+    [NetworkRequest requestFakeSearch:self.productTextField.text success:^(NSString *successContent){
+        [SVProgressHUD showSuccessWithStatus:successContent];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
-    } failure:^(NSString *error){
-        [SVProgressHUD showErrorWithStatus:error];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+    } failure:^(NSString *error,NSString *phone){
+        if (phone.length == 0) { //网络问题
+            [SVProgressHUD showErrorWithStatus:error];
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+            return ;
+        }
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:0.2f];
+        [self showAlertWithTitle:error phone:phone];
     }];
+}
+
+- (void)showAlertWithTitle:(NSString *)title phone:(NSString *)phone {
+    UIAlertController *vc = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *call = [UIAlertAction actionWithTitle:@"拨打电话" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSMutableString * str = [[NSMutableString alloc] initWithFormat:@"tel:%@",phone];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    }];
+    [vc addAction:cancel];
+    [vc addAction:call];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)dismiss {

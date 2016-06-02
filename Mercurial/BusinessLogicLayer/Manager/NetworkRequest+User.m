@@ -243,4 +243,40 @@
     }];
 }
 
++ (void)fetchSmsCode:(NSString *)phone success:(void (^)(NSString *sid))success
+             failure:(void (^)(NSString *error))failure{
+    AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
+    NSURL *url = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/sms/index/getcode"]];
+    NSDictionary *parameters = @{@"phone":phone};
+    
+    [manager GET:url.absoluteString parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dic = responseObject;
+        NSLog(@"%@",responseObject);
+        if([[dic objectForKey:@"status"] isEqualToString:@"200"]){
+            success(dic[@"sid"]);
+        }else{
+            failure([dic objectForKey:@"error"]);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(@"Network Error");
+    }];
+}
+
++ (void)forgetPasswordWithSid:(NSString *)sid password:(NSString *)password code:(NSString *)code success:(void (^)())success failure:(void (^)(NSString *))failure {
+    AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
+    NSURL *url = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/user/index/checkcode"]];
+    NSDictionary *parameters = @{@"sid":sid, @"password":[Utility md5:password], @"code":code};
+    [manager GET:url.absoluteString parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dic = responseObject;
+        NSLog(@"%@",responseObject);
+        if([[dic objectForKey:@"status"] isEqualToString:@"200"]){
+            success();
+        }else{
+            failure([dic objectForKey:@"error"]);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(@"Network Error");
+    }];
+}
+
 @end

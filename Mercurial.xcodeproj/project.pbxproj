@@ -17,6 +17,7 @@
 		305F85E41CB3D38700F42B33 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305F85E31CB3D38700F42B33 /* AssetsLibrary.framework */; };
 		305F861A1CB53E4100F42B33 /* FriendsIntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305F86191CB53E4100F42B33 /* FriendsIntroduceViewController.m */; };
 		305F861D1CB5468400F42B33 /* AddOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305F861C1CB5468400F42B33 /* AddOrderViewController.m */; };
+		308E0D7D1CF1ADE10048F38A /* webView.js in Resources */ = {isa = PBXBuildFile; fileRef = 308E0D7C1CF1ADE10048F38A /* webView.js */; };
 		30A3A9271CA96FD70076208B /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A3A9251CA96FD70076208B /* NewsCell.m */; };
 		30A3A9281CA96FD70076208B /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A3A9261CA96FD70076208B /* NewsCell.xib */; };
 		30A3A92C1CAA44980076208B /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A3A92A1CAA44980076208B /* ProductViewController.m */; };
@@ -41,6 +42,8 @@
 		30ACF6651CA6A658005B56EC /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF6641CA6A658005B56EC /* UIColor+expanded.m */; };
 		30CADF521CB5501F003E0F7F /* FriendsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CADF511CB5501F003E0F7F /* FriendsListViewController.m */; };
 		30CADF551CB5537B003E0F7F /* OrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CADF541CB5537B003E0F7F /* OrderListViewController.m */; };
+		30D0183A1CEBF3F400E50B23 /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D018391CEBF3F400E50B23 /* ForgetPasswordViewController.m */; };
+		30D0183E1CEC07B900E50B23 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D0183D1CEC07B900E50B23 /* NSArray+Log.m */; };
 		30D18F1E1C9AD79500559866 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D18F1D1C9AD79500559866 /* KxMenu.m */; };
 		30D18F211C9ADBE500559866 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D18F201C9ADBE500559866 /* LoginStoryboard.storyboard */; };
 		30D18F231C9ADBF000559866 /* RegisterStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D18F221C9ADBF000559866 /* RegisterStoryBoard.storyboard */; };
@@ -137,6 +140,7 @@
 		305F86191CB53E4100F42B33 /* FriendsIntroduceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsIntroduceViewController.m; sourceTree = "<group>"; };
 		305F861B1CB5468400F42B33 /* AddOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddOrderViewController.h; sourceTree = "<group>"; };
 		305F861C1CB5468400F42B33 /* AddOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddOrderViewController.m; sourceTree = "<group>"; };
+		308E0D7C1CF1ADE10048F38A /* webView.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = webView.js; sourceTree = "<group>"; };
 		30A3A9241CA96FD70076208B /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
 		30A3A9251CA96FD70076208B /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
 		30A3A9261CA96FD70076208B /* NewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
@@ -181,6 +185,10 @@
 		30CADF511CB5501F003E0F7F /* FriendsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsListViewController.m; sourceTree = "<group>"; };
 		30CADF531CB5537B003E0F7F /* OrderListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListViewController.h; sourceTree = "<group>"; };
 		30CADF541CB5537B003E0F7F /* OrderListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListViewController.m; sourceTree = "<group>"; };
+		30D018381CEBF3F400E50B23 /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
+		30D018391CEBF3F400E50B23 /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
+		30D0183C1CEC07B900E50B23 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		30D0183D1CEC07B900E50B23 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
 		30D18F1C1C9AD79500559866 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
 		30D18F1D1C9AD79500559866 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		30D18F1F1C9AD98400559866 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = ../PrefixHeader.pch; sourceTree = "<group>"; };
@@ -609,6 +617,7 @@
 		AC5E1CDC1C904484008D91E5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				308E0D7C1CF1ADE10048F38A /* webView.js */,
 				AC5E1CF01C904484008D91E5 /* Info.plist */,
 				AC5E1CEB1C904484008D91E5 /* Assets.xcassets */,
 				30D18F1F1C9AD98400559866 /* PrefixHeader.pch */,
@@ -705,6 +714,10 @@
 				30D18F251C9ADDAF00559866 /* LoginViewController.m */,
 				30D18F271C9ADDC100559866 /* RegisterViewController.h */,
 				30D18F281C9ADDC100559866 /* RegisterViewController.m */,
+				30D018381CEBF3F400E50B23 /* ForgetPasswordViewController.h */,
+				30D018391CEBF3F400E50B23 /* ForgetPasswordViewController.m */,
+				30D0183C1CEC07B900E50B23 /* NSArray+Log.h */,
+				30D0183D1CEC07B900E50B23 /* NSArray+Log.m */,
 			);
 			name = loginRegister;
 			path = storyboard;
@@ -876,7 +889,7 @@
 				TargetAttributes = {
 					AC5E1CD81C904484008D91E5 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = BSR7J239R5;
+						DevelopmentTeam = 5CT8R4N349;
 					};
 				};
 			};
@@ -922,6 +935,7 @@
 				30ECBFF41CB7DF780020164B /* AnwserCell.xib in Resources */,
 				30D18F231C9ADBF000559866 /* RegisterStoryBoard.storyboard in Resources */,
 				30A3A9281CA96FD70076208B /* NewsCell.xib in Resources */,
+				308E0D7D1CF1ADE10048F38A /* webView.js in Resources */,
 				30ACF6481CA51E5C005B56EC /* WXWebViewController.xib in Resources */,
 				30A4A67C1C97F61000BF5EA1 /* ShoppingViewController.xib in Resources */,
 				AC8B92601CBDF37A006CBF1F /* Home.storyboard in Resources */,
@@ -991,6 +1005,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30D0183E1CEC07B900E50B23 /* NSArray+Log.m in Sources */,
 				30D18F261C9ADDAF00559866 /* LoginViewController.m in Sources */,
 				ACF83E161CBF6AB700A962BD /* NetworkRequest+Product.m in Sources */,
 				30A3A92C1CAA44980076208B /* ProductViewController.m in Sources */,
@@ -1069,6 +1084,7 @@
 				ACC204FF1C99527200B26CDD /* ProductType.m in Sources */,
 				30ECBFF31CB7DF780020164B /* AnwserCell.m in Sources */,
 				30ACF6601CA58773005B56EC /* ActionSheetStringPicker.m in Sources */,
+				30D0183A1CEBF3F400E50B23 /* ForgetPasswordViewController.m in Sources */,
 				AC5182771CAE6A970095BAB6 /* TypeManager.m in Sources */,
 				30ACF65B1CA58773005B56EC /* AbstractActionSheetPicker.m in Sources */,
 				AC51826E1CAE65720095BAB6 /* Answer.m in Sources */,

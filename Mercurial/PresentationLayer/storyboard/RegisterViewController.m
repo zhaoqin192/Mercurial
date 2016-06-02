@@ -55,6 +55,11 @@
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
+    if (![self isNumOrEnglish:self.nameTextField.text]) {
+        [SVProgressHUD showErrorWithStatus:@"姓名只能包含英文或数字"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+        return;
+    }
     if (self.passwordTextField.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入密码"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
@@ -67,11 +72,6 @@
     }
     if (self.mailTextField.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入邮箱"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
-        return;
-    }
-    if (![self isValidAgeNumber:self.ageTextField.text]) {
-        [SVProgressHUD showErrorWithStatus:@"请输入年龄"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
@@ -145,6 +145,27 @@
     for (int i=0; i<text.length; i++) {
         c=[text characterAtIndex:i];
         if (!isdigit(c)) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+- (BOOL)isNumOrEnglish:(NSString *)text {
+    NSInteger alength = [text length];
+    for (int i = 0; i<alength; i++) {
+        char commitChar = [text characterAtIndex:i];
+        NSString *temp = [text substringWithRange:NSMakeRange(i,1)];
+        const char *u8Temp = [temp UTF8String];
+        if (3==strlen(u8Temp)){
+            return NO;
+        }else if((commitChar>64)&&(commitChar<91)){
+           // NSLog(@"字符串中含有大写英文字母");
+        }else if((commitChar>96)&&(commitChar<123)){
+          //  NSLog(@"字符串中含有小写英文字母");
+        }else if((commitChar>47)&&(commitChar<58)){
+          //  NSLog(@"字符串中含有数字");
+        }else{
             return NO;
         }
     }

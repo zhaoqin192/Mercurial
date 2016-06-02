@@ -61,8 +61,8 @@
  *  @param failure
  */
 + (void) requestFakeSearch:(NSString *)productID
-                   success:(void (^)())success
-                   failure:(void (^)(NSString *error))failure;
+                   success:(void (^)(NSString *successContent))success
+                   failure:(void (^)(NSString *error,NSString *phone))failure;
 
 
 @end
