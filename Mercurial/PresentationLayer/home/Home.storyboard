@@ -528,7 +528,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n0r-2d-E2S">
-                                <rect key="frame" x="0.0" y="259" width="375" height="150"/>
+                                <rect key="frame" x="0.0" y="233.5" width="375" height="200"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nv3-wn-AmV">
                                         <rect key="frame" x="30" y="30" width="30" height="30"/>
@@ -544,27 +544,62 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eV2-5x-pkk">
-                                        <rect key="frame" x="30" y="90" width="30" height="30"/>
+                                        <rect key="frame" x="30" y="85" width="30" height="30"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="3VG-lF-F0t"/>
                                             <constraint firstAttribute="width" constant="30" id="bS4-06-Moz"/>
+                                            <constraint firstAttribute="width" constant="30" id="nlE-62-pVs"/>
                                             <constraint firstAttribute="height" constant="30" id="o59-X2-hwe"/>
                                         </constraints>
                                         <state key="normal" title="注册">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="bS4-06-Moz"/>
+                                                <exclude reference="o59-X2-hwe"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="registerButtonClicked" destination="SqH-2l-0od" eventType="touchUpInside" id="Ow8-eo-si7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="077-E2-isj">
+                                        <rect key="frame" x="30" y="136" width="30" height="30"/>
+                                        <state key="normal" title="分享">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shareButton:" destination="SqH-2l-0od" eventType="touchUpInside" id="bYU-41-vlu"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="077-E2-isj" secondAttribute="bottom" constant="34" id="Nht-pM-8jk"/>
+                                    <constraint firstItem="077-E2-isj" firstAttribute="leading" secondItem="n0r-2d-E2S" secondAttribute="leading" constant="22" id="Ql5-G0-iED"/>
+                                    <constraint firstItem="077-E2-isj" firstAttribute="leading" secondItem="n0r-2d-E2S" secondAttribute="leading" constant="30" id="S2n-he-yg3"/>
                                     <constraint firstItem="nv3-wn-AmV" firstAttribute="top" secondItem="n0r-2d-E2S" secondAttribute="top" constant="30" id="UHm-YW-od4"/>
-                                    <constraint firstAttribute="height" constant="150" id="We2-QZ-oUi"/>
+                                    <constraint firstAttribute="height" constant="200" id="We2-QZ-oUi"/>
+                                    <constraint firstAttribute="bottom" secondItem="077-E2-isj" secondAttribute="bottom" constant="33" id="afd-Ku-Dic"/>
                                     <constraint firstAttribute="bottom" secondItem="eV2-5x-pkk" secondAttribute="bottom" constant="30" id="alx-61-o8M"/>
+                                    <constraint firstItem="077-E2-isj" firstAttribute="top" secondItem="eV2-5x-pkk" secondAttribute="bottom" constant="22" id="c4h-gY-ua8"/>
+                                    <constraint firstItem="eV2-5x-pkk" firstAttribute="leading" secondItem="n0r-2d-E2S" secondAttribute="leading" constant="30" id="cVn-qP-LQ3"/>
+                                    <constraint firstItem="077-E2-isj" firstAttribute="top" secondItem="eV2-5x-pkk" secondAttribute="bottom" constant="20" id="crS-sQ-Kph"/>
+                                    <constraint firstItem="077-E2-isj" firstAttribute="top" secondItem="eV2-5x-pkk" secondAttribute="bottom" constant="21" id="noT-Dp-mDL"/>
                                     <constraint firstItem="nv3-wn-AmV" firstAttribute="leading" secondItem="n0r-2d-E2S" secondAttribute="leading" constant="30" id="pNa-oz-Bq3"/>
                                     <constraint firstItem="eV2-5x-pkk" firstAttribute="leading" secondItem="n0r-2d-E2S" secondAttribute="leading" constant="30" id="xVp-GC-HO6"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="alx-61-o8M"/>
+                                        <exclude reference="xVp-GC-HO6"/>
+                                        <exclude reference="Ql5-G0-iED"/>
+                                        <exclude reference="afd-Ku-Dic"/>
+                                        <exclude reference="c4h-gY-ua8"/>
+                                        <exclude reference="crS-sQ-Kph"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

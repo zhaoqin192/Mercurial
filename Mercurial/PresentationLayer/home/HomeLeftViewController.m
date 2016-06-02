@@ -50,45 +50,62 @@
 }
 
 - (IBAction)loginButtonClicked {
-//    if ([self.loginButton.titleLabel.text isEqualToString:@"登录"]) {
-//        [self.mm_drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {
-//            [[NSNotificationCenter defaultCenter] postNotificationName:@"loginButtonClicked" object:nil];
-//        }];
-//    }
-//    else{
-//        [self.mm_drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {
-//            [[NSNotificationCenter defaultCenter] postNotificationName:@"loginOutButtonClicked" object:nil];
-//        }];
-//    }
-    
-    WeChatManager *manager = [[WeChatManager alloc] init];
-    
-    [manager onSelectTimelineScene];
-    
-    if ([manager sendLinkContent]) {
-        NSLog(@"send success");
+    if ([self.loginButton.titleLabel.text isEqualToString:@"登录"]) {
+        [self.mm_drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"loginButtonClicked" object:nil];
+        }];
     }
-    else {
-        NSLog(@"send failure");
-    }}
+    else{
+        [self.mm_drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"loginOutButtonClicked" object:nil];
+        }];
+    }
+}
 
 - (IBAction)registerButtonClicked {
-//    [self.mm_drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {
-//        [[NSNotificationCenter defaultCenter] postNotificationName:@"registerButtonClicked" object:nil];
-//    }];
+    [self.mm_drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"registerButtonClicked" object:nil];
+    }];
+}
+
+- (IBAction)shareButton:(id)sender {
     
-    WeChatManager *manager = [[WeChatManager alloc] init];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle: UIAlertControllerStyleActionSheet];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
     
-    [manager onSelectSessionScene];
+    UIAlertAction *shareTimeAction = [UIAlertAction actionWithTitle:@"分享到朋友圈" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            WeChatManager *manager = [[WeChatManager alloc] init];
+        
+            [manager onSelectTimelineScene];
+        
+            if ([manager sendLinkContent]) {
+                NSLog(@"send success");
+            }
+            else {
+                NSLog(@"send failure");
+            }
+    }];
     
-    [manager sendLinkContent];
+    UIAlertAction *shareSessionAction = [UIAlertAction actionWithTitle:@"分享给好友" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+            WeChatManager *manager = [[WeChatManager alloc] init];
+        
+            [manager onSelectSessionScene];
+        
+            [manager sendLinkContent];
+        
+            if ([manager sendLinkContent]) {
+                NSLog(@"send success");
+            }
+            else {
+                NSLog(@"send failure");
+            }
+    }];
     
-    if ([manager sendLinkContent]) {
-        NSLog(@"send success");
-    }
-    else {
-        NSLog(@"send failure");
-    }
+    [alertController addAction:cancelAction];
+    [alertController addAction:shareTimeAction];
+    [alertController addAction:shareSessionAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
     
 }
 
