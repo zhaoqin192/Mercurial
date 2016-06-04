@@ -33,6 +33,8 @@
 
 
 @interface HomePageViewController () <SDCycleScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *scrollAdView;
 @property (strong, nonatomic) NSMutableArray *salesArray;
 @property (strong, nonatomic) NSMutableArray *imageUrlArray;
@@ -144,6 +146,11 @@
     [self configureScrollView];
     [self configureNotifacation];
     [self configureLogin];
+    if (KScreen_width == 320) {
+        self.topConstraint.constant = 100;
+        self.bottomConstraint.constant = 100;
+        [self.view layoutIfNeeded];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated{

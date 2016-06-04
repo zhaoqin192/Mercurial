@@ -21,11 +21,9 @@
     if (self.url) {
         NSLog(@"%@",self.url);
         [self.myWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.url]]];
-            [self.myWebView stringByEvaluatingJavaScriptFromString:[NSString stringWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"webView" withExtension:@"js"] encoding:NSUTF8StringEncoding error:nil]];
     }
     else{
         [self loadUrl];
-            [self.myWebView stringByEvaluatingJavaScriptFromString:[NSString stringWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"webView" withExtension:@"js"] encoding:NSUTF8StringEncoding error:nil]];
     }
 }
 

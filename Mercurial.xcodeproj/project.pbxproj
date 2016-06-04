@@ -17,7 +17,6 @@
 		305F85E41CB3D38700F42B33 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305F85E31CB3D38700F42B33 /* AssetsLibrary.framework */; };
 		305F861A1CB53E4100F42B33 /* FriendsIntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305F86191CB53E4100F42B33 /* FriendsIntroduceViewController.m */; };
 		305F861D1CB5468400F42B33 /* AddOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305F861C1CB5468400F42B33 /* AddOrderViewController.m */; };
-		308E0D7D1CF1ADE10048F38A /* webView.js in Resources */ = {isa = PBXBuildFile; fileRef = 308E0D7C1CF1ADE10048F38A /* webView.js */; };
 		30A3A9271CA96FD70076208B /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A3A9251CA96FD70076208B /* NewsCell.m */; };
 		30A3A9281CA96FD70076208B /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A3A9261CA96FD70076208B /* NewsCell.xib */; };
 		30A3A92C1CAA44980076208B /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A3A92A1CAA44980076208B /* ProductViewController.m */; };
@@ -134,7 +133,6 @@
 		305F86191CB53E4100F42B33 /* FriendsIntroduceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsIntroduceViewController.m; sourceTree = "<group>"; };
 		305F861B1CB5468400F42B33 /* AddOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddOrderViewController.h; sourceTree = "<group>"; };
 		305F861C1CB5468400F42B33 /* AddOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddOrderViewController.m; sourceTree = "<group>"; };
-		308E0D7C1CF1ADE10048F38A /* webView.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = webView.js; sourceTree = "<group>"; };
 		30A3A9241CA96FD70076208B /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
 		30A3A9251CA96FD70076208B /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
 		30A3A9261CA96FD70076208B /* NewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
@@ -622,7 +620,6 @@
 		AC5E1CDC1C904484008D91E5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				308E0D7C1CF1ADE10048F38A /* webView.js */,
 				AC5E1CF01C904484008D91E5 /* Info.plist */,
 				AC5E1CEB1C904484008D91E5 /* Assets.xcassets */,
 				30D18F1F1C9AD98400559866 /* PrefixHeader.pch */,
@@ -918,7 +915,6 @@
 				30ECBFF41CB7DF780020164B /* AnwserCell.xib in Resources */,
 				30D18F231C9ADBF000559866 /* RegisterStoryBoard.storyboard in Resources */,
 				30A3A9281CA96FD70076208B /* NewsCell.xib in Resources */,
-				308E0D7D1CF1ADE10048F38A /* webView.js in Resources */,
 				30ACF6481CA51E5C005B56EC /* WXWebViewController.xib in Resources */,
 				30A4A67C1C97F61000BF5EA1 /* ShoppingViewController.xib in Resources */,
 				AC8B92601CBDF37A006CBF1F /* Home.storyboard in Resources */,
