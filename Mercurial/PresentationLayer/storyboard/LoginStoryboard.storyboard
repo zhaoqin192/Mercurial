@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f7g-VR-fho">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f7g-VR-fho">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hFs-ed-rJV">
-                                <rect key="frame" x="42" y="132" width="290" height="30"/>
+                                <rect key="frame" x="42" y="192" width="290" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="aoD-mz-bRX"/>
                                     <constraint firstAttribute="width" constant="290" id="f56-Om-KWh"/>
@@ -26,7 +27,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghd-Nm-3fI">
-                                <rect key="frame" x="252" y="312" width="80" height="44"/>
+                                <rect key="frame" x="252" y="372" width="80" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="OxA-bR-iPu"/>
@@ -40,7 +41,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tDW-ZQ-AfT">
-                                <rect key="frame" x="42" y="205" width="290" height="30"/>
+                                <rect key="frame" x="42" y="265" width="290" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="290" id="Ep7-Sv-Yut"/>
                                     <constraint firstAttribute="height" constant="30" id="Wxn-bU-7zI"/>
@@ -49,7 +50,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="忘记密码？" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gll-nE-ZzU">
-                                <rect key="frame" x="247" y="271" width="85" height="21"/>
+                                <rect key="frame" x="247" y="331" width="85" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="85" id="IEj-Ks-Pa1"/>
                                     <constraint firstAttribute="height" constant="21" id="cgt-Mb-WxE"/>
@@ -64,7 +65,7 @@
                             <constraint firstItem="tDW-ZQ-AfT" firstAttribute="centerX" secondItem="OUg-gc-d1R" secondAttribute="centerX" id="1vi-3T-kgD"/>
                             <constraint firstItem="ghd-Nm-3fI" firstAttribute="top" secondItem="gll-nE-ZzU" secondAttribute="bottom" constant="20" id="7ep-5s-L1l"/>
                             <constraint firstItem="hFs-ed-rJV" firstAttribute="centerX" secondItem="OUg-gc-d1R" secondAttribute="centerX" id="GtC-vn-Z6L"/>
-                            <constraint firstItem="ghd-Nm-3fI" firstAttribute="centerY" secondItem="OUg-gc-d1R" secondAttribute="centerY" id="a8p-FX-ETD"/>
+                            <constraint firstItem="ghd-Nm-3fI" firstAttribute="centerY" secondItem="OUg-gc-d1R" secondAttribute="centerY" constant="60" id="a8p-FX-ETD"/>
                             <constraint firstItem="gll-nE-ZzU" firstAttribute="trailing" secondItem="tDW-ZQ-AfT" secondAttribute="trailing" id="aQU-2w-qb5"/>
                             <constraint firstItem="ghd-Nm-3fI" firstAttribute="trailing" secondItem="tDW-ZQ-AfT" secondAttribute="trailing" id="l2B-UN-i71"/>
                             <constraint firstItem="ghd-Nm-3fI" firstAttribute="centerX" secondItem="OUg-gc-d1R" secondAttribute="centerX" id="miV-pZ-Jai"/>

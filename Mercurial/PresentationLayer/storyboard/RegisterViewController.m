@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (weak, nonatomic) IBOutlet UITextField *ageTextField;
 @property (weak, nonatomic) IBOutlet UITextField *mailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *confirmPasswordTF;
 @property (weak, nonatomic) IBOutlet UITextField *sexTextField;
@@ -87,7 +86,7 @@
     }
     [SVProgressHUD show];    
    
-    [NetworkRequest userRegisterWithName:self.nameTextField.text password:self.passwordTextField.text phone:self.phoneNumTextField.text sex:self.sexTextField.text age:[self.ageTextField.text integerValue] Email:self.mailTextField.text success:^{
+    [NetworkRequest userRegisterWithName:self.nameTextField.text password:self.passwordTextField.text phone:self.phoneNumTextField.text sex:self.sexTextField.text age:18 Email:self.mailTextField.text success:^{
 
         [SVProgressHUD showSuccessWithStatus:@"注册成功!"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
