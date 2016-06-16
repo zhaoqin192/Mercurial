@@ -15,9 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (weak, nonatomic) IBOutlet UITextField *mailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *confirmPasswordTF;
-@property (weak, nonatomic) IBOutlet UITextField *sexTextField;
 @end
 
 @implementation RegisterViewController
@@ -29,8 +27,6 @@
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"menu_bg"]]];
     [self configureRegisterButton];
     [self.phoneNumTextField becomeFirstResponder];
-    self.sexTextField.inputView = [[UIView alloc] init];
-    self.sexTextField.delegate = self;
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
 }
@@ -50,12 +46,12 @@
         return;
     }
     if (self.nameTextField.text.length == 0) {
-        [SVProgressHUD showErrorWithStatus:@"请输入姓名"];
+        [SVProgressHUD showErrorWithStatus:@"请输入用户名"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
     if (![self isNumOrEnglish:self.nameTextField.text]) {
-        [SVProgressHUD showErrorWithStatus:@"姓名只能包含英文或数字"];
+        [SVProgressHUD showErrorWithStatus:@"用户名只能包含英文或数字"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
@@ -69,25 +65,13 @@
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
-    if (self.mailTextField.text.length == 0) {
-        [SVProgressHUD showErrorWithStatus:@"请输入邮箱"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
-        return;
-    }
-    if (self.sexTextField.text.length == 0) {
-        [SVProgressHUD showErrorWithStatus:@"请输入性别"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
-        return;
-    }
     if(![self.passwordTextField.text isEqualToString:self.confirmPasswordTF.text]){
         [SVProgressHUD showErrorWithStatus:@"两次输入的密码不一致，请重新输入"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         return;
     }
-    [SVProgressHUD show];    
-   
-    [NetworkRequest userRegisterWithName:self.nameTextField.text password:self.passwordTextField.text phone:self.phoneNumTextField.text sex:self.sexTextField.text age:18 Email:self.mailTextField.text success:^{
-
+    [SVProgressHUD show];
+    [NetworkRequest userRegisterWithName:self.nameTextField.text password:self.passwordTextField.text phone:self.phoneNumTextField.text sex:@"男" age:18 Email:@"10000@weimei.com" success:^{
         [SVProgressHUD showSuccessWithStatus:@"注册成功!"];
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
         [self.navigationController popViewControllerAnimated:YES];
@@ -106,12 +90,12 @@
 }
 
 #pragma mark <UITextFieldDelegate>
-- (void)textFieldDidBeginEditing:(UITextField *)textField{
-    [ActionSheetStringPicker showPickerWithTitle:nil rows:@[@[@"男", @"女"]] initialSelection:@[@(0)] doneBlock:^(ActionSheetStringPicker *picker, NSArray * selectedIndex, NSArray *selectedValue) {
-        self.sexTextField.text = [selectedValue firstObject];
-        [self.sexTextField resignFirstResponder];
-    } cancelBlock:nil origin:self.view];
-}
+//- (void)textFieldDidBeginEditing:(UITextField *)textField{
+//    [ActionSheetStringPicker showPickerWithTitle:nil rows:@[@[@"男", @"女"]] initialSelection:@[@(0)] doneBlock:^(ActionSheetStringPicker *picker, NSArray * selectedIndex, NSArray *selectedValue) {
+//        self.sexTextField.text = [selectedValue firstObject];
+//        [self.sexTextField resignFirstResponder];
+//    } cancelBlock:nil origin:self.view];
+//}
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     return NO;

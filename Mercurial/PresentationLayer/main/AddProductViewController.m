@@ -52,16 +52,17 @@
     order.product_name = self.nameTF.text;
     order.product_level = self.rankTF.text;
     order.product_amount = [NSNumber numberWithInteger:[self.numTF.text integerValue]];
-    order.product_price = [NSNumber numberWithInteger:[self.priceTF.text integerValue]];
+    order.product_price = [NSNumber numberWithFloat:[self.priceTF.text floatValue]];
+    NSLog(@"%@",order.product_price);
     order.product_usage = self.usageTF.text;
     if (self.addOrder) {
+        [self returnButtonClicked];
         self.addOrder(order);
-         [self returnButtonClicked];
     }else{
         self.order.product_name = self.nameTF.text;
         self.order.product_level = self.rankTF.text;
         self.order.product_amount = [NSNumber numberWithInteger:[self.numTF.text integerValue]];
-        self.order.product_price = [NSNumber numberWithInteger:[self.priceTF.text integerValue]];
+        self.order.product_price = [NSNumber numberWithFloat:[self.priceTF.text floatValue]];
         self.order.product_usage = self.usageTF.text;
         [[NSNotificationCenter defaultCenter] postNotificationName:@"SaveOrder" object:nil];
     }

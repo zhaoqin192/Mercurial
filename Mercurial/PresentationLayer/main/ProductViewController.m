@@ -172,9 +172,8 @@
 
 #pragma mark <UISearchBarDelegate>
 
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    NSLog(@"%@",searchText);
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name CONTAINS %@",searchText];
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name CONTAINS %@",searchBar.text];
     if([self.mytitle isEqualToString:@"产品品牌"]){
         self.selectArray = [self.logo filteredArrayUsingPredicate:predicate];
         [self.myTableView reloadData];

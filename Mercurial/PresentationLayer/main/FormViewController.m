@@ -201,6 +201,12 @@
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    if (![[DatabaseManager sharedAccount] isLogin]) {
+        [SVProgressHUD showErrorWithStatus:@"请登录"];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1.5f];
+        return;
+    }
+    
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getRequestQueue];
     NSURL *URL = [NSURL URLWithString:[URLPREFIX stringByAppendingString:@"/weimei_background/index.php/Forum/Index/search_topic"]];
     Account *account = [[DatabaseManager sharedAccount] getAccount];

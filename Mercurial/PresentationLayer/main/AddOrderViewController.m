@@ -142,7 +142,11 @@
 }
 
 - (void)configurePicker{
-    NSDate *curDate = [NSDate dateFromString:@"1990-01-01" withFormat:@"yyyy-MM-dd"];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *date = [formatter stringFromDate:[NSDate date]];
+    
+    NSDate *curDate = [NSDate dateFromString:date withFormat:@"yyyy-MM-dd"];
     self.picker = [[ActionSheetDatePicker alloc] initWithTitle:nil datePickerMode:UIDatePickerModeDate selectedDate:curDate doneBlock:^(ActionSheetDatePicker *picker, NSDate *selectedDate, id origin) {
         // NSLog(@"%@",[selectedDate string_yyyy_MM_dd]);
         self.dateTF.text = [selectedDate string_yyyy_MM_dd];
