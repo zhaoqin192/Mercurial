@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
 
-#define URLPREFIX @"http://yyzwt.cn:12345"
+#define URLPREFIX @"http://wg.gdwm.cn:12345"
 
 typedef void(^NetworkFetcherCompletionHandler)();
 typedef void(^NetworkFetcherErrorHandler)(NSString *error);
