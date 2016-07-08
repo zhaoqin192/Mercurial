@@ -54,6 +54,7 @@
     [self configureRegisterButton];
     [self configurePicker];
     [self.nameTF becomeFirstResponder];
+    [self configureNameTF];
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
     if (self.identify) {
@@ -62,6 +63,14 @@
     else {
         [self configureDateToday];
     }
+}
+
+- (void)configureNameTF{
+    [self.productTF addTarget:self action:@selector(changeName) forControlEvents:UIControlEventEditingChanged];
+}
+
+- (void)changeName{
+    self.productTF.text = self.productTF.text.uppercaseString;
 }
 
 - (void)configureDateToday{

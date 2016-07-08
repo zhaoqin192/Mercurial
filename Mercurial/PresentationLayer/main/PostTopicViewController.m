@@ -36,6 +36,7 @@
     [self.view endEditing:YES];
 }
 - (IBAction)cameraButtonClicked {
+    NSLog(@"camera");
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
     picker.allowsEditing = YES;//设置可编辑
@@ -44,6 +45,7 @@
 }
 
 - (IBAction)photoButtonClicked {
+    NSLog(@"photo");
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
     picker.allowsEditing = YES;//设置可编辑
